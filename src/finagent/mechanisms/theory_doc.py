@@ -10,9 +10,13 @@ Ported from the research workspace's results/lit_20261023/make_doc.py (with its 
 now finagent.mechanisms.docx_writer). The text of every section is the original's; the appendix is built from
 good_thinking_theory.json (44 entries, each re-checked by an independent verifier; the verifier's corrections are
 applied there). The content is now one list of blocks, blocks(), written out twice: as the .docx and as Markdown.
-The .docx's six XML parts are byte-identical to those of the workspace's 好的思考_理论依据_20261023.docx; the zip
-around them is deterministic (fixed timestamps, stored rather than deflated; see docx_writer), so the file itself is
-the same on every build and every host, and differs from the workspace file only in that container.
+The first version of the document (2026-10-23) called the redundancy matrix 22 fields (the size of its largest
+near-duplicate cluster; data/evidence_relations/tool_redundancy/pearson_matrix.csv has 69) and said the ~6.7 ratio
+was measured against a Kalman rule (it is the Kelly-style target-exposure rule of results/mechanisms/position_adjustment);
+both were corrected the same day, in the workspace copy and here, together with the five research notes in
+good_thinking_theory.json that repeated the 22. The six XML parts of the .docx are byte-identical to those of the
+workspace's corrected 好的思考_理论依据_20261023.docx; the zip around them is deterministic (fixed timestamps, stored
+rather than deflated; see docx_writer), so the file itself is the same on every build and every host.
 """
 from __future__ import annotations
 
@@ -28,6 +32,9 @@ THEORY_JSON = FOLDER / "good_thinking_theory.json"
 DOCX = FOLDER / "good_thinking_20261023.docx"
 MARKDOWN = config.DOCS / "GOOD_THINKING.md"
 DOC_TITLE = "什么是好的思考：信息分量和信息关系的理论依据"          # the .docx core properties title
+
+# The tool-redundancy matrix of data/evidence_relations/tool_redundancy/ (69 x 69 in pearson_matrix.csv).
+REDUNDANCY_MATRIX = "69 个字段的冗余矩阵"
 
 STATUS_CN = {"confirmed": "已确认", "corrected": "已更正细节", "wrong": "出处正确，一处说法已更正", "unverifiable": "未能核实"}
 FAMILY_CN = {"weight": "信息分量", "relations": "信息关系", "finance": "金融测量", "llm": "大模型"}
@@ -133,7 +140,7 @@ def blocks(data: list[dict]) -> list[tuple]:
             ["重复报道、同源指标", "条件分量 = 0", "舒姆（1994）证据分类；恩克与齐默尔曼（2019）相关性忽视；德马佐、瓦亚诺斯、兹韦贝尔（2003）说服偏差", "重复新闻扰动；冗余矩阵里高度相关的字段"],
             ["已被价格消化", "已知价格之后，条件分量接近 0", "法玛（1970）有效市场；艾斯特、雷宾、瓦亚诺斯（2019）", "“已消化”扰动（只用交易日之前的新闻）"],
             ["过时新闻", "已知前一天的信息之后，条件分量接近 0", "泰特洛克（2011）：市场确实会对转载的旧闻反应", "“过时”扰动"],
-            ["冗余（部分重叠）", "条件分量小于单独分量", "部分信息分解（威廉斯与比尔，2010）；沙普利交互指数为负", "22 个字段的冗余矩阵"],
+            ["冗余（部分重叠）", "条件分量小于单独分量", "部分信息分解（威廉斯与比尔，2010）；沙普利交互指数为负", REDUNDANCY_MATRIX],
             ["协同（合起来才有用）", "条件分量大于单独分量", "舒姆（1994）；部分信息分解", "合成任务"],
             ["矛盾、冲突", "正负分量相互抵消；要比较来源的可信度", "舒姆（1994）", "合成任务"],
         ], [18, 22, 34, 26]),
@@ -169,8 +176,8 @@ def blocks(data: list[dict]) -> list[tuple]:
         ("h1", "六、落到我们项目：好的思考怎么打分"),
         ("table", ["层次", "测什么", "用到的现有材料"], [
             ["行为层（主）", "分量回归（c、d 和三类附加系数）、重复计数比、交互对比", "合成任务（似然比已知）；真实交易日的重复、已消化、过时三类扰动"],
-            ["改动层", "日间仓位变化与卡尔曼参照规则之比（现在约 6.7，好的接近 1）；信念移动量 ÷ 不确定性下降量；修正—误差回归", "连续交易轨迹；理性基准"],
-            ["文本层（辅）", "思考里每句“证据甲和证据乙是什么关系”的说法，拿冗余矩阵核对，算准确率和覆盖率；“我的决定符合信号 X”这类自我辩护不算关系、不计分；再查文本说的关系和行为是否一致", "22 个字段的冗余矩阵；已扫描的 4,000 个会话"],
+            ["改动层", "日间仓位变化与理性仓位规则（凯利式目标仓位）的改动之比（现在约 6.7，好的接近 1）；信念移动量 ÷ 不确定性下降量；修正—误差回归", "连续交易轨迹；理性基准"],
+            ["文本层（辅）", "思考里每句“证据甲和证据乙是什么关系”的说法，拿冗余矩阵核对，算准确率和覆盖率；“我的决定符合信号 X”这类自我辩护不算关系、不计分；再查文本说的关系和行为是否一致", f"{REDUNDANCY_MATRIX}；已扫描的 4,000 个会话"],
         ], [16, 50, 34]),
         ("para", "这些材料（合成任务、三类扰动、冗余矩阵、三个参照智能体）都已经放进 finance1 仓库，可以直接套用上面的打分公式。"),
 

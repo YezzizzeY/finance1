@@ -268,10 +268,10 @@ def sec_position(POS):
   {html_table([
       ["", "样本数（间隔）", "改动量对理性改动的回归斜率", "标准差之比"],
       ["平静日（|惊讶程度|&lt;1）", f"{quiet['regression']['n']}", f"{quiet['regression']['b']:.2f}", f"{quiet['std_ratio']['ratio']:.2f}×"],
-      ["大事日（|惊讶程度|≥2）", f"{event['regression']['n']}", f"{event['regression']['b']:.2f}（标准误 {event['regression']['se_cluster_day']['b']:.2f}，和估计值一样大）", f"{event['std_ratio']['ratio']:.2f}×"],
+      ["大事日（|惊讶程度|≥2）", f"{event['regression']['n']}", f"{event['regression']['b']:.2f}（标准误 {event['regression']['se_cluster_day']['b']:.2f}，约是斜率的 {event['regression']['se_cluster_day']['b'] / event['regression']['b']:.0f} 倍）", f"{event['std_ratio']['ratio']:.2f}×"],
   ])}
   <p class="tnote">斜率＝回归"智能体当日改动量"对"理性当日改动量"，1 代表改动幅度刚好对，大于 1 说明改得比该改的还夸张。
-  大事日这一格样本太薄（16 个间隔），标准误和估计值本身一样大，<b>测不出平静日/大事日这个不对称性在"仓位"这个量上是否存在，不强行下结论</b>。</p>
+  大事日这一格样本太薄（16 个间隔），标准误约是斜率本身的 3 倍，<b>测不出平静日/大事日这个不对称性在"仓位"这个量上是否存在，不强行下结论</b>。</p>
 
   <h3>一个真实轨迹：ELV，2026 年 1 月</h3>
   {html_table(rows)}

@@ -66,3 +66,15 @@ def test_no_host_paths_or_removed_names(built):
         blob = zipfile.ZipFile(io.BytesIO(data)).read("word/document.xml") if data[:2] == b"PK" else data
         assert FORBIDDEN not in blob.lower()
         assert all(s.encode() not in blob for s in ("/srv/", "/home/", "/tmp/", str(config.ROOT)))
+
+
+def test_redundancy_matrix_size_matches_the_matrix(built):
+    """The document names the tool-redundancy matrix by its size (the first version said 22 fields, the size of its
+    largest near-duplicate cluster): the size must be that of the shipped matrix, in both cells and both formats."""
+    header = (config.DATA / "evidence_relations" / "tool_redundancy" / "pearson_matrix.csv").read_text().split("\n", 1)[0]
+    n_fields = len(header.split(",")) - 1
+    assert theory_doc.REDUNDANCY_MATRIX == f"{n_fields} 个字段的冗余矩阵" and n_fields == 69
+    md = built[theory_doc.MARKDOWN].decode("utf-8")
+    xml = zipfile.ZipFile(io.BytesIO(built[theory_doc.DOCX])).read("word/document.xml").decode("utf-8")
+    for text in (md, xml):
+        assert text.count(theory_doc.REDUNDANCY_MATRIX) == 2 and "22 个字段" not in text

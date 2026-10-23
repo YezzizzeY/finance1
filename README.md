@@ -283,10 +283,10 @@ over-reaction found earlier is visible in the sessions. Full method, numbers and
   scale k (3.4 at 2k, 10.8 at k/2); the eventful subset (16 changes, 5 stocks) is too small to test eventful against
   quiet days.
 - **Thinking: more relating with news, little real relating.** In 4,000 reasoning texts, relationship language
-  (strict tier) is more common with news in the prompt (63.2% against 51.7%, z = 7.3). But read by hand only about one
-  match in four (4 of 17, 95% interval 9.6% to 47.3%) really relates two pieces of evidence, and only 2.8% of the
-  sessions that use both news and the volatility tool connect the two in one sentence. This is a keyword method, not a
-  validated classifier.
+  (strict2 tier: without the generic words and the "aligns with" family) is more common with news in the prompt
+  (63.2% against 51.7%, z = 7.3). But read by hand only about one match in four (4 of 17, 95% interval 9.6% to 47.3%)
+  really relates two pieces of evidence, and only 2.8% of the sessions that use both news and the volatility tool
+  connect the two in one sentence. This is a keyword method, not a validated classifier.
 
 `results/mechanisms/page/mechanisms.html` shows the four results (in Chinese), byte-identical to the research page.
 [docs/GOOD_THINKING.md](docs/GOOD_THINKING.md) (also as `docs/good_thinking/good_thinking_20261023.docx`, in Chinese)

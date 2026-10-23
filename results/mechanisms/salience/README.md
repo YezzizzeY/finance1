@@ -15,11 +15,11 @@ metadata are in `data.json`.
 |---|---|---|---|
 | `data/mechanisms/sessions/newsagent`, **FULL** arm, k=0..3 (primary) | Qwen3.5-9B | 694 | valid submit_decision + >=1 `get_volatility_stats` call |
 | same, **NO_NEWS** arm, k=0..3 | Qwen3.5-9B | 751 | same filter |
-| `data/mechanisms/sessions/q3news_s1`, FULL/NO_NEWS (cross-check) | Qwen3-8B, thinking on | 155 / 139 | same filter; most q3news sessions never call `get_volatility_stats` at all, so usable N is much smaller than the corpus size (1988 files) |
+| `data/mechanisms/sessions/q3news_s1`, FULL/NO_NEWS (cross-check) | Qwen3-8B, thinking on | 155 / 139 | same filter; most q3news sessions never call `get_volatility_stats` at all, so usable N is much smaller than the files scanned (2,000: 294 usable, 1,692 with no `get_volatility_stats` call, 14 without a complete `submit_decision`) |
 | `data/mechanisms/salience/grounding_A_main`, FULL_G/NO_NEWS_G | Qwen3-8B | **0 — skipped** | checked every one of the 2000 session traces: tool_calls contains only `submit_decision` in 1,998/2,000; 2/2,000 additionally call `get_risk_budget` (never `get_volatility_stats`). `get_volatility_stats` specifically is never invoked anywhere in this corpus (0/2,000). In this corpus the price-tool readings are injected as static text in the user prompt rather than retrieved by a tool call, so the task's own inclusion rule ("`get_volatility_stats` called at least once") yields zero usable sessions by construction. Reported as skipped, not substituted with a weaker proxy (e.g. scanning the prompt text for the same numbers would test a different mechanism). |
 
-`FULL_T06_*` files (temperature=0.6, label `FULL_T06`, 500 files in newsagent) are a separate temperature-robustness
-arm and are excluded from the k=0..3 FULL/NO_NEWS scan described above.
+`FULL_T06_*` files (temperature=0.6, label `FULL_T06`, 500 files in newsagent and 500 in q3news_s1) are a separate
+temperature-robustness arm and are excluded from the k=0..3 FULL/NO_NEWS scan described above.
 
 ## Rational benchmark join
 
@@ -175,4 +175,6 @@ finagent mech-salience           # -> results/mechanisms/salience/data.json (abo
 
 The same file order and the same numpy/pandas operations as the original give bit-identical numbers: all 183 numeric
 values of the workspace `data.json` are reproduced exactly. Only path strings differ (they now name this
-repository's files), and two runs give byte-identical output.
+repository's files), and two runs give byte-identical output. This README corrects one figure of the workspace
+README: it gave the q3news cross-check corpus as 1988 files, but the scan reads 2,000 (the counts in
+`corpora.secondary_crosscheck` of `data.json` add up to 2,000; the folder's other 500 files are `FULL_T06`).

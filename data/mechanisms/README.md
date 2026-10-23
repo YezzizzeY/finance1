@@ -19,7 +19,7 @@ the method and the findings: [`docs/MECHANISMS.md`](../../docs/MECHANISMS.md).
 | Path | Files | Bytes | What it is | Source in the workspace | Read by |
 |---|---:|---:|---|---|---|
 | `sessions/newsagent/<TICKER>_<date>/` | 2,500 | 37,729,810 | Qwen3.5-9B tool-agent sessions on 250 real ticker-days: `FULL_<k>` (news and tools, k = 0..3), `NO_NEWS_<k>` (no news in the prompt), `FULL_T06_<k>` (FULL at temperature 0.6, k = 0, 1) | `results/newsagent_20261011/raw/sessions/` | salience, proximity, thinking |
-| `sessions/q3news_s1/<TICKER>_<date>/` | 2,500 | 35,364,055 | the same 250 days and arms, Qwen3-8B with thinking on | `results/q3news_20261012/S1/sessions/` | salience (cross-check), thinking |
+| `sessions/q3news_s1/<TICKER>_<date>/` | 2,500 | 35,364,055 | 250 ticker-days (125 shared with `newsagent/`), same arms, Qwen3-8B with thinking on | `results/q3news_20261012/S1/sessions/` | salience (cross-check), thinking |
 | `salience/grounding_A_main/<TICKER>_<date>/` | 2,000 | 26,922,431 | Qwen3-8B sessions with the price readings in the prompt: `FULL_G_<k>`, `NO_NEWS_G_<k>` (k = 0..3); the `.meta.json` sidecars were not copied | `results/grounding_20261012/A_main/sessions/` | salience (scanned; 0 usable sessions) |
 | `salience/rcf_20261011/rule.json` | 1 | 11,688 | the rational benchmark's rule: R5 = 100 ln(C[t+5]/C[t]), sigma = exp(lsig), u = (R5 − m)/sigma | `results/rcf_20261011/rule.json` | salience |
 | `salience/rcf_20261011/events_all.parquet` | 1 | 2,270,578 | rational benchmark on news-event days: m, lsig, sigma, u per (ticker, day); 15,134 rows | `results/rcf_20261011/data/events_all.parquet` | salience |

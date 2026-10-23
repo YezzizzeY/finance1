@@ -78,7 +78,7 @@ finagent analyze --check        # "same" for each of the 6 files in results/
 | codex commands | the 150 sandbox and `codex exec` command lines (write roots, relay port, log path, prompt) and the size of the agent's environment, regenerated the same way, against the first `execve` in each `strace.txt` |
 | analysis outputs | the 6 files in `results/`, recomputed byte for byte |
 | figures | the 5 charts in `results/figures/`, redrawn byte for byte |
-| mechanism salience | `results/mechanisms/salience/data.json`, rebuilt byte for byte from 6,500 saved sessions, the benchmark tables and the price panel |
+| mechanism salience | `results/mechanisms/salience/data.json`, rebuilt byte for byte from 6,000 saved sessions (2,000 from each of the three session folders; the 1,000 `FULL_T06` files are skipped by name), the benchmark tables and the price panel |
 | mechanism proximity | `results/mechanisms/proximity/data.json`, rebuilt from the 1,000 FULL newsagent sessions |
 | mechanism position | `results/mechanisms/position_adjustment/data.json`, rebuilt from the six trajectory files and the benchmark tables |
 | mechanism thinking | `results/mechanisms/thinking/data.json`, rebuilt from 4,000 reasoning texts |
@@ -108,7 +108,7 @@ and the smoke folders in it) both commands read `setup/host.recorded.env`. For o
 
 Everything at once: `make verify` unpacks the records first if needed and prints `30 of 30 checks passed
 (L0, L1, L2)` in about 65 s. `make test` runs every check as a test (`pytest -q`), with the golden-fixture,
-evidence_relations and mechanism unit tests: 229 tests in about 4 minutes.
+evidence_relations and mechanism unit tests: 230 tests in about 4 minutes.
 
 ## L3: new runs
 

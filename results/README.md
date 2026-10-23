@@ -120,6 +120,6 @@ Headline numbers, copied from the four `data.json`:
 | Salience | the annualised number adds nothing once the rational sigma is known (b2 = −0.0073, t = −0.36); 27 sessions (1.9%) copy it, mean error 1.73 against 0.62 (t = 8.78) | 1,445 sessions |
 | Proximity | no effect of calling position: slope difference p = 0.59, day fixed effects p = 0.73 | 420 sessions on 128 days |
 | Position adjustment | agent exposure changes have 6.71 times the std of the rational rule's; slope +0.22 (cluster SE 0.28 to 0.29), Spearman −0.16 | 692 changes |
-| Thinking | strict relationship language 63.2% with news against 51.7% without (z = 7.32); hand check: 4 of 17 relationship matches genuine | 4,000 texts |
+| Thinking | relationship language (strict2 tier) 63.2% with news against 51.7% without (z = 7.32); hand check: 4 of 17 relationship matches genuine | 4,000 texts |
 
 `make mechanisms` rebuilds all four, the page and the good-thinking theory document (`docs/GOOD_THINKING.md`).

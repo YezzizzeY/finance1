@@ -1,6 +1,7 @@
 """The salience mechanism analysis: build() reproduces the shipped results/mechanisms/salience/data.json byte for
 byte, a fresh process (other hash seed) writes the same bytes, and the pieces behave as the original scripts did.
-CPU only, about 20 s: it scans the 6,500 saved session files twice (once in this process, once in the subprocess)."""
+CPU only, about 20 s: it reads the 6,000 saved session files the analysis scans (2,000 per corpus; the 1,000 FULL_T06
+files are skipped by name) twice, once in this process and once in the subprocess."""
 from __future__ import annotations
 
 import json

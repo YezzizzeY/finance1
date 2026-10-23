@@ -22,7 +22,7 @@ number, table and quote; a page in Chinese that shows all four (`results/mechani
   plus two FULL runs at temperature 0.6 (`FULL_T06_*`, not used here). A session file holds the whole conversation:
   the prompt, every reasoning turn, every tool call with its result, and the submitted decision (5-day expected return,
   5-day volatility, position).
-- **`data/mechanisms/sessions/q3news_s1/`**: the same days and arms run with Qwen3-8B (thinking on).
+- **`data/mechanisms/sessions/q3news_s1/`**: 250 ticker-days, 125 of them shared with `newsagent/`, with the same arms, run with Qwen3-8B (thinking on).
 - **`data/mechanisms/salience/grounding_A_main/`**: 2,000 Qwen3-8B sessions in which the price readings are written into
   the prompt instead of being fetched by a tool.
 - **Rational benchmark** (`events_all.parquet`, `nonevent_days.parquet`, `rule.json`): for each (stock, day), the
@@ -91,7 +91,7 @@ the rule's (14.9 against 2.2 percentage points). They are not aligned with them 
 0.29, not different from 0), rank correlation −0.16. Even the same-day levels barely agree (Pearson 0.00, Spearman 0.24).
 
 **Caveats.** The eventful subset is too small to test the quiet/eventful asymmetry found for volatility forecasts:
-16 changes, 5 stocks, 6 dates, with a standard error as large as the slope itself, so that part is inconclusive, not
+16 changes, 5 stocks, 6 dates, with a standard error about three times the slope (0.92 against 0.32, clustered by date), so that part is inconclusive, not
 negative. The ratio scales with the choice of k: 3.4 at 2k and 10.8 at k/2 (the rank correlation, −0.15 to −0.16,
 does not depend on k). The 6.7 is a different quantity from the project's earlier 71-times figure for volatility
 revisions and cannot be compared with it directly.
@@ -148,14 +148,24 @@ Every output is deterministic: two runs, with different hash seeds, give byte-id
 ## Faithfulness to the research workspace
 
 The four analyses were ported from the workspace scripts and re-run on byte-identical copies of the inputs. Every
-number of the workspace results is reproduced exactly: 183 of 183 (salience), 132 of 132 (proximity), 348 of 348
-(position adjustment), 293 of 293 (thinking). The differences are in text only:
+numeric field of the workspace `data.json` files is reproduced exactly: 183 of 183 (salience), 132 of 132
+(proximity), 348 of 348 (position adjustment), 293 of 293 (thinking). The other differences are in text (the prose
+fields of `data.json`, the READMEs and the theory document), and four of them correct a number written in that text
+(1,624 to 1,625, 73 to 72, 1988 to 2,000, 22 to 69):
 
 - paths now name this repository's files;
-- thinking: the sentence on the "aligns with" family said 1,624 sessions = 45.0% "of the 4,000-session corpus". The
-  analysis's own text gives 1,625 (the checker that produced 1,624 built the text slightly differently and found 1,387
-  instead of 1,388 for "aligns with"), and 45.0% is the share of the 3,608 marked sessions (40.6% of all 4,000); the
-  sentence now says both;
+- thinking (a text field of `data.json`): the sentence on the "aligns with" family said 1,624 sessions = 45.0% "of the
+  4,000-session corpus". The analysis's own text gives 1,625 (the checker that produced 1,624 built the text slightly
+  differently and found 1,387 instead of 1,388 for "aligns with"), and 45.0% is the share of the 3,608 marked sessions
+  (40.6% of all 4,000); the sentence now says both;
 - thinking: one of the 15 excerpts had dropped a word ("Position remains at 99.9% exposure"); it now matches its
   session, and the build checks every excerpt;
-- thinking README: 72 relationship phrases (+1 pattern), as in both `data.json` files, not 73.
+- thinking README: 72 relationship phrases (+1 pattern), as in both `data.json` files, not 73;
+- salience README: the q3news cross-check corpus was given as 1988 files; the scan reads 2,000 of them (294 usable;
+  the folder's other 500 are `FULL_T06`, which the scan skips);
+- theory document: two table cells (sections 3 and 6) called the redundancy matrix "22 个字段的冗余矩阵". The
+  matrix (`data/evidence_relations/tool_redundancy/pearson_matrix.csv`) has 69 fields; 22 is the size of its largest
+  near-duplicate cluster. Both cells now say "69 个字段的冗余矩阵", so `word/document.xml` of the .docx differs from
+  the workspace's in that phrase (its other five parts are byte-identical). `docs/good_thinking/good_thinking_theory.json`
+  stays byte-identical to the workspace copy; its `measurable_test_cn` fields, which the document does not print,
+  still say 22.
