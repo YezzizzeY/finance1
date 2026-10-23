@@ -1,0 +1,30 @@
+{
+ "None": {
+  "status": 200,
+  "s": 31.0,
+  "reasoning_tokens": 1140,
+  "completion": 1280,
+  "err": null
+ },
+ "low": {
+  "status": 200,
+  "s": 9.5,
+  "reasoning_tokens": 162,
+  "completion": 240,
+  "err": null
+ },
+ "high": {
+  "status": 200,
+  "s": 19.1,
+  "reasoning_tokens": 599,
+  "completion": 656,
+  "err": null
+ },
+ "max": {
+  "status": 200,
+  "s": 23.8,
+  "reasoning_tokens": 744,
+  "completion": 863,
+  "err": null
+ }
+}

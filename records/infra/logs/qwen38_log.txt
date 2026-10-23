@@ -1,0 +1,12 @@
+2026-10-18 20:14:09 waiting: best GPU 1 has 26909 MiB free < 38912
+2026-10-18 20:19:09 GPU 0 has 48412 MiB free (need 38912)
+2026-10-18 20:19:09 starting vLLM qwen38_27b with --max-model-len 65536
+2026-10-18 20:24:09 vLLM ready on GPU 0 (pid 2123421, util 0.94, 300.1 s)
+2026-10-18 20:24:10 smoke: ['qwen38_27b__harness__MCHP_2026-08-07__ORIG__0', 'qwen38_27b__coding_agent__HOOD_2026-04-14__NOLABEL__0'] (max_tokens 2048) -> results/codexpilot_20261018/smoke_runs
+2026-10-18 20:31:45 smoke qwen38_27b__harness__MCHP_2026-08-07__ORIG__0: valid True flag False calls 10 wall 378.3 finish ['tool_calls', 'length', 'length', 'tool_calls', 'tool_calls'] err None
+2026-10-18 20:31:45 smoke qwen38_27b__coding_agent__HOOD_2026-04-14__NOLABEL__0: valid True flag False calls 6 wall 453.7 finish None err None
+2026-10-18 20:31:45 smoke done; server left running for the batch
+2026-10-18 20:33:06 server already up (pid 2123421, GPU 0, max-model-len 65536)
+2026-10-18 20:33:07 batch: 60 runs, 0 already done (max_tokens 8192)
+2026-10-18 21:40:38 batch finished: 60 of 60 records
+2026-10-18 21:40:43 stopped: {'relay': {'key': 'qwen38_27b', 'pid': 2170313, 'state': 'stopped'}, 'server': {'key': 'qwen38_27b', 'pid': 2123421, 'state': 'stopped', 'children_killed': []}, 'gpu_hours_this_launch': 1.36}

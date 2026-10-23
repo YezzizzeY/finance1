@@ -1,0 +1,7030 @@
+[
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.639,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 2.017,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.125,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.312,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 1.925,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.959,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.47,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.312,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": -0.958,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.959,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": -0.435,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.312,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.958,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.959,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.56,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.36,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.967,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 1.107,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.036,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.36,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": -1.917,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 1.107,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.133,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.133,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.167,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.167,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 6532.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.5,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.2,
+  "n": 15
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.2,
+  "n": 15
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 1,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 0.75,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.222,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.222,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.5,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.2,
+  "n": 15
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.2,
+  "n": 15
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 1,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.75,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.222,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.222,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 1,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 1,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.665,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.381,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.22,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.752,
+  "n": 12
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.912,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.433,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.475,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "runs_valid",
+  "value": 27,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "runs_flagged_excluded",
+  "value": 1,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "runs_usable",
+  "value": 26,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.348,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 1.625,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": -0.406,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.127,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 0.225,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.815,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.294,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.127,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.342,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.815,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": -0.457,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.155,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.963,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.998,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.094,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.179,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 1.175,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 1.152,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": 0.148,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.179,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 1.35,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 1.152,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.038,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.038,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.1,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.1,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 6178.0,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.346,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.111,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.111,
+  "n": 9
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 0.2,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 0.75,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.269,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.143,
+  "n": 7
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.143,
+  "n": 7
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.2,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.5,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.5,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.5,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 2.2,
+  "n": 30
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 2.35,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "computed_vol_from_prices_csv_share",
+  "value": 0.0,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.552,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.082,
+  "n": 26
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.108,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.629,
+  "n": 10
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.551,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.417,
+  "n": 6
+ },
+ {
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.561,
+  "n": 4
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.4,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 1.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.627,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.193,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 2.783,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.707,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.186,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.193,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": -0.217,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.707,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.122,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.193,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": -0.6,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.707,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.504,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.222,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 3.383,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.816,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.308,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.222,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 0.383,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.816,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.067,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.167,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.083,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.5,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.167,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 6475.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.733,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.045,
+  "n": 22
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.136,
+  "n": 22
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 2,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.083,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.2,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.4,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.733,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.045,
+  "n": 22
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.136,
+  "n": 22
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 2,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.083,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.2,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.4,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share",
+  "value": 0.033,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_NOLABEL",
+  "value": 0.167,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 1.13,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 1.13,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.65,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.363,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.162,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.524,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 1.032,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.407,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.763,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "runs_valid",
+  "value": 29,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "runs_usable",
+  "value": 29,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.701,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 3.57,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": -0.397,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.289,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": -0.525,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 2.41,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.292,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.289,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": -0.687,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 2.41,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": -0.18,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.317,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.04,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 2.641,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.036,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.366,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.38,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 3.049,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": 0.097,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.366,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 0.385,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 3.049,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.069,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.069,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.167,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.167,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 8149.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.655,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.053,
+  "n": 19
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.053,
+  "n": 19
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 1,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 0.833,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.1,
+  "n": 10
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.1,
+  "n": 10
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 1,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 0.8,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.621,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.056,
+  "n": 18
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.056,
+  "n": 18
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 1,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.75,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.111,
+  "n": 9
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.111,
+  "n": 9
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 1,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.8,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 10.03,
+  "n": 30
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 10.03,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "computed_vol_from_prices_csv_share",
+  "value": 0.862,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.539,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.194,
+  "n": 29
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.1,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.614,
+  "n": 12
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.655,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.405,
+  "n": 6
+ },
+ {
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.378,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.278,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 0.983,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.13,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.124,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 0.525,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.45,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": 0.146,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.124,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.225,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.45,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.114,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.124,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.325,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.45,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.015,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.144,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.2,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.519,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": 0.031,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.144,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": -0.1,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.519,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 15818,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.967,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.967,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share",
+  "value": 0.933,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_ORIG",
+  "value": 0.917,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_UNIT5D",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_PLACEBO",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 9.07,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 9.07,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.402,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.032,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.082,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.376,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.419,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.395,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.444,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "runs_flagged_excluded",
+  "value": 2,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "runs_usable",
+  "value": 28,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.091,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 1.183,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.095,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.042,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": true,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 0.3,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.744,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": 0.05,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.038,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.608,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.679,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.027,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.042,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": -0.13,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.744,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": 0.014,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.054,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.6,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.961,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": 0.005,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.048,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 1.1,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.859,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 17409.0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.786,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 22
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 22
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 1.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 1.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.786,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 22
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 22
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 1.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 1.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 5.87,
+  "n": 30
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 5.68,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "computed_vol_from_prices_csv_share",
+  "value": 0.821,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.414,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.071,
+  "n": 28
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.117,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.402,
+  "n": 12
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.533,
+  "n": 5
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.378,
+  "n": 6
+ },
+ {
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.37,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.144,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 1.017,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": -0.036,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.056,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": -0.325,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.729,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": 0.016,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.056,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.075,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.729,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.134,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.056,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": -0.358,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.729,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": -0.17,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.064,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.033,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.842,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.119,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.064,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 0.433,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.842,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 7976.0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.967,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 29
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 0.917,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.767,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.667,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 8
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 8
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share",
+  "value": 0.967,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_UNIT5D",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_PLACEBO",
+  "value": 0.833,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 12.1,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 12.1,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.395,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.13,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.131,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.375,
+  "n": 12
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.444,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.38,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.402,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "runs_flagged_excluded",
+  "value": 7,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "runs_usable",
+  "value": 23,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.139,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 0.85,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.034,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.081,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 0.45,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.404,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.102,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.093,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.333,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.466,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.102,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.072,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.24,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.361,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": -0.055,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.093,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.025,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.466,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.22,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.107,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": -0.333,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.539,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 9610.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.783,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 18
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 18
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 1.0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.8,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 1.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.478,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.667,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.4,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.6,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 8.13,
+  "n": 30
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 7.65,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "computed_vol_from_prices_csv_share",
+  "value": 1.0,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.386,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.026,
+  "n": 23
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.111,
+  "n": 6
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.356,
+  "n": 9
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.468,
+  "n": 5
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.402,
+  "n": 4
+ },
+ {
+  "model": "DeepSeek (reasoner)",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.344,
+  "n": 5
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.157,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 0.717,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": 0.08,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.061,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": -0.258,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.139,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.061,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": 0.225,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.084,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.061,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": -0.342,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": -0.004,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.071,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": 0.083,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.385,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.223,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.071,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": 0.567,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.385,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 1864.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.467,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 14
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 14
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 0.583,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 7
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 7
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 0.5,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.167,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 1
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 1
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 0.5,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.167,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.25,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 3
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share",
+  "value": 0.533,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_ORIG",
+  "value": 0.5,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_NOLABEL",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_UNIT5D",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "harness_called_get_risk_budget_share_PLACEBO",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 3.7,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 3.7,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.395,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.165,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.151,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.417,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.375,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.359,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "harness",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.409,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "runs_finished",
+  "value": 30,
+  "n": null
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "runs_valid",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "runs_flagged_excluded",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "runs_usable",
+  "value": 30,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_lnvol",
+  "value": 0.091,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "orig_run_to_run_abs_diff_return_pp",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol",
+  "value": -0.007,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_se",
+  "value": 0.035,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp",
+  "value": 0.183,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_se",
+  "value": 0.261,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol",
+  "value": -0.03,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_se",
+  "value": 0.035,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp",
+  "value": -0.4,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_se",
+  "value": 0.261,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol",
+  "value": 0.005,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_se",
+  "value": 0.035,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp",
+  "value": 0.35,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_se",
+  "value": 0.261,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol",
+  "value": -0.012,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_se",
+  "value": 0.041,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp",
+  "value": -0.167,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_se",
+  "value": 0.302,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_NOLABEL_minus_PLACEBO_return_pp_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol",
+  "value": -0.036,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_se",
+  "value": 0.041,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_lnvol_outside_noise",
+  "value": false,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp",
+  "value": -0.75,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_se",
+  "value": 0.302,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "shift_UNIT5D_minus_PLACEBO_return_pp_outside_noise",
+  "value": true,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share",
+  "value": 0.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "runs_with_reasoning_text_share",
+  "value": 1.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_chars_per_run_mean",
+  "value": 3574.0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share",
+  "value": 0.8,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 24
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 24
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_ORIG",
+  "value": 1.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_NOLABEL",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_any_share_PLACEBO",
+  "value": 1.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_any_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_any_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share",
+  "value": 0.367,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share",
+  "value": 0.0,
+  "n": 11
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact",
+  "value": 0,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_ORIG",
+  "value": 0.417,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_ORIG",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_ORIG",
+  "value": 0.0,
+  "n": 5
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_ORIG",
+  "value": 0,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_NOLABEL",
+  "value": 0.333,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_NOLABEL",
+  "value": 0.0,
+  "n": 2
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_NOLABEL",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_UNIT5D",
+  "value": 0.0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_UNIT5D",
+  "value": null,
+  "n": 0
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_UNIT5D",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "reasoning_mentions_annualised_exact_share_PLACEBO",
+  "value": 0.667,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_strict_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "among_mention_exact_submits_annualised_broad_share_PLACEBO",
+  "value": 0.0,
+  "n": 4
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "pasted_broad_without_mention_exact_PLACEBO",
+  "value": 0,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_finished",
+  "value": 4.6,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_tool_calls_or_commands_usable",
+  "value": 4.6,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "computed_vol_from_prices_csv_share",
+  "value": 0.633,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.396,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.087,
+  "n": 30
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_err_se_over_days",
+  "value": 0.124,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_ORIG",
+  "value": 0.387,
+  "n": 12
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_NOLABEL",
+  "value": 0.376,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_UNIT5D",
+  "value": 0.382,
+  "n": 6
+ },
+ {
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d_PLACEBO",
+  "value": 0.446,
+  "n": 6
+ },
+ {
+  "model": "baseline: readings ann_vol_20d x sqrt(5/252)",
+  "framework": "-",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.476,
+  "n": 6
+ },
+ {
+  "model": "baseline: readings ann_vol_20d x sqrt(5/252)",
+  "framework": "-",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.034,
+  "n": 6
+ },
+ {
+  "model": "baseline: S1 rational prior sigma5",
+  "framework": "-",
+  "metric": "mean_abs_ln_vol_forecast_over_realised5d",
+  "value": 0.426,
+  "n": 6
+ },
+ {
+  "model": "baseline: S1 rational prior sigma5",
+  "framework": "-",
+  "metric": "mean_ln_vol_forecast_over_realised5d_bias",
+  "value": 0.096,
+  "n": 6
+ }
+]

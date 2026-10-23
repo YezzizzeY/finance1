@@ -1,0 +1,20 @@
+{
+  "cluster_edge_count_ge_0_9": 243,
+  "cluster_threshold": 0.9,
+  "min_n_for_summary": 1000,
+  "n_clusters_ge2": 11,
+  "n_cols_dropped": 29,
+  "n_cols_kept": 69,
+  "n_near_independent": 1290,
+  "n_numeric_cols_total": 98,
+  "n_pairs_cross_tool_with_min_n": 2064,
+  "n_pairs_total": 2346,
+  "n_rows": 23777,
+  "n_tickers": 96,
+  "n_tool_pairs": 136,
+  "n_tool_pairs_fully_independent": 42,
+  "n_tool_pairs_fully_redundant": 0,
+  "n_tool_pairs_mixed": 94,
+  "n_top20": 20,
+  "near_independent_threshold": 0.2
+}

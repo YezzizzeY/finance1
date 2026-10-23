@@ -1,0 +1,30 @@
+# Runner environment of the presentation pilot: run loop, 32-tool harness, API clients and the Codex relay.
+# Python 3.12.3. Exact versions from the original virtualenv (built with uv 0.8.22): every distribution the
+# pilot imports at run time, plus its installed dependencies. aiodns, Brotli and backports.zstd are aiohttp's
+# "speedups" extras; aiohttp imports them when present (aiodns selects its DNS resolver).
+aiodns==4.0.4
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.3
+aiosignal==1.4.0
+attrs==23.2.0
+backports.zstd==1.7.0
+brotli==1.2.0
+certifi==2026.7.22
+cffi==2.1.1
+charset-normalizer==3.5.1
+frozenlist==1.8.0
+idna==3.19
+multidict==6.8.0
+numpy==2.5.3
+pandas==3.0.5
+propcache==0.5.4
+pyarrow==25.0.1
+pycares==5.0.1
+pycparser==3.0
+python-dateutil==2.9.0.post0
+pytz==2026.3.post1
+requests==2.34.2
+six==1.17.0
+typing_extensions==4.16.0
+urllib3==2.8.0
+yarl==1.25.1

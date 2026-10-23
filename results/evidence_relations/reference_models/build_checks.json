@@ -1,0 +1,17 @@
+{
+  "bayes_optimal_cross_check": {
+    "max_abs_diff_after_round2": 0.01,
+    "max_abs_diff_before_round2": 0.005,
+    "mean_abs_diff_before_round2": 0.002492,
+    "n_exact_match_after_round2": 38332,
+    "n_mismatch_after_round2": 68,
+    "n_rows": 38400
+  },
+  "n_rows_by_variant": {
+    "base": 23040,
+    "contradiction": 7680,
+    "stale": 7680
+  },
+  "n_rows_total": 38400,
+  "salience_tie_count": 19
+}

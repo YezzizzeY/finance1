@@ -1,0 +1,23 @@
+{
+ "ticker": "HON",
+ "events": [
+  {
+   "ex_date": "2025-10-30",
+   "kind": "spin-off of Solstice Advanced Materials",
+   "factor": null,
+   "evidence": "Yahoo 2025-10-30 'HONEYWELL COMPLETES SPIN-OFF OF SOLSTICE ADVANCED MATERIALS'; pre-spin raw price not available"
+  },
+  {
+   "ex_date": "2026-06-29",
+   "kind": "spin-off of Honeywell Aerospace (1 for 2) and 1-for-2 reverse split",
+   "factor": 0.9587402180164664,
+   "evidence": "Benzinga 2026-06-05 'Honeywell Sets June 15, 2026 Record Date For Aerospace Spin-Off ... Honeywell Reverse Stock Split Expected To Occur On June 29, 2026'; Benzinga 2026-07-08 '... After 1-For-2 Reverse Stock Split'; G = 1.0430"
+  }
+ ],
+ "G_vs_ext2017_as_of_2026_03_11": {
+  "G": 1.043035413773395,
+  "spread": 6.496198576844137e-07,
+  "n": 195
+ },
+ "rule": "bars shown on decision day t = panel bars x product of the factors of the events with ex_date > t (volumes / it); an event with factor null is unknown: its factor counts as 1 and such days are ineligible (ca_ok)"
+}

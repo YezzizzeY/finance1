@@ -1,0 +1,8 @@
+2026-10-18 20:24:10 start qwen38_27b harness (1 runs)
+2026-10-18 20:24:10 start qwen38_27b coding agent (1 runs)
+2026-10-18 20:30:29 done qwen38_27b harness (1 runs): 1 runs in 379 s, valid 1, flagged 0
+2026-10-18 20:31:45 done qwen38_27b coding agent (1 runs): 1 runs in 455 s, valid 1, flagged 0
+2026-10-18 20:33:07 start qwen38_27b harness (30 runs)
+2026-10-18 20:48:18 done qwen38_27b harness (30 runs): 30 runs in 911 s, valid 30, flagged 0
+2026-10-18 20:48:18 start qwen38_27b coding agent (30 runs)
+2026-10-18 21:40:38 done qwen38_27b coding agent (30 runs): 30 runs in 3141 s, valid 30, flagged 2

@@ -1,0 +1,3919 @@
+{
+ "n_checks": 456,
+ "n_with_problems": 0,
+ "pass": true,
+ "rows": [
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 151,
+   "chars_new": 151
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 109,
+   "chars_new": 109
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 328,
+   "chars_new": 328
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 100
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 151,
+   "chars_new": 130
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 54
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 109,
+   "chars_new": 109
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 328,
+   "chars_new": 310
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 151,
+   "chars_new": 151
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 109,
+   "chars_new": 109
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 328,
+   "chars_new": 370
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 151,
+   "chars_new": 151
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 109,
+   "chars_new": 109
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 328,
+   "chars_new": 328
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 150,
+   "chars_new": 150
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 291,
+   "chars_new": 291
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 111,
+   "chars_new": 111
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 330
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 100
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 150,
+   "chars_new": 129
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 54
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 291,
+   "chars_new": 291
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 111,
+   "chars_new": 111
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 310
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 150,
+   "chars_new": 150
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 291,
+   "chars_new": 291
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 111,
+   "chars_new": 111
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 371
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 121,
+   "chars_new": 121
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 150,
+   "chars_new": 150
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 71,
+   "chars_new": 71
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 291,
+   "chars_new": 291
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 111,
+   "chars_new": 111
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 330
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 124,
+   "chars_new": 124
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 155,
+   "chars_new": 155
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 70,
+   "chars_new": 70
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 286,
+   "chars_new": 286
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 93,
+   "chars_new": 93
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 330
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 124,
+   "chars_new": 103
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 155,
+   "chars_new": 131
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 70,
+   "chars_new": 53
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 286,
+   "chars_new": 286
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 93,
+   "chars_new": 93
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 312
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 124,
+   "chars_new": 124
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 155,
+   "chars_new": 155
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 70,
+   "chars_new": 70
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 286,
+   "chars_new": 286
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 93,
+   "chars_new": 93
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 371
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 124,
+   "chars_new": 124
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 155,
+   "chars_new": 155
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 70,
+   "chars_new": 70
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 286,
+   "chars_new": 286
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 93,
+   "chars_new": 93
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 330,
+   "chars_new": 330
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 289,
+   "chars_new": 289
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 117,
+   "chars_new": 117
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 327
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 104
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 133
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 53
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 289,
+   "chars_new": 289
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 117,
+   "chars_new": 117
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 310
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 289,
+   "chars_new": 289
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 117,
+   "chars_new": 117
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 367
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 289,
+   "chars_new": 289
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 117,
+   "chars_new": 117
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 327
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 72,
+   "chars_new": 72
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 116,
+   "chars_new": 116
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 327
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 104
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 133
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 72,
+   "chars_new": 52
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 116,
+   "chars_new": 116
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 310
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 72,
+   "chars_new": 72
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 116,
+   "chars_new": 116
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 367
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 72,
+   "chars_new": 72
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 288,
+   "chars_new": 288
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 116,
+   "chars_new": 116
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 327,
+   "chars_new": 327
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 287,
+   "chars_new": 287
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 101,
+   "chars_new": 101
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 329,
+   "chars_new": 329
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 104
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 27
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 133
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 53
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 287,
+   "chars_new": 287
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 101,
+   "chars_new": 101
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 329,
+   "chars_new": 309
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 287,
+   "chars_new": 287
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 101,
+   "chars_new": 101
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 329,
+   "chars_new": 369
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_trend_signal",
+   "problems": [],
+   "chars_orig": 125,
+   "chars_new": 125
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_rsi",
+   "problems": [],
+   "chars_orig": 48,
+   "chars_new": 48
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_mean_reversion_signal",
+   "problems": [],
+   "chars_orig": 154,
+   "chars_new": 154
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_macd",
+   "problems": [],
+   "chars_orig": 73,
+   "chars_new": 73
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_price_stats",
+   "problems": [],
+   "chars_orig": 287,
+   "chars_new": 287
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_support_resistance",
+   "problems": [],
+   "chars_orig": 101,
+   "chars_new": 101
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "block",
+   "tool": "get_volatility_stats",
+   "problems": [],
+   "chars_orig": 329,
+   "chars_new": 329
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "prompt",
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_trend_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_mean_reversion_signal",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_macd",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_price_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_support_resistance",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_volatility_stats",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 7
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_rsi",
+   "args": {
+    "period": 21
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_risk_budget",
+   "args": {},
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "ORIG",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "NOLABEL",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "UNIT5D",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "where": "tool_call",
+   "tool": "get_returns",
+   "args": {
+    "days": 5
+   },
+   "problems": []
+  }
+ ]
+}

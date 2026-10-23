@@ -1,0 +1,47 @@
+Trading day 2026-05-07 — MRK
+
+CLOSE 111.50   (last 10 closes: 2026-04-24:111.10 2026-04-27:109.44 2026-04-28:109.24 2026-04-29:110.16 2026-04-30:108.40 2026-05-01:111.36 2026-05-04:112.30 2026-05-05:112.34 2026-05-06:112.75 2026-05-07:111.50)
+
+ACCOUNT
+- cash 94944.60
+- shares held 45
+- position value 5017.42
+- total assets 99962.02
+- position 5.0% of total assets
+- one percentage point of exposure = 9.0 shares at today's close
+
+COMPANY NEWS (past 7 days, most recent 10)
+- [20260508T063708] Merck : Statement on Daiichi Sankyo Update to Manufacturing and Supply Plan - Merck.com (Finnhub)
+- [20260507T140954] Merck Announces Publication Of Paper Describing Unique Manufacturing Methods For Enlicitide Decanoate Oral PCSK9 Inhibitor (Benzinga)
+- [20260507T140500] Merck Scientists Publish Landmark Paper on Novel Method for Large-Scale Biocatalytic Synthesis of Investigational Oral PCSK9 Inhibitor, Enlicitide Decanoate (Yahoo)
+- [20260507T080000] Merck Becomes Sole Testing Provider for Genetix Biotherapeutics’ FDA-Approved Gene Therapies (Yahoo)
+- [20260507T003212] Salesforce AI Win With Merck Highlights Real World Platform Adoption (Yahoo)
+- [20260506T145520] Analyst Raises Merck (MRK) Price Target by $1 After Beating Q1 Estimates (Yahoo)
+- [20260506T101610] Is Merck (MRK) Still Attractive After Recent Pullback And Conflicting Valuation Signals (Yahoo)
+- [20260506T090000] Merck Animal Health Selects Salesforce’s Agentforce Life Sciences for Customer Engagement to Transform Animal Care and Enhance Support Experiences for Employees (Yahoo)
+- [20260506T075104] Here Are Wednesday’s Top Wall Street Analyst Research Calls: Advanced Micro Devices, American Eagle Outfitters, GlobalFoundries, IAC, Merck, Palantir Technologies, Reddit, and More (Yahoo)
+- [20260505T131734] Merck Stock Looks Undervalued as KEYTRUDA Growth and Pipeline Offset Near-Term Headwinds (Yahoo)
+
+FISCAL POLICY NEWS
+- (none)
+
+MONETARY POLICY NEWS
+- (none)
+
+INSIDER TRANSACTIONS (filed before today)
+- (none)
+
+YOUR LAST 4 DECISIONS
+- 2026-05-05: Buy 45 @ 112.34 -> exposure 5.1%, assets 100000
+- 2026-05-06: Hold 0 @ 112.75 -> exposure 5.1%, assets 100018
+
+PRICE TOOL READINGS (computed for you from the daily price history through today's close; each line is exactly what the named tool returns today)
+- get_trend_signal: {"signal": "bearish", "ema8": 111.77, "ema21": 113.23, "ema55": 113.86, "spread_8_55_pct": 1.83, "close": 111.49819946289062}
+- get_rsi (period 14): {"rsi": 34.2, "period": 14, "signal": "neutral"}
+- get_mean_reversion_signal: {"signal": "neutral", "z_score_50d": -1.18, "bollinger_upper": 120.68, "bollinger_lower": 106.45, "bollinger_position": 0.35, "close": 111.49819946289062}
+- get_macd: {"macd": -1.51, "signal": -1.522, "histogram": 0.011, "cross": "bullish"}
+- get_price_stats: {"close": 111.49819946289062, "date": "2026-05-07", "high_52w": 123.33302108292563, "low_52w": 70.23517108691551, "pct_from_52w_high": -9.6, "pct_from_52w_low": 58.75, "drawdown_from_peak_pct": -8.83, "ret_5d_pct": 2.86, "ret_20d_pct": -8.46, "ret_60d_pct": -3.43, "ret_250d_pct": 49.88}
+- get_support_resistance: {"close": 111.49819946289062, "resistance_above": [117.28, 116.19, 113.8], "support_below": [107.13]}
+- get_volatility_stats: {"vol_5d_equiv_from_10d_pct": 3.2, "vol_5d_equiv_from_20d_pct": 3.8, "vol_5d_equiv_from_60d_pct": 3.4, "parkinson_vol_5d_equiv_from_10d_pct": 3.3, "atr_14": 2.95, "atr_14_pct_of_price": 2.65, "vol_zscore_vs_63d": 0.53, "regime": "normal", "abs_move_yesterday_pct": 1.12, "note": "big moves cluster: after a large move the next few days are usually larger than average"}
+
+Decide today's action and call submit_decision.

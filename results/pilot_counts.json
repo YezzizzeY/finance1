@@ -1,0 +1,523 @@
+{
+ "n_planned": 300,
+ "n_finished": 300,
+ "totals": {
+  "planned": 300,
+  "finished": 300,
+  "valid": 296,
+  "invalid": 4,
+  "flagged_excluded": 10,
+  "error_runs": 0,
+  "timed_out": 0,
+  "usable": 286
+ },
+ "flag_kinds": {
+  "DeepSeek / Codex CLI": {
+   "codex_bundled_tool_only": 6,
+   "other": 1
+  },
+  "Qwen3.8-27B / Codex CLI": {
+   "other": 2
+  },
+  "Qwen3-8B / Codex CLI": {
+   "codex_bundled_tool_only": 1
+  }
+ },
+ "gpu": {
+  "sessions": [
+   {
+    "file": "pilot1_launch_qwen35_9b.json",
+    "key": "qwen35_9b",
+    "gpu_index": 0,
+    "gpu_memory_utilization": 0.7,
+    "hours": 0.493
+   },
+   {
+    "file": "pilot1_launch_qwen3_8b.json",
+    "key": "qwen3_8b",
+    "gpu_index": 2,
+    "gpu_memory_utilization": 0.54,
+    "hours": 0.07
+   },
+   {
+    "file": "pilot2_launch_qwen3_8b.json",
+    "key": "qwen3_8b",
+    "gpu_index": 0,
+    "gpu_memory_utilization": 0.94,
+    "hours": 0.103
+   },
+   {
+    "file": "qwen38_launches.jsonl",
+    "key": "qwen38_27b",
+    "gpu_index": 0,
+    "gpu_memory_utilization": 0.94,
+    "hours": 1.36
+   },
+   {
+    "file": null,
+    "key": "qwen3_8b",
+    "gpu_index": 0,
+    "gpu_memory_utilization": null,
+    "hours": 0.011,
+    "note": "exited during start-up (free memory taken by another user's process); retried on GPU 2"
+   }
+  ],
+  "total_gpu_hours_held": 2.037
+ },
+ "cells": [
+  {
+   "model": "Qwen3-8B",
+   "model_key": "qwen3_8b",
+   "framework": "harness",
+   "framework_label": "harness",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 159661,
+   "tok_out": 56212,
+   "tok_reasoning": 0,
+   "tok_cached": 0,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "mean_tool_calls": 1,
+   "median_wall_s": 88.0,
+   "sum_wall_s": 3006.9,
+   "requests": 37,
+   "requests_cut_by_token_cap": 7,
+   "max_tokens_per_turn": 2048
+  },
+  {
+   "model": "Qwen3-8B",
+   "model_key": "qwen3_8b",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "planned": 30,
+   "finished": 30,
+   "valid": 27,
+   "invalid": 3,
+   "flagged_excluded": 1,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 26,
+   "tok_in": 1056369,
+   "tok_out": 59697,
+   "tok_reasoning": 42322,
+   "tok_cached": 954416,
+   "failures": [
+    {
+     "run_id": "qwen3_8b__coding_agent__MCHP_2026-08-07__PLACEBO__0",
+     "valid": false,
+     "error": null,
+     "note": "decision.json is not JSON",
+     "timed_out": false
+    },
+    {
+     "run_id": "qwen3_8b__coding_agent__HOOD_2026-04-14__PLACEBO__0",
+     "valid": false,
+     "error": null,
+     "note": "no decision.json",
+     "timed_out": false
+    },
+    {
+     "run_id": "qwen3_8b__coding_agent__CB_2026-04-22__ORIG__0",
+     "valid": false,
+     "error": null,
+     "note": "no decision.json",
+     "timed_out": false
+    }
+   ],
+   "flag_reasons": [
+    {
+     "run_id": "qwen3_8b__coding_agent__HOOD_2026-04-14__ORIG__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3456361, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    }
+   ],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "mean_tool_calls": 2.2,
+   "median_wall_s": 78.0,
+   "sum_wall_s": 2403.7,
+   "relay": {
+    "requests": 138,
+    "input": 1056369,
+    "output": 59697,
+    "reasoning": 42322,
+    "cached": 954416,
+    "errors": 0,
+    "status": {
+     "200": 138
+    }
+   }
+  },
+  {
+   "model": "Qwen3.5-9B",
+   "model_key": "qwen35_9b",
+   "framework": "harness",
+   "framework_label": "harness",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 211734,
+   "tok_out": 66483,
+   "tok_reasoning": 0,
+   "tok_cached": 0,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 1,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "mean_tool_calls": 1.13,
+   "median_wall_s": 72.6,
+   "sum_wall_s": 3264.2,
+   "requests": 47,
+   "requests_cut_by_token_cap": 14,
+   "max_tokens_per_turn": 2048
+  },
+  {
+   "model": "Qwen3.5-9B",
+   "model_key": "qwen35_9b",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "planned": 30,
+   "finished": 30,
+   "valid": 29,
+   "invalid": 1,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 29,
+   "tok_in": 5307990,
+   "tok_out": 238188,
+   "tok_reasoning": 72535,
+   "tok_cached": 4591488,
+   "failures": [
+    {
+     "run_id": "qwen35_9b__coding_agent__CRWD_2026-08-27__PLACEBO__0",
+     "valid": false,
+     "error": null,
+     "note": null,
+     "timed_out": false
+    }
+   ],
+   "flag_reasons": [],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "mean_tool_calls": 10.03,
+   "median_wall_s": 288.4,
+   "sum_wall_s": 8869.0,
+   "relay": {
+    "requests": 282,
+    "input": 5307990,
+    "output": 238188,
+    "reasoning": 72535,
+    "cached": 4591488,
+    "errors": 0,
+    "status": {
+     "200": 282
+    }
+   }
+  },
+  {
+   "model": "Qwen3.8-27B",
+   "model_key": "qwen38_27b",
+   "framework": "harness",
+   "framework_label": "harness",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 552680,
+   "tok_out": 178677,
+   "tok_reasoning": 0,
+   "tok_cached": 0,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 1,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3.8-27B-FP8"
+   ],
+   "mean_tool_calls": 9.07,
+   "median_wall_s": 712.1,
+   "sum_wall_s": 20256.8,
+   "requests": 93,
+   "requests_cut_by_token_cap": 0,
+   "max_tokens_per_turn": 8192
+  },
+  {
+   "model": "Qwen3.8-27B",
+   "model_key": "qwen38_27b",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 2,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 28,
+   "tok_in": 2870264,
+   "tok_out": 265919,
+   "tok_reasoning": 178934,
+   "tok_cached": 2082304,
+   "failures": [],
+   "flag_reasons": [
+    {
+     "run_id": "qwen38_27b__coding_agent__MCHP_2026-08-07__PLACEBO__0",
+     "kind": "other",
+     "reasons": [
+      "path: 2 accesses outside the workspace and system dirs: [{'pid': 2418203, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}, {'pid': 2418201, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}]"
+     ]
+    },
+    {
+     "run_id": "qwen38_27b__coding_agent__CRWD_2026-08-27__NOLABEL__0",
+     "kind": "other",
+     "reasons": [
+      "path: 2 accesses outside the workspace and system dirs: [{'pid': 2555257, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}, {'pid': 2555255, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}]"
+     ]
+    }
+   ],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "Qwen/Qwen3.8-27B-FP8"
+   ],
+   "mean_tool_calls": 5.87,
+   "median_wall_s": 538.5,
+   "sum_wall_s": 18049.8,
+   "relay": {
+    "requests": 201,
+    "input": 2870264,
+    "output": 265919,
+    "reasoning": 178934,
+    "cached": 2082304,
+    "errors": 0,
+    "status": {
+     "200": 201
+    }
+   }
+  },
+  {
+   "model": "DeepSeek",
+   "model_key": "deepseek",
+   "framework": "harness",
+   "framework_label": "harness",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 819968,
+   "tok_out": 92018,
+   "tok_reasoning": 66725,
+   "tok_cached": 708736,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 17,
+   "block_tool_outputs_rewritten": 7,
+   "served": [
+    "deepseek-flash"
+   ],
+   "mean_tool_calls": 12.1,
+   "median_wall_s": 19.4,
+   "sum_wall_s": 636.4,
+   "requests": 117,
+   "requests_cut_by_token_cap": 0,
+   "max_tokens_per_turn": 8192
+  },
+  {
+   "model": "DeepSeek",
+   "model_key": "deepseek",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 7,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 23,
+   "tok_in": 3121667,
+   "tok_out": 153600,
+   "tok_reasoning": 82966,
+   "tok_cached": 2843520,
+   "failures": [],
+   "flag_reasons": [
+    {
+     "run_id": "deepseek__coding_agent__MCHP_2026-08-07__UNIT5D__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3467011, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__HOOD_2026-04-14__NOLABEL__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3475109, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__CB_2026-04-22__ORIG__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3490855, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__CB_2026-04-22__UNIT5D__0",
+     "kind": "other",
+     "reasons": [
+      "path: 2 accesses outside the workspace and system dirs: [{'pid': 3498220, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}, {'pid': 3498212, 'call': 'openat', 'path': '/tmp/analyze.py', 'ret': '-1'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__MRK_2026-05-07__ORIG__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3497347, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__MRK_2026-05-07__ORIG__1",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 3 accesses outside the workspace and system dirs: [{'pid': 3498106, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}, {'pid': 3498771, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}, {'pid': 3499418, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    },
+    {
+     "run_id": "deepseek__coding_agent__MRK_2026-05-07__PLACEBO__0",
+     "kind": "codex_bundled_tool_only",
+     "reasons": [
+      "path: 1 accesses outside the workspace and system dirs: [{'pid': 3504462, 'call': 'execve', 'path': '/srv/shared_home/lmz/.codex/packages/standalone/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/rg', 'ret': '0'}]"
+     ]
+    }
+   ],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "deepseek-flash"
+   ],
+   "mean_tool_calls": 8.13,
+   "median_wall_s": 31.5,
+   "sum_wall_s": 1066.0,
+   "relay": {
+    "requests": 229,
+    "input": 3121667,
+    "output": 153600,
+    "reasoning": 82966,
+    "cached": 2843520,
+    "errors": 1,
+    "status": {
+     "200": 228,
+     "relay_error": 1
+    }
+   }
+  },
+  {
+   "model": "Kimi K3",
+   "model_key": "kimi",
+   "framework": "harness",
+   "framework_label": "harness",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 278693,
+   "tok_out": 35387,
+   "tok_reasoning": 15967,
+   "tok_cached": 220672,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 1,
+   "block_tool_outputs_rewritten": 1,
+   "served": [
+    "kimi-k3"
+   ],
+   "mean_tool_calls": 3.7,
+   "median_wall_s": 40.8,
+   "sum_wall_s": 1196.5,
+   "requests": 68,
+   "requests_cut_by_token_cap": 0,
+   "max_tokens_per_turn": 16384
+  },
+  {
+   "model": "Kimi K3",
+   "model_key": "kimi",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "error_runs": 0,
+   "timed_out": 0,
+   "usable": 30,
+   "tok_in": 1397218,
+   "tok_out": 64636,
+   "tok_reasoning": 32067,
+   "tok_cached": 1147392,
+   "failures": [],
+   "flag_reasons": [],
+   "block_tool_calls": 0,
+   "block_tool_outputs_rewritten": 0,
+   "served": [
+    "kimi-k3"
+   ],
+   "mean_tool_calls": 4.6,
+   "median_wall_s": 78.7,
+   "sum_wall_s": 2298.2,
+   "relay": {
+    "requests": 159,
+    "input": 1397218,
+    "output": 64636,
+    "reasoning": 32067,
+    "cached": 1147392,
+    "errors": 0,
+    "status": {
+     "200": 159
+    }
+   }
+  }
+ ]
+}

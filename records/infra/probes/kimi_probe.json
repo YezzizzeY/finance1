@@ -1,0 +1,151 @@
+{
+ "base": "https://api.moonshot.ai/v1",
+ "model": "kimi-k3",
+ "models": {
+  "status": 200,
+  "ids": [
+   "kimi-k2.6",
+   "kimi-k2.7-code",
+   "kimi-k3",
+   "kimi-k2.7-code-highspeed"
+  ]
+ },
+ "chat": {
+  "status": 200,
+  "s": 6.4,
+  "model": "kimi-k3",
+  "msg_keys": [
+   "content",
+   "reasoning_content",
+   "role"
+  ],
+  "usage": {
+   "prompt_tokens": 95,
+   "completion_tokens": 60,
+   "total_tokens": 155,
+   "completion_tokens_details": {
+    "reasoning_tokens": 44
+   },
+   "prompt_tokens_details": {
+    "cache_write_tokens": 0
+   }
+  },
+  "reasoning_len": 81,
+  "reasoning_head": "17 \u00d7 23 = 17 \u00d7 23. Let me compute: 17 \u00d7 20 = 340, 17 \u00d7 3 = 51, so 340 + 51 = 391.",
+  "content": "391",
+  "error": null
+ },
+ "tools": [
+  {
+   "status": 200,
+   "s": 4.2,
+   "finish": "tool_calls",
+   "msg_keys": [
+    "content",
+    "reasoning_content",
+    "role",
+    "tool_calls"
+   ],
+   "usage": {
+    "prompt_tokens": 243,
+    "completion_tokens": 84,
+    "total_tokens": 327,
+    "completion_tokens_details": {
+     "reasoning_tokens": 31
+    },
+    "prompt_tokens_details": {
+     "cache_write_tokens": 0
+    }
+   },
+   "reasoning_len": 115,
+   "calls": [
+    "get_price"
+   ],
+   "args": [
+    "{\"ticker\":\"AAPL\"}"
+   ],
+   "error": null
+  },
+  {
+   "status": 200,
+   "s": 4.4,
+   "finish": "tool_calls",
+   "msg_keys": [
+    "content",
+    "reasoning_content",
+    "role",
+    "tool_calls"
+   ],
+   "usage": {
+    "prompt_tokens": 370,
+    "completion_tokens": 107,
+    "total_tokens": 477,
+    "completion_tokens_details": {
+     "reasoning_tokens": 30
+    },
+    "prompt_tokens_details": {
+     "cache_write_tokens": 256
+    }
+   },
+   "reasoning_len": 67,
+   "calls": [
+    "submit"
+   ],
+   "args": [
+    "{\"answer\":403}"
+   ],
+   "error": null
+  }
+ ],
+ "tools_without_reasoning_back": {
+  "status": 200,
+  "error": null
+ },
+ "responses_api": {
+  "status": 200,
+  "s": 5.5,
+  "keys": [
+   "background",
+   "completed_at",
+   "conversation",
+   "created_at",
+   "error",
+   "frequency_penalty",
+   "id",
+   "incomplete_details",
+   "instructions",
+   "max_output_tokens",
+   "max_tool_calls",
+   "metadata",
+   "model",
+   "object",
+   "output",
+   "parallel_tool_calls",
+   "presence_penalty",
+   "previous_response_id",
+   "prompt_cache_key",
+   "reasoning",
+   "safety_identifier",
+   "service_tier",
+   "status",
+   "store",
+   "temperature",
+   "text",
+   "tool_choice",
+   "tools",
+   "top_logprobs",
+   "top_p",
+   "truncation",
+   "usage"
+  ],
+  "error": null,
+  "text": ""
+ },
+ "temperature_1": {
+  "status": 200,
+  "error": null
+ },
+ "stream": {
+  "status": 200
+ }
+}

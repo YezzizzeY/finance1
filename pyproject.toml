@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finagent"
+version = "1.0.0"
+description = "Reproduction of the presentation pilot: do rewritten price readings change LLM trading agents' 5-day forecasts?"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "YezzizzeY" }]
+# exact versions of the environment that ran the pilot: setup/requirements/runner.txt (the bounds keep its major versions)
+dependencies = ["numpy>=2", "pandas>=3", "pyarrow", "requests", "aiohttp>=3"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+finagent = "finagent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

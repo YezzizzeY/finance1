@@ -1,0 +1,10 @@
+{
+ "ticker": "WM",
+ "events": [],
+ "G_vs_ext2017_as_of_2026_03_11": {
+  "G": 0.9917417638872814,
+  "spread": 5.556106974502484e-07,
+  "n": 195
+ },
+ "rule": "bars shown on decision day t = panel bars x product of the factors of the events with ex_date > t (volumes / it); an event with factor null is unknown: its factor counts as 1 and such days are ineligible (ca_ok)"
+}

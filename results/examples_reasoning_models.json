@@ -1,0 +1,194 @@
+[
+ {
+  "id": "X1",
+  "model": "Qwen3-8B",
+  "framework": "Codex CLI",
+  "day": "CB_2026-04-22",
+  "arm": "ORIG",
+  "run_index": 1,
+  "run_id": "qwen3_8b__coding_agent__CB_2026-04-22__ORIG__1",
+  "source": "reasoning",
+  "excerpt": "\"Considering the volatility stats, the 5-day volatility is around 12.6%, and the expected return might be slightly negative. The p_up for the next 5 days being above today's close could be around 0.4, with an expected return of -0.5% and volatility of 15%.\"",
+  "excerpt_chars": 257,
+  "final_answer": {
+   "action": "Hold",
+   "shares": 0.0,
+   "p_up": 0.4,
+   "expected_return_pct": -0.5,
+   "expected_vol_pct": 15.0
+  },
+  "final_vol_is_annualised_strict_broad": [
+   true,
+   true
+  ],
+  "reasoning_mentions_annualised_any": true,
+  "day_annualised_readings": [
+   12.6,
+   14.6,
+   18.3,
+   17.3
+  ],
+  "realised_5d_vol_pct_not_shown": 3.82,
+  "note": "12.6 is the annualised 10-day reading (ann_vol_10d_pct), read as a 5-day figure; its 5-day equivalent is 1.8."
+ },
+ {
+  "id": "X2",
+  "model": "Qwen3.5-9B",
+  "framework": "Codex CLI",
+  "day": "CRWD_2026-08-27",
+  "arm": "ORIG",
+  "run_index": 0,
+  "run_id": "qwen35_9b__coding_agent__CRWD_2026-08-27__ORIG__0",
+  "source": "reasoning",
+  "excerpt": "\"- Ann vol 10d: 105.4% (extremely high!)\" … \"Forecast for next 5 trading days: 46% probability of finishing above current close, -1.5% expected return, 52% expected volatility\" … \"- expected_vol_pct: 5-day one-sd in percent ✓\"",
+  "excerpt_chars": 226,
+  "final_answer": {
+   "action": "Hold",
+   "shares": 0.0,
+   "p_up": 0.46,
+   "expected_return_pct": -1.5,
+   "expected_vol_pct": 52.0
+  },
+  "final_vol_is_annualised_strict_broad": [
+   true,
+   true
+  ],
+  "reasoning_mentions_annualised_any": true,
+  "day_annualised_readings": [
+   105.4,
+   81.2,
+   64.0,
+   56.1
+  ],
+  "realised_5d_vol_pct_not_shown": 12.74,
+  "note": "It checks the field definition after writing 52 and does not notice the unit."
+ },
+ {
+  "id": "X3",
+  "model": "Kimi K3",
+  "framework": "Codex CLI",
+  "day": "VST_2026-05-06",
+  "arm": "ORIG",
+  "run_index": 1,
+  "run_id": "kimi__coding_agent__VST_2026-05-06__ORIG__1",
+  "source": "reasoning",
+  "excerpt": "\"5-day vol estimate: ann vol 45% → 5-day sd = 45% × sqrt(5/252) ≈ 45% × 0.141 ≈ 6.35%.\"",
+  "excerpt_chars": 87,
+  "final_answer": {
+   "action": "Buy",
+   "shares": 109.0,
+   "p_up": 0.6,
+   "expected_return_pct": 2.0,
+   "expected_vol_pct": 7.0
+  },
+  "final_vol_is_annualised_strict_broad": [
+   false,
+   false
+  ],
+  "reasoning_mentions_annualised_any": true,
+  "day_annualised_readings": [
+   45.0,
+   39.4,
+   47.8,
+   39.0
+  ],
+  "realised_5d_vol_pct_not_shown": 7.34,
+  "note": "Mentions the annualised figure and converts it (Kimi's Codex reasoning arrives as summary text)."
+ },
+ {
+  "id": "X4",
+  "model": "Kimi K3",
+  "framework": "harness",
+  "day": "MRK_2026-05-07",
+  "arm": "UNIT5D",
+  "run_index": 0,
+  "run_id": "kimi__harness__MRK_2026-05-07__UNIT5D__0",
+  "source": "reasoning",
+  "excerpt": "\"Vol 5-day equiv ~3.4-3.8%.\" … \"Typical 5-day vol ~3.4% but I've been overstating. Set expected_vol ~2.8%.\"",
+  "excerpt_chars": 107,
+  "final_answer": {
+   "action": "Hold",
+   "shares": 45.0,
+   "p_up": 0.53,
+   "expected_return_pct": 0.5,
+   "expected_vol_pct": 2.8
+  },
+  "final_vol_is_annualised_strict_broad": [
+   false,
+   false
+  ],
+  "reasoning_mentions_annualised_any": false,
+  "day_annualised_readings": [
+   22.6,
+   26.7,
+   24.2,
+   23.5
+  ],
+  "realised_5d_vol_pct_not_shown": 1.6,
+  "note": "Same day ORIG runs submitted 5.5 and 4.5; ORIG run 0 used ATR x sqrt(5) ('5-day vol ≈ 2.65*sqrt(5)=5.9%'). 'Overstating' comes from the harness tool get_calibration_ledger, which this run called."
+ },
+ {
+  "id": "X5",
+  "model": "DeepSeek (reasoner)",
+  "framework": "harness",
+  "day": "MCHP_2026-08-07",
+  "arm": "UNIT5D",
+  "run_index": 0,
+  "run_id": "deepseek__harness__MCHP_2026-08-07__UNIT5D__0",
+  "source": "reasoning",
+  "excerpt": "\"Trailing 20d vol 74.1% annualized — very high.\" … \"20d annualized 74% → 5-day = 74*sqrt(5/252) = 74*0.1409 = 10.4%. That's already the trailing. Given high vol regime and understating tendency, maybe use 11-12%. I'll say 11.\"",
+  "excerpt_chars": 226,
+  "final_answer": {
+   "action": "Buy",
+   "shares": 111.0,
+   "p_up": 0.58,
+   "expected_return_pct": 2.5,
+   "expected_vol_pct": 11.0
+  },
+  "final_vol_is_annualised_strict_broad": [
+   false,
+   false
+  ],
+  "reasoning_mentions_annualised_any": true,
+  "day_annualised_readings": [
+   89.6,
+   74.1,
+   64.8,
+   49.4
+  ],
+  "realised_5d_vol_pct_not_shown": 5.33,
+  "note": "UNIT5D shows only 5-day equivalents in the readings; 74.1 is get_risk_budget's trailing_vol_20d_pct, which the arm does not rewrite."
+ },
+ {
+  "id": "X6",
+  "model": "Qwen 27B (Qwen3.8-27B-FP8)",
+  "framework": "Codex CLI",
+  "day": "CRWD_2026-08-27",
+  "arm": "ORIG",
+  "run_index": 0,
+  "run_id": "qwen38_27b__coding_agent__CRWD_2026-08-27__ORIG__0",
+  "source": "command output + reasoning",
+  "excerpt": "\"implied 5d 1sd from 10d daily vol: 16.80%\" … \"implied 5d 1sd from 20d daily vol: 12.46%\" … \"5-day 1σ: about 12.5% (20-day implied) to about 16.8% (10-day implied); I'll use 14%.\"",
+  "excerpt_chars": 179,
+  "final_answer": {
+   "action": "Buy",
+   "shares": 18.0,
+   "p_up": 0.72,
+   "expected_return_pct": 5.5,
+   "expected_vol_pct": 14.0
+  },
+  "final_vol_is_annualised_strict_broad": [
+   false,
+   false
+  ],
+  "reasoning_mentions_annualised_any": true,
+  "day_annualised_readings": [
+   105.4,
+   81.2,
+   64.0,
+   56.1
+  ],
+  "realised_5d_vol_pct_not_shown": 12.74,
+  "note": "Its own script on prices.csv printed the two 5-day figures (first two quotes), then the reasoning picked a value between them."
+ }
+]

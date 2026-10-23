@@ -1,0 +1,25 @@
+{
+ "wrapper_identity_outside_session": true,
+ "per_arm": {
+  "ORIG": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 0
+  },
+  "NOLABEL": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 5
+  },
+  "UNIT5D": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 1
+  },
+  "PLACEBO": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 7
+  }
+ }
+}

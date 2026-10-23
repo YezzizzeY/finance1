@@ -1,0 +1,242 @@
+{
+ "n_smoke_runs": 2,
+ "n_pass": 2,
+ "smoke": [
+  {
+   "run_id": "kimi__coding_agent__VST_2026-05-06__ORIG__0",
+   "model": "Kimi K3",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "kimi-k3"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "ok": true,
+    "n_commands_in_events": 4,
+    "n_command_processes_in_strace": 4,
+    "n_command_events_audited": 599,
+    "unmatched_commands": [],
+    "extra_processes": []
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": {
+     "strace_events": 1692,
+     "command_events": 599,
+     "command_file_events": 582,
+     "commands": 4,
+     "tool_calls": 0,
+     "paths_outside": 0,
+     "net_attempts": 0,
+     "net_commands": 0,
+     "relay_strays": 0,
+     "future_date_mentions": 0
+    },
+    "future_date_mentions": []
+   },
+   "exit": {
+    "exit_code": 0,
+    "timed_out": false,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Buy",
+     "shares": 140.0,
+     "target_exposure_pct": 60.0,
+     "p_up": 0.68,
+     "expected_return_pct": 3.5,
+     "expected_vol_pct": 7.0,
+     "confidence": 0.6
+    },
+    "n_tool_calls": 4,
+    "tokens": {
+     "input": 39546,
+     "output": 1456,
+     "reasoning": 625,
+     "cached": 28672,
+     "turns": 1
+    },
+    "wall_s": 57.8,
+    "tool_names": null,
+    "codex": {
+     "n_commands": 4,
+     "n_file_changes": 0,
+     "n_other_tools": 0,
+     "errors": [
+      "Model metadata for `kimi-k3` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."
+     ]
+    }
+   },
+   "pass": true,
+   "kimi": {
+    "ok": true,
+    "n_model_responses": 5,
+    "n_with_reasoning_text": 4,
+    "reasoning_chars": 1916,
+    "models_reported": [
+     "kimi-k3"
+    ],
+    "codex_item_types": {
+     "error": 1,
+     "reasoning": 4,
+     "command_execution": 4,
+     "agent_message": 3
+    }
+   },
+   "pass_with_kimi_checks": true
+  },
+  {
+   "run_id": "kimi__harness__VST_2026-05-06__ORIG__0",
+   "model": "Kimi K3",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "kimi-k3"
+   ],
+   "rewrite": {
+    "where": "the user message of the first request (captured in chat())",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "trace_tool_texts_in_requests": true,
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "n_tool_calls_logged": 3,
+    "calls_have_args_and_text": true,
+    "cache_log": {
+     "n_accesses": 3,
+     "n_items_served": 10,
+     "latest_item_time": "20260507T081647",
+     "D": "20260507T090000",
+     "items_at_or_after_D": [],
+     "accesses_for_another_day": 0
+    },
+    "n_tool_calls_record": 3,
+    "ok": true
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": null,
+    "future_date_mentions": null
+   },
+   "exit": {
+    "exit_code": null,
+    "timed_out": null,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Buy",
+     "shares": 80.0,
+     "target_exposure_pct": 50.0,
+     "p_up": 0.6,
+     "expected_return_pct": 2.5,
+     "expected_vol_pct": 8.0,
+     "confidence": 0.6
+    },
+    "n_tool_calls": 3,
+    "tokens": {
+     "input": 7436,
+     "output": 1042,
+     "reasoning": 371,
+     "cached": 3328,
+     "requests": 2
+    },
+    "wall_s": 39.2,
+    "tool_names": [
+     "get_event_risk",
+     "get_risk_budget",
+     "submit_decision"
+    ],
+    "codex": null
+   },
+   "pass": true,
+   "kimi": {
+    "ok": true,
+    "n_requests": 2,
+    "n_raw_responses": 2,
+    "rows": [
+     {
+      "status": 200,
+      "json": true,
+      "model": "kimi-k3",
+      "msg_keys": [
+       "content",
+       "reasoning_content",
+       "role",
+       "tool_calls"
+      ],
+      "reasoning_chars": 795,
+      "content_chars": 0,
+      "tool_calls": [
+       "get_event_risk",
+       "get_risk_budget"
+      ],
+      "finish": "tool_calls"
+     },
+     {
+      "status": 200,
+      "json": true,
+      "model": "kimi-k3",
+      "msg_keys": [
+       "content",
+       "reasoning_content",
+       "role",
+       "tool_calls"
+      ],
+      "reasoning_chars": 584,
+      "content_chars": 1091,
+      "tool_calls": [
+       "submit_decision"
+      ],
+      "finish": "tool_calls"
+     }
+    ]
+   },
+   "pass_with_kimi_checks": true
+  }
+ ],
+ "kimi_key_scan": {
+  "n_files_scanned": 80,
+  "n_files_containing_key": 0,
+  "files": []
+ }
+}

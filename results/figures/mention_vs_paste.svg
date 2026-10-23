@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" font-family="Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+<title id="title">Mentioning the annualised figure vs submitting it</title>
+<desc id="desc">Left: share of usable runs whose reasoning output mentions an annualised figure of the day (rule any). Right: among those runs, the share whose final 5-day volatility is still that annualised figure (strict rule).</desc>
+<rect width="760" height="442" rx="14" fill="#ffffff"/>
+<text x="20.0" y="30.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="bold">Mentioning the annualised figure vs submitting it</text>
+<text x="20.0" y="48.0" font-size="12" fill="#52514e" text-anchor="start">Left: usable runs whose reasoning output mentions an annualised figure of the day (rule any).</text>
+<text x="20.0" y="66.0" font-size="12" fill="#52514e" text-anchor="start">Right: of those runs, the ones whose final 5-day vol is still an annualised figure (strict rule).</text>
+<rect x="20.0" y="83.0" width="12.0" height="12.0" fill="#2a78d6" rx="3"/>
+<text x="38.0" y="93.0" font-size="12" fill="#52514e" text-anchor="start">harness</text>
+<rect x="107.8" y="83.0" width="12.0" height="12.0" fill="#eb6834" rx="3"/>
+<text x="125.8" y="93.0" font-size="12" fill="#52514e" text-anchor="start">Codex CLI</text>
+<text x="108.0" y="136.0" font-size="12" fill="#0b0b0b" text-anchor="end">Qwen3-8B</text>
+<text x="108.0" y="186.0" font-size="12" fill="#0b0b0b" text-anchor="end">Qwen3.5-9B</text>
+<text x="108.0" y="236.0" font-size="12" fill="#0b0b0b" text-anchor="end">Qwen3.8-27B</text>
+<text x="108.0" y="286.0" font-size="12" fill="#0b0b0b" text-anchor="end">DeepSeek</text>
+<text x="108.0" y="336.0" font-size="12" fill="#0b0b0b" text-anchor="end">Kimi K3</text>
+<line x1="118.0" y1="108.0" x2="118.0" y2="356.0" stroke="#a8a69e" stroke-width="1"/>
+<text x="118.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">0%</text>
+<line x1="188.5" y1="108.0" x2="188.5" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="188.5" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">25%</text>
+<line x1="259.0" y1="108.0" x2="259.0" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="259.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">50%</text>
+<line x1="329.5" y1="108.0" x2="329.5" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="329.5" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">75%</text>
+<line x1="400.0" y1="108.0" x2="400.0" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="400.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">100%</text>
+<text x="259.0" y="392.0" font-size="12" fill="#52514e" text-anchor="middle">mentions it: share of usable runs</text>
+<path d="M118.0,116.0h137.0a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-137.0z" fill="#2a78d6"><title>Qwen3-8B / harness: 15/30</title></path>
+<text x="265.0" y="126.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">15/30</text>
+<path d="M118.0,136.0h93.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-93.6z" fill="#eb6834"><title>Qwen3-8B / Codex CLI: 9/26</title></path>
+<text x="221.6" y="146.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">9/26</text>
+<path d="M118.0,166.0h202.8a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-202.8z" fill="#2a78d6"><title>Qwen3.5-9B / harness: 22/30</title></path>
+<text x="330.8" y="176.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">22/30</text>
+<path d="M118.0,186.0h180.8a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-180.8z" fill="#eb6834"><title>Qwen3.5-9B / Codex CLI: 19/29</title></path>
+<text x="308.8" y="196.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">19/29</text>
+<path d="M118.0,216.0h268.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-268.6z" fill="#2a78d6"><title>Qwen3.8-27B / harness: 29/30</title></path>
+<text x="396.6" y="226.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">29/30</text>
+<path d="M118.0,236.0h217.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-217.6z" fill="#eb6834"><title>Qwen3.8-27B / Codex CLI: 22/28</title></path>
+<text x="345.6" y="246.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">22/28</text>
+<path d="M118.0,266.0h268.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-268.6z" fill="#2a78d6"><title>DeepSeek / harness: 29/30</title></path>
+<text x="396.6" y="276.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">29/30</text>
+<path d="M118.0,286.0h216.7a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-216.7z" fill="#eb6834"><title>DeepSeek / Codex CLI: 18/23</title></path>
+<text x="344.7" y="296.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">18/23</text>
+<path d="M118.0,316.0h127.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-127.6z" fill="#2a78d6"><title>Kimi K3 / harness: 14/30</title></path>
+<text x="255.6" y="326.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">14/30</text>
+<path d="M118.0,336.0h221.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-221.6z" fill="#eb6834"><title>Kimi K3 / Codex CLI: 24/30</title></path>
+<text x="349.6" y="346.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">24/30</text>
+<line x1="470.0" y1="108.0" x2="470.0" y2="356.0" stroke="#a8a69e" stroke-width="1"/>
+<text x="470.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">0%</text>
+<line x1="527.5" y1="108.0" x2="527.5" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="527.5" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">25%</text>
+<line x1="585.0" y1="108.0" x2="585.0" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="585.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">50%</text>
+<line x1="642.5" y1="108.0" x2="642.5" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="642.5" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">75%</text>
+<line x1="700.0" y1="108.0" x2="700.0" y2="356.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="700.0" y="372.0" font-size="11" fill="#6f6d67" text-anchor="middle">100%</text>
+<text x="585.0" y="392.0" font-size="12" fill="#52514e" text-anchor="middle">still submits it: share of those runs</text>
+<path d="M470.0,116.0h42.0a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-42.0z" fill="#2a78d6"><title>Qwen3-8B / harness: 3/15</title></path>
+<text x="522.0" y="126.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">3/15</text>
+<path d="M470.0,136.0h21.6a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-21.6z" fill="#eb6834"><title>Qwen3-8B / Codex CLI: 1/9</title></path>
+<text x="501.6" y="146.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">1/9</text>
+<path d="M470.0,166.0h6.5a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-6.5z" fill="#2a78d6"><title>Qwen3.5-9B / harness: 1/22</title></path>
+<text x="486.5" y="176.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">1/22</text>
+<path d="M470.0,186.0h8.1a4,4 0 0 1 4,4v4.0a4,4 0 0 1 -4,4h-8.1z" fill="#eb6834"><title>Qwen3.5-9B / Codex CLI: 1/19</title></path>
+<text x="488.1" y="196.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">1/19</text>
+<text x="476.0" y="226.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/29</text>
+<text x="476.0" y="246.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/22</text>
+<text x="476.0" y="276.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/29</text>
+<text x="476.0" y="296.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/18</text>
+<text x="476.0" y="326.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/14</text>
+<text x="476.0" y="346.0" font-size="11" fill="#52514e" text-anchor="start" stroke="#ffffff" stroke-width="3" paint-order="stroke">0/24</text>
+<text x="20.0" y="409.0" font-size="11" fill="#6f6d67" text-anchor="start">Labels: runs, k of n. The mention and paste rules are defined in describe_reasoning_models.md.</text>
+<text x="20.0" y="426.0" font-size="11" fill="#6f6d67" text-anchor="start">Source: results/describe_reasoning_models.json (finagent analyze), drawn by finagent figures.</text>
+</svg>

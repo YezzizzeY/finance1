@@ -1,0 +1,1 @@
+Your task is described in task.md in the current folder. Read it and do it. Finish by writing decision.json in the current folder.

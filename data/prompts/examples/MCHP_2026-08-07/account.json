@@ -1,0 +1,34 @@
+{
+ "ticker": "MCHP",
+ "date": "2026-08-07",
+ "close": 84.69,
+ "cash": 94798.36,
+ "shares_held": 67,
+ "position_value": 5674.23,
+ "total_assets": 100472.59,
+ "position_pct_of_total_assets": 5.6,
+ "shares_per_exposure_point": 11.9,
+ "rules": {
+  "long_only": true,
+  "orders_execute_at": "today's close price",
+  "buy_must_fit_cash": true
+ },
+ "last_decisions": [
+  {
+   "date": "2026-08-05",
+   "action": "Buy",
+   "shares": 64,
+   "price": 77.79,
+   "exposure_pct": 5.0,
+   "total_assets": 100000.0
+  },
+  {
+   "date": "2026-08-06",
+   "action": "Buy",
+   "shares": 3,
+   "price": 74.36,
+   "exposure_pct": 5.0,
+   "total_assets": 99780.0
+  }
+ ]
+}

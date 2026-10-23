@@ -1,0 +1,50 @@
+{
+ "key": "qwen3_8b",
+ "model": "Qwen/Qwen3-8B",
+ "pid": 2868833,
+ "gpu": {
+  "index": 0,
+  "uuid": "GPU-346dd21e-e312-249d-1e04-b77c97ca159f",
+  "free_mib": 31251,
+  "used_mib": 17292,
+  "total_mib": 49140,
+  "util": 0.59
+ },
+ "cmd": [
+  "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/0_model_server/.venv-vllm/bin/python",
+  "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/0_model_server/.venv-vllm/bin/vllm",
+  "serve",
+  "models/Qwen3-8B",
+  "--served-model-name",
+  "Qwen/Qwen3-8B",
+  "--port",
+  "18580",
+  "--host",
+  "127.0.0.1",
+  "--gpu-memory-utilization",
+  "0.59",
+  "--max-model-len",
+  "32768",
+  "--generation-config",
+  "vllm",
+  "--enable-lora",
+  "--max-lora-rank",
+  "16",
+  "--max-loras",
+  "4",
+  "--max-num-seqs",
+  "128",
+  "--enable-auto-tool-choice",
+  "--tool-call-parser",
+  "hermes",
+  "--reasoning-parser",
+  "qwen3"
+ ],
+ "port": 18580,
+ "started": 1792302717.3753054,
+ "extra_env": {
+  "HF_HUB_OFFLINE": "1"
+ },
+ "flags_note": "see repro/codexpilot/server.py docstring",
+ "ready_after_s": 180.0
+}

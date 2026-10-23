@@ -1,0 +1,2 @@
+# Every integrity check compares bytes (data/MANIFEST.sha256, records/SHA256SUMS, prompt hashes): no end-of-line conversion.
+* -text

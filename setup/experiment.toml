@@ -1,0 +1,48 @@
+# The presentation pilot (codexpilot_20261018): the run-design constants (prompt-text constants live with the prompt code).
+# Read through finagent.config.EXPERIMENT; paths are relative to the data folder (data/ unless FINAGENT_DATA_DIR is set).
+
+workflow = "codexpilot_20261018"
+seed = 20261018                      # the day draw (finagent.days) and the PLACEBO key orders (finagent.arms)
+
+[days]
+file = "days.json"                   # the 6 chosen days; `finagent days` rebuilds it from data/selection and data/anchors
+n_big = 3
+n_ordinary = 3
+big_z = 2.0                          # big-move day: |z| >= 2, z = 1-day return / daily prior sd (information through close t)
+ordinary_z = 1.0                     # ordinary day: |z| < 1
+
+[runs]
+arms = ["ORIG", "NOLABEL", "UNIT5D", "PLACEBO"]
+frameworks = ["harness", "coding_agent"]
+per_arm = { ORIG = 2, NOLABEL = 1, UNIT5D = 1, PLACEBO = 1 }
+# seed of a run = branch_seed_base of the day + seed_offset + arm_seed_step * arm index + k (only vLLM requests carry it)
+seed_offset = 600
+arm_seed_step = 10
+
+[harness]
+max_turns = 10                       # assistant turns per session, plus at most one reminder request
+tool_result_chars = 2500             # every tool result (and every readings line) is cut here, after the arm rewrite
+turn_seed_step = 1000                # vLLM seed of turn n = seed + turn_seed_step * n
+reminder_seed_offset = 99            # vLLM seed of the reminder request sent after the loop
+
+[coding_agent]
+codex_version = "codex-cli 0.162.1"
+wall_s = 1800                        # wall-clock cap of one Codex run: SIGTERM to the process group, then SIGKILL
+kill_grace_s = 5
+
+[concurrency]
+# runs in flight per model x framework; the models in `sequential` run the harness batch first and then the Codex batch,
+# the others run both batches side by side
+harness = { qwen3_8b = 30, qwen35_9b = 30, deepseek = 10, qwen38_27b = 30, kimi = 4 }
+coding_agent = { qwen3_8b = 6, qwen35_9b = 6, deepseek = 6, qwen38_27b = 6, kimi = 4 }
+sequential = ["qwen38_27b", "kimi"]
+
+[vllm]
+# serving policy shared by the three local models (per-model flags are in models.toml)
+version = "0.29.0"
+host = "127.0.0.1"
+gpu_reserve_mib = 2048               # --gpu-memory-utilization = floor((free - reserve) / total, 2) on the card with most free memory
+min_gpu_util = 0.45                  # refuse to start below this
+start_attempts = 4                   # retried when another job takes the measured free memory first
+ready_wait_s = 1200
+env = { VLLM_NO_USAGE_STATS = "1", DO_NOT_TRACK = "1", VLLM_ALLOW_RUNTIME_LORA_UPDATING = "1", PYTORCH_CUDA_ALLOC_CONF = "expandable_segments:True" }

@@ -1,0 +1,100 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 151, in <module>
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 147, in main
+    web.run_app(app, host="127.0.0.1", port=a.port, print=None, access_log=None)
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 502, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 404, in _run_app
+    await site.start()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web_runner.py", line 138, in start
+    self._server = await loop.create_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 18592): address already in use
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 151, in <module>
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 147, in main
+    web.run_app(app, host="127.0.0.1", port=a.port, print=None, access_log=None)
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 502, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 404, in _run_app
+    await site.start()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web_runner.py", line 138, in start
+    self._server = await loop.create_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 18592): address already in use
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 151, in <module>
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 147, in main
+    web.run_app(app, host="127.0.0.1", port=a.port, print=None, access_log=None)
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 502, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 404, in _run_app
+    await site.start()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web_runner.py", line 138, in start
+Traceback (most recent call last):
+    self._server = await loop.create_server(
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 151, in <module>
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 147, in main
+    web.run_app(app, host="127.0.0.1", port=a.port, print=None, access_log=None)
+    raise OSError(err.errno, msg) from None
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 502, in run_app
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 18592): address already in use
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 404, in _run_app
+    await site.start()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web_runner.py", line 138, in start
+    self._server = await loop.create_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 18592): address already in use
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 151, in <module>
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/relay.py", line 147, in main
+    web.run_app(app, host="127.0.0.1", port=a.port, print=None, access_log=None)
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 502, in run_app
+    loop.run_until_complete(main_task)
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web.py", line 404, in _run_app
+    await site.start()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/.venv/lib/python3.12/site-packages/aiohttp/web_runner.py", line 138, in start
+    self._server = await loop.create_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 18592): address already in use

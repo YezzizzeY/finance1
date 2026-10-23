@@ -1,0 +1,138 @@
+# The five models with visible reasoning, one table per model. Table order = run-list order (finagent.records.runs).
+#   provider        vllm (our server) | deepseek | kimi (OpenAI-compatible chat completions)
+#   model_id        the model name sent in every request (and vLLM's --served-model-name)
+#   model_reported  the name the server reported back in the records
+#   [.harness]      the harness request: per-turn max_tokens (thinking included), sampling, timeouts and retry window
+#   [.codex]        Codex CLI settings: model_reasoning_effort, model_context_window, relay upstream
+#   [.vllm]         the vLLM serve flags, extra environment, weights (HF repo + revision, sha256 manifest of every file)
+# vLLM harness body: model, messages, tools, tool_choice "auto", temperature, top_p, max_tokens, seed, return_token_ids true,
+# chat_template_kwargs {enable_thinking: true}. API harness body: model, messages, tools, tool_choice "auto", max_tokens
+# (+ reasoning_effort); no temperature, top_p or seed. Codex requests carry no sampling settings (server defaults apply).
+
+[qwen3_8b]
+label = "Qwen3-8B"
+provider = "vllm"
+model_id = "Qwen/Qwen3-8B"
+model_reported = "Qwen/Qwen3-8B"
+coding_framework = "Codex CLI"
+
+[qwen3_8b.harness]
+temperature = 1.0
+top_p = 0.95
+max_tokens = 2048
+timeout_s = 3000
+give_up_after_s = 21600              # 429 / 5xx / unreachable: back off and retry for up to 6 h; other 4xx: 2 retries
+
+[qwen3_8b.codex]
+reasoning_effort = "high"            # the chat template ignores it; thinking is on by default
+context_window = 32768
+
+[qwen3_8b.vllm]
+weights = "Qwen3-8B"                 # folder under the host's MODEL_DIR
+hf_repo = "Qwen/Qwen3-8B"
+hf_revision = "b968826d9c46dd6066d109eabc6255188de91218"
+weights_sha256 = "setup/weights/qwen3_8b.sha256"
+flags = ["--max-model-len", "32768", "--generation-config", "vllm", "--enable-lora", "--max-lora-rank", "16", "--max-loras", "4",
+         "--max-num-seqs", "128", "--enable-auto-tool-choice", "--tool-call-parser", "hermes", "--reasoning-parser", "qwen3"]
+env = { HF_HUB_OFFLINE = "1" }
+
+[qwen35_9b]
+label = "Qwen3.5-9B"
+provider = "vllm"
+model_id = "Qwen/Qwen3.5-9B"
+model_reported = "Qwen/Qwen3.5-9B"
+coding_framework = "Codex CLI"
+
+[qwen35_9b.harness]
+temperature = 1.0
+top_p = 0.95
+max_tokens = 2048
+timeout_s = 3000
+give_up_after_s = 21600
+
+[qwen35_9b.codex]
+reasoning_effort = "high"            # ignored by the chat template
+context_window = 65536
+
+[qwen35_9b.vllm]
+weights = "Qwen3.5-9B"
+hf_repo = "Qwen/Qwen3.5-9B"
+hf_revision = "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+# not recorded at run time; identified afterwards: all 16 local files match the HF tree at this commit (docs/ENVIRONMENT.md)
+weights_sha256 = "setup/weights/qwen35_9b.sha256"
+flags = ["--max-model-len", "65536", "--enable-lora", "--max-lora-rank", "16", "--max-loras", "4", "--max-num-seqs", "128",
+         "--enable-auto-tool-choice", "--tool-call-parser", "qwen3_coder", "--reasoning-parser", "qwen3"]
+env = {}                             # HF_HUB_OFFLINE was not set for this model (vLLM could contact the HF Hub at start)
+
+[deepseek]
+label = "DeepSeek"
+provider = "deepseek"
+model_id = "deepseek-reasoner"
+model_reported = "deepseek-flash"    # DeepSeek resolves the alias; it cannot be pinned
+api_key_env = "DEEPSEEK_API_KEY"
+coding_framework = "Codex CLI"
+
+[deepseek.harness]
+endpoint = "https://api.deepseek.com/chat/completions"
+max_tokens = 8192                    # thinking mode counts its reasoning in max_tokens
+timeout_s = 1800
+give_up_after_s = 3600
+
+[deepseek.codex]
+base_url = "https://api.deepseek.com"   # relay upstream; Codex posts /v1/responses
+reasoning_effort = "high"
+context_window = 1000000
+
+[qwen38_27b]
+label = "Qwen3.8-27B"
+provider = "vllm"
+model_id = "Qwen/Qwen3.8-27B-FP8"
+model_reported = "Qwen/Qwen3.8-27B-FP8"
+coding_framework = "Codex CLI"
+record_serving = true                # records carry served_max_model_len, gpu_index (+ max_tokens_per_turn for the harness)
+
+[qwen38_27b.harness]
+temperature = 1.0
+top_p = 0.95
+max_tokens = 8192                    # 2048 cut 2 of 5 turns in the smoke run, so the batch used 8192
+timeout_s = 3000
+give_up_after_s = 21600
+keep_raw_choices = true              # every answer also stored as vLLM returned it (session ctx.raw_choices)
+
+[qwen38_27b.codex]
+reasoning_effort = "xhigh"           # the chat template accepts xhigh (its default) / medium / low and raises on "high"
+context_window = 65536               # = the served --max-model-len
+
+[qwen38_27b.vllm]
+weights = "Qwen3.8-27B-FP8"
+hf_repo = "Qwen/Qwen3.8-27B-FP8"
+hf_revision = "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a"
+weights_sha256 = "setup/weights/qwen38_27b.sha256"
+flags = ["--max-model-len", "65536", "--max-num-seqs", "128", "--enable-auto-tool-choice", "--tool-call-parser", "qwen3_coder",
+         "--reasoning-parser", "qwen3"]
+env = { HF_HUB_OFFLINE = "1" }
+max_model_len_fallbacks = [65536, 49152, 40960, 32768]   # tried in order when the KV cache cannot hold one full request
+need_free_mib = 38912                # wait for a card with this much free memory before starting
+
+[kimi]
+label = "Kimi K3"
+provider = "kimi"
+model_id = "kimi-k3"
+model_reported = "kimi-k3"
+api_key_env = "MOONSHOT_API_KEY"
+coding_framework = "Codex CLI"
+
+[kimi.harness]
+endpoint = "https://api.moonshot.ai/v1/chat/completions"
+max_tokens = 16384
+reasoning_effort = "high"            # = the Codex setting; the API allows temperature 1 only, so none is sent
+max_concurrent = 4                   # requests in flight from one process
+keep_raw_responses = true            # every response body kept verbatim (session ctx.raw_responses)
+timeout_s = 1800
+give_up_after_s = 3600
+
+[kimi.codex]
+base_url = "https://api.moonshot.ai"
+reasoning_effort = "high"
+context_window = 1048576
+relay_max_concurrent = 4

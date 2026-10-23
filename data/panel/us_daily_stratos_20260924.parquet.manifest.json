@@ -1,0 +1,16 @@
+{
+  "source_url": "https://huggingface.co/datasets/stratos-org/ohlcv-750",
+  "source_sha256": "e2492fbf0ae3f2f1c6cd018051f1c496de504fe56524c842bf12d53509aa50b1",
+  "output_sha256": "da057ddadc875f825363e6efe8965819b1d736a657b6e927a3743591e255d3b6",
+  "snapshot_us_last_date": "2026-09-24",
+  "us_tickers": 507,
+  "us_rows": 403476,
+  "price_adjustment": "third-party adjusted bars; absolute anchor differs from old panel",
+  "universe_warning": "Current S&P500-heavy source may omit names delisted before snapshot; avoid claiming survivorship-free alpha.",
+  "overlap_check": {
+    "overlap_days": 39,
+    "median_close_price_ratio_new_old": 0.9990795238597973,
+    "median_daily_return_difference_bps": 0.0007725291534255163,
+    "p99_daily_return_difference_bps": 0.00322931243040836
+  }
+}

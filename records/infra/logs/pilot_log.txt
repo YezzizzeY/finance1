@@ -1,0 +1,65 @@
+2026-10-18 14:51:55 qwen3_8b: starting vLLM
+2026-10-18 14:54:16 qwen3_8b: vLLM ready on GPU 2 (pid 3434894)
+2026-10-18 14:54:16 start qwen3_8b harness (30 runs)
+2026-10-18 14:54:16 start qwen3_8b coding agent (30 runs)
+2026-10-18 14:55:57 start deepseek harness (30 runs)
+2026-10-18 14:55:57 start deepseek coding agent (30 runs)
+2026-10-18 14:56:45 FAILED qwen3_8b coding agent (30 runs): RuntimeError: port 18590 answers but is not our relay
+dexpilot/run_pilot.py", line 66, in <lambda>
+    threads.append(threading.Thread(target=_guard, args=(lambda: CA.run_batch(c, days, 6), f"{model} coding agent ({len(c)} runs)")))
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/coding_agent.py", line 371, in run_batch
+    return list(ex.map(lambda r: run_one(r, days[r["day_id"]]), todo))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/coding_agent.py", line 371, in <lambda>
+    return list(ex.map(lambda r: run_one(r, days[r["day_id"]]), todo))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/coding_agent.py", line 281, in run_one
+    ensure_relay(r["model"])
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/1_overreaction/repro/codexpilot/coding_agent.py", line 88, in ensure_relay
+    raise RuntimeError(f"port {P.RELAY_PORTS[key]} answers but is not our relay")
+RuntimeError: port 18590 answers but is not our relay
+
+2026-10-18 14:57:14 done qwen3_8b harness (30 runs): 30 runs in 178 s, valid 30, flagged 0
+2026-10-18 14:57:14 qwen3_8b: relay {'key': 'qwen3_8b', 'state': 'not running'}
+2026-10-18 14:57:15 done deepseek harness (30 runs): 30 runs in 79 s, valid 30, flagged 0
+2026-10-18 14:57:19 qwen3_8b: vLLM {'key': 'qwen3_8b', 'pid': 3434894, 'state': 'stopped', 'children_killed': []}
+2026-10-18 14:57:19 qwen35_9b: starting vLLM
+2026-10-18 14:59:40 done deepseek coding agent (30 runs): 30 runs in 223 s, valid 30, flagged 7
+2026-10-18 14:59:40 deepseek: relay {'key': 'deepseek', 'pid': 3464403, 'state': 'stopped'}
+2026-10-18 14:59:49 qwen35_9b: vLLM ready on GPU 0 (pid 3485522)
+2026-10-18 14:59:49 start qwen35_9b harness (30 runs)
+2026-10-18 14:59:49 start qwen35_9b coding agent (30 runs)
+2026-10-18 15:09:08 done qwen35_9b harness (30 runs): 30 runs in 559 s, valid 30, flagged 0
+2026-10-18 15:26:48 done qwen35_9b coding agent (30 runs): 30 runs in 1619 s, valid 29, flagged 0
+2026-10-18 15:26:48 qwen35_9b: relay {'key': 'qwen35_9b', 'pid': 3493591, 'state': 'stopped'}
+2026-10-18 15:26:53 qwen35_9b: vLLM {'key': 'qwen35_9b', 'pid': 3485522, 'state': 'stopped', 'children_killed': []}
+2026-10-18 15:26:53 summary: 216 records, 8 flagged and excluded -> summary.md
+2026-10-18 15:27:40 RERUN: qwen3_8b coding_agent, 24 runs lost to the relay-start race (fixed with a lock in coding_agent.ensure_relay)
+2026-10-18 15:27:41 qwen3_8b: starting vLLM
+2026-10-18 15:28:51 qwen3_8b: vLLM ready on GPU 0 (pid 3765387)
+2026-10-18 15:28:51 start qwen3_8b coding agent (24 runs)
+2026-10-18 15:33:48 done qwen3_8b coding agent (24 runs): 24 runs in 298 s, valid 22, flagged 0
+2026-10-18 15:33:48 qwen3_8b: relay {'key': 'qwen3_8b', 'pid': 3778310, 'state': 'stopped'}
+2026-10-18 15:33:53 qwen3_8b: vLLM {'key': 'qwen3_8b', 'pid': 3765387, 'state': 'stopped', 'children_killed': []}
+2026-10-18 15:33:53 summary: 240 records, 8 flagged and excluded -> summary.md
+2026-10-18 20:17:19 start kimi harness (30 runs)
+2026-10-18 20:22:36 done kimi harness (30 runs): 30 runs in 318 s, valid 30, flagged 0
+2026-10-18 20:22:36 start kimi coding agent (30 runs)
+2026-10-18 20:32:26 done kimi coding agent (30 runs): 30 runs in 590 s, valid 30, flagged 0
+2026-10-18 20:32:26 kimi: relay {'key': 'kimi', 'pid': 2154906, 'state': 'stopped'}
+2026-10-18 20:32:27 summary: 300 records, 8 flagged and excluded -> summary.md

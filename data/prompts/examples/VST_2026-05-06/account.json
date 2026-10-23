@@ -1,0 +1,34 @@
+{
+ "ticker": "VST",
+ "date": "2026-05-06",
+ "close": 158.07,
+ "cash": 61931.86,
+ "shares_held": 237,
+ "position_value": 37462.27,
+ "total_assets": 99394.13,
+ "position_pct_of_total_assets": 37.7,
+ "shares_per_exposure_point": 6.3,
+ "rules": {
+  "long_only": true,
+  "orders_execute_at": "today's close price",
+  "buy_must_fit_cash": true
+ },
+ "last_decisions": [
+  {
+   "date": "2026-05-04",
+   "action": "Buy",
+   "shares": 237,
+   "price": 160.63,
+   "exposure_pct": 38.1,
+   "total_assets": 100000.0
+  },
+  {
+   "date": "2026-05-05",
+   "action": "Hold",
+   "shares": 0,
+   "price": 160.16,
+   "exposure_pct": 38.0,
+   "total_assets": 99889.0
+  }
+ ]
+}

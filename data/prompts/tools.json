@@ -1,0 +1,509 @@
+[
+ {
+  "type": "function",
+  "function": {
+   "name": "get_daily_candles",
+   "description": "Daily OHLCV bars, newest first. The prompt shows only the last 10 closes; this adds open/high/low/volume and more history.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_weekly_candles",
+   "description": "Weekly OHLCV bars aggregated from daily, newest first.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "weeks": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_monthly_candles",
+   "description": "Monthly OHLCV bars aggregated from daily, newest first.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "months": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_returns",
+   "description": "Daily log returns in percent for the last N sessions, with cumulative return and up/down day counts.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_price_stats",
+   "description": "Where the price sits: 52-week high/low, drawdown from peak, 5/20/60/250-day returns.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_trend_signal",
+   "description": "EMA 8/21/55 trend read: bullish / bearish / neutral.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_mean_reversion_signal",
+   "description": "Bollinger band position and 50-day z-score: oversold / overbought / neutral.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_rsi",
+   "description": "RSI for a given period (default 14).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "period": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_macd",
+   "description": "MACD(12,26,9) line, signal, histogram and any fresh cross.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_volatility_stats",
+   "description": "Annualised trailing volatility at 10/20/60 days, Parkinson (high-low) vol, ATR, vol regime vs the last 63 days.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_support_resistance",
+   "description": "Nearest pivot-based support and resistance levels from the last 60 sessions.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_volume_analysis",
+   "description": "Today's volume vs 20-day average and the recent price-volume correlation.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_risk_budget",
+   "description": "Given a target annualised portfolio volatility (default 15%), the maximum exposure the current trailing vol allows, your current ex-ante risk, and the share count that closes the gap.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "target_vol_pct": {
+      "type": "number"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_kelly_sizing",
+   "description": "Fractional-Kelly exposure implied by your own expected return and volatility for the next session, at a given risk aversion (default 32).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "expected_return_pct": {
+      "type": "number"
+     },
+     "expected_vol_pct": {
+      "type": "number"
+     },
+     "risk_aversion": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "expected_return_pct",
+     "expected_vol_pct"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_drawdown_stats",
+   "description": "Episode P&L, peak assets and current drawdown.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_earnings_calendar",
+   "description": "Last and next earnings report dates and trading days until the next one, once the company has announced it.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "ticker": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_event_risk",
+   "description": "How the stock moved on the session after each past earnings report, versus an ordinary day.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "ticker": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_news",
+   "description": "Headlines with summaries and sentiment. feed: ticker | economy_fiscal | economy_monetary. The prompt shows 10 titles from the last 7 days; the ticker feed holds ~250 in that window, most about other companies, so only_ticker filters to items that mention the stock.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "feed": {
+      "type": "string"
+     },
+     "days": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     },
+     "only_ticker": {
+      "type": "boolean"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "search_news",
+   "description": "Keyword search over all news feeds for the last N days (default 30).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string"
+     },
+     "days": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    },
+    "required": [
+     "query"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_news_stats",
+   "description": "Per-day count and average sentiment of items mentioning the stock: a news-attention gauge.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_macro_news",
+   "description": "Recent fiscal-policy and monetary-policy headlines.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_insider_trades",
+   "description": "Insider transactions filed before today, within the last N days (default 90).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     },
+     "limit": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_insider_summary",
+   "description": "Net insider buying vs selling over the last N days.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_portfolio",
+   "description": "Cash, shares, exposure as percent of assets, P&L since the start of the episode.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_trade_history",
+   "description": "Your executed orders this episode, newest first.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "simulate_order",
+   "description": "Preview what exposure an order would leave, without submitting it. Give either shares+action or target_exposure_pct.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "action": {
+      "type": "string"
+     },
+     "shares": {
+      "type": "integer"
+     },
+     "target_exposure_pct": {
+      "type": "number"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "memory_read",
+   "description": "Your past decisions with the return that followed each one and whether your stated volatility was over or under what happened.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "days": {
+      "type": "integer"
+     }
+    }
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "memory_write",
+   "description": "Save a note for your future sessions (a rule you want to keep, an observation to check later).",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "note": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "note"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "memory_search",
+   "description": "Search your notes and past reasoning by keyword.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "query"
+    ]
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_calibration_ledger",
+   "description": "How your stated volatility and direction forecasts compared with realised moves so far this episode.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "get_lessons",
+   "description": "After-action review of the episode: worst session, and whether the book was heavy on the biggest-move days.",
+   "parameters": {
+    "type": "object",
+    "properties": {}
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "submit_decision",
+   "description": "Record the day's decision and your forecast for the next 5 trading days. Echoes the exposure the order produces; you may resubmit. The last submission wins.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "action": {
+      "type": "string"
+     },
+     "shares": {
+      "type": "integer"
+     },
+     "target_exposure_pct": {
+      "type": "integer"
+     },
+     "p_up": {
+      "type": "number",
+      "description": "probability the close 5 trading days from now is above today's close, 0-1"
+     },
+     "expected_return_pct": {
+      "type": "number",
+      "description": "mean 5-day return you expect, percent"
+     },
+     "expected_vol_pct": {
+      "type": "number",
+      "description": "one-standard-deviation size of the 5-day return, percent (not annualised, not daily)"
+     },
+     "confidence": {
+      "type": "number",
+      "description": "0-1, how much information you have for this forecast (how much you would stake on it being accurate)"
+     },
+     "reasoning": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+]

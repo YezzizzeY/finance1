@@ -1,0 +1,695 @@
+{
+ "smoke_day": [
+  "VST_2026-05-06"
+ ],
+ "n_smoke_runs": 6,
+ "n_pass": 6,
+ "smoke": [
+  {
+   "run_id": "deepseek__coding_agent__VST_2026-05-06__ORIG__0",
+   "model": "DeepSeek",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "deepseek-flash"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "ok": true,
+    "n_commands_in_events": 6,
+    "n_command_processes_in_strace": 6,
+    "n_command_events_audited": 1482,
+    "unmatched_commands": [],
+    "extra_processes": []
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": {
+     "strace_events": 2614,
+     "command_events": 1482,
+     "command_file_events": 1395,
+     "commands": 6,
+     "tool_calls": 0,
+     "paths_outside": 0,
+     "net_attempts": 0,
+     "net_commands": 0,
+     "relay_strays": 0,
+     "future_date_mentions": 0
+    },
+    "future_date_mentions": []
+   },
+   "exit": {
+    "exit_code": 0,
+    "timed_out": false,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Buy",
+     "shares": 235.0,
+     "target_exposure_pct": 75.0,
+     "p_up": 0.75,
+     "expected_return_pct": 4.5,
+     "expected_vol_pct": 6.5,
+     "confidence": 0.65
+    },
+    "n_tool_calls": 6,
+    "tokens": {
+     "input": 64453,
+     "output": 3444,
+     "reasoning": 2107,
+     "cached": 57472,
+     "turns": 1
+    },
+    "wall_s": 24.6,
+    "tool_names": null,
+    "codex": {
+     "n_commands": 6,
+     "n_file_changes": 0,
+     "n_other_tools": 0,
+     "errors": [
+      "Model metadata for `deepseek-reasoner` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."
+     ]
+    }
+   },
+   "pass": true
+  },
+  {
+   "run_id": "deepseek__harness__VST_2026-05-06__ORIG__0",
+   "model": "DeepSeek",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "deepseek-flash"
+   ],
+   "rewrite": {
+    "where": "the user message of the first request (captured in chat())",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "trace_tool_texts_in_requests": true,
+    "tool_outputs": {
+     "n_block_tool_calls": 1,
+     "ok": true,
+     "rows": [
+      {
+       "tool": "get_volatility_stats",
+       "args": {},
+       "ok": true,
+       "rewritten": false
+      }
+     ]
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "n_tool_calls_logged": 11,
+    "calls_have_args_and_text": true,
+    "cache_log": {
+     "n_accesses": 4,
+     "n_items_served": 31,
+     "latest_item_time": "20260507T081647",
+     "D": "20260507T090000",
+     "items_at_or_after_D": [],
+     "accesses_for_another_day": 0
+    },
+    "n_tool_calls_record": 11,
+    "ok": true
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": null,
+    "future_date_mentions": null
+   },
+   "exit": {
+    "exit_code": null,
+    "timed_out": null,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Buy",
+     "shares": 65.0,
+     "target_exposure_pct": 48.0,
+     "p_up": 0.62,
+     "expected_return_pct": 3.0,
+     "expected_vol_pct": 5.5,
+     "confidence": 0.6
+    },
+    "n_tool_calls": 11,
+    "tokens": {
+     "input": 24070,
+     "output": 2566,
+     "reasoning": 1844,
+     "cached": 20480,
+     "requests": 4
+    },
+    "wall_s": 19.1,
+    "tool_names": [
+     "get_news",
+     "get_event_risk",
+     "get_earnings_calendar",
+     "get_volatility_stats",
+     "get_portfolio",
+     "get_risk_budget",
+     "get_kelly_sizing",
+     "get_calibration_ledger",
+     "get_returns",
+     "simulate_order",
+     "submit_decision"
+    ],
+    "codex": null
+   },
+   "pass": true
+  },
+  {
+   "run_id": "qwen35_9b__coding_agent__VST_2026-05-06__ORIG__0",
+   "model": "Qwen3.5-9B",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "ok": true,
+    "n_commands_in_events": 7,
+    "n_command_processes_in_strace": 7,
+    "n_command_events_audited": 785,
+    "unmatched_commands": [],
+    "extra_processes": []
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": {
+     "strace_events": 1973,
+     "command_events": 785,
+     "command_file_events": 763,
+     "commands": 7,
+     "tool_calls": 0,
+     "paths_outside": 0,
+     "net_attempts": 0,
+     "net_commands": 0,
+     "relay_strays": 0,
+     "future_date_mentions": 0
+    },
+    "future_date_mentions": []
+   },
+   "exit": {
+    "exit_code": 0,
+    "timed_out": false,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Sell",
+     "shares": 10.0,
+     "target_exposure_pct": 36.5,
+     "p_up": 0.55,
+     "expected_return_pct": 2.5,
+     "expected_vol_pct": 9.2,
+     "confidence": 0.58
+    },
+    "n_tool_calls": 7,
+    "tokens": {
+     "input": 102828,
+     "output": 2601,
+     "reasoning": 1447,
+     "cached": 80784,
+     "turns": 1
+    },
+    "wall_s": 75.7,
+    "tool_names": null,
+    "codex": {
+     "n_commands": 7,
+     "n_file_changes": 0,
+     "n_other_tools": 0,
+     "errors": [
+      "Model metadata for `Qwen/Qwen3.5-9B` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."
+     ]
+    }
+   },
+   "pass": true
+  },
+  {
+   "run_id": "qwen35_9b__harness__VST_2026-05-06__ORIG__0",
+   "model": "Qwen3.5-9B",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "rewrite": {
+    "where": "the user message of the first request (captured in chat())",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "trace_tool_texts_in_requests": true,
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "n_tool_calls_logged": 1,
+    "calls_have_args_and_text": true,
+    "cache_log": {
+     "n_accesses": 3,
+     "n_items_served": 10,
+     "latest_item_time": "20260507T081647",
+     "D": "20260507T090000",
+     "items_at_or_after_D": [],
+     "accesses_for_another_day": 0
+    },
+    "n_tool_calls_record": 1,
+    "ok": true
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": null,
+    "future_date_mentions": null
+   },
+   "exit": {
+    "exit_code": null,
+    "timed_out": null,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Hold",
+     "shares": 0.0,
+     "target_exposure_pct": 37.7,
+     "p_up": 0.52,
+     "expected_return_pct": 0.8,
+     "expected_vol_pct": 4.5,
+     "confidence": 0.4
+    },
+    "n_tool_calls": 1,
+    "tokens": {
+     "input": 4465,
+     "output": 974,
+     "reasoning": null,
+     "cached": null,
+     "requests": 1
+    },
+    "wall_s": 29.8,
+    "tool_names": [
+     "submit_decision"
+    ],
+    "codex": null
+   },
+   "pass": true
+  },
+  {
+   "run_id": "qwen3_8b__coding_agent__VST_2026-05-06__ORIG__0",
+   "model": "Qwen3-8B",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "ok": true,
+    "n_commands_in_events": 3,
+    "n_command_processes_in_strace": 3,
+    "n_command_events_audited": 305,
+    "unmatched_commands": [],
+    "extra_processes": []
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": {
+     "strace_events": 1408,
+     "command_events": 305,
+     "command_file_events": 296,
+     "commands": 3,
+     "tool_calls": 0,
+     "paths_outside": 0,
+     "net_attempts": 0,
+     "net_commands": 0,
+     "relay_strays": 0,
+     "future_date_mentions": 0
+    },
+    "future_date_mentions": []
+   },
+   "exit": {
+    "exit_code": 0,
+    "timed_out": false,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Hold",
+     "shares": 0.0,
+     "target_exposure_pct": 37.7,
+     "p_up": 0.45,
+     "expected_return_pct": 1.5,
+     "expected_vol_pct": 3.5,
+     "confidence": 0.7
+    },
+    "n_tool_calls": 3,
+    "tokens": {
+     "input": 45134,
+     "output": 2038,
+     "reasoning": 1532,
+     "cached": 36608,
+     "turns": 1
+    },
+    "wall_s": 58.2,
+    "tool_names": null,
+    "codex": {
+     "n_commands": 3,
+     "n_file_changes": 0,
+     "n_other_tools": 0,
+     "errors": [
+      "Model metadata for `Qwen/Qwen3-8B` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."
+     ]
+    }
+   },
+   "pass": true
+  },
+  {
+   "run_id": "qwen3_8b__harness__VST_2026-05-06__ORIG__0",
+   "model": "Qwen3-8B",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "VST_2026-05-06",
+   "arm": "ORIG",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "rewrite": {
+    "where": "the user message of the first request (captured in chat())",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 0,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "trace_tool_texts_in_requests": true,
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   },
+   "decision_check": {
+    "ok": true,
+    "problems": []
+   },
+   "audit": {
+    "n_tool_calls_logged": 1,
+    "calls_have_args_and_text": true,
+    "cache_log": {
+     "n_accesses": 3,
+     "n_items_served": 10,
+     "latest_item_time": "20260507T081647",
+     "D": "20260507T090000",
+     "items_at_or_after_D": [],
+     "accesses_for_another_day": 0
+    },
+    "n_tool_calls_record": 1,
+    "ok": true
+   },
+   "leakage": {
+    "flag": false,
+    "reasons": [],
+    "counts": null,
+    "future_date_mentions": null
+   },
+   "exit": {
+    "exit_code": null,
+    "timed_out": null,
+    "error": null
+   },
+   "record": {
+    "decision": {
+     "action": "Hold",
+     "shares": 0.0,
+     "target_exposure_pct": 37.0,
+     "p_up": 0.55,
+     "expected_return_pct": 1.2,
+     "expected_vol_pct": 4.5,
+     "confidence": 0.7
+    },
+    "n_tool_calls": 1,
+    "tokens": {
+     "input": 4299,
+     "output": 1101,
+     "reasoning": null,
+     "cached": null,
+     "requests": 1
+    },
+    "wall_s": 31.3,
+    "tool_names": [
+     "submit_decision"
+    ],
+    "codex": null
+   },
+   "pass": true
+  }
+ ],
+ "rewrite_on_build_stage_runs_of_other_arms": [
+  {
+   "run_id": "deepseek__harness__MCHP_2026-08-07__PLACEBO__0",
+   "model": "DeepSeek",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "MCHP_2026-08-07",
+   "arm": "PLACEBO",
+   "model_served": [
+    "deepseek-flash"
+   ],
+   "rewrite": {
+    "where": "the user message in the session trace (build-stage run: chat() capture not yet added)",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 7,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   }
+  },
+  {
+   "run_id": "qwen35_9b__coding_agent__CB_2026-04-22__PLACEBO__0",
+   "model": "Qwen3.5-9B",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "CB_2026-04-22",
+   "arm": "PLACEBO",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 7,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   }
+  },
+  {
+   "run_id": "qwen35_9b__harness__CB_2026-04-22__UNIT5D__0",
+   "model": "Qwen3.5-9B",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "CB_2026-04-22",
+   "arm": "UNIT5D",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "rewrite": {
+    "where": "the user message in the session trace (build-stage run: chat() capture not yet added)",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 1,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   }
+  },
+  {
+   "run_id": "qwen3_8b__coding_agent__CRWD_2026-08-27__NOLABEL__0",
+   "model": "Qwen3-8B",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "CRWD_2026-08-27",
+   "arm": "NOLABEL",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 5,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   }
+  },
+  {
+   "run_id": "qwen3_8b__coding_agent__MRK_2026-05-07__PLACEBO__0",
+   "model": "Qwen3-8B",
+   "framework": "coding_agent",
+   "framework_label": "Codex CLI",
+   "day_id": "MRK_2026-05-07",
+   "arm": "PLACEBO",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "rewrite": {
+    "where": "the request bodies forwarded by the relay to the model",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 7,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "ok": true
+   }
+  },
+  {
+   "run_id": "qwen3_8b__harness__CRWD_2026-08-27__UNIT5D__0",
+   "model": "Qwen3-8B",
+   "framework": "harness",
+   "framework_label": "harness",
+   "day_id": "CRWD_2026-08-27",
+   "arm": "UNIT5D",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "rewrite": {
+    "where": "the user message in the session trace (build-stage run: chat() capture not yet added)",
+    "block": {
+     "n_lines": 8,
+     "n_found": 8,
+     "missing": [],
+     "n_lines_changed_by_arm": 1,
+     "orig_form_seen": [],
+     "ok": true
+    },
+    "tool_outputs": {
+     "n_block_tool_calls": 0,
+     "ok": true,
+     "rows": []
+    },
+    "ok": true
+   }
+  }
+ ],
+ "deepseek_key_scan": {
+  "n_files_scanned": 471,
+  "n_files_containing_key": 0
+ }
+}

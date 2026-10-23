@@ -1,0 +1,1 @@
+You stopped without calling submit_decision, so nothing is recorded for today. Call submit_decision now with action, shares or target_exposure_pct, p_up, expected_return_pct, expected_vol_pct and reasoning.

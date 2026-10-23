@@ -1,0 +1,47 @@
+Trading day 2026-04-14 — HOOD
+
+CLOSE 79.09   (last 10 closes: 2026-03-31:69.30 2026-04-01:70.11 2026-04-02:68.90 2026-04-06:69.78 2026-04-07:69.65 2026-04-08:71.83 2026-04-09:70.12 2026-04-10:69.19 2026-04-13:71.67 2026-04-14:79.09)
+
+ACCOUNT
+- cash 70707.83
+- shares held 423
+- position value 33455.07
+- total assets 104162.90
+- position 32.1% of total assets
+- one percentage point of exposure = 13.2 shares at today's close
+
+COMPANY NEWS (past 7 days, most recent 10)
+- [20260415T085800] Robinhood Gets Good News From the SEC. Why the Stock Is Jumping. (Yahoo)
+- [20260415T080302] Robinhood stock jumps as SEC scraps $25K pattern day trader rule (Yahoo)
+- [20260415T073705] End of ‘Pattern Day Trader’ Rule Could Turbocharge Retail Stock Trading (Yahoo)
+- [20260415T072750] Stocks making the biggest moves premarket: Bank of America, Morgan Stanley, Robinhood & more (CNBC)
+- [20260415T063551] Social Buzz: Wallstreetbets Stocks Mixed Pre-Bell Wednesday; Robinhood Markets to Advance, Micron Technology to Decline (Yahoo)
+- [20260415T060000] How Retail Investors are navigating volatility (Yahoo)
+- [20260414T212232] Meta, Broadcom, IonQ, D-Wave Quantum And Robinhood: Why These 5 Stocks Are On Investors' Radars Today (Benzinga)
+- [20260414T160612] Robinhood shares jump following raised price target (CNBC)
+- [20260414T133655] Why Robinhood shares are seen to double (Yahoo)
+- [20260414T123100] Cantor Fitzgerald Says Robinhood and Coinbase Are Best Positioned for Prediction Market Growth (Yahoo)
+
+FISCAL POLICY NEWS
+- (none)
+
+MONETARY POLICY NEWS
+- (none)
+
+INSIDER TRANSACTIONS (filed before today)
+- (none)
+
+YOUR LAST 4 DECISIONS
+- 2026-04-10: Buy 413 @ 69.19 -> exposure 28.6%, assets 100000
+- 2026-04-13: Buy 10 @ 71.67 -> exposure 30.0%, assets 101024
+
+PRICE TOOL READINGS (computed for you from the daily price history through today's close; each line is exactly what the named tool returns today)
+- get_trend_signal: {"ema55": 80.6, "spread_8_55_pct": 10.37, "ema21": 72.38, "ema8": 72.25, "close": 79.08999633789062, "signal": "bearish"}
+- get_rsi (period 14): {"rsi": 65.3, "signal": "neutral", "period": 14}
+- get_mean_reversion_signal: {"bollinger_lower": 64.57, "bollinger_upper": 77.68, "bollinger_position": 1.11, "close": 79.08999633789062, "signal": "neutral", "z_score_50d": 0.69}
+- get_macd: {"histogram": 1.252, "macd": -1.411, "cross": "none", "signal": -2.663}
+- get_price_stats: {"ret_60d_pct": -28.33, "close": 79.08999633789062, "pct_from_52w_high": -48.6, "high_52w": 153.86000061035156, "ret_250d_pct": 79.18, "ret_5d_pct": 13.55, "drawdown_from_peak_pct": -48.12, "date": "2026-04-14", "ret_20d_pct": 5.02, "low_52w": 39.209999084472656, "pct_from_52w_low": 101.71}
+- get_support_resistance: {"resistance_above": [84.75, 80.75, 79.57], "support_below": [72.25, 72.79, 75.55], "close": 79.08999633789062}
+- get_volatility_stats: {"note": "big moves cluster: after a large move the next few days are usually larger than average", "vol_zscore_vs_63d": -0.22, "parkinson_vol_10d_pct": 52.7, "atr_14_pct_of_price": 5.46, "ann_vol_20d_pct": 62.7, "regime": "normal", "ann_vol_10d_pct": 57.9, "abs_move_yesterday_pct": 9.85, "atr_14": 4.32, "ann_vol_60d_pct": 72.5}
+
+Decide today's action and call submit_decision.

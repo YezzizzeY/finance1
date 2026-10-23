@@ -1,0 +1,307 @@
+{
+ "system_sha256": "e992af5a450245b4f68e304a55d220ad0370025d0eae8d8392de0881e9bd20bf",
+ "coding_system_sha256": "846913522a3d44eb118eeb773fd9f6bf4dbe98998603be5f6b0fd3be30048a9a",
+ "days": {
+  "MCHP_2026-08-07": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/MCHP_2026-08-07/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 769,
+    "n_news": 496,
+    "last_news_time": "20260810T045700",
+    "D": "20260810T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "15d82e4a6e0f1ccbd120bcdcde7ced1e1d93f61a44bb690be7290a7cc5ae7dd0",
+    "news.csv": "cb705a85565ce4dafb91ce2f319e4faaa072dea6c00559f77580dd1179cdd717",
+    "account.json": "eeb6d847cfa945c19d8458d063282c9e2bbe441c8ee87650cac52989a07d5c05"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "b3f3cf77b47a105cce4e3d20ef8098f03256701a21c2ebc0ef7760e13fe66472",
+     "task_md_sha256": "895cfd7e65f9e075a7fda7127f505a5f90d8c9addfca733f7ff3a6da82673e61",
+     "harness_prompt_chars": 3259,
+     "task_md_chars": 6228,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "432598f4f84a455f5b8b13d4d37e1920e3bef10f098928bead29bdb55034c44b",
+     "task_md_sha256": "ae2a49d1dda3c0a9518b5ad5b442bfe4783ff04f516b8caa7d99bb32eb55c4a0",
+     "harness_prompt_chars": 3161,
+     "task_md_chars": 6130,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "80452ec1a4f265ae6266eeab4cb63a498a81dafcc4fbaca0271cb668f984180e",
+     "task_md_sha256": "aeb92879e41893af317670408b5d7ed2964f8b150bdeb9e34fe8d3f102a9f0ad",
+     "harness_prompt_chars": 3301,
+     "task_md_chars": 6270,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "2a27acaf7beddbb331b600a71301f47ee9c4be6d4bebd69ec9b784236a9f4490",
+     "task_md_sha256": "3ff9680c4e9bbfc43d84d354efade08214df8aac9df34a2e568635645f464318",
+     "harness_prompt_chars": 3259,
+     "task_md_chars": 6228,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  },
+  "HOOD_2026-04-14": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/HOOD_2026-04-14/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 689,
+    "n_news": 1155,
+    "last_news_time": "20260415T085800",
+    "D": "20260415T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "6953437f3e75ad7c448c1f501441f99fcc747da49ee6b1a64ae1ba233688b2bc",
+    "news.csv": "691245f01c158249a7c69b8b5155ffef791610098a007d2c90bb5ec4bf3bebc2",
+    "account.json": "c46cea0840ae1007f80b83be9c2f40cb5f34ecbfd36c4cbfdec9c9dd55c46032"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "8a19405b6fa339c2e45de5cd81d879f4135a5c3ef35880b81d0f08462ce4ad81",
+     "task_md_sha256": "ef326d59e7ab68ce3ac297f713757470aa57228718814b5fc91636d469015363",
+     "harness_prompt_chars": 3239,
+     "task_md_chars": 6208,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "13218aab05db824ecc48d4c5b8dfd3b100a964dc8f0ef36fac8a3095d1ca1191",
+     "task_md_sha256": "39f5251771cb7269539c55c593664ed47f2383aa17f8c4d2b704f85d19abaf74",
+     "harness_prompt_chars": 3139,
+     "task_md_chars": 6108,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "41a1cc09d99048532517ccc96beddc18a161d65d659c6de61c7f71bb5a45a2c6",
+     "task_md_sha256": "0cdf029973f976be06ab3d89e992cf5afc0a75959d98a528eb665c369e74cdcf",
+     "harness_prompt_chars": 3280,
+     "task_md_chars": 6249,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "1914fccdb074946185fc79d12a55ceefb02d857596d757d5bfaf21e94b62d987",
+     "task_md_sha256": "1447d2ae938e4d614e52c9b2ce3f9491043c4f42c08cbe22ab510da31f6f96cd",
+     "harness_prompt_chars": 3239,
+     "task_md_chars": 6208,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  },
+  "CRWD_2026-08-27": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/CRWD_2026-08-27/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 783,
+    "n_news": 1540,
+    "last_news_time": "20260828T081428",
+    "D": "20260828T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "dec6374e623243ca33d9ed5d233d7f3c9660a86fb1ebdbe218368a88940d3a0b",
+    "news.csv": "0d8da05208c631a2bf264efc20990e00aec0b808f0a1d1a800eadc0f598c0305",
+    "account.json": "5623d2555feff738be4e65a9e316848ccbdc1c71680bff2bc80f836ca77f6809"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "32291c0607b856d0913b581412be855cc133aa69e436bd35a015c6ed0b5196ed",
+     "task_md_sha256": "8ce2994f105cb6b4173a7f014016dfad3cfa20bd6808492fa7d604208ba1ceef",
+     "harness_prompt_chars": 3242,
+     "task_md_chars": 6211,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "e1e91c2831fcfcd6ad171141a052e7883a43f0b47fceb2f62acc81665854e15e",
+     "task_md_sha256": "9ade93da0a40cd97950f0981b12fe5fbe779f83760b01b738961e17f5e5d4b83",
+     "harness_prompt_chars": 3141,
+     "task_md_chars": 6110,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "ff923a6286662331020b5d30d0420ab74cc2a27fb374f49d0c56a5af713ed454",
+     "task_md_sha256": "6288a91bac552a8f9dfa626b6ebb32825d19b225473df32a6e02610aa2c6473e",
+     "harness_prompt_chars": 3283,
+     "task_md_chars": 6252,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "e8ebbbd04e1a921c914937544666805121243827d70664e8723daf28bee1687e",
+     "task_md_sha256": "1ce9a79214d82cca03375ea99de4288422fe240d0d7655ff813f22ab279994cf",
+     "harness_prompt_chars": 3242,
+     "task_md_chars": 6211,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  },
+  "VST_2026-05-06": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/VST_2026-05-06/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 705,
+    "n_news": 400,
+    "last_news_time": "20260507T081647",
+    "D": "20260507T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "6e73f0dec20084295a70caa2adad72fc347349cf87aa9ce762f0dc5c23d9c919",
+    "news.csv": "4bb8624a571f5f16b58e7748c2ac68bc66b549565fa66cf8c583693b4e9d865e",
+    "account.json": "5a7b9d9ab35262326ee0d2c66a9fd2b8f0d009e4d29f77735b5d0d1832e9913a"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "4d661032aeeb3bb7eb27c68981604d3d62c49679c4475186972b03a1420176cb",
+     "task_md_sha256": "fa6d0ed5726e851bc77c9f00f1c509d67d7df090ec4bb1331fa2f13a972ff0a2",
+     "harness_prompt_chars": 3113,
+     "task_md_chars": 6080,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "67ebc8808d3ab6d03b1ec8d7acb24b1845c11739a07f658c2d3802dd74755f25",
+     "task_md_sha256": "b371dd8cb449ed9a6acb22bedcf06afbb0f76de06cc99ad6ea96bd1e7441142c",
+     "harness_prompt_chars": 3013,
+     "task_md_chars": 5980,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "fd0a48579fd0b2988e1125dab0eff23f694d6524aafa618238b79657e0e58046",
+     "task_md_sha256": "0971a2ac9b894ab376fef12bedca203a39e3c2e7d7bb28c6a8e0a66c1b7ef95f",
+     "harness_prompt_chars": 3153,
+     "task_md_chars": 6120,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "f123d2c56cf9345852376973a57ca5f6f581b652427f1212d96b63f2352366e3",
+     "task_md_sha256": "54954bc992f0ccc6124ed94aa5d1379f32e3f9186ceec99c20f3b4a4628777d2",
+     "harness_prompt_chars": 3113,
+     "task_md_chars": 6080,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  },
+  "CB_2026-04-22": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/CB_2026-04-22/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 695,
+    "n_news": 284,
+    "last_news_time": "20260423T030331",
+    "D": "20260423T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "459aa8e33778aaa5cad731a0de5077f1133eaad3d95bf56105720cb079e25bb3",
+    "news.csv": "d976f5af6deb39a70e8f886c36900a652dea280f1774f2469f2153abc5aea9d3",
+    "account.json": "4ed8e460f3b347c274d412e138ba8b9b5d9258c8c08da2a05a09a88d97529bfd"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "8a1f8f463c50d7af6a0eae6f915c886ff3347f1d4e019097356d076ca6769bb3",
+     "task_md_sha256": "4ef87f3a324e6868dc80b5c83cc1c10c6cdd501ac0df9de732b41280ad6f2f6d",
+     "harness_prompt_chars": 3182,
+     "task_md_chars": 6147,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "bf810105f1dea1daf516f56c3f6f250870e26e6e4fe508006d9d2e91495dacdf",
+     "task_md_sha256": "02a82c26edd5ebf8508c357ea67cbc0df309dee6248c98a984f037055477a4e1",
+     "harness_prompt_chars": 3082,
+     "task_md_chars": 6047,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "551ff33a3ad439ad0551c5c2299f56005c17adb75c7d021c6c14f334621a8f4e",
+     "task_md_sha256": "a6cdb78a61683e6ed20c078e052fa4ced1ef582840d65387d0fea06dd2db21e2",
+     "harness_prompt_chars": 3222,
+     "task_md_chars": 6187,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "bbaca7ebebd00f65bd1aed610359bf64c3671e477f605cfcb85ad3052e72c6e0",
+     "task_md_sha256": "444eed0764508c676f9c566040ea9cdc296da47bd3e65ac39c26d646121a865f",
+     "harness_prompt_chars": 3182,
+     "task_md_chars": 6147,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  },
+  "MRK_2026-05-07": {
+   "saved_session_check": {
+    "saved_session": "results/grounding_20261012/A_main/sessions/MRK_2026-05-07/FULL_G_0.json.gz",
+    "user_identical": true,
+    "system_identical": true
+   },
+   "workspace": {
+    "problems": [],
+    "n_bars": 706,
+    "n_news": 1031,
+    "last_news_time": "20260508T063708",
+    "D": "20260508T090000",
+    "dates_after_D_mentioned_in_text": {}
+   },
+   "file_sha256": {
+    "prices.csv": "1c993d3221029fad6fde09d9b5ab7171785d0a3b6fea58885ba696acb8f14546",
+    "news.csv": "ffbc95363979f1d4e21cc9d3ab8aa681f9ca5dba29048ae162959bf546bc803e",
+    "account.json": "04d0c18a0eddb51f0808f9a800e4fa70014e370453a10dab2cf1c19a26a8c660"
+   },
+   "arms": {
+    "ORIG": {
+     "harness_prompt_sha256": "dae80d1370ea3df443fd21b7f252ded2867d5047b42377bc9395df91102ba9cc",
+     "task_md_sha256": "f76383986fe38f866c9b8a0256996ae3ec69f474d048128698adb070998e5a40",
+     "harness_prompt_chars": 3613,
+     "task_md_chars": 6580,
+     "task_md_diff_only_in_block": true
+    },
+    "NOLABEL": {
+     "harness_prompt_sha256": "1ae2ec49fe8ad12cf0a7b5dc0809ee7f72a3903006ba98b9b4eb08a81a411e9e",
+     "task_md_sha256": "5d6f4c0ed08baf1958107a14352950d669331e3bd0344d3eca029ee398efd31e",
+     "harness_prompt_chars": 3510,
+     "task_md_chars": 6477,
+     "task_md_diff_only_in_block": true
+    },
+    "UNIT5D": {
+     "harness_prompt_sha256": "a610e6b4e0e014f6019cae3aaffc831df58c92b792bd148ed1db49e432236aff",
+     "task_md_sha256": "a14c2a78677dce1713a42afce53c91563cd8c9ac2926921524d3316aea505c5b",
+     "harness_prompt_chars": 3653,
+     "task_md_chars": 6620,
+     "task_md_diff_only_in_block": true
+    },
+    "PLACEBO": {
+     "harness_prompt_sha256": "98179a05f42753bc35125ccf9ed5f74a35b9e5603a66609985bbc5c88b21fd03",
+     "task_md_sha256": "ec15d4bcd918e1bb4ada92e21236b5a1ddf7cdef95c6f2e9a04b5bce5397fb0a",
+     "harness_prompt_chars": 3613,
+     "task_md_chars": 6580,
+     "task_md_diff_only_in_block": true
+    }
+   }
+  }
+ },
+ "pass": true
+}

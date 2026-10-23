@@ -1,0 +1,300 @@
+{
+ "rewrite_check.json": {
+  "pass": true,
+  "n_checks": 456,
+  "n_with_problems": 0
+ },
+ "prompt_check.json": {
+  "pass": true
+ },
+ "harness_wrapper_check.json": {
+  "pass": true,
+  "ORIG": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 0
+  },
+  "NOLABEL": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 5
+  },
+  "UNIT5D": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 1
+  },
+  "PLACEBO": {
+   "ok": true,
+   "calls": 7,
+   "rewritten": 7
+  }
+ },
+ "sandbox_selftest": {
+  "write_inside": "allowed",
+  "write_outside_home": "blocked: PermissionError",
+  "write_tmp": "blocked: PermissionError",
+  "read_outside": "allowed",
+  "tcp_internet": "blocked: PermissionError",
+  "tcp_local_ssh": "blocked: PermissionError",
+  "udp_socket": "blocked: PermissionError",
+  "dns": "blocked: gaierror",
+  "pass": true,
+  "landlock_abi": 4
+ },
+ "audit_canary": {
+  "CANARY__deepseek__coding_agent__VST_2026-05-06": {
+   "flag": true,
+   "path_flag": true,
+   "project_flag": true,
+   "network_flag": true,
+   "date_flag": true,
+   "outside_write_blocked": true,
+   "n_paths_outside": 3,
+   "pass": true
+  }
+ },
+ "smoke_runs": {
+  "deepseek__coding_agent__HOOD_2026-04-14__ORIG__0": {
+   "framework": "Codex CLI",
+   "model_served": [
+    "deepseek-flash"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Buy",
+    "shares": 699.0,
+    "target_exposure_pct": 85.0,
+    "p_up": 0.72,
+    "expected_return_pct": 6.0,
+    "expected_vol_pct": 10.5,
+    "confidence": 0.66
+   },
+   "n_tool_calls": 14,
+   "tokens": {
+    "input": 185747,
+    "output": 7033,
+    "reasoning": 3862,
+    "cached": 174848,
+    "turns": 1
+   },
+   "wall_s": 43.7,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "deepseek__harness__MCHP_2026-08-07__PLACEBO__0": {
+   "framework": "harness",
+   "model_served": [
+    "deepseek-flash"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Buy",
+    "shares": 87.0,
+    "target_exposure_pct": 13.0,
+    "p_up": 0.56,
+    "expected_return_pct": 1.5,
+    "expected_vol_pct": 10.5,
+    "confidence": 0.5
+   },
+   "n_tool_calls": 9,
+   "tokens": {
+    "input": 19163,
+    "output": 3114,
+    "reasoning": 2234,
+    "cached": 12928,
+    "requests": 3
+   },
+   "wall_s": 19.1,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "qwen35_9b__coding_agent__CB_2026-04-22__PLACEBO__0": {
+   "framework": "Codex CLI",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Hold",
+    "shares": 0.0,
+    "target_exposure_pct": 1.0,
+    "p_up": 0.59,
+    "expected_return_pct": 0.71,
+    "expected_vol_pct": 2.63,
+    "confidence": 0.55
+   },
+   "n_tool_calls": 9,
+   "tokens": {
+    "input": 175279,
+    "output": 6067,
+    "reasoning": 2557,
+    "cached": 151008,
+    "turns": 1
+   },
+   "wall_s": 175.2,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "qwen35_9b__harness__CB_2026-04-22__UNIT5D__0": {
+   "framework": "harness",
+   "model_served": [
+    "Qwen/Qwen3.5-9B"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Hold",
+    "shares": 3.0,
+    "target_exposure_pct": 1.0,
+    "p_up": 0.52,
+    "expected_return_pct": 0.5,
+    "expected_vol_pct": 3.5,
+    "confidence": 0.45
+   },
+   "n_tool_calls": 1,
+   "tokens": {
+    "input": 4496,
+    "output": 989,
+    "reasoning": null,
+    "cached": null,
+    "requests": 1
+   },
+   "wall_s": 29.1,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "qwen3_8b__coding_agent__CRWD_2026-08-27__NOLABEL__0": {
+   "framework": "Codex CLI",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "decision_valid": false,
+   "decision": {
+    "action": null,
+    "shares": null,
+    "target_exposure_pct": null,
+    "p_up": null,
+    "expected_return_pct": null,
+    "expected_vol_pct": null,
+    "confidence": null
+   },
+   "n_tool_calls": 11,
+   "tokens": {
+    "input": 143372,
+    "output": 4162,
+    "reasoning": 1656,
+    "cached": 137792,
+    "turns": 1
+   },
+   "wall_s": 166.0,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": "no decision.json"
+  },
+  "qwen3_8b__coding_agent__MRK_2026-05-07__PLACEBO__0": {
+   "framework": "Codex CLI",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Hold",
+    "shares": 0.0,
+    "target_exposure_pct": 5.0,
+    "p_up": 0.4,
+    "expected_return_pct": -1.0,
+    "expected_vol_pct": 5.0,
+    "confidence": 0.7
+   },
+   "n_tool_calls": 2,
+   "tokens": {
+    "input": 30246,
+    "output": 1848,
+    "reasoning": 1331,
+    "cached": 27296,
+    "turns": 1
+   },
+   "wall_s": 53.2,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "qwen3_8b__coding_agent__VST_2026-05-06__ORIG__0": {
+   "framework": "Codex CLI",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Hold",
+    "shares": 0.0,
+    "target_exposure_pct": 37.7,
+    "p_up": 0.45,
+    "expected_return_pct": 1.2,
+    "expected_vol_pct": 2.8,
+    "confidence": 0.65
+   },
+   "n_tool_calls": 2,
+   "tokens": {
+    "input": 29980,
+    "output": 1590,
+    "reasoning": 1122,
+    "cached": 22288,
+    "turns": 1
+   },
+   "wall_s": 46.1,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  },
+  "qwen3_8b__harness__CRWD_2026-08-27__UNIT5D__0": {
+   "framework": "harness",
+   "model_served": [
+    "Qwen/Qwen3-8B"
+   ],
+   "decision_valid": true,
+   "decision": {
+    "action": "Hold",
+    "shares": 0.0,
+    "target_exposure_pct": 34.0,
+    "p_up": 0.65,
+    "expected_return_pct": 5.8,
+    "expected_vol_pct": 18.2,
+    "confidence": 0.75
+   },
+   "n_tool_calls": 1,
+   "tokens": {
+    "input": 4333,
+    "output": 1155,
+    "reasoning": null,
+    "cached": null,
+    "requests": 1
+   },
+   "wall_s": 44.9,
+   "leakage_flag": false,
+   "leakage_reasons": [],
+   "error": null,
+   "decision_note": null
+  }
+ },
+ "combos_with_a_valid_unflagged_smoke_run": [
+  "deepseek/coding_agent",
+  "deepseek/harness",
+  "qwen35_9b/coding_agent",
+  "qwen35_9b/harness",
+  "qwen3_8b/coding_agent",
+  "qwen3_8b/harness"
+ ],
+ "pass": true
+}

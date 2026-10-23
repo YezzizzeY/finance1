@@ -1,0 +1,41 @@
+{
+ "high": {
+  "status": 200,
+  "s": 5.1,
+  "usage": {
+   "prompt_tokens": 96,
+   "completion_tokens": 27,
+   "total_tokens": 123,
+   "completion_tokens_details": {
+    "reasoning_tokens": 11
+   },
+   "prompt_tokens_details": {
+    "cache_write_tokens": 0
+   }
+  },
+  "error": null
+ },
+ "bogus": {
+  "status": 200,
+  "s": 3.3,
+  "usage": {
+   "prompt_tokens": 95,
+   "completion_tokens": 40,
+   "total_tokens": 135,
+   "completion_tokens_details": {
+    "reasoning_tokens": 24
+   },
+   "prompt_tokens_details": {
+    "cache_write_tokens": 0
+   }
+  },
+  "error": null
+ },
+ "temperature_0.3": {
+  "status": 400,
+  "error": {
+   "message": "invalid temperature: only 1 is allowed for this model",
+   "type": "invalid_request_error"
+  }
+ }
+}

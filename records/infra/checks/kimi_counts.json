@@ -1,0 +1,336 @@
+{
+ "model": {
+  "label": "Kimi K3",
+  "model_id": "kimi-k3",
+  "kind": "kimi",
+  "base_url": "https://api.moonshot.ai",
+  "coding_framework": "Codex CLI",
+  "codex_reasoning_effort": "high"
+ },
+ "cells": {
+  "harness": {
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "flag_kinds": {},
+   "usable": 30,
+   "error_runs": 0,
+   "timed_out": 0,
+   "models_served": [
+    "kimi-k3"
+   ],
+   "tokens_from_records": {
+    "input": 278693,
+    "output": 35387,
+    "reasoning": 15967,
+    "cached": 220672
+   },
+   "mean_tool_calls": 3.7,
+   "sum_wall_s": 1196.5,
+   "invalid_runs": [],
+   "flag_reasons": [],
+   "requests": 68,
+   "finish_reasons": {
+    "tool_calls": 68
+   },
+   "turns": {
+    "1": 3,
+    "3": 9,
+    "2": 17,
+    "4": 1
+   }
+  },
+  "coding_agent": {
+   "planned": 30,
+   "finished": 30,
+   "valid": 30,
+   "invalid": 0,
+   "flagged_excluded": 0,
+   "flag_kinds": {},
+   "usable": 30,
+   "error_runs": 0,
+   "timed_out": 0,
+   "models_served": [
+    "kimi-k3"
+   ],
+   "tokens_from_records": {
+    "input": 1397218,
+    "output": 64636,
+    "reasoning": 32067,
+    "cached": 1147392
+   },
+   "mean_tool_calls": 4.6,
+   "sum_wall_s": 2298.2,
+   "invalid_runs": [],
+   "flag_reasons": [],
+   "relay_usage": {
+    "requests": 159,
+    "input": 1397218,
+    "output": 64636,
+    "reasoning": 32067,
+    "cached": 1147392,
+    "errors": 0,
+    "status": {
+     "200": 159
+    }
+   }
+  }
+ },
+ "api_tokens_total": {
+  "input": 1675911,
+  "output": 100023,
+  "reasoning": 48034,
+  "cached": 1368064
+ },
+ "shifts_primary_flagged_excluded": [
+  {
+   "model": "Kimi K3",
+   "framework": "Codex CLI",
+   "NOLABEL_abs_dlnvol": {
+    "mean": 0.044,
+    "n_days": 6
+   },
+   "NOLABEL_abs_dret": {
+    "mean": 0.6,
+    "n_days": 6
+   },
+   "NOLABEL_dlnvol": {
+    "mean": -0.007,
+    "n_days": 6
+   },
+   "NOLABEL_dret": {
+    "mean": 0.183,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dlnvol": {
+    "mean": 0.091,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dret": {
+    "mean": 0.667,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dlnvol": {
+    "mean": 0.072,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dret": {
+    "mean": 0.45,
+    "n_days": 6
+   },
+   "PLACEBO_dlnvol": {
+    "mean": 0.005,
+    "n_days": 6
+   },
+   "PLACEBO_dret": {
+    "mean": 0.35,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dlnvol": {
+    "mean": 0.043,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dret": {
+    "mean": 0.483,
+    "n_days": 6
+   },
+   "UNIT5D_dlnvol": {
+    "mean": -0.03,
+    "n_days": 6
+   },
+   "UNIT5D_dret": {
+    "mean": -0.4,
+    "n_days": 6
+   }
+  },
+  {
+   "model": "Kimi K3",
+   "framework": "harness",
+   "NOLABEL_abs_dlnvol": {
+    "mean": 0.139,
+    "n_days": 6
+   },
+   "NOLABEL_abs_dret": {
+    "mean": 0.492,
+    "n_days": 6
+   },
+   "NOLABEL_dlnvol": {
+    "mean": 0.08,
+    "n_days": 6
+   },
+   "NOLABEL_dret": {
+    "mean": -0.258,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dlnvol": {
+    "mean": 0.157,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dret": {
+    "mean": 0.717,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dlnvol": {
+    "mean": 0.093,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dret": {
+    "mean": 0.508,
+    "n_days": 6
+   },
+   "PLACEBO_dlnvol": {
+    "mean": 0.084,
+    "n_days": 6
+   },
+   "PLACEBO_dret": {
+    "mean": -0.342,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dlnvol": {
+    "mean": 0.153,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dret": {
+    "mean": 0.392,
+    "n_days": 6
+   },
+   "UNIT5D_dlnvol": {
+    "mean": -0.139,
+    "n_days": 6
+   },
+   "UNIT5D_dret": {
+    "mean": 0.225,
+    "n_days": 6
+   }
+  }
+ ],
+ "shifts_sensitivity_codex_tool_readmitted": [
+  {
+   "model": "Kimi K3",
+   "framework": "Codex CLI",
+   "NOLABEL_abs_dlnvol": {
+    "mean": 0.044,
+    "n_days": 6
+   },
+   "NOLABEL_abs_dret": {
+    "mean": 0.6,
+    "n_days": 6
+   },
+   "NOLABEL_dlnvol": {
+    "mean": -0.007,
+    "n_days": 6
+   },
+   "NOLABEL_dret": {
+    "mean": 0.183,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dlnvol": {
+    "mean": 0.091,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dret": {
+    "mean": 0.667,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dlnvol": {
+    "mean": 0.072,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dret": {
+    "mean": 0.45,
+    "n_days": 6
+   },
+   "PLACEBO_dlnvol": {
+    "mean": 0.005,
+    "n_days": 6
+   },
+   "PLACEBO_dret": {
+    "mean": 0.35,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dlnvol": {
+    "mean": 0.043,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dret": {
+    "mean": 0.483,
+    "n_days": 6
+   },
+   "UNIT5D_dlnvol": {
+    "mean": -0.03,
+    "n_days": 6
+   },
+   "UNIT5D_dret": {
+    "mean": -0.4,
+    "n_days": 6
+   }
+  },
+  {
+   "model": "Kimi K3",
+   "framework": "harness",
+   "NOLABEL_abs_dlnvol": {
+    "mean": 0.139,
+    "n_days": 6
+   },
+   "NOLABEL_abs_dret": {
+    "mean": 0.492,
+    "n_days": 6
+   },
+   "NOLABEL_dlnvol": {
+    "mean": 0.08,
+    "n_days": 6
+   },
+   "NOLABEL_dret": {
+    "mean": -0.258,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dlnvol": {
+    "mean": 0.157,
+    "n_days": 6
+   },
+   "ORIG_rr_abs_dret": {
+    "mean": 0.717,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dlnvol": {
+    "mean": 0.093,
+    "n_days": 6
+   },
+   "PLACEBO_abs_dret": {
+    "mean": 0.508,
+    "n_days": 6
+   },
+   "PLACEBO_dlnvol": {
+    "mean": 0.084,
+    "n_days": 6
+   },
+   "PLACEBO_dret": {
+    "mean": -0.342,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dlnvol": {
+    "mean": 0.153,
+    "n_days": 6
+   },
+   "UNIT5D_abs_dret": {
+    "mean": 0.392,
+    "n_days": 6
+   },
+   "UNIT5D_dlnvol": {
+    "mean": -0.139,
+    "n_days": 6
+   },
+   "UNIT5D_dret": {
+    "mean": 0.225,
+    "n_days": 6
+   }
+  }
+ ],
+ "kimi_key_scan": {
+  "n_files_scanned": 1203,
+  "n_files_containing_key": 0,
+  "files": []
+ }
+}

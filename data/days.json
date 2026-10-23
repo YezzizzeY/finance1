@@ -1,0 +1,214 @@
+{
+ "workflow": "codexpilot_20261018",
+ "seed": 20261018,
+ "rule": {
+  "candidates": "grounding_blocks.json day ids in s1_spec.json with valid saved S1 anchors",
+  "z": "r1 / (exp(lsig) / sqrt(5)) = the spec's z_today (information through close t only)",
+  "big": "|z| >= 2.0",
+  "ordinary": "|z| < 1.0",
+  "draw": "per group sorted by day id, numpy default_rng(SEED).permutation (big first, then ordinary, one generator), skip a ticker or date already taken"
+ },
+ "pool": {
+  "n_candidates": 250,
+  "n_big": 13,
+  "n_ordinary": 184
+ },
+ "sources": {
+  "grounding_blocks": {
+   "path": "results/grounding_20261012/grounding_blocks.json",
+   "sha256": "61ac6d1645f8877dd46ee10eea0454ddce54d36fd79f69b821a624cd1f91db35"
+  },
+  "s1_spec": {
+   "path": "results/q3news_20261012/s1_spec.json",
+   "sha256": "70aac99094712fc75a424cddc2559f1c9dc500dd74896ba8882652e91dd48829"
+  }
+ },
+ "days": [
+  {
+   "day_id": "MCHP_2026-08-07",
+   "ticker": "MCHP",
+   "t": "2026-08-07",
+   "D": "20260810T090000",
+   "anchor_days": [
+    "2026-08-05",
+    "2026-08-06"
+   ],
+   "branch_seed_base": 4107000,
+   "universe_split": "heldout",
+   "z": 3.335030931055445,
+   "r1_pct": 13.01,
+   "sigma5_prior_pct": 8.722930907889868,
+   "daily_sd_prior_pct": 3.90101329461514,
+   "day_type": "big",
+   "check": {
+    "r1_simple_from_bars_pct": 13.891879701809273,
+    "r1_log_from_bars_pct": 13.007938869976323,
+    "sd60_daily_pct": 3.7031506824582365,
+    "z_vs_sd60": 3.512667991501052,
+    "block_sha256": "4ce3673d95a304f45bff2a08057ac832fe8e0192ad3edb338e4ed223e1dc5464",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 769,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-08-07"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/MCHP_2026-08-07.json.gz",
+   "anchor_sha256": "692dd3ce823082354a06957ab247a03161834c98f167c2fe61b1b3b190346046"
+  },
+  {
+   "day_id": "HOOD_2026-04-14",
+   "ticker": "HOOD",
+   "t": "2026-04-14",
+   "D": "20260415T090000",
+   "anchor_days": [
+    "2026-04-10",
+    "2026-04-13"
+   ],
+   "branch_seed_base": 4123000,
+   "universe_split": "heldout",
+   "z": 2.160480765788008,
+   "r1_pct": 9.85,
+   "sigma5_prior_pct": 10.194614979754052,
+   "daily_sd_prior_pct": 4.55917041983354,
+   "day_type": "big",
+   "check": {
+    "r1_simple_from_bars_pct": 10.353004546552924,
+    "r1_log_from_bars_pct": 9.851417377084463,
+    "sd60_daily_pct": 4.4655092073038425,
+    "z_vs_sd60": 2.2061128797968577,
+    "block_sha256": "ac81afa88287f35fb013164a954ab6c0dabfbedade8dfb3a97d3a8340e761e90",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 689,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-04-14"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/HOOD_2026-04-14.json.gz",
+   "anchor_sha256": "f6933562b66d6829c3d0d30dd2854358354c8294a847eb85e9dddfd51c9f9489"
+  },
+  {
+   "day_id": "CRWD_2026-08-27",
+   "ticker": "CRWD",
+   "t": "2026-08-27",
+   "D": "20260828T090000",
+   "anchor_days": [
+    "2026-08-25",
+    "2026-08-26"
+   ],
+   "branch_seed_base": 4056000,
+   "universe_split": "heldout",
+   "z": 4.616117587209291,
+   "r1_pct": 18.65,
+   "sigma5_prior_pct": 9.034143301705349,
+   "daily_sd_prior_pct": 4.0401917082175105,
+   "day_type": "big",
+   "check": {
+    "r1_simple_from_bars_pct": 20.49900387962671,
+    "r1_log_from_bars_pct": 18.647130034933568,
+    "sd60_daily_pct": 3.2501849872391246,
+    "z_vs_sd60": 5.737251912782172,
+    "block_sha256": "e04ca7b9d41d30c83167aa157909b7c2ac82ec9fc91ba532789298e71e4bc612",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 783,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-08-27"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/CRWD_2026-08-27.json.gz",
+   "anchor_sha256": "cd647a6980046c7285b1ae743335212ae7cd836ac522a46c6a470c5de6242fea"
+  },
+  {
+   "day_id": "VST_2026-05-06",
+   "ticker": "VST",
+   "t": "2026-05-06",
+   "D": "20260507T090000",
+   "anchor_days": [
+    "2026-05-04",
+    "2026-05-05"
+   ],
+   "branch_seed_base": 4088000,
+   "universe_split": "heldout",
+   "z": -0.5059387809589856,
+   "r1_pct": -1.31,
+   "sigma5_prior_pct": 5.789730221851064,
+   "daily_sd_prior_pct": 2.5892460694887833,
+   "day_type": "ordinary",
+   "check": {
+    "r1_simple_from_bars_pct": -1.3031579278322658,
+    "r1_log_from_bars_pct": -1.3117235276645693,
+    "sd60_daily_pct": 3.0188452516606756,
+    "z_vs_sd60": -0.43451168188994993,
+    "block_sha256": "645abc356821982afa8c2dd797261e6df745586c939c39ab0018dc1b91028b5c",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 705,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-05-06"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/VST_2026-05-06.json.gz",
+   "anchor_sha256": "662cb37aabd8c9043474539aaf2d39ae13660404f73a52526843e83e2f81a43a"
+  },
+  {
+   "day_id": "CB_2026-04-22",
+   "ticker": "CB",
+   "t": "2026-04-22",
+   "D": "20260423T090000",
+   "anchor_days": [
+    "2026-04-20",
+    "2026-04-21"
+   ],
+   "branch_seed_base": 4015000,
+   "universe_split": "heldout",
+   "z": -0.874663533072147,
+   "r1_pct": -1.18,
+   "sigma5_prior_pct": 3.0166573930230487,
+   "daily_sd_prior_pct": 1.3490901991253672,
+   "day_type": "ordinary",
+   "check": {
+    "r1_simple_from_bars_pct": -1.172218429723182,
+    "r1_log_from_bars_pct": -1.1791430778204033,
+    "sd60_daily_pct": 1.1423461624109696,
+    "z_vs_sd60": -1.0322117030898692,
+    "block_sha256": "4258a368864f7ae81b95148528ecc13cebb678b2593706d44a0e86ba21f815f1",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 695,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-04-22"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/CB_2026-04-22.json.gz",
+   "anchor_sha256": "65a4e82c932aca8b37acde8a5620888d13d8fbda05d2ef9f39d707a8d7e9c535"
+  },
+  {
+   "day_id": "MRK_2026-05-07",
+   "ticker": "MRK",
+   "t": "2026-05-07",
+   "D": "20260508T090000",
+   "anchor_days": [
+    "2026-05-05",
+    "2026-05-06"
+   ],
+   "branch_seed_base": 4240000,
+   "universe_split": "train",
+   "z": -0.5364922268956952,
+   "r1_pct": -1.12,
+   "sigma5_prior_pct": 4.668093980207228,
+   "daily_sd_prior_pct": 2.0876350930201837,
+   "day_type": "ordinary",
+   "check": {
+    "r1_simple_from_bars_pct": -1.1095350725274677,
+    "r1_log_from_bars_pct": -1.1157363256301975,
+    "sd60_daily_pct": 1.5205292924571558,
+    "z_vs_sd60": -0.7337815398657542,
+    "block_sha256": "a99d4d6adf384f161b35deea413951fdd0dd2a488f3e7ba696dc21a739856586",
+    "block_recomputed_identical": true,
+    "block_problems": [],
+    "n_bars_through_t": 706,
+    "first_bar": "2023-07-17",
+    "last_bar": "2026-05-07"
+   },
+   "anchor_file": "results/q3news_20261012/S1/anchors/MRK_2026-05-07.json.gz",
+   "anchor_sha256": "0581761c16348885424a9485f237ab43dbe25275f70ad2db02f0d645f0c748fb"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+# unpacked record archives (make unpack) and new runs (finagent run)
+records/raw/
+runs/
+.venv*/
+__pycache__/
+*.egg-info/
+build/
+.pytest_cache/

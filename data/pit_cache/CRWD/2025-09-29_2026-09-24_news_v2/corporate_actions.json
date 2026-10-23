@@ -1,0 +1,17 @@
+{
+ "ticker": "CRWD",
+ "events": [
+  {
+   "ex_date": "2026-07-02",
+   "kind": "4-for-1 stock split",
+   "factor": 4.0,
+   "evidence": "Benzinga 2026-06-03 'CrowdStrike Holdings Approves 4-For-1 Forward Stock Split, With Split-Adjusted Trading Set To Begin July 2, 2026'; Benzinga 2026-07-02 'CrowdStrike Begins Split-Adjusted Trading'; G = 0.2500; quoted prices about 4 x the panel close until June 2026, about 1 x from July 2026"
+  }
+ ],
+ "G_vs_ext2017_as_of_2026_03_11": {
+  "G": 0.25,
+  "spread": 1.047060482761708e-07,
+  "n": 195
+ },
+ "rule": "bars shown on decision day t = panel bars x product of the factors of the events with ex_date > t (volumes / it); an event with factor null is unknown: its factor counts as 1 and such days are ineligible (ca_ok)"
+}

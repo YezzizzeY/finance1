@@ -1,0 +1,167 @@
+{
+ "source_request": "results/codexpilot_20261018/raw/deepseek__coding_agent__CB_2026-04-22__ORIG__0/relay/00151_req.json",
+ "body_keys": [
+  "client_metadata",
+  "include",
+  "input",
+  "model",
+  "parallel_tool_calls",
+  "prompt_cache_key",
+  "reasoning",
+  "store",
+  "stream",
+  "tool_choice",
+  "tools"
+ ],
+ "tool_types": [
+  "function",
+  "function",
+  "function",
+  "function"
+ ],
+ "tool_names": [
+  "exec_command",
+  "write_stdin",
+  "request_user_input",
+  "view_image"
+ ],
+ "turn1": {
+  "status": 200,
+  "s": 5.8,
+  "events": {
+   "response.created": 1,
+   "response.in_progress": 1,
+   "response.output_item.added": 2,
+   "response.reasoning_summary_part.added": 1,
+   "response.reasoning_summary_text.delta": 7,
+   "response.reasoning_summary_text.done": 1,
+   "response.reasoning_summary_part.done": 1,
+   "response.output_item.done": 2,
+   "response.function_call_arguments.delta": 6,
+   "response.function_call_arguments.done": 1,
+   "response.completed": 1
+  },
+  "usage": {
+   "input_tokens": 4740,
+   "input_tokens_details": {
+    "cache_write_tokens": 4608,
+    "cached_tokens": 0
+   },
+   "output_tokens": 61,
+   "output_tokens_details": {
+    "reasoning_tokens": 8
+   },
+   "total_tokens": 4801
+  },
+  "error": null,
+  "items": [
+   {
+    "type": "reasoning",
+    "keys": [
+     "id",
+     "status",
+     "summary",
+     "type"
+    ],
+    "name": null,
+    "reasoning_text_len": 0,
+    "summary_len": 26,
+    "has_encrypted": false,
+    "head": "{\"type\": \"reasoning\", \"id\": \"rs_yTl2UpQSkKVgxDhVANCe9f8M\", \"status\": \"completed\", \"summary\": [{\"type\": \"summary_text\", \"text\": \"Let me read task.md first.\"}]}"
+   },
+   {
+    "type": "function_call",
+    "keys": [
+     "arguments",
+     "call_id",
+     "id",
+     "name",
+     "status",
+     "type"
+    ],
+    "name": "exec_command",
+    "reasoning_text_len": null,
+    "summary_len": null,
+    "has_encrypted": false,
+    "head": "{\"type\": \"function_call\", \"id\": \"fc_wPuvuBPQmMhNOwc1e6auhezW\", \"status\": \"completed\", \"call_id\": \"exec_command_0_a6bac970\", \"name\": \"exec_command\", \"arguments\": \"{\\\"cmd\\\":\\\"cat task.md\\\"}\"}"
+   }
+  ],
+  "raw_head": [
+   "{\"type\":\"response.created\",\"sequence_number\":0,\"response\":{\"id\":\"resp_6ad4ab2342abd6aba51aefef\",\"object\":\"response\",\"created_at\":1792322340,\"completed_at\":null,\"status\":\"in_progress\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"store\":false,\"background\":false,\"previous_response_i",
+   "{\"type\":\"response.in_progress\",\"sequence_number\":1,\"response\":{\"id\":\"resp_6ad4ab2342abd6aba51aefef\",\"object\":\"response\",\"created_at\":1792322340,\"completed_at\":null,\"status\":\"in_progress\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"store\":false,\"background\":false,\"previous_respon",
+   "{\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"type\":\"reasoning\",\"id\":\"rs_yTl2UpQSkKVgxDhVANCe9f8M\",\"status\":\"in_progress\",\"summary\":[]}}",
+   "{\"type\":\"response.reasoning_summary_part.added\",\"sequence_number\":3,\"item_id\":\"rs_yTl2UpQSkKVgxDhVANCe9f8M\",\"output_index\":0,\"summary_index\":0,\"part\":{\"text\":\"\",\"type\":\"summary_text\"}}",
+   "{\"type\":\"response.reasoning_summary_text.delta\",\"sequence_number\":4,\"item_id\":\"rs_yTl2UpQSkKVgxDhVANCe9f8M\",\"output_index\":0,\"summary_index\":0,\"delta\":\"Let\"}",
+   "{\"type\":\"response.reasoning_summary_text.delta\",\"sequence_number\":5,\"item_id\":\"rs_yTl2UpQSkKVgxDhVANCe9f8M\",\"output_index\":0,\"summary_index\":0,\"delta\":\" me\"}"
+  ]
+ },
+ "turn2": {
+  "status": 200,
+  "s": 5.3,
+  "events": {
+   "response.created": 1,
+   "response.in_progress": 1,
+   "response.output_item.added": 2,
+   "response.reasoning_summary_part.added": 1,
+   "response.reasoning_summary_text.done": 1,
+   "response.reasoning_summary_part.done": 1,
+   "response.output_item.done": 2,
+   "response.function_call_arguments.delta": 20,
+   "response.function_call_arguments.done": 1,
+   "response.completed": 1
+  },
+  "usage": {
+   "input_tokens": 4865,
+   "input_tokens_details": {
+    "cache_write_tokens": 256,
+    "cached_tokens": 4608
+   },
+   "output_tokens": 68,
+   "output_tokens_details": {
+    "reasoning_tokens": 1
+   },
+   "total_tokens": 4933
+  },
+  "error": null,
+  "items": [
+   {
+    "type": "reasoning",
+    "keys": [
+     "id",
+     "status",
+     "summary",
+     "type"
+    ],
+    "name": null,
+    "reasoning_text_len": 0,
+    "summary_len": 0,
+    "has_encrypted": false,
+    "head": "{\"type\": \"reasoning\", \"id\": \"rs_i1jHwgsuZUDAussbtZlOoSCW\", \"status\": \"completed\", \"summary\": [{\"type\": \"summary_text\", \"text\": \"\"}]}"
+   },
+   {
+    "type": "function_call",
+    "keys": [
+     "arguments",
+     "call_id",
+     "id",
+     "name",
+     "status",
+     "type"
+    ],
+    "name": "exec_command",
+    "reasoning_text_len": null,
+    "summary_len": null,
+    "has_encrypted": false,
+    "head": "{\"type\": \"function_call\", \"id\": \"fc_4imG4MHwNDLwD4VQeH0QiIPG\", \"status\": \"completed\", \"call_id\": \"exec_command_1_735936af\", \"name\": \"exec_command\", \"arguments\": \"{\\\"cmd\\\":\\\"printf '{\\\\\\\"action\\\\\\\": \\\\\\\"Hold\\\\\\\"}\\\\\\\\n' > decision.json && cat decision.json\\\"}\"}"
+   }
+  ],
+  "raw_head": [
+   "{\"type\":\"response.created\",\"sequence_number\":0,\"response\":{\"id\":\"resp_6ad4ab2974b282b0cdedadc3\",\"object\":\"response\",\"created_at\":1792322345,\"completed_at\":null,\"status\":\"in_progress\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"store\":false,\"background\":false,\"previous_response_i",
+   "{\"type\":\"response.in_progress\",\"sequence_number\":1,\"response\":{\"id\":\"resp_6ad4ab2974b282b0cdedadc3\",\"object\":\"response\",\"created_at\":1792322345,\"completed_at\":null,\"status\":\"in_progress\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"store\":false,\"background\":false,\"previous_respon",
+   "{\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"type\":\"reasoning\",\"id\":\"rs_i1jHwgsuZUDAussbtZlOoSCW\",\"status\":\"in_progress\",\"summary\":[]}}",
+   "{\"type\":\"response.reasoning_summary_part.added\",\"sequence_number\":3,\"item_id\":\"rs_i1jHwgsuZUDAussbtZlOoSCW\",\"output_index\":0,\"summary_index\":0,\"part\":{\"text\":\"\",\"type\":\"summary_text\"}}",
+   "{\"type\":\"response.reasoning_summary_text.done\",\"sequence_number\":4,\"item_id\":\"rs_i1jHwgsuZUDAussbtZlOoSCW\",\"output_index\":0,\"summary_index\":0,\"text\":\"\"}",
+   "{\"type\":\"response.reasoning_summary_part.done\",\"sequence_number\":5,\"item_id\":\"rs_i1jHwgsuZUDAussbtZlOoSCW\",\"output_index\":0,\"summary_index\":0,\"part\":{\"text\":\"\",\"type\":\"summary_text\"}}"
+  ]
+ }
+}

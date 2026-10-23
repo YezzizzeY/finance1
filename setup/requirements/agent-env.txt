@@ -1,0 +1,6 @@
+# Python environment first on the Codex agent's PATH (python3 -m venv from /usr/bin/python3.12, Python 3.12.3);
+# the agent's PATH is <WS_ROOT>/pyenv/bin:/usr/local/bin:/usr/bin:/bin. Output of `pip freeze` (the venv also holds pip==24.0).
+numpy==2.5.4
+pandas==3.0.6
+python-dateutil==2.9.0.post0
+six==1.17.0

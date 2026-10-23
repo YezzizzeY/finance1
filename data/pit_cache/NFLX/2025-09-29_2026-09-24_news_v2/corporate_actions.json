@@ -1,0 +1,17 @@
+{
+ "ticker": "NFLX",
+ "events": [
+  {
+   "ex_date": "2025-11-17",
+   "kind": "10-for-1 stock split",
+   "factor": 10.0,
+   "evidence": "Yahoo 2025-10-30 'Netflix Announces Ten-For-One Stock Split'; Yahoo 2025-11-17 07:11 'Netflix Stock Split Kicks in Today'; news-quoted prices about 10 x the panel close in October 2025"
+  }
+ ],
+ "G_vs_ext2017_as_of_2026_03_11": {
+  "G": 1.0,
+  "spread": 1.1589092330233086e-07,
+  "n": 195
+ },
+ "rule": "bars shown on decision day t = panel bars x product of the factors of the events with ex_date > t (volumes / it); an event with factor null is unknown: its factor counts as 1 and such days are ineligible (ca_ok)"
+}

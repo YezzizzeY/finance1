@@ -1,0 +1,30 @@
+2026-10-18 14:36:55 smoke stage: 8 ORIG runs on VST_2026-05-06 -> results/codexpilot_20261018/smoke_orig
+2026-10-18 14:36:56 qwen3_8b: starting vLLM
+2026-10-18 14:37:40 start deepseek harness (1 runs)
+2026-10-18 14:37:40 start deepseek coding agent (1 runs)
+2026-10-18 14:37:59 done deepseek harness (1 runs): 1 runs in 19 s, valid 1, flagged 0
+2026-10-18 14:38:06 qwen3_8b: vLLM ready on GPU 0 (pid 3277628)
+2026-10-18 14:38:06 start qwen3_8b harness (1 runs)
+2026-10-18 14:38:06 start qwen3_8b coding agent (1 runs)
+2026-10-18 14:38:06 done deepseek coding agent (1 runs): 1 runs in 26 s, valid 1, flagged 0
+2026-10-18 14:38:06 deepseek: relay {'key': 'deepseek', 'pid': 3286949, 'state': 'stopped'}
+2026-10-18 14:38:37 done qwen3_8b harness (1 runs): 1 runs in 31 s, valid 1, flagged 0
+2026-10-18 14:39:05 done qwen3_8b coding agent (1 runs): 1 runs in 59 s, valid 1, flagged 0
+2026-10-18 14:39:05 qwen3_8b: relay {'key': 'qwen3_8b', 'pid': 3291259, 'state': 'stopped'}
+2026-10-18 14:42:08 qwen3_8b: vLLM {'key': 'qwen3_8b', 'pid': 3277628, 'state': 'stopped', 'children_killed': []}
+2026-10-18 14:42:08 qwen35_9b: starting vLLM
+2026-10-18 14:42:32 smoke stage: 4 ORIG runs on VST_2026-05-06 -> results/codexpilot_20261018/smoke_orig
+2026-10-18 14:42:33 qwen35_9b: starting vLLM
+2026-10-18 14:45:03 qwen35_9b: vLLM ready on GPU 0 (pid 3334704)
+2026-10-18 14:45:03 start qwen35_9b harness (1 runs)
+2026-10-18 14:45:03 start qwen35_9b coding agent (1 runs)
+2026-10-18 14:45:33 done qwen35_9b harness (1 runs): 1 runs in 30 s, valid 1, flagged 0
+2026-10-18 14:46:20 done qwen35_9b coding agent (1 runs): 1 runs in 77 s, valid 1, flagged 0
+2026-10-18 14:46:20 qwen35_9b: relay {'key': 'qwen35_9b', 'pid': 3359050, 'state': 'stopped'}
+2026-10-18 14:46:25 qwen35_9b: vLLM {'key': 'qwen35_9b', 'pid': 3334704, 'state': 'stopped', 'children_killed': []}
+2026-10-18 20:14:06 smoke stage: 2 ORIG runs on VST_2026-05-06 -> results/codexpilot_20261018/smoke_orig
+2026-10-18 20:14:06 start kimi harness (1 runs)
+2026-10-18 20:14:46 done kimi harness (1 runs): 1 runs in 40 s, valid 1, flagged 0
+2026-10-18 20:14:46 start kimi coding agent (1 runs)
+2026-10-18 20:15:46 done kimi coding agent (1 runs): 1 runs in 59 s, valid 1, flagged 0
+2026-10-18 20:15:46 kimi: relay {'key': 'kimi', 'pid': 2085077, 'state': 'stopped'}
