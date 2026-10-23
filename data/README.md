@@ -26,6 +26,8 @@ What each file is, who reads it, where it came from and under what terms: [`docs
 saw, *written by* `finagent prompts` from the data above, and checked by `finagent prompts --check` (byte equality
 with a fresh regeneration), not by `MANIFEST.sha256`. **[`evidence_relations/`](#evidence_relations)** below is a
 second, independent, CPU-only extension with its own verification, not part of the pilot or of `finagent verify`.
+**[`mechanisms/`](#mechanisms)** (7,011 files, 107.9 MB) holds the inputs of the four mechanism analyses, with its own
+`mechanisms/MANIFEST.sha256`, checked by `finagent verify` ("mechanism data").
 
 ## evidence_relations
 
@@ -76,3 +78,26 @@ splice a headline dated on or after day t) and the tool-redundancy matrix's 42 f
 
 Full design, the real-day ground-truth claims at their exact precision, and the tool-redundancy methodology:
 [`docs/EVIDENCE_RELATIONS.md`](../docs/EVIDENCE_RELATIONS.md).
+
+## mechanisms
+
+Saved agent sessions and trajectories, and the rational-benchmark tables, that the four mechanism analyses read
+(salience, proximity, position adjustment, thinking; CPU only, no model calls). Byte-identical copies from the
+research workspace, listed file by file in [`mechanisms/README.md`](mechanisms/README.md) and hashed in
+`mechanisms/MANIFEST.sha256` (7,011 files, the README.md files excluded). Code: `src/finagent/mechanisms/`; outputs:
+[`../results/mechanisms/`](../results/mechanisms/); design and findings: [`docs/MECHANISMS.md`](../docs/MECHANISMS.md).
+
+| Folder | What it is | Files | Size |
+|---|---|---:|---:|
+| [`mechanisms/sessions/newsagent/`](mechanisms/README.md) | Qwen3.5-9B tool-agent sessions, 250 ticker-days × FULL / NO_NEWS (k = 0..3) and FULL_T06 (k = 0, 1) | 2,500 | 37.7 MB |
+| [`mechanisms/sessions/q3news_s1/`](mechanisms/README.md) | the same days and arms, Qwen3-8B with thinking on | 2,500 | 35.4 MB |
+| [`mechanisms/salience/`](mechanisms/salience/README.md) | 2,000 Qwen3-8B grounding sessions; the rational benchmark (`rule.json`, `events_all.parquet`, `nonevent_days.parquet`) | 2,003 | 29.5 MB |
+| [`mechanisms/position_adjustment/`](mechanisms/position_adjustment/README.md) | six BASE-policy multi-day trajectory files; the two benchmark tables again | 8 | 5.3 MB |
+| [`mechanisms/proximity/`](mechanisms/proximity/README.md), [`mechanisms/thinking/`](mechanisms/thinking/README.md) | README only: these two analyses read the shared session corpora | 0 | — |
+
+```sh
+finagent mech-salience && finagent mech-proximity && finagent mech-position && finagent mech-thinking   # results/mechanisms/*/data.json
+finagent mech-page                                                                                      # results/mechanisms/page/mechanisms.html
+```
+
+or `make mechanisms` (also writes the good-thinking theory document, `docs/GOOD_THINKING.md`).

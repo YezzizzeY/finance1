@@ -27,6 +27,18 @@ COMMANDS: dict[str, tuple[str, str]] = {
                          "rebuild the four real_day_perturbations families (real headlines/numbers, known ground truth)"),
     "evidence-tools":   ("finagent.evidence_relations.tool_redundancy:main",
                          "rebuild the tool-redundancy matrix (23 tools x 96 tickers x ~248 days)"),
+    "mech-salience":    ("finagent.mechanisms.salience:main",
+                         "salience: does the big annualised vol number pull the 5-day vol forecast? -> results/mechanisms/salience/"),
+    "mech-proximity":   ("finagent.mechanisms.proximity:main",
+                         "proximity: does calling the vol tool last give its number more weight? -> results/mechanisms/proximity/"),
+    "mech-position":    ("finagent.mechanisms.position_adjustment:main",
+                         "position changes against a rational sizing rule -> results/mechanisms/position_adjustment/"),
+    "mech-thinking":    ("finagent.mechanisms.thinking:main",
+                         "weighing / relating language in 4,000 reasoning texts -> results/mechanisms/thinking/"),
+    "mech-page":        ("finagent.mechanisms.page:main",
+                         "the four-mechanism page (Chinese) from the four data.json -> results/mechanisms/page/mechanisms.html"),
+    "mech-theory-doc":  ("finagent.mechanisms.theory_doc:main",
+                         "the good-thinking theory document -> docs/good_thinking/*.docx and docs/GOOD_THINKING.md"),
 }
 
 

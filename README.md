@@ -89,8 +89,8 @@ three charts.*
 
 | Level | What it shows | Needs | Time (CPU) |
 |---|---|---|---|
-| **L0** | every input byte, prompt, tool schema and tool output is the one the pilot used | this repository | ~15 s |
-| **L1** | every record and every reported number follows from the shipped run logs | the records unpacked (436 MB) | ~10 s + ~12 s |
+| **L0** | every input byte, prompt, tool schema and tool output is the one the pilot used | this repository | ~16 s |
+| **L1** | every record and every reported number follows from the shipped run logs (and the mechanism results from their saved sessions) | the records unpacked (436 MB) | ~10 s + ~42 s |
 | **L2** | the leakage audit of the 150 coding-agent runs gives the same verdicts | the records unpacked | ~6 s |
 | **L3** | any model × framework cell can be rerun with the same protocol | Linux ≥ 6.7, a GPU or API keys, Codex 0.162.1 | minutes to an hour per cell |
 
@@ -103,14 +103,14 @@ pip install -r setup/requirements/runner.txt -e ".[test]"     # or: make setup
 ```
 
 ```sh
-finagent verify --level L0    # 10 of 10 checks passed (L0)
+finagent verify --level L0    # 11 of 11 checks passed (L0)
 finagent unpack               # 4443 of 4443 files in records/raw match records/MEMBERS.sha256
-finagent verify --level L1    # 11 of 11 checks passed (L1)
+finagent verify --level L1    # 17 of 17 checks passed (L1)
 finagent verify --level L2    # 2 of 2 checks passed (L2)
 ```
 
 `make verify` runs all of this in one go: it unpacks the records first if needed and prints
-`23 of 23 checks passed (L0, L1, L2)` in about 30 s on the original host (2 × Xeon Platinum 8352V).
+`30 of 30 checks passed (L0, L1, L2)` in about 65 s on the original host (2 × Xeon Platinum 8352V).
 `finagent analyze --check` reports `same` for each of the 6 files in `results/`, and `finagent audit`
 reports `150 of 150 verdicts identical`. [REPRODUCING](docs/REPRODUCING.md) explains every check, and
 `make test` runs them as tests, with the golden-fixture unit tests.
@@ -136,7 +136,7 @@ lists each source of difference.
 ├── README.md, README.zh-CN.md   this overview, in English and Chinese
 ├── LICENSE                      MIT, for the code
 ├── DATA_LICENSE.md              CC BY 4.0 for our records and data; the terms of third-party material and the news notice
-├── pyproject.toml, Makefile     the `finagent` package; make setup | unpack | verify | analyze | audit | prompts | figures | test | clean
+├── pyproject.toml, Makefile     the `finagent` package; make setup | unpack | verify | analyze | audit | prompts | figures | test | clean | mechanisms
 ├── setup/
 │   ├── experiment.toml          design constants: days, arms, runs per arm, seeds, turn limit, tool-result cut, wall cap, concurrency
 │   ├── models.toml              one table per model: ids, endpoint, harness request, Codex settings, vLLM flags, weights revision
@@ -147,7 +147,8 @@ lists each source of difference.
 │   └── scripts/                 host setup for new runs: runner, agent env, Codex 0.162.1, vLLM env, weights
 ├── data/                        every input, byte-identical: days, price panel, point-in-time caches (96 tickers), anchors, selection files
 │   ├── prompts/                 every text the models saw, written by `finagent prompts` (72 files)
-│   └── evidence_relations/      CPU-only extension inputs: day pool, real-day prompt perturbations, tool-redundancy matrix, synthetic benchmark
+│   ├── evidence_relations/      CPU-only extension inputs: day pool, real-day prompt perturbations, tool-redundancy matrix, synthetic benchmark
+│   └── mechanisms/              saved sessions and trajectories, rational-benchmark tables: inputs of the four mechanism analyses
 ├── src/finagent/
 │   ├── cli.py, config.py        the `finagent` command; folders, configs and host settings
 │   ├── data/                    point-in-time cache, corporate actions, realised outcomes, anchor states
@@ -161,11 +162,15 @@ lists each source of difference.
 │   ├── evidence_relations/      day pool, real_day_perturbations, tool_redundancy, the synthetic two-signal Bayesian
 │   │                            benchmark and its three reference forecasters (`finagent evidence-pool|evidence-real-day|
 │   │                            evidence-tools|evidence-synthetic|evidence-reference-models`)
+│   ├── mechanisms/              salience, proximity, position adjustment, thinking; their page; the theory document
+│   │                            (`finagent mech-salience|mech-proximity|mech-position|mech-thinking|mech-page|mech-theory-doc`)
 │   └── verify.py                the checks of L0 to L2, and `finagent unpack`
 ├── records/                     run evidence: runs.jsonl (300 records), 11 archives of run folders, infra logs and checks, hashes
 ├── results/                     analysis outputs and figures, recomputed by `finagent analyze` and `finagent figures`
-│   └── evidence_relations/      reference_models/: the synthetic benchmark's three non-LLM baselines (an analysis output)
-├── docs/                        PROTOCOL, REPRODUCING, TOOLS, DATA, PROVENANCE, ENVIRONMENT, LIMITATIONS; Apache-2.0 text (Codex)
+│   ├── evidence_relations/      reference_models/: the synthetic benchmark's three non-LLM baselines (an analysis output)
+│   └── mechanisms/              <analysis>/data.json and README.md for the four analyses; page/mechanisms.html
+├── docs/                        PROTOCOL, REPRODUCING, TOOLS, DATA, PROVENANCE, ENVIRONMENT, LIMITATIONS, MECHANISMS, GOOD_THINKING
+│                                (+ good_thinking/: the theory document and its literature data); Apache-2.0 text (Codex)
 └── tests/                       pytest wrappers around the checks, and golden fixtures recorded from the original code
 ```
 
@@ -177,9 +182,11 @@ lists each source of difference.
 | [`data/prompts/`](data/prompts/README.md) | system prompts, tool schemas, the reminder, the agent prompt, and for each day and arm the harness prompt and `task.md` | 72 files |
 | [`records/`](records/README.md) | one `record.json` per run; for each run the session or the Codex logs, relay bodies, strace and workspace; smoke runs and the audit canary; vLLM, relay and run logs | 11 archives, 12.6 MB packed, 4,443 files and 436 MB unpacked |
 | [`results/`](results/README.md) | the five-model page, its metrics and excerpts, run counts, five figures | 6 files and 5 figures |
+| [`data/mechanisms/`](data/mechanisms/README.md) + [`results/mechanisms/`](results/mechanisms/) | 5,000 saved Qwen3.5-9B / Qwen3-8B tool-agent sessions on 250 real ticker-days, 2,000 grounding sessions, six multi-day trajectory files and the rational-benchmark tables, under `data/`; the four analyses' `data.json` and their page under `results/` | 7,011 files, 107.9 MB (inputs) |
 | [`data/evidence_relations/`](data/evidence_relations/) + [`results/evidence_relations/`](results/evidence_relations/) | day pool (197 days, 96 tickers), real-day prompt perturbations (4 families, 1,742 rows with a known ground truth), tool-redundancy matrix (23 tools x 96 tickers x ~248 days), a synthetic two-signal Bayesian benchmark (30 conditions, 153,600 rows, shipped xz-compressed, 13.0 MB) under `data/`, and its three reference forecasters (an analysis output) under `results/` | see each subfolder's own README.md |
 
-Every file has a sha256 in `data/MANIFEST.sha256`, `records/SHA256SUMS` or `records/MEMBERS.sha256`.
+Every file has a sha256 in `data/MANIFEST.sha256`, `data/mechanisms/MANIFEST.sha256`, `records/SHA256SUMS` or
+`records/MEMBERS.sha256`.
 Provenance back to the vendors is in [docs/PROVENANCE.md](docs/PROVENANCE.md), and a description of each
 file in [docs/DATA.md](docs/DATA.md).
 
@@ -253,6 +260,43 @@ finagent evidence-synthetic && finagent evidence-reference-models               
 or `make evidence-pool evidence-real-day evidence-tools evidence-synthetic evidence-reference-models`.
 [data/README.md](data/README.md#evidence_relations) lists every subfolder; `docs/EVIDENCE_RELATIONS.md` has the
 full design, the real-day ground-truth claims at their exact precision, and the tool-redundancy methodology.
+
+## Mechanisms: why does the agent over-react?
+
+Four analyses of agent sessions that were already run and saved (Qwen3.5-9B, with Qwen3-8B as a cross-check), under
+`data/mechanisms/` and `results/mechanisms/`: CPU only, no model calls, not part of the pilot above, but checked by
+`finagent verify` (one data check at L0, six rebuild checks at L1). Each one asks whether a candidate cause of the
+over-reaction found earlier is visible in the sessions. Full method, numbers and caveats: [docs/MECHANISMS.md](docs/MECHANISMS.md).
+
+- **Salience: not on average, but a rare literal copy.** Once the rational 5-day sigma is known, the big annualised
+  volatility number adds nothing to the 5-day forecast (coefficient −0.007, t = −0.36, 1,445 sessions). But 27 of the
+  1,445 sessions (1.9%) submit the annual number itself as the 5-day volatility, and those forecasts are about 5.6
+  times off against 1.9 times for the rest (t = 8.8). The copy group is small, so its rate is noisy; news makes no
+  detectable difference (2.2% against 1.6%, p ≈ 0.43, low power).
+- **Proximity: no effect, with enough data to see one.** Whether the volatility tool is the last call before the
+  decision does not change how much its number moves the forecast: 128 days with both orders, 420 sessions, slope
+  difference p = 0.59, day fixed effects p = 0.73. The planned second test was impossible: `get_risk_budget` reports
+  the same 20-day number as `get_volatility_stats` (32 of 32 sessions identical).
+- **Position adjustment: about 6.7 times noisier than a rational rule.** On 692 day-to-day changes (one window,
+  January 2026), the agent's exposure changes have 6.7 times the standard deviation of a Kelly-style rule's, and they
+  do not follow it (slope +0.22, cluster SE about 0.29; rank correlation −0.16). The ratio depends on the rule's
+  scale k (3.4 at 2k, 10.8 at k/2); the eventful subset (16 changes, 5 stocks) is too small to test eventful against
+  quiet days.
+- **Thinking: more relating with news, little real relating.** In 4,000 reasoning texts, relationship language
+  (strict tier) is more common with news in the prompt (63.2% against 51.7%, z = 7.3). But read by hand only about one
+  match in four (4 of 17, 95% interval 9.6% to 47.3%) really relates two pieces of evidence, and only 2.8% of the
+  sessions that use both news and the volatility tool connect the two in one sentence. This is a keyword method, not a
+  validated classifier.
+
+`results/mechanisms/page/mechanisms.html` shows the four results (in Chinese), byte-identical to the research page.
+[docs/GOOD_THINKING.md](docs/GOOD_THINKING.md) (also as `docs/good_thinking/good_thinking_20261023.docx`, in Chinese)
+sets out from the literature what "good thinking" should mean: information weight and the relations between pieces of
+information, with how to measure them and a 44-entry, independently checked literature list.
+
+```sh
+make mechanisms                # the four data.json, the page and the theory document (about 30 s)
+finagent mech-thinking --check # rebuild one in memory and compare with the shipped file
+```
 
 ## License
 

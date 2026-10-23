@@ -5,15 +5,15 @@ code and recompute every reported number. L3 reruns the experiment and needs a p
 
 | Level | Command | Expected output | Time |
 |---|---|---|---|
-| L0 | `finagent verify --level L0` | `10 of 10 checks passed (L0)` | ~15 s |
-| L1 | `finagent unpack` then `finagent verify --level L1` | `4443 of 4443 files … match`, `11 of 11 checks passed (L1)` | ~10 s + ~12 s |
+| L0 | `finagent verify --level L0` | `11 of 11 checks passed (L0)` | ~16 s |
+| L1 | `finagent unpack` then `finagent verify --level L1` | `4443 of 4443 files … match`, `17 of 17 checks passed (L1)` | ~10 s + ~42 s |
 | L2 | `finagent verify --level L2` | `2 of 2 checks passed (L2)` | ~6 s |
 | L3 | `finagent run --model <key> --framework <framework>` | 30 new run folders in `runs/pilot/raw/` | 1 min to 1 h per cell in the pilot |
 
 The times were measured on the original host (2 × Xeon Platinum 8352V); L0 to L2 use no GPU.
 
 **Contents.** [Install](#install) · [L0](#l0-the-repository) · [L1](#l1-records-and-results) · [L2](#l2-the-audit) ·
-[L3](#l3-new-runs) · [Expected differences](#expected-differences)
+[L3](#l3-new-runs) · [Expected differences](#expected-differences) · [Mechanisms](#mechanisms-four-analyses-of-saved-sessions)
 
 ## Install
 
@@ -27,7 +27,7 @@ pip install -r setup/requirements/runner.txt -e ".[test]"     # or: make setup
 
 `setup/requirements/runner.txt` pins the exact versions of the environment that ran the pilot. The install must
 be editable, because `finagent` finds `data/`, `records/` and `results/` relative to the checkout. With
-access to PyPI, the install takes about 25 s. `finagent --help` lists the ten commands, and
+access to PyPI, the install takes about 25 s. `finagent --help` lists every command, and
 `finagent <command> --help` shows the options of each.
 
 ## L0: the repository
@@ -48,6 +48,7 @@ finagent verify --level L0
 | day selection | the draw rebuilt from `data/selection/` and `data/anchors/` against `data/days.json` |
 | arm rewrites | 456 rewrite checks, each row against `records/infra/checks/rewrite_check.json` |
 | golden tool outputs | 1,896 tool calls, 24 stateful sequences and 60 `submit_decision` replies against outputs recorded from the original code (`tests/fixtures/`) |
+| mechanism data | the 7,011 files of `data/mechanisms/` (two session corpora, grounding sessions, trajectories, benchmark tables) against `data/mechanisms/MANIFEST.sha256` |
 
 You can also check the hashes without `finagent`:
 
@@ -77,6 +78,15 @@ finagent analyze --check        # "same" for each of the 6 files in results/
 | codex commands | the 150 sandbox and `codex exec` command lines (write roots, relay port, log path, prompt) and the size of the agent's environment, regenerated the same way, against the first `execve` in each `strace.txt` |
 | analysis outputs | the 6 files in `results/`, recomputed byte for byte |
 | figures | the 5 charts in `results/figures/`, redrawn byte for byte |
+| mechanism salience | `results/mechanisms/salience/data.json`, rebuilt byte for byte from 6,500 saved sessions, the benchmark tables and the price panel |
+| mechanism proximity | `results/mechanisms/proximity/data.json`, rebuilt from the 1,000 FULL newsagent sessions |
+| mechanism position | `results/mechanisms/position_adjustment/data.json`, rebuilt from the six trajectory files and the benchmark tables |
+| mechanism thinking | `results/mechanisms/thinking/data.json`, rebuilt from 4,000 reasoning texts |
+| mechanism page | `results/mechanisms/page/mechanisms.html`, redrawn from the four `data.json`; the 72 numbers its text types by hand must agree with them |
+| theory document | `docs/good_thinking/good_thinking_20261023.docx` and `docs/GOOD_THINKING.md`, rebuilt from `docs/good_thinking/good_thinking_theory.json` |
+
+The six mechanism checks read `data/mechanisms/`, the price panel and `docs/good_thinking/`, not the records; they sit in
+L1 because, like "analysis outputs", they recompute shipped results.
 
 `finagent analyze` writes `results/`, and `finagent figures` redraws the charts from it.
 [`results/README.md`](../results/README.md) explains each output.
@@ -96,9 +106,9 @@ The audit judges paths, so it must use the original host's folders: for the ship
 and the smoke folders in it) both commands read `setup/host.recorded.env`. For other run folders
 `finagent audit` uses `FINAGENT_HOST_ENV`, or `--host-env FILE`.
 
-Everything at once: `make verify` unpacks the records first if needed and prints
-`23 of 23 checks passed (L0, L1, L2)`. `make test` runs every check as a test (`pytest -q`), with the
-golden-fixture unit tests, in about 45 s.
+Everything at once: `make verify` unpacks the records first if needed and prints `30 of 30 checks passed
+(L0, L1, L2)` in about 65 s. `make test` runs every check as a test (`pytest -q`), with the golden-fixture,
+evidence_relations and mechanism unit tests: 229 tests in about 4 minutes.
 
 ## L3: new runs
 
@@ -284,3 +294,28 @@ The real-day half (day pool, real-day prompt perturbations, tool-redundancy matr
 `data/evidence_relations/real_day_perturbations/README.md`
 and `data/evidence_relations/tool_redundancy/README.md` for its own build and verification commands (`finagent evidence-pool`,
 `evidence-real-day`, `evidence-tools`).
+
+## Mechanisms: four analyses of saved sessions
+
+The four mechanism analyses (salience, proximity, position adjustment, thinking; [MECHANISMS.md](MECHANISMS.md)), their
+page and the good-thinking theory document are CPU only and make no model calls. Their inputs are in `data/mechanisms/`
+(and the price panel); `finagent verify` checks them (the "mechanism data" check at L0, six rebuild checks at L1).
+To rebuild them yourself:
+
+```sh
+make mechanisms                  # = finagent mech-salience, mech-proximity, mech-position, mech-thinking, mech-page,
+                                 #   mech-theory-doc (about 30 s); each prints what it wrote
+finagent mech-salience --check   # any of the six with --check: rebuild in memory, "same" or "DIFFERENT", exit 1 if different
+```
+
+| Command | Output | Time |
+|---|---|---|
+| `finagent mech-salience` | `results/mechanisms/salience/data.json` | ~10 s |
+| `finagent mech-proximity` | `results/mechanisms/proximity/data.json` | ~2 s |
+| `finagent mech-position` | `results/mechanisms/position_adjustment/data.json` | < 1 s |
+| `finagent mech-thinking` | `results/mechanisms/thinking/data.json` | ~18 s |
+| `finagent mech-page` | `results/mechanisms/page/mechanisms.html` (from the four `data.json`) | < 1 s |
+| `finagent mech-theory-doc` | `docs/good_thinking/good_thinking_20261023.docx`, `docs/GOOD_THINKING.md` | < 1 s |
+
+All six are deterministic: running `make mechanisms` twice (the second time with another `PYTHONHASHSEED`) gives
+byte-identical files. The .docx is a stored zip with fixed timestamps, so it does not depend on the zlib build.

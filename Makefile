@@ -3,7 +3,8 @@ PY ?= python3.12
 PYTHON ?= .venv/bin/python
 
 .PHONY: help setup unpack verify analyze audit prompts figures test clean evidence-pool evidence-real-day evidence-tools \
-       evidence-synthetic evidence-reference-models
+       evidence-synthetic evidence-reference-models mechanisms mech-salience mech-proximity mech-position mech-thinking \
+       mech-page mech-theory-doc
 .DEFAULT_GOAL := help
 
 help:     # this list
@@ -56,3 +57,23 @@ evidence-synthetic:          # synthetic two-signal Bayesian benchmark -> data/e
 
 evidence-reference-models: evidence-synthetic   # bayes_optimal/counting_naive/salience_follower -> results/evidence_relations/reference_models/
 	$(PYTHON) -m finagent evidence-reference-models
+
+mechanisms: mech-salience mech-proximity mech-position mech-thinking mech-page mech-theory-doc   # all six below, in order (CPU only, about 30 s)
+
+mech-salience:      # salience of the annualised vol number -> results/mechanisms/salience/data.json
+	$(PYTHON) -m finagent mech-salience
+
+mech-proximity:     # calling position of the vol tool -> results/mechanisms/proximity/data.json
+	$(PYTHON) -m finagent mech-proximity
+
+mech-position:      # position changes vs the rational sizing rule -> results/mechanisms/position_adjustment/data.json
+	$(PYTHON) -m finagent mech-position
+
+mech-thinking:      # weighing / relating language in 4,000 reasoning texts -> results/mechanisms/thinking/data.json
+	$(PYTHON) -m finagent mech-thinking
+
+mech-page:          # the four-mechanism page from the four data.json -> results/mechanisms/page/mechanisms.html
+	$(PYTHON) -m finagent mech-page
+
+mech-theory-doc:    # the good-thinking theory document -> docs/good_thinking/good_thinking_20261023.docx, docs/GOOD_THINKING.md
+	$(PYTHON) -m finagent mech-theory-doc

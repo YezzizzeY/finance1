@@ -22,12 +22,15 @@ if not (ROOT / "setup" / "experiment.toml").is_file():
 CONFIGS = ROOT / "setup"
 RECORDS = ROOT / "records"
 RESULTS = ROOT / "results"
+DOCS = ROOT / "docs"
 RAW = RECORDS / "raw"                                       # the run folders, after `finagent unpack`
 DATA = Path(os.environ.get("FINAGENT_DATA_DIR") or ROOT / "data")
 RUNS = Path(os.environ.get("FINAGENT_RUNS_DIR") or ROOT / "runs")
 PROMPTS = DATA / "prompts"
 EVIDENCE_RELATIONS_DATA = DATA / "evidence_relations"          # day_pool/, real_day_perturbations/, synthetic/, tool_redundancy/ (inputs)
 EVIDENCE_RELATIONS_RESULTS = RESULTS / "evidence_relations"    # reference_models/ (an analysis output, not an input)
+MECHANISMS_DATA = DATA / "mechanisms"                           # sessions/ and the inputs of the four mechanism analyses
+MECHANISMS_RESULTS = RESULTS / "mechanisms"                     # <analysis>/data.json and page/ (outputs)
 
 
 def _toml(name: str) -> dict:

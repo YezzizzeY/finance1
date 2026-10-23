@@ -1,0 +1,793 @@
+{
+ "check4_news_volatility_connection": {
+  "ci95": [
+   1.94,
+   4.13
+  ],
+  "definition": "FULL-arm session where news is present in the day's prompt AND the word news/headline appears somewhere in the reasoning text AND get_volatility_stats was called; 'connects' = at least one sentence in the reasoning contains a news-term, a volatility-term, AND a weighing/relationship marker all together.",
+  "n_connects_same_sentence": 26,
+  "n_eligible": 916,
+  "rate_pct": 2.84,
+  "sentence_splitting_algorithm": "Reasoning text is frequently bullet-point style with no terminal periods, so period-only splitting under-segments it. Exact rule (added 2026-10-23 after independent verification found the original wording ambiguous -- reproducing the numbers below requires this precise algorithm, not a guess): (1) first split the full reasoning text on newline characters; (2) split each resulting line further on sentence-ending punctuation (. ! ?) followed by whitespace; (3) drop empty fragments; the ordered list of surviving fragments is the 'sentence' unit used everywhere in this check. 'Same sentence' = both a news-term and a volatility-term, plus a weighing/relationship marker, fall inside one such fragment. '2-sentence window' = an ADJACENT PAIR of consecutive fragments (fragment i and fragment i+1), not a 3-fragment window centred on a match -- scanned over every adjacent pair in the session.",
+  "window2_sensitivity": {
+   "definition": "Same eligibility, but 'connects' relaxed to: a news-term and a volatility-term co-occur within ANY 2 consecutive sentences (not just the same single sentence) together with a weighing/relationship marker somewhere in that 2-sentence window. Looser and noisier (picks up some cases where the two mentions are merely adjacent, not actually tied together), reported as a sensitivity bound, not a replacement for the primary same-sentence number.",
+   "interpretation": "The true rate of explicit news<->volatility connection is somewhere between the conservative same-sentence estimate (2.84%, n=916) and this looser window estimate (20.9%) -- most of the gap is sessions that discuss news and separately discuss volatility as two items in an adjacent bullet list without an explicit connecting clause, which on reading is closer to 'mentioned both, not related' than to 'related'. Treat 2.84% as the best single estimate of genuinely explicit connection and 20.9% as a generous upper bound.",
+   "n_connects_2sentence_window": 191,
+   "n_eligible": 916,
+   "rate_pct": 20.9
+  }
+ },
+ "corpora": {
+  "newsagent_20261011": {
+   "files_used": "plain FULL_<k>.json.gz and NO_NEWS_<k>.json.gz only (k=0..3); FULL_T06_* temperature-variant files excluded as out of scope for this task.",
+   "model": "Qwen3.5-9B",
+   "n_sessions_analyzed": 2000,
+   "path": "data/mechanisms/sessions/newsagent"
+  },
+  "q3news_20261012_S1": {
+   "files_used": "same file-selection rule as above.",
+   "model": "Qwen3-8B (thinking on)",
+   "n_sessions_analyzed": 2000,
+   "path": "data/mechanisms/sessions/q3news_s1"
+  },
+  "total_sessions": 4000
+ },
+ "examples": {
+  "genuine_weighing_or_relating": [
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/ACN_2026-03-24/FULL_3.json.gz",
+    "label": "genuine_1_best",
+    "matched_phrases": [
+     "outweigh",
+     "combined with",
+     "despite the"
+    ],
+    "verbatim_quote": "I'll hold flat (0 shares) because the trend is clearly bearish, volatility is high, and there's no strong reversal signal yet despite the somewhat oversold RSI. The negative news (Mizuho downgrade, pullback) combined with bearish technicals outweigh the positive fundamental news at this moment.",
+    "why_genuine": "Explicitly combines TWO evidence items (negative news + bearish technicals) and states that their combination outweighs a THIRD, separately-named piece of evidence (positive fundamental news) -- genuine multi-item weighing, not just a list."
+   },
+   {
+    "arm": "NO_NEWS",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/MMM_2026-06-18/NO_NEWS_1.json.gz",
+    "label": "genuine_2",
+    "matched_phrases": [
+     "significant"
+    ],
+    "verbatim_quote": "I'm weighing the bullish technical indicators against the overextended price action. The mean reversion signal and proximity to Bollinger bands suggest caution.",
+    "why_genuine": "Uses the literal verb 'weighing ... against' to explicitly set two evidence clusters (bullish trend signals vs. overextended/overbought price action) against each other before deciding -- note the session was flagged via a different, weaker keyword ('significant') elsewhere in the text; this sentence is the clearer real evidence of genuine weighing in the same session."
+   },
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/HON_2026-08-06/FULL_0.json.gz",
+    "label": "genuine_3",
+    "matched_phrases": [
+     "main driver"
+    ],
+    "verbatim_quote": "Key concerns:\n- The aerospace business (the main driver) had disappointing debut as standalone\n- Stock crashed after earnings\n- However, the bull case remains intact according to news",
+    "why_genuine": "Explicitly identifies WHICH business segment is the 'main driver' of the overall result (weighing one piece of fundamental information above others), then relates that negative read to a separate, more positive overall-news read via 'However'."
+   },
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/UBER_2026-06-04/FULL_0.json.gz",
+    "label": "genuine_4",
+    "matched_phrases": [
+     "mixed signals"
+    ],
+    "verbatim_quote": "The news is heavily negative on AI spending/restructuring with job cuts (23% of people team), but also has mixed signals on robotaxis investment.",
+    "why_genuine": "States that two sub-components of the SAME evidence type (news) point in different directions, i.e. explicitly characterizes the relationship (mixed/conflicting) between two news items rather than just listing both."
+   },
+   {
+    "arm": "NO_NEWS",
+    "corpus": "q3news_20261012_S1",
+    "file": "data/mechanisms/sessions/q3news_s1/CVX_2026-05-18/NO_NEWS_3.json.gz",
+    "label": "genuine_5_q3news_crossmodel",
+    "matched_phrases": [
+     "contradict"
+    ],
+    "verbatim_quote": "Also, checking the mean reversion signal. If the stock is overbought, maybe it's a good time to sell. But the trend signal might contradict that.",
+    "why_genuine": "Explicitly reasons about whether one technical signal (trend) would contradict the implication of another (mean reversion) -- genuine relationship reasoning between two named evidence items, from the second model (Qwen3-8B, cross-model check)."
+   },
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/TRV_2026-08-27/FULL_0.json.gz",
+    "label": "genuine_6",
+    "matched_phrases": [
+     "outweighs"
+    ],
+    "verbatim_quote": "Maintaining current exposure as upside case (probability ~55% for 5-day upside, modest positive return expected) outweighs immediate adjustment need.",
+    "why_genuine": "Explicit weighing language comparing the (probabilistic) upside case against the case for an immediate position change; terse but unambiguous."
+   },
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/CB_2026-03-11/FULL_0.json.gz",
+    "label": "genuine_7_news_vol_connection",
+    "matched_phrases": [
+     "while the"
+    ],
+    "verbatim_quote": "While the news-driven volatility is evident, the trend and RSI indicators point to potential stabilization.",
+    "why_genuine": "From the check-4 same-sentence sample: explicitly ties the news evidence to the measured volatility ('news-driven volatility'), then relates that combination to a third, separate signal cluster (trend+RSI)."
+   }
+  ],
+  "note_on_corpus_coverage": "All 4 pure-listing examples come from newsagent_20261011 (Qwen3.5-9B). q3news_20261012_S1 (Qwen3-8B, thinking-on) has ZERO sessions meeting the '>=3 distinct tools AND zero weighing/relationship markers' criterion (18 of its 19 raw-flagged 'neither' sessions called 0 tools, 1 called 2) -- itself a finding: for that model, every session that explored more extensively (3+ tools) hit at least one keyword marker (though per the hand-check, that does not mean every one was genuine relating; see precision_handcheck).",
+  "pure_listing_3plus_tools_zero_markers": [
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/MMM_2026-06-18/FULL_3.json.gz",
+    "label": "pure_listing_1",
+    "n_distinct_tools": 6,
+    "then_jumps_to": "Decision: Add to position to reach 100% exposure (599+647=1246 shares).",
+    "verbatim_excerpt": "**Technical Analysis:**\n- Trend signal: **BULLISH** (EMA 8: 158.5, EMA 21: 155.12, EMA 55: 152.24)\n- RSI: 69.3 (neutral, approaching overbought at 70)\n- MACD: Bullish (MACD: 3.081, Signal: 2.587, Histogram: 0.494) - bullish crossover but no fresh cross\n- Support/Resistance: Next resistance at 163.01, support at 146.56, 148.4, 151.72\n\n**Volatility:**\n- Vol regime: LOW (-3.29 z-score vs 63-day)\n- ATR: 2.75% of price\n- Volatility is compressed, suggesting potential for expansion\n\n**Price Context:**\n- Down 8.6% from 52-week high (175.71)\n- Up 15.85% from 52-week low (138.62)\n- Current: 160.60\n- Drawdown from peak: -7.13%\n\n**Recent News Sentiment:**\n- Mixed but cautious: Some sources see a technical breakout setup, but others highlight concerns about litigation, balance sheet, and \"not enough margin of safety\"\n- Most recent articles are cautious but acknowledge the turnaround is working",
+    "why_flagged_neither": "Zero weighing/relationship keyword hits anywhere in the full concatenated reasoning for this session. Each indicator (trend, RSI, MACD, support/resistance, volatility, news) is reported as an independent bullet with no sentence tying any two of them together or saying one matters more than another."
+   },
+   {
+    "arm": "NO_NEWS",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/NEE_2026-09-11/NO_NEWS_0.json.gz",
+    "label": "pure_listing_2",
+    "n_distinct_tools": 10,
+    "then_jumps_to": "Position remains at 99.9% exposure. Price at $82.31 is below EMA8/21/55 trend (bearish signal) but above key support at $80.75. RSI 41.3 is neutral, not oversold. 5-day and 20-day returns are negative (-2.08%, -4.3%). Volume is 92% of 20-day average (below average). Volatility regime is low. No fundamental catalysts or earnings catalyst in view. Holding current position until price tests support at $80.75 or breaks above $84.38 resistance.",
+    "verbatim_excerpt": "**Technical Analysis:**\n1. **Trend Signal**: Bearish - EMA8 (82.94) is above current price, and EMA21 (83.85) and EMA55 (85.57) are also above, with a 3.07% spread between 8 and 55 EMAs\n2. **Mean Reversion**: Neutral - Price is at 0.22 bollinger band position, z-score of -1.61 (somewhat below mean but not oversold)\n3. **RSI**: 41.3 - Neutral, not oversold\n4. **MACD**: -0.971 line, -0.986 signal, +0.015 histogram - slight bullish divergence but still bearish\n5. **Volume**: Today's volume (9.88M) is below 20-day average (10.69M), ratio 0.92 - normal/weak\n6. **Volatility**: Low regime (-1.02 z-score), ATR 1.46% of price\n7. **Support/Resistance**: Support at $80.75, resistance at $84.38, $87.52, $89.19",
+    "why_flagged_neither": "10 distinct tools called (the most of any bucket), 7-point numbered list of independent indicators, final paragraph restates each number again with no comparison between them -- a clean example of information gathered in bulk but never explicitly weighed or cross-referenced."
+   },
+   {
+    "arm": "NO_NEWS",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/UAL_2026-06-30/NO_NEWS_1.json.gz",
+    "label": "pure_listing_3",
+    "n_distinct_tools": 9,
+    "then_jumps_to": "I'll proceed with a Hold strategy at current 220 shares, preserving the strong momentum while staying flexible to emerging market signals. The technical indicators suggest maintaining the position makes sense given the bullish trend.",
+    "verbatim_excerpt": "**Technical Analysis:**\n1. **Trend**: Bullish (EMA 8/21/55 all aligned upward)\n2. **Mean Reversion**: Overbought (z-score 2.25, Bollinger position 0.91)\n3. **RSI**: 76.3 (overbought)\n4. **MACD**: Bullish (8.479 line above 6.65 signal)\n5. **Price Stats**: \n   - 52-week high: $138.77 (only 2% away)\n   - 5-day return: +11.88%\n   - 20-day return: +21.68%\n   - Very strong momentum but approaching resistance ($138.44)\n\n**Key Observations:**\n- The stock has rallied significantly from ~$115-120 in early June to current $135.99\n- Strong bullish trend but overbought conditions\n- Approaching 52-week high ($138.77) and immediate resistance ($138.44)\n- Volume today (5.08M) is below 20-day average (5.76M)\n- High volatility regime (55.2% annualized)\n\n**Decision Considerations:**\n- Trend is strongly bullish but price is overbought\n- Only ~2% from 52-week high, resistance at $138.44 is close\n- The recent news is quiet (no company news)\n- Overbought RSI (76.3) suggests potential pullback\n\nGiven the overbought conditions and proximity to resistance, I should consider either:\n1. Holding current position",
+    "why_flagged_neither": "Note 'rallied significantly' appears but does NOT match the keyword list, because the list contains 'significant' (adjective) not 'significantly' (adverb) and word-boundary matching correctly does not treat the adverb as a hit; this is a deliberate scope limit, not a bug -- see README limitations. Eight indicators listed as independent bullets, then a hold decision justified only by re-citing 'bullish trend' alone, not by weighing the overbought signals against it."
+   },
+   {
+    "arm": "FULL",
+    "corpus": "newsagent_20261011",
+    "file": "data/mechanisms/sessions/newsagent/JPM_2026-09-17/FULL_3.json.gz",
+    "label": "pure_listing_4",
+    "n_distinct_tools": 9,
+    "then_jumps_to": "Position at 99.8% exposure, neutral technical signals across trend, mean reversion, RSI, and MACD. Stock at support level (~348.69) with tight consolidation range. Volatility regime low, no directional bias. Maintaining current exposure appropriate.",
+    "verbatim_excerpt": "**Technical Analysis:**\n1. **Trend Signal:** Neutral - EMA8 (352.14) > EMA21 (353.99)? Actually looking closer, EMA8 is 352.14 and EMA21 is 353.99, so EMA8 < EMA21 which suggests bearish short-term, but EMA55 is 348.01 below current price. Overall neutral.\n\n2. **Mean Reversion:** Neutral - z-score -0.49, price is slightly above Bollinger lower band (348.16), position at 0.09 (close to middle). Not oversold or overbought.\n\n3. **RSI:** 43.7 - neutral, slightly below 50.\n\n4. **MACD:** -0.625, signal 0.644, histogram -1.269 - bearish crossover with negative histogram, no fresh cross.\n\n5. **Support/Resistance:** Next support at 348.69 (very close - just 0.62 below current), resistance at 360.05.\n\n6. **Price Stats:** \n   - 5-day return: -1.2%\n   - 20-day return: -2.23%\n   - Drawdown from peak: -4.35%\n   - 52-week high: 366.5 (4.7% below)\n\n7. **Volatility:** \n   - 20-day annualized: 14.6% (low regime)\n   - Volatility z-score: -1.17 (below average)\n   - ATR: 6.99 (2.0% of price)\n   - Note: \"big moves cluster\"\n\n8. **News Sentiment:** All neutral (0.0 average sentiment over past 7 days)",
+    "why_flagged_neither": "News (FULL arm, 7 real headlines) and 8 technical readings are each listed and labeled 'neutral' independently; the model never states whether the news is already captured by the 0.0 average news-sentiment score, or whether any one of the 8 signals should carry more weight than another -- it reports all 8 as flatly 'neutral' and holds."
+   }
+  ]
+ },
+ "limitations": [
+  "This is approximate keyword/phrase matching on ~4000 free-text reasoning traces, not a validated NLP classifier -- treat every rate here as directional, not exact, and prefer the strict/strict2 variants and the hand-check precision numbers over the raw percentages when the two disagree.",
+  "WEIGHING false positives: roughly 1 in 4 of hand-checked 'significant'/'minor' matches described the trader's own position or trade SIZE, not the importance of a piece of external evidence; the keyword cannot distinguish these cases.",
+  "RELATIONSHIP false positives (for the task's strict 'relates two evidence items to each other' definition): the single largest relationship category, 'aligns with'/'align with'/'aligned with' (~46% of all raw relationship-flagged sessions touch this family), is overwhelmingly a decision-justification tic ('my decision aligns with signal X') rather than genuine cross-evidence reasoning. Hand-check strict precision for relationship-flagged sessions was only ~23.5% (4/17); a looser, still-defensible reading got to ~50%. Report both the raw (90.2%) and strict2 (57.4%) rates; do not quote the raw number alone as 'relationship reasoning rate'.",
+  "A genuine qualitative counter-example was found in a session classified 'neither' by the keyword rule (JPM_2026-09-17/FULL_3): 'Given the news about Iran war oil forecast being dropped (which could be negative for earnings) but also the housing commitment being positive, the sentiment is neutral overall' -- this IS a tacit weighing of two news items reaching a netted-out conclusion, but uses no listed keyword. The 3.3% raw 'neither' / pure-listing rate is therefore a slight OVER-estimate of true pure-listing behavior (misses this kind of unworded netting-out); conversely the 26.1% strict-neither rate is likely an UNDER-estimate of true pure listing in the other direction, since many of its 'weighing/relationship' credits are the weak phrases. The true pure-listing rate is bounded within roughly [3%, 26%] and we cannot pin it down more precisely with this method.",
+  "Check 4 (explicit news<->volatility connection) is highly sensitive to window size: 2.84% (same sentence, n=916) vs 20.9% (2-sentence window, same n) -- report as a range, not a point estimate.",
+  "'Significantly' (adverb) and other inflections beyond the literal listed forms are deliberately NOT matched (word-boundary exact phrase match only); this is a documented scope choice, not an oversight, and means the true keyword-coverage rate for magnitude language is a bit higher than reported if adverb forms were included -- not re-run here to keep the exact pattern list auditable and simple.",
+  "No scipy or statsmodels available in the project .venv (checked at the start); all statistics (proportions, Wilson CIs, two-proportion z-tests, OLS slope+SE) are closed-form numpy/math, not library calls. This does not change any result, just how it was computed.",
+  "FULL_T06_* files (a temperature-variant arm, 500 files per corpus) exist alongside the plain FULL/NO_NEWS files but were excluded as out of scope for this specific task's corpus definition."
+ ],
+ "patterns": {
+  "_edit_log": [
+   "2026-10-23: removed the duplicate-typo phrase 'while the the' (a literal typo of 'while the X the Y' with no wildcard, so it never matched any real text; found during independent verification; removing it does not change any reported count since it contributed zero matches)."
+  ],
+  "matching_method": "Case-insensitive, word-boundary-wrapped literal substring match (python re, \\b<escaped phrase>\\b) applied to the full concatenated reasoning text of the session, plus the one named regex for the 'both X and Y suggest/confirm/support' construction. Word-boundary wrapping was added after an initial pass without it produced false hits (e.g. 'minor' matching inside 'Minority', 'however, the' matching the 'the' prefix of \"there's\"); all reported numbers use the word-boundary-fixed version.",
+  "relationship_phrases": [
+   "consistent with",
+   "in line with",
+   "confirms",
+   "corroborates",
+   "contradicts",
+   "conflicts with",
+   "contrary to",
+   "on the other hand",
+   "however the",
+   "however, the",
+   "despite the",
+   "while the",
+   "confirming",
+   "confirmed",
+   "corroborating",
+   "corroborate",
+   "contradicting",
+   "contradict",
+   "conflicting with",
+   "aligns with",
+   "align with",
+   "echoes",
+   "echoing",
+   "reinforces",
+   "reinforcing",
+   "reinforce the",
+   "supports the",
+   "support the",
+   "backs up",
+   "backed by",
+   "mirrors",
+   "mirroring",
+   "at odds with",
+   "inconsistent with",
+   "diverges from",
+   "diverging from",
+   "in tension with",
+   "offsets",
+   "offsetting",
+   "counterbalances",
+   "counterbalancing",
+   "reflects the",
+   "mixed signals",
+   "mixed picture",
+   "jibes with",
+   "matches the",
+   "matching the",
+   "in contrast to",
+   "unlike the",
+   "together with",
+   "combined with",
+   "paired with",
+   "whereas the",
+   "even though the",
+   "notwithstanding the",
+   "adds to the case",
+   "builds on the",
+   "undercuts",
+   "undercutting",
+   "undermines",
+   "undermining",
+   "lines up with",
+   "squares with",
+   "at odds",
+   "confirm",
+   "reinforce",
+   "undermine",
+   "undercut",
+   "mirror",
+   "echo",
+   "offset",
+   "aligned with"
+  ],
+  "relationship_regexes": [
+   {
+    "name": "both...suggest/indicate/confirm/support",
+    "pattern": "\\bboth\\b[^.?!]{0,80}\\b(?:suggest|suggests|indicate|indicates|point to|points to|confirm|confirms|support|supports)\\b"
+   }
+  ],
+  "relationship_weak2_subset_excluded_in_strict2": [
+   "align with",
+   "aligned with",
+   "aligns with",
+   "despite the",
+   "however the",
+   "however, the",
+   "while the"
+  ],
+  "relationship_weak_subset_excluded_in_strict": [
+   "despite the",
+   "however the",
+   "however, the",
+   "while the"
+  ],
+  "text_unit_analyzed": "Per session: all trace[i]['reasoning'] strings (the per-turn chain-of-thought text, type=='turn' entries) concatenated in trace order, PLUS the final submit_decision tool call's own 'reasoning' argument string appended at the end (joined with blank lines). This is broader than 'turn reasoning only' because the submit_decision reasoning argument is also model-generated justification text and can itself contain weighing/relating language (and sometimes is the ONLY place it appears, e.g. terse sessions). This choice is documented so the corpus-level rates are reproducible.",
+  "weighing_phrases": [
+   "more important",
+   "less important",
+   "significant",
+   "minor",
+   "doesn't change",
+   "does not change",
+   "already reflects",
+   "already reflect",
+   "already priced",
+   "not much new",
+   "outweighs",
+   "outweigh",
+   "largely",
+   "marginal",
+   "doesn't add much",
+   "does not add much",
+   "carries more weight",
+   "carry more weight",
+   "most important",
+   "won't change",
+   "wouldn't change",
+   "already priced in",
+   "already reflected",
+   "nothing new",
+   "carries less weight",
+   "weighs more",
+   "weighs less",
+   "weigh more heavily",
+   "weigh less heavily",
+   "more weight than",
+   "less weight than",
+   "bigger factor",
+   "biggest factor",
+   "key driver",
+   "main driver",
+   "primary driver",
+   "overshadow",
+   "overshadows",
+   "overshadowed",
+   "negligible",
+   "immaterial",
+   "material factor",
+   "dominant factor",
+   "limited impact",
+   "minimal impact",
+   "significant impact",
+   "substantial impact",
+   "takes precedence",
+   "take precedence",
+   "tips the balance",
+   "tip the balance",
+   "secondary concern",
+   "secondary factor",
+   "primary concern",
+   "weigh heavily",
+   "weighs heavily",
+   "weigh against",
+   "weigh in favor",
+   "more credible",
+   "less credible",
+   "more reliable",
+   "less reliable",
+   "stronger signal",
+   "weaker signal",
+   "carries weight",
+   "bigger concern",
+   "more telling",
+   "less telling",
+   "matters more",
+   "matters less",
+   "the bigger risk",
+   "the bigger driver",
+   "outweighed",
+   "marginally"
+  ],
+  "weighing_weak_subset_excluded_in_strict": [
+   "minor",
+   "significant"
+  ]
+ },
+ "precision_handcheck": {
+  "finding_1_bug_found_and_fixed": "Initial substring matching (no word boundaries) produced literal false hits: 'minor' matched inside 'Minority' (a news headline about a 'Minority Stake'), and 'however, the' matched the 'the' that begins \"there's\" in 'However, there's also...'. Fixed by wrapping every literal phrase in \\b...\\b before the hand-check reported below was finalized.",
+  "method": "Random sample (seed=20261023) of 20 sessions flagged positive (has_weighing or has_relationship true, drawn from the pooled 4000-session corpus) and 20 sessions flagged negative (has_neither true), read by the analyst with surrounding context (first occurrence, +/-160 chars) for the positive sample and the full reasoning text for the negative sample. This is approximate text matching, same spirit as the project's existing keyword_polarity precedent -- it is NOT a validated classifier, and the numbers below are a rough, one-pass human judgment call, not an inter-rater-reliability study.",
+  "relationship_judgment": {
+   "dominant_false_positive_pattern": "'aligns with' / 'align with' / 'aligned with' (1,388 + 310 + 135 raw hits on the three separate phrases; a session can match more than one, so the DISTINCT-SESSION union is 1,625 sessions = 45.0% of the 3,608 sessions with a raw relationship marker (40.6% of the 4,000-session corpus), not the naive sum of 1,833 -- corrected 2026-10-23 after independent verification) is overwhelmingly used as 'my DECISION aligns with signal X' (one evidence item justifying one action), not 'evidence A relates to evidence B'. Of the 17 sampled relationship-flagged excerpts, essentially all of the 13 judged false-positive-for-the-strict-definition were this pattern, or a bare arithmetic self-check ('14 shares, which matches/confirms the target 68% exposure').",
+   "judged_false_positive_strict": 13,
+   "judged_genuine_loose_note": "Under a LOOSER reading that also credits a decision stated as consistent with/aligned with the available evidence (closer to the task's literal inclusion of 'in line with' as an example phrase), roughly 8-9 of the 17 would count, i.e. ~50%. Given this spread (23.5% strict vs ~50% loose), the raw relationship rate (90.2% of sessions) should NOT be read as '90% of sessions show real inter-evidence reasoning' -- it should be read as an upper bound inflated mostly by decision-justification language. The strict2 rate (57.4%, excluding both the generic transition words AND the alignment phrases) is the more defensible headline number; see rates.relationship.",
+   "judged_genuine_strict": 4,
+   "judged_genuine_strict_quote": "Under the TASK'S STRICT definition (explicitly relates TWO PIECES OF EVIDENCE TO EACH OTHER -- e.g. one signal confirms/contradicts/is-redundant-with another), only sessions where two distinct evidence items (two technical signals, or a news item and a technical signal, etc.) were explicitly tied together were counted genuine. 95% Wilson CI on 4/17: [9.6%, 47.3%] -- the sample is small (17 cases); treat 23.5% as 'roughly one in four, could plausibly be anywhere from one in ten to one in two', not a precise figure.",
+   "n_sampled_with_a_relationship_match_shown": 17,
+   "rough_precision_strict_pct": 23.5,
+   "rough_precision_strict_pct_wilson95_ci": [
+    9.6,
+    47.3
+   ]
+  },
+  "weighing_judgment": {
+   "judged_false_positive": 4,
+   "judged_genuine": 12,
+   "judged_genuine_quote": "A WEIGHING match was judged genuine if the matched phrase assesses how much a piece of EXTERNAL INFORMATION/evidence (price action, a news item, a technical signal, the overall picture) matters -- per the task's own definition. It was judged NOT genuine (false positive) when the matched word instead described the magnitude of the trader's OWN position size or the size of the contemplated trade/action (e.g. 'significant exposure', 'minor tactical adjustment', 'maintaining a significant presence') -- that is a real, specific, recurring confusion the keyword list cannot resolve on its own.",
+   "n_sampled_with_a_weighing_match_shown": 16,
+   "note": "4 of 16 (25%) of matches were about position/trade size, not about weighing a piece of evidence. 'significant' alone accounts for ~68% of all raw weighing-flagged sessions corpus-wide (2702/4000); it is also the single most ambiguous phrase for exactly this reason. 'minor'/'significant' are the only two phrases moved to a documented 'weak' subset for a stricter sensitivity rate (see rates.weighing). 95% Wilson CI on 12/16: [50.5%, 89.8%] -- the sample is small (16 cases); treat 75% as 'roughly three in four', not a precise figure.",
+   "rough_precision_pct": 75.0,
+   "rough_precision_pct_wilson95_ci": [
+    50.5,
+    89.8
+   ]
+  }
+ },
+ "rates": {
+  "by_arm": {
+   "FULL": {
+    "k_neither": 42,
+    "k_relationship": 1854,
+    "k_weighing": 1423,
+    "n": 2000,
+    "neither_ci95": [
+     1.56,
+     2.83
+    ],
+    "pct_neither": 2.1,
+    "pct_neither_strict": 20.65,
+    "pct_relationship": 92.7,
+    "pct_relationship_strict": 77.1,
+    "pct_relationship_strict2": 63.15,
+    "pct_weighing": 71.15,
+    "pct_weighing_strict": 10.7,
+    "relationship_ci95": [
+     91.48,
+     93.76
+    ],
+    "weighing_ci95": [
+     69.13,
+     73.09
+    ]
+   },
+   "NO_NEWS": {
+    "k_neither": 90,
+    "k_relationship": 1754,
+    "k_weighing": 1393,
+    "n": 2000,
+    "neither_ci95": [
+     3.68,
+     5.5
+    ],
+    "pct_neither": 4.5,
+    "pct_neither_strict": 31.6,
+    "pct_relationship": 87.7,
+    "pct_relationship_strict": 67.0,
+    "pct_relationship_strict2": 51.7,
+    "pct_weighing": 69.65,
+    "pct_weighing_strict": 5.65,
+    "relationship_ci95": [
+     86.19,
+     89.07
+    ],
+    "weighing_ci95": [
+     67.6,
+     71.63
+    ]
+   }
+  },
+  "by_corpus": {
+   "newsagent_20261011": {
+    "k_neither": 113,
+    "k_relationship": 1652,
+    "k_weighing": 1514,
+    "n": 2000,
+    "neither_ci95": [
+     4.72,
+     6.75
+    ],
+    "pct_neither": 5.65,
+    "pct_neither_strict": 24.95,
+    "pct_relationship": 82.6,
+    "pct_relationship_strict": 73.0,
+    "pct_relationship_strict2": 62.35,
+    "pct_weighing": 75.7,
+    "pct_weighing_strict": 8.8,
+    "relationship_ci95": [
+     80.88,
+     84.2
+    ],
+    "weighing_ci95": [
+     73.77,
+     77.53
+    ]
+   },
+   "q3news_20261012_S1": {
+    "k_neither": 19,
+    "k_relationship": 1956,
+    "k_weighing": 1302,
+    "n": 2000,
+    "neither_ci95": [
+     0.61,
+     1.48
+    ],
+    "pct_neither": 0.95,
+    "pct_neither_strict": 27.3,
+    "pct_relationship": 97.8,
+    "pct_relationship_strict": 71.1,
+    "pct_relationship_strict2": 52.5,
+    "pct_weighing": 65.1,
+    "pct_weighing_strict": 7.55,
+    "relationship_ci95": [
+     97.06,
+     98.36
+    ],
+    "weighing_ci95": [
+     62.98,
+     67.16
+    ]
+   }
+  },
+  "by_corpus_arm": {
+   "newsagent_20261011__FULL": {
+    "k_neither": 39,
+    "k_relationship": 862,
+    "k_weighing": 804,
+    "n": 1000,
+    "neither_ci95": [
+     2.87,
+     5.29
+    ],
+    "pct_neither": 3.9,
+    "pct_neither_strict": 19.9,
+    "pct_relationship": 86.2,
+    "pct_relationship_strict": 77.2,
+    "pct_relationship_strict2": 66.9,
+    "pct_weighing": 80.4,
+    "pct_weighing_strict": 13.0,
+    "relationship_ci95": [
+     83.92,
+     88.2
+    ],
+    "weighing_ci95": [
+     77.83,
+     82.74
+    ]
+   },
+   "newsagent_20261011__NO_NEWS": {
+    "k_neither": 74,
+    "k_relationship": 790,
+    "k_weighing": 710,
+    "n": 1000,
+    "neither_ci95": [
+     5.94,
+     9.19
+    ],
+    "pct_neither": 7.4,
+    "pct_neither_strict": 30.0,
+    "pct_relationship": 79.0,
+    "pct_relationship_strict": 68.8,
+    "pct_relationship_strict2": 57.8,
+    "pct_weighing": 71.0,
+    "pct_weighing_strict": 4.6,
+    "relationship_ci95": [
+     76.37,
+     81.41
+    ],
+    "weighing_ci95": [
+     68.11,
+     73.73
+    ]
+   },
+   "q3news_20261012_S1__FULL": {
+    "k_neither": 3,
+    "k_relationship": 992,
+    "k_weighing": 619,
+    "n": 1000,
+    "neither_ci95": [
+     0.1,
+     0.88
+    ],
+    "pct_neither": 0.3,
+    "pct_neither_strict": 21.4,
+    "pct_relationship": 99.2,
+    "pct_relationship_strict": 77.0,
+    "pct_relationship_strict2": 59.4,
+    "pct_weighing": 61.9,
+    "pct_weighing_strict": 8.4,
+    "relationship_ci95": [
+     98.43,
+     99.59
+    ],
+    "weighing_ci95": [
+     58.85,
+     64.86
+    ]
+   },
+   "q3news_20261012_S1__NO_NEWS": {
+    "k_neither": 16,
+    "k_relationship": 964,
+    "k_weighing": 683,
+    "n": 1000,
+    "neither_ci95": [
+     0.99,
+     2.58
+    ],
+    "pct_neither": 1.6,
+    "pct_neither_strict": 33.2,
+    "pct_relationship": 96.4,
+    "pct_relationship_strict": 65.2,
+    "pct_relationship_strict2": 45.6,
+    "pct_weighing": 68.3,
+    "pct_weighing_strict": 6.7,
+    "relationship_ci95": [
+     95.06,
+     97.39
+    ],
+    "weighing_ci95": [
+     65.35,
+     71.11
+    ]
+   }
+  },
+  "by_n_distinct_tools_bucket": {
+   "0-1": {
+    "k_neither": 19,
+    "k_relationship": 1138,
+    "k_weighing": 669,
+    "n": 1184,
+    "neither_ci95": [
+     1.03,
+     2.49
+    ],
+    "pct_neither": 1.6,
+    "pct_neither_strict": 31.93,
+    "pct_relationship": 96.11,
+    "pct_relationship_strict": 66.39,
+    "pct_relationship_strict2": 40.62,
+    "pct_weighing": 56.5,
+    "pct_weighing_strict": 5.74,
+    "relationship_ci95": [
+     94.86,
+     97.07
+    ],
+    "weighing_ci95": [
+     53.66,
+     59.3
+    ]
+   },
+   "2": {
+    "k_neither": 1,
+    "k_relationship": 127,
+    "k_weighing": 81,
+    "n": 128,
+    "neither_ci95": [
+     0.14,
+     4.29
+    ],
+    "pct_neither": 0.78,
+    "pct_neither_strict": 28.91,
+    "pct_relationship": 99.22,
+    "pct_relationship_strict": 68.75,
+    "pct_relationship_strict2": 57.03,
+    "pct_weighing": 63.28,
+    "pct_weighing_strict": 7.03,
+    "relationship_ci95": [
+     95.71,
+     99.86
+    ],
+    "weighing_ci95": [
+     54.66,
+     71.13
+    ]
+   },
+   "3-4": {
+    "k_neither": 0,
+    "k_relationship": 523,
+    "k_weighing": 406,
+    "n": 525,
+    "neither_ci95": [
+     0.0,
+     0.73
+    ],
+    "pct_neither": 0.0,
+    "pct_neither_strict": 22.67,
+    "pct_relationship": 99.62,
+    "pct_relationship_strict": 76.0,
+    "pct_relationship_strict2": 67.62,
+    "pct_weighing": 77.33,
+    "pct_weighing_strict": 9.14,
+    "relationship_ci95": [
+     98.62,
+     99.9
+    ],
+    "weighing_ci95": [
+     73.56,
+     80.71
+    ]
+   },
+   "5-6": {
+    "k_neither": 16,
+    "k_relationship": 363,
+    "k_weighing": 335,
+    "n": 403,
+    "neither_ci95": [
+     2.46,
+     6.35
+    ],
+    "pct_neither": 3.97,
+    "pct_neither_strict": 17.12,
+    "pct_relationship": 90.07,
+    "pct_relationship_strict": 80.15,
+    "pct_relationship_strict2": 73.45,
+    "pct_weighing": 83.13,
+    "pct_weighing_strict": 12.66,
+    "relationship_ci95": [
+     86.77,
+     92.63
+    ],
+    "weighing_ci95": [
+     79.16,
+     86.47
+    ]
+   },
+   "7+": {
+    "k_neither": 96,
+    "k_relationship": 1457,
+    "k_weighing": 1325,
+    "n": 1760,
+    "neither_ci95": [
+     4.49,
+     6.62
+    ],
+    "pct_neither": 5.45,
+    "pct_neither_strict": 25.11,
+    "pct_relationship": 82.78,
+    "pct_relationship_strict": 73.07,
+    "pct_relationship_strict2": 62.05,
+    "pct_weighing": 75.28,
+    "pct_weighing_strict": 8.58,
+    "relationship_ci95": [
+     80.95,
+     84.48
+    ],
+    "weighing_ci95": [
+     73.22,
+     77.24
+    ]
+   }
+  },
+  "field_meaning": "pct_X = % of sessions with >=1 match from the RAW/full pattern list. pct_X_strict excludes the 'weak' phrases documented in patterns.weighing_weak_subset_excluded_in_strict / relationship_weak_subset_excluded_in_strict. pct_relationship_strict2 additionally excludes the 'aligns with' family (see precision_handcheck.relationship_judgment). All _ci95 fields are Wilson 95% confidence intervals on the RAW proportion, computed in closed form (no scipy available in this environment; statsmodels also unavailable -- confirmed by import check before starting).",
+  "overall": {
+   "k_neither": 132,
+   "k_relationship": 3608,
+   "k_weighing": 2816,
+   "n": 4000,
+   "neither_ci95": [
+    2.79,
+    3.9
+   ],
+   "pct_neither": 3.3,
+   "pct_neither_strict": 26.12,
+   "pct_relationship": 90.2,
+   "pct_relationship_strict": 72.05,
+   "pct_relationship_strict2": 57.42,
+   "pct_weighing": 70.4,
+   "pct_weighing_strict": 8.18,
+   "relationship_ci95": [
+    89.24,
+    91.08
+   ],
+   "weighing_ci95": [
+    68.97,
+    71.79
+   ]
+  }
+ },
+ "significance_tests": {
+  "FULL_vs_NO_NEWS_relationship_raw": {
+   "diff_pct": 5.0,
+   "p_two_sided": 0.0,
+   "se_pct": 0.94,
+   "z": 5.318
+  },
+  "FULL_vs_NO_NEWS_relationship_strict2": {
+   "diff_pct": 11.45,
+   "p_two_sided": 0.0,
+   "se_pct": 1.56,
+   "z": 7.323
+  },
+  "FULL_vs_NO_NEWS_weighing_raw": {
+   "diff_pct": 1.5,
+   "p_two_sided": 0.29876,
+   "se_pct": 1.44,
+   "z": 1.039
+  },
+  "FULL_vs_NO_NEWS_weighing_strict": {
+   "diff_pct": 5.05,
+   "p_two_sided": 0.0,
+   "se_pct": 0.87,
+   "z": 5.829
+  },
+  "headline_result": "FULL arm shows MORE relationship language than NO_NEWS at every strictness level (raw +5.0pp, strict2 +11.45pp, both p<0.0001) and more weighing language too once the noisy 'significant'/'minor' phrases are excluded (strict +5.05pp, p<0.0001; the raw weighing gap of +1.5pp is NOT significant, p=0.30 -- the generic phrases mask the real signal here).",
+  "method": "Two-proportion z-test, pooled SE, normal approximation p-value (math.erfc closed form, no scipy). diff_pct = pct(FULL) - pct(NO_NEWS)."
+ },
+ "task": "mech4 (4 of 4): does FULL/NO_NEWS session reasoning text actually weigh evidence and reason about relationships between pieces of evidence, or just list tool outputs and jump to a number?",
+ "tool_count_trend": {
+  "headline_result": "The RAW relationship rate falls with more distinct tools called (slope -0.017/tool, t=-13.2) -- but this is an artifact: short/low-tool sessions lean on the generic word 'however, the' a lot. Once that noise is removed (strict2), the trend REVERSES and is positive and highly significant (slope +0.024/tool, t=11.0): genuine relationship language is more common in sessions that called more distinct tools, consistent with the task's hypothesis that more available signals creates more opportunity to relate them. The relationship is not linear though -- see by_n_distinct_tools_bucket.pct_relationship_strict2: 0-1 tools=40.6%, 2 tools=57.0%, 3-4 tools=67.6%, 5-6 tools=73.5% (peak), 7+ tools=62.1% (falls back). So: rises sharply through ~5-6 tools, then drops off at the highest tool counts (possibly turn/token-budget pressure in the longest sessions crowding out synthesis, or habituation/boilerplate in very long sessions) -- this is a real, not-fully-explained non-monotonicity, reported as an open question rather than smoothed over.",
+  "ols_raw": {
+   "intercept": 0.9814,
+   "n": 4000,
+   "note": "OLS of has_relationship(0/1) RAW flag on n_distinct_tools, closed-form, homoskedastic SE; descriptive trend not a causal claim. Confounded by the 'however, the' generic-transition phrase being common even in short, low-tool sessions -- see strict2 version below for a cleaner read.",
+   "pearson_r": -0.2041,
+   "slope_per_extra_tool": -0.017,
+   "slope_se": 0.0013,
+   "slope_t_stat": -13.185
+  },
+  "ols_strict2": {
+   "intercept": 0.463,
+   "n": 4000,
+   "note": "Same OLS but on the stricter has_relationship_strict2 flag (excludes generic transition words AND the 'aligns with/align with/aligned with' decision-justification phrases). Linear fit is a poor description (true pattern is non-monotonic, see by_tool_bucket) but sign/magnitude still useful as a summary: still a rough rise-then-plateau, not a flat or falling line.",
+   "pearson_r": 0.172,
+   "slope_per_extra_tool": 0.0238,
+   "slope_se": 0.0022,
+   "slope_t_stat": 11.042
+  }
+ }
+}

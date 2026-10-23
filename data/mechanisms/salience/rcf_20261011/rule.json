@@ -1,0 +1,98 @@
+{
+ "title": "RCF (逆向通道预测) pre-registered pass rules",
+ "source_plan": {
+  "path": "results/realtext_plan_20261010/PLAN_zh.md",
+  "sha256": "9787f84a1b1d22bf91d28b969df5a986449b3de7b92896b8b7c673d2afbc5bfc",
+  "section": "5) 最便宜的可行性验证 / 事先登记的通过规则"
+ },
+ "verbatim_zh": {
+  "full_block": "**事先登记的通过规则**：\n- 范围：测试段，Qwen3-8B。\n- 置信区间同时用股票自助法（2,000 次重抽）和按日期聚类两种方法计算，两者必须一致。\n\n判据：\n- **(a) 前提**：原始组至少有一种可修正的失真，否则报告\"真实文本上没有可修正的失真\"并停止。两种失真是：\n  - 新闻分量的 Mincer-Zarnowitz 斜率，即 (R5−m) 对 [原始组(有新闻) − 原始组(无新闻)] 回归的斜率，置信区间不含 1（任一方向都算，记录方向）。斜率为 1 表示刻度正确，小于 1 表示过度反应。\n  - 原始组在新闻日对波动的上调超过实现值，置信区间不含 0。\n- **(b) 有信息**：以下两个斜率都大于 0，置信区间都不含 0，并且 λ > 0。\n  - (R5−m) 对 (逆向通道法均值 − m) 的斜率；\n  - log|R5−m| 对逆向通道法对数波动偏移的斜率。\n- **(c) 有价值**：平均分箱对数得分同时优于先验组和线性去除组，配对置信区间不含 0；去掉含价格变动叙述的新闻条目后仍须成立。\n- **(d) 线性去除做不到的修正**：按新闻正负拆开后，两个 Mincer-Zarnowitz 斜率都落在 [0.6, 1.5]。线性去除组的拆分斜率一并报告。\n- **(e) 新意**：分箱对数得分优于 LEAP 式口头似然组，配对置信区间不含 0。\n\n判决：\n\n| 结果 | 结论 |\n|---|---|\n| (a) 到 (e) 全部成立 | 通过 |\n| (a) 到 (d) 成立，(e) 不成立 | 方法有效但新意降级，交项目负责人决定 |\n| (b) 或 (c) 不成立，或安慰剂的得分优于先验组（置信区间不含 0） | 终止 |\n\nMistral 作为次要模型，重复检验 (c) 和 (d)。",
+  "scope": "- 范围：测试段，Qwen3-8B。",
+  "confidence_intervals": "- 置信区间同时用股票自助法（2,000 次重抽）和按日期聚类两种方法计算，两者必须一致。",
+  "rules": {
+   "(a)": "- **(a) 前提**：原始组至少有一种可修正的失真，否则报告\"真实文本上没有可修正的失真\"并停止。两种失真是：\n  - 新闻分量的 Mincer-Zarnowitz 斜率，即 (R5−m) 对 [原始组(有新闻) − 原始组(无新闻)] 回归的斜率，置信区间不含 1（任一方向都算，记录方向）。斜率为 1 表示刻度正确，小于 1 表示过度反应。\n  - 原始组在新闻日对波动的上调超过实现值，置信区间不含 0。",
+   "(b)": "- **(b) 有信息**：以下两个斜率都大于 0，置信区间都不含 0，并且 λ > 0。\n  - (R5−m) 对 (逆向通道法均值 − m) 的斜率；\n  - log|R5−m| 对逆向通道法对数波动偏移的斜率。",
+   "(c)": "- **(c) 有价值**：平均分箱对数得分同时优于先验组和线性去除组，配对置信区间不含 0；去掉含价格变动叙述的新闻条目后仍须成立。",
+   "(d)": "- **(d) 线性去除做不到的修正**：按新闻正负拆开后，两个 Mincer-Zarnowitz 斜率都落在 [0.6, 1.5]。线性去除组的拆分斜率一并报告。",
+   "(e)": "- **(e) 新意**：分箱对数得分优于 LEAP 式口头似然组，配对置信区间不含 0。"
+  },
+  "verdict_table_markdown": "| 结果 | 结论 |\n|---|---|\n| (a) 到 (e) 全部成立 | 通过 |\n| (a) 到 (d) 成立，(e) 不成立 | 方法有效但新意降级，交项目负责人决定 |\n| (b) 或 (c) 不成立，或安慰剂的得分优于先验组（置信区间不含 0） | 终止 |",
+  "verdict_table": [
+   {
+    "结果": "(a) 到 (e) 全部成立",
+    "结论": "通过"
+   },
+   {
+    "结果": "(a) 到 (d) 成立，(e) 不成立",
+    "结论": "方法有效但新意降级，交项目负责人决定"
+   },
+   {
+    "结果": "(b) 或 (c) 不成立，或安慰剂的得分优于先验组（置信区间不含 0）",
+    "结论": "终止"
+   }
+  ],
+  "secondary_model": "Mistral 作为次要模型，重复检验 (c) 和 (d)。",
+  "report_only_not_in_verdict": "**只报告，不进判决**：\n- 三倍复制后 |均值 − m| 的变化不超过 25%，并与原始组的变化对比；\n- (均值 − m) 对过去 5 日收益的载荷绝对值不超过 0.01，用来防止复述涨跌的标题把外推带回来；\n- 朴素贝叶斯版的斜率是否比联合版更偏离 1；\n- 情景句换一套同义改写后的稳健性；\n- 开启思考生成不含数字的新闻摘要、替代原始新闻后的结果。"
+ },
+ "operationalization": {
+  "status": "Binding implementation of the verbatim rules where PLAN_zh.md leaves a choice open; fixed before any model query. It changes no threshold, scope or verdict. Arms, ablations and controls are as listed in PLAN_zh.md section 5; every coefficient (lambda, b_k, beta, offsets) is fit on the train sample only.",
+  "evaluation_sample": "The sampled test events in data/events_test.jsonl (t 2026-02-01..2026-09-17), Qwen3-8B (0_model_server/models/Qwen3-8B). Every criterion is computed with equal weight per sampled event; inverse-inclusion-probability weighted values (column p_incl) are reported only.",
+  "target_and_bins": "R5 = 100 ln(C[t+5]/C[t]) from results/_panel/us_daily_stratos_20260924.parquet; m = 100 ln(1 + mu/100) and sigma = exp(lsig) from results/twin_20261009/data/rational_model.json at close t; u = (R5 - m)/sigma; 7 bins with edges -2, -1, -0.35, 0.35, 1, 2.",
+  "binned_log_score": "ln of the forecast probability of the realised u-bin, averaged over the evaluation sample.",
+  "prior_arm_先验组": "P1 = the N(0,1) bin masses of u times exp(c_k), six free offsets fit on the train sample by maximum likelihood (= the train bin frequencies, data/prior_baseline.json). It is the lambda = 0 member of the RCF posterior family, so a gain over it is a gain from the text likelihood. P0 (N(0,1) bin masses without offsets) is reported alongside.",
+  "readouts": "Forecast mean = m + sigma * sum_k p_k E[u|k]; forecast sd of u = sqrt(sum_k p_k E[u^2|k] - (sum_k p_k E[u|k])^2), with E[.|k] the N(0,1) within-bin moments (data/prior_baseline.json). RCF log-volatility offset = ln sd_RCF(u) - ln sd_P1(u).",
+  "ci": "95% percentile intervals from (i) a ticker bootstrap and (ii) a date-cluster bootstrap (clusters = close date t), 2,000 resamples each, numpy default_rng(20261011); regressions are refit in every resample; paired differences are computed per event before resampling. '两者必须一致': a criterion that involves an interval holds only if it holds under both intervals; if they disagree it does not hold (reported as inconsistent).",
+  "regressions": "All Mincer-Zarnowitz and slope regressions are OLS with an intercept on the evaluation sample.",
+  "(a)": "Distortion 1: slope of (R5 - m) on [mu_raw(with news) - mu_raw(without news)] (raw arm mu_pct, same price summary in both queries); holds if the interval excludes 1 (direction recorded). Distortion 2: V = mean of [(ln sigma_raw(with news) - ln sigma_raw(without news)) - (ln|R5 - m| - lsig - kappa0)], kappa0 = mean of ln|R5 - m| - lsig over the covered no-news stock-days of the train split (data/nonevent_days.parquet); holds if V > 0 and the interval excludes 0. (a) holds if at least one distortion holds.",
+  "(b)": "lambda > 0 is the train estimate. Slopes: (R5 - m) on (RCF mean - m); ln|R5 - m| on the RCF log-volatility offset. Both point estimates > 0 and both intervals exclude 0.",
+  "(c)": "Per-event paired differences of the binned log score, RCF - P1 and RCF - linear-removal arm; both means > 0 and both intervals exclude 0. Robustness: the same with every item whose has_move flag is true removed from the news of every arm (coefficients refit on train under the same removal; an event left without items gets each arm's no-news forecast, P1 for RCF).",
+  "(d)": "Test events split by the sign of the arm's own news component (RCF: RCF mean - P1 mean; linear removal: mu_raw(with news) - mu_raw(without news)); within each half the slope of (R5 - m) on (arm mean - m). Holds if both RCF point estimates lie in [0.6, 1.5]; intervals and the linear-removal slopes are reported.",
+  "(e)": "Per-event paired difference of the binned log score, RCF - LEAP-style verbal-likelihood arm; mean > 0 and intervals exclude 0.",
+  "placebo": "Each test event's news replaced by the news of another ticker's event on the same close date (events of a date sorted by ticker, cyclic shift by one; a date with a single event takes the first other-ticker event of the next date), scored with the lambda and b_k fit on the true train news (no refit). 'Placebo beats the prior' = mean(placebo - P1) > 0 with both intervals excluding 0.",
+  "verdict_logic": "Rows of the verdict table are checked in this order: termination row; pass row; downgrade row. If (a) fails, report '真实文本上没有可修正的失真' and stop (rule (a)). A combination the table does not list is reported with its criteria and no verdict label.",
+  "secondary_model": "Mistral-7B-Instruct-v0.3 repeats (c) and (d) on the same events; reported, not part of the verdict table.",
+  "scenario_sentences": "The h_k wording is fixed on the train split only; its text and sha256 are recorded in a separate registration file before the first test-split query. rule.json is not edited afterwards."
+ },
+ "data": {
+  "files_sha256": {
+   "data/events_train.jsonl": "82710d7ff2a383fa8791029b946b1aefa9527db681be8a757eca881b8d6900e0",
+   "data/events_test.jsonl": "796bff12fcac629cc173e95d28678537cb0a8ae2bf1bbf11b0f7e8d975ed8146",
+   "data/events_all.parquet": "317f6aaa8da6ef55ad19c669cc7c7c2c93c74ebd26da59f8b15c5cc5d343523b",
+   "data/nonevent_days.parquet": "83c753d3686af35a1374556367e02afa40a33d697d105804ba97291f8feee11d",
+   "data/news_items_flagged.parquet": "d4348ef307310838e6d021e6f257774d91251dfbbfb7a158a54610ff79956b49",
+   "data/coverage.json": "ff2138261da38690161464334c20131dbca710be9fcc0ac02df7e87a662f4c63",
+   "data/prior_baseline.json": "0324ecccb2b3d886928a95730c089ccc07e77c0d51733fee890eb0d0044a2f5c",
+   "data/event_stats.json": "99cbce1582646c1c2eed0ba1fcf3276e1d605fbb9ead53fee761ce067587e779",
+   "data/token_stats.json": "d1ce5ae5d7f85091711b7aea58fcd9792e043a189a401b20a546d99e25a7ec8e",
+   "data/design_deviations.json": "119f89cc9fd44f01f9b04b657d95f48b7a1081892c2405c37d722ac2a2a0d788",
+   "data/news/fetch_state.json": "cef65639f499fbbdd7a47a7225c4efbff494eb0da2dd1d38d725531f8e4e1593",
+   "scripts/build_events.py": "8c814d2b74331f62a95f3cee35136b153e218319ad712721532115f3e05e8389",
+   "scripts/news_lib.py": "2d7a1133f8a321d6ddd323c1cb680bf845abb4578ed1498bbf3c93b0742cee0e",
+   "scripts/prior_baseline.py": "c3cdf7e2f80e564631e2a3c4c19617b03b3c46ee2dfea082ae5358c09769a402",
+   "scripts/fetch_news.py": "2a2a507c1a42bbd79398ec4059d103abd4fbe1d6f35584597dfb17f921698d54",
+   "scripts/finnhub_lib.py": "1bf333302d958b40d924cc6a8e25bdc9d390af949f2f47bf6fec9f10db8b1e3c",
+   "scripts/make_rule.py": "6e991b668ea1dc48c5bf6022cfc5deccc70ebb4823049601fed9b1ddc791d996",
+   "logs/finnhub_calls.jsonl": "94ee7cb9a459a92bcf529c9c912b93a9db999082356ecccdf6fd8ced90bb0e37"
+  },
+  "counts": {
+   "eligible": {
+    "train": 4914,
+    "test": 10220
+   },
+   "sampled": {
+    "train": 2000,
+    "test": 4000
+   },
+   "sampled_tickers": {
+    "train": 95,
+    "test": 96
+   },
+   "sampled_dates": {
+    "train": 83,
+    "test": 158
+   }
+  }
+ },
+ "model_queries_before_this_file": 0,
+ "created_utc": "2026-10-10T11:47:15+00:00"
+}

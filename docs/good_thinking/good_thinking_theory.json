@@ -1,0 +1,939 @@
+[
+ {
+  "family": "weight",
+  "title": "Normative information weight and its psychology",
+  "research": {
+   "items": [
+    {
+     "name": "I. J. Good: weight of evidence = logarithm of the likelihood ratio (Turing's ban and deciban)",
+     "authors": "I. J. Good (book 1950); I. J. Good (1979 historical note on A. M. Turing's wartime statistical work)",
+     "year": "1950; 1979",
+     "venue": "Probability and the Weighing of Evidence, Charles Griffin and Co., London, 1950; Biometrika 66(2):393-396, 1979",
+     "core_idea_cn": "一条证据对一个假设的“分量”，定义为：假设为真时看到这条证据的概率，除以假设为假时看到它的概率，再取对数。以10为底取对数，单位叫“班”，十分之一班叫“分贝班”，这是图灵和古德在二战破译密码时用的单位。先验的对数赔率加上各条证据的分量，就是后验的对数赔率。分量能直接相加有一个前提：两条证据在“假设为真”和“假设为假”两种情况下都相互独立。不独立时，第二条证据只能加上它在已知第一条之后剩下的“条件分量”。",
+     "good_thinking_cn": "好的思考就是：每条信息只按它的条件分量去移动信念。相互独立的信息相加；重复出现的信息，条件分量是0；已经被价格反映过的新闻，在知道价格走势之后，条件分量接近0；互相矛盾的信息，正负分量相互抵消，而不是挑一条来讲。思考文本应能回答：这条信息在已知其他信息之后，还剩多少分量。",
+     "measurable_test_cn": "输入：合成任务（每条信息的似然比已知）、代理提交的预期五日收益和预期五日波动。把提交值换算成上涨概率 p = 标准正态分布函数(预期收益 / 预期波动)，或直接让代理报概率。计算代理的对数赔率变化 = ln(p/(1-p)) 减去先验对数赔率。三个数字：(1) 把代理的对数赔率变化对“真实条件分量之和”做回归，好的标准是斜率接近1（建议在0.8到1.2之间）、截距接近0；贝叶斯最优参考代理按定义斜率为1。(2) 每条证据的误差 = |代理移动量 - 真实条件分量|，换成分贝班（自然对数单位乘以约4.34），好的标准是中位数不超过约1分贝班。(3) 真实交易日的“重复新闻”扰动中，真实条件分量为0，代理移动应接近0分贝班；平均计数参考代理会再加一次完整分量。",
+     "fit_cn": "这是整套评估的“统一单位”：后面各项（重复、已消化、过时、矛盾、协同）都可以换算成分贝班来比较。我们已有的合成任务已知似然比，可以直接套用。",
+     "formula": "W(H:E) = log10[ P(E|H) / P(E|not H) ]  (bans; x10 = decibans). log10 O(H|E1,E2) = log10 O(H) + W(H:E1) + W(H:E2|E1). W(H:E2|E1) = W(H:E2) when E1, E2 are conditionally independent given H and given not-H. 1 deciban = 0.1*ln(10) = about 0.230 natural-log units; 1 natural-log unit = about 4.34 decibans.",
+     "source_url": "https://doi.org/10.1093/biomet/66.2.393 ; book reviewed at https://doi.org/10.1017/s0020268100013585",
+     "uncertainty": "Book and Biometrika note confirmed through Crossref metadata (book via contemporary reviews). Good's later survey 'Weight of evidence: a brief survey' (Bayesian Statistics 2, 1985) is cited on Wikipedia but its page numbers were not confirmed. The remark that about 1 deciban is the finest change people can judge is attributed to Good via a secondary source (Wikipedia), not re-read in the original. The 0.8-1.2 band is our suggested tolerance, not from the source.",
+     "verified": true
+    },
+    {
+     "name": "J. M. Keynes: weight of arguments (amount of evidence, separate from probability)",
+     "authors": "John Maynard Keynes",
+     "year": "1921",
+     "venue": "A Treatise on Probability, Macmillan and Co., London; Part I, Chapter VI 'The Weight of Arguments'",
+     "core_idea_cn": "凯恩斯把两件事分开：一个结论有多大可能（概率），和支撑这个判断的相关知识有多少（论证的权重）。原文的意思是：新证据有时会降低一个论证的概率，但总会增加它的“权重”。比较权重时看的不是有利证据和不利证据谁多，而是相关知识与相关无知各有多少。凯恩斯本人认为权重通常不能用一个通用数字来度量。",
+     "good_thinking_cn": "好的思考要分开说两件事：“往哪边、有多可能”和“依据有多厚”。依据薄的时候（独立证据少、都来自同一来源、新闻已经过时），要承认判断容易被推翻、仓位应小；依据厚的时候，单条新的小信号不应把判断推来推去。现代能计算的替代量是：后验精度（方差的倒数），或“有效独立证据条数”。",
+     "measurable_test_cn": "(1) 合成任务“概率相同、权重不同”：甲组只有1条支持证据；乙组有5条支持、4条反对（每条似然比相同），两组贝叶斯净对数赔率完全相同。好的思考：两组给出的上涨概率差别小于1分贝班；平均计数参考代理会把乙组看得不一样。(2) 连续信号版本：已经给了n条独立观测，再给1条新观测；贝叶斯更新幅度大约按1/(n+1)缩小。把代理更新幅度的对数对 ln(n+1) 回归，好的斜率接近 -1；忽视依据多少的代理斜率接近0。(3) 真实交易日：用22个字段的冗余矩阵算出当天“有效独立证据条数”，检查思考文本是否说明依据厚薄（判读模型打分），并计算有效条数与日间仓位变化绝对值的相关系数，好的应为负。",
+     "fit_cn": "直接对应我们的“仓位变化比理性规则噪6.7倍”问题：如果代理不把以前积累的依据当回事，每天都像第一次判断，就会过度变动。权重这个概念告诉我们该把“依据厚薄”写进思考，并让它决定今天该动多少。",
+     "formula": "Keynes gives no general formula. Modern stand-ins (our interpretation, not Keynes's): weight ~ posterior precision tau_post = tau_0 + sum_i tau_i; or effective number of independent items n_eff = 1' R^-1 1, with R the error correlation matrix of the items. Gaussian unknown-mean case: gain for the (n+1)-th observation = tau / (tau_0 + (n+1)*tau).",
+     "source_url": "https://www.gutenberg.org/ebooks/32625",
+     "uncertainty": "Title, year, publisher, chapter title and the quoted sentence ('New evidence will sometimes decrease the probability of an argument, but it will always increase its weight') confirmed in the Project Gutenberg PDF. The precision and effective-count formulas are later interpretations, not Keynes's own.",
+     "verified": true
+    },
+    {
+     "name": "Precision weighting: Kalman gain as the rational update size, and optimal combination of correlated forecasts",
+     "authors": "R. E. Kalman (1960); J. M. Bates and C. W. J. Granger (1969)",
+     "year": "1960; 1969",
+     "venue": "Journal of Basic Engineering 82(1):35-45 (1960); Operational Research Quarterly 20(4):451-468 (1969, now Journal of the Operational Research Society)",
+     "core_idea_cn": "理性的更新幅度由两种不确定性的比例决定：新信号越准（噪声方差越小）、原有判断越不确定，就该更新得越多。卡尔曼增益就是这个比例。多个信号时，按精度（方差的倒数）加权平均。如果信号的误差彼此相关（例如趋势信号和指数平滑异同移动平均线都来自同一段价格），最优权重要用误差协方差矩阵的逆来算：相关越高，几条信号合起来越接近只有一条。贝茨和格兰杰研究了两个误差相关的预测怎样组合才使误差方差最小。",
+     "good_thinking_cn": "每个工具输出的权重 = 它自己的精度，再扣掉与其他工具重叠的部分。卡尔曼增益给出“今天该动多少”：新信息小、噪声大，就只动一点点。年化20日波动这个数字，要先换算成五日单位（乘以根号(5/252)，约0.141），再和其他波动估计按精度合并，而不是原样照抄。",
+     "measurable_test_cn": "(1) 更新幅度比：用22个字段的冗余矩阵估计误差协方差，搭一个卡尔曼滤波参考规则，算它的日间仓位变化标准差；代理与它之比现在约6.7，好的接近1（建议不超过1.5）。(2) 隐含权重：把代理提交的预期五日收益对标准化后的工具字段做最小二乘回归，得到代理的隐含权重；和用协方差矩阵逆算出的最优权重比较。对高度相关的一簇字段（如趋势信号与指数平滑异同移动平均线），算“代理在簇内权重之和 / 最优簇权重”，好的接近1，明显大于1说明重复计算。(3) 波动照抄率：提交的预期五日波动等于年化20日波动数值的会话比例，现在约2%，好的是0；提交值对“换算到五日后的20日波动”回归，斜率应接近1。",
+     "fit_cn": "这是我们“理性凯利规则”参考线的理论来源，也直接用上了冗余矩阵：冗余矩阵就是计算最优权重和有效独立条数所需的输入。",
+     "formula": "Scalar: K = P0/(P0 + R); m1 = m0 + K*(y - m0); P1 = (1 - K)*P0. Vector: K = P H' (H P H' + R)^-1. Independent signals: m = (tau0*m0 + sum_i tau_i*y_i)/(tau0 + sum_i tau_i), tau = 1/variance. Correlated errors with covariance S: w = S^-1 1 / (1' S^-1 1). Two forecasts with error sds s1, s2 and correlation rho: weight on forecast 1 k = (s2^2 - rho*s1*s2)/(s1^2 + s2^2 - 2*rho*s1*s2). n equally noisy signals with common correlation rho: effective count = n/(1 + (n-1)*rho). Unit conversion: sigma_5d = sigma_annual*sqrt(5/252).",
+     "source_url": "https://doi.org/10.1115/1.3662552 ; https://doi.org/10.1057/jors.1969.103",
+     "uncertainty": "Both papers confirmed through Crossref metadata. The weights w = S^-1 1/(1' S^-1 1) and the effective-count formula are standard generalized least squares results, not quoted from these two papers. The two-forecast correlated formula is the standard minimum-variance result usually credited to Bates and Granger 1969, but I did not re-read the paper text. The 1.5 threshold is our suggestion.",
+     "verified": true
+    },
+    {
+     "name": "Value of information: Blackwell informativeness ordering and Howard information value theory",
+     "authors": "David Blackwell (1951, 1953); Ronald A. Howard (1966)",
+     "year": "1951; 1953; 1966",
+     "venue": "Proceedings of the Second Berkeley Symposium on Mathematical Statistics and Probability, pp. 93-102 (1951); Annals of Mathematical Statistics 24(2):265-272 (1953); IEEE Transactions on Systems Science and Cybernetics 2(1):22-26 (1966)",
+     "core_idea_cn": "布莱克韦尔：如果信息源乙可以看成是信息源甲再经过一层随机“打乱”（数学上：乙的条件分布 = 甲的条件分布乘一个随机矩阵），那么对任何决策者、任何目标，甲都至少和乙一样有用；反过来也成立。霍华德：信息的价值 = 有了信息之后最优决策的期望收益，减去没有信息时最优决策的期望收益；完全准确信息的价值是上限。一条信息再“强”，只要不能改变决策，价值就是0。",
+     "good_thinking_cn": "一条信息的分量要看它能不能改变今天的仓位，以及改变之后期望收益提高多少。过时新闻和已经被价格反映的新闻，在已知价格统计之后，相当于价格信息的“打乱版”，附加价值接近0；重复新闻附加价值为0。好的思考会问：“把这条信息拿掉，我的仓位会变吗？”",
+     "measurable_test_cn": "(1) 对每个工具字段，用贝叶斯最优参考代理计算“去掉这个字段后，期望对数财富增长（凯利效用）下降多少”，这就是该字段在其他字段都在时的信息价值。(2) 对代理做反事实重放：把这个字段换成中性值或删除，记录仓位变化的绝对值，得到代理对它的依赖度。(3) 依赖度与信息价值的等级相关系数，好的接近1（建议不低于0.7），显眼信息跟随参考代理会明显偏低。(4) 对信息价值约为0的扰动（重复、已消化、过时新闻），计算“这类新闻引起的仓位变化 / 普通新闻引起的仓位变化”，好的接近0。(5) 统计“打乱版反而更受重视”的次数：当字段乙是字段甲的确定性换算或打乱版（例如年化波动是日波动的换算），代理对乙的依赖却超过对甲，好的为0次。",
+     "fit_cn": "把“已消化、过时、重复”三种扰动统一成一句话：它们是已有信息的打乱版，所以附加价值为0。信息价值也给了第(4)项注意力分配一个客观的目标分布。",
+     "formula": "Blackwell: experiment P is at least as informative as Q iff Q = P*M for some row-stochastic (Markov) matrix M iff, for every decision problem, max_a E[u | observe P] >= max_a E[u | observe Q]. Howard: value of perfect information = E_s[ max_a U(a,s) ] - max_a E_s[ U(a,s) ]; value of signal y = E_y[ max_a E[U(a,s)|y] ] - max_a E[U(a,s)]. Conditional value of field i: VOI_i = V(all fields) - V(all fields except i), with V = expected log wealth growth under the optimal exposure.",
+     "source_url": "https://doi.org/10.1214/aoms/1177729032 ; https://doi.org/10.1525/9780520411586-009 ; https://doi.org/10.1109/tssc.1966.300074",
+     "uncertainty": "All three confirmed through Crossref metadata. The ordering statement and the value-of-information definitions are the standard textbook forms; I did not re-read the original texts. The leave-one-out conditional value and the 0.7 threshold are our design choices.",
+     "verified": true
+    },
+    {
+     "name": "Rational inattention: attention as a limited information channel (Sims 2003) and the Journal of Economic Literature review",
+     "authors": "Christopher A. Sims (2003); Bartosz Mackowiak, Filip Matejka, Mirko Wiederholt (2023)",
+     "year": "2003; 2023",
+     "venue": "Journal of Monetary Economics 50(3):665-690 (2003); Journal of Economic Literature 61(1):226-273 (2023)",
+     "core_idea_cn": "人处理信息的能力有限，所以要选择“看什么、看多仔细”。西姆斯把这种限制写成信息论里的信道容量：从数据到决定之间能传递的互信息有上限（或者每单位互信息有成本）。最优做法是把有限的注意力用在对决策价值最高的信息上。在正态分布加平方损失的情形里，注意力有限会让决定更平滑、反应更迟缓，而不是更噪。2023年的综述总结了这一理论的机制和在各领域的证据。",
+     "good_thinking_cn": "(1) 思考文本的篇幅和提及次数，应分配给决策价值高的信息，而不是数字最显眼的信息。(2) 一个注意力有限但理性的代理，它的预测值的波动不会超过使用全部信息的贝叶斯代理（由全方差公式推出）。如果代理比全信息理性规则还噪，那就不是“看得少”造成的，而是分量给错了。",
+     "measurable_test_cn": "(1) 注意力分配：用判读模型把每次思考文本的句子归到22个字段，得到各字段的“注意力份额”；与第4项算出的信息价值份额比较，计算等级相关系数（或库尔贝克-莱布勒散度），好的接近贝叶斯最优参考代理，显眼信息跟随参考代理会把注意力集中在年化波动这类显眼数字上。(2) 方差上界检验：代理提交的预期五日收益的方差，除以贝叶斯最优参考代理用同样工具得到的预期收益的方差；任何理性代理（包括注意力有限的）都应不超过1，大于1就是多余噪声。(3) 多余噪声份额 = 1 - 决定系数（代理仓位对最优仓位回归），好的越小越好。",
+     "fit_cn": "这一项给“6.7倍噪声”一个干净的诊断：注意力有限只能让反应更平滑，不能让它更噪，所以多出来的噪声必须归因于分量错误（例如对弱信号过度反应），而不是信息不够。它也给出思考文本中注意力该怎么分配的标准。",
+     "formula": "Choose attention (signal S about state X) to maximize E[U(a(S), X)] - lambda*I(X;S), or subject to I(X;S) <= kappa, with I = Shannon mutual information. Gaussian-quadratic case: posterior variance = prior variance * exp(-2*kappa) (kappa in nats). Discrete-choice form (Matejka and McKay 2015, American Economic Review 105(1):272-298): P(a|x) = P0(a)*exp(U(a,x)/lambda) / sum_b P0(b)*exp(U(b,x)/lambda). Variance bound (law of total variance): if the agent's information S is a garbling of the tool outputs T, Var(E[X|S]) <= Var(E[X|T]).",
+     "source_url": "https://doi.org/10.1016/S0304-3932(03)00029-1 ; https://doi.org/10.1257/jel.20211524",
+     "uncertainty": "Both papers (and Matejka and McKay 2015) confirmed through Crossref; the review's abstract was read. Sims's abstract was not retrieved; the Gaussian formula is the standard linear-quadratic-Gaussian result of this literature, not re-read here. The variance bound is my derivation from the law of total variance: it holds for the level of the forecast, not strictly for day-to-day changes.",
+     "verified": true
+    },
+    {
+     "name": "Shapley value: the weight of one input in the context of all the others (plus pairwise interaction index for redundancy and synergy)",
+     "authors": "Lloyd S. Shapley (1953); Scott M. Lundberg and Su-In Lee (2017); Michel Grabisch and Marc Roubens (1999)",
+     "year": "1953; 2017; 1999",
+     "venue": "Contributions to the Theory of Games II, Annals of Mathematics Studies 28, Princeton University Press, pp. 307-317 (1953); Advances in Neural Information Processing Systems 30 (2017); International Journal of Game Theory 28(4):547-565 (1999)",
+     "core_idea_cn": "把一组输入共同产生的结果公平地分给每个输入：对某个输入，考察它加入所有可能的其他输入组合时带来的边际贡献，再按固定权重平均。它满足：各输入分到的量加起来等于总效果；作用完全相同的两个输入分得一样多；毫无作用的输入分到0。伦德伯格和李把它用来解释机器学习模型的单次预测。格拉比施和鲁本斯给出“两两交互指数”：负值表示冗余（两个一起的效果小于分别效果之和），正值表示协同（一起才有用）。",
+     "good_thinking_cn": "一条信息的分量不是孤立的，而是“在其他信息都在的情况下”它还贡献多少。好的思考，代理对各工具的实际依赖（归因）应接近理性规则的归因；冗余的一对（趋势信号和指数平滑异同移动平均线）应表现为负交互；新闻和价格统计在“新闻已被消化”时也应表现为负交互（价格里已经含有新闻）。",
+     "measurable_test_cn": "把9个工具当作“参与者”（2的9次方 = 512种组合，可以穷举；或每个交易日随机抽约100个排列做近似）。两套价值函数：最优版 = 贝叶斯最优参考代理只看某一组工具时的期望对数财富增长（合成任务中可用对数赔率）；代理版 = 只给代理这组工具（其余遮蔽）重放后得到的仓位。计算：(1) 代理沙普利值与最优沙普利值的等级相关，好的接近1（建议不低于0.7）。(2) 冗余矩阵中高度相关的工具对，代理交互指数应为负；记录符号一致率，好的接近100%；平均计数参考代理交互接近0（简单相加），因而在这些对上不一致。(3) “新闻已消化”扰动中，新闻与价格统计的最优交互为负，代理也应为负。",
+     "fit_cn": "这是唯一一个同时给出“单条分量”和“两两关系（冗余或协同）”的统一框架，正好对应我们的目标(a)和(b)。代价是需要大量遮蔽重放，按工具分组可以控制成本。",
+     "formula": "phi_i = sum over S subset of N\\{i} of [ |S|! * (n-|S|-1)! / n! ] * [ v(S u {i}) - v(S) ]; sum_i phi_i = v(N) - v(empty). Pairwise Shapley interaction index: I_ij = sum over S subset of N\\{i,j} of [ |S|! * (n-|S|-2)! / (n-1)! ] * [ v(S u {i,j}) - v(S u {i}) - v(S u {j}) + v(S) ]; I_ij < 0 redundancy, I_ij > 0 synergy.",
+     "source_url": "https://doi.org/10.1515/9781400881970-018 ; https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions ; https://doi.org/10.1007/s001820050125",
+     "uncertainty": "All three confirmed (Crossref, NeurIPS proceedings page). Crossref lists the Shapley chapter as pp. 307-318; it is usually cited as 307-317. The interaction-index formula is the standard form, written from memory rather than re-read in Grabisch and Roubens. Cost of masked replays on the real agent is a practical constraint, not a theoretical one. The 0.7 threshold is our suggestion.",
+     "verified": true
+    },
+    {
+     "name": "Griffin and Tversky: strength versus weight of evidence",
+     "authors": "Dale Griffin and Amos Tversky",
+     "year": "1992",
+     "venue": "Cognitive Psychology 24(3):411-435",
+     "core_idea_cn": "人在判断时主要看证据的“强度”（有多极端，例如推荐信写得多热情、效应有多大），而对证据的“权重”（有多可信，例如写信人是否可靠、样本有多大）考虑不足。结果是：强度高、权重低时过度自信；强度低、权重高时信心不足。在抛硬币实验里，强度用样本中正面的比例表示，权重用样本量表示。",
+     "good_thinking_cn": "对每条信息同时看“有多极端”和“有多可靠、样本多大”，两样都要进入分量。一条措辞激烈但来源单一的新闻，分量不应超过很多条温和但相互独立的报道。很极端的相对强弱指数数值，如果计算窗口很短，也要打折扣。",
+     "measurable_test_cn": "合成任务做网格设计：强度 = 新闻中正面的比例（例如0.6、0.7、0.8）乘以 权重 = 独立文章数（例如3、9、27）。在二项模型下，真实对数似然比 = 文章数 × (2 × 正面比例 - 1) × 常数。把“代理对数赔率变化的绝对值”取对数，对 ln(2×正面比例-1) 和 ln(文章数) 做回归，贝叶斯要求两个系数都等于1。报告“文章数系数 / 比例系数”，好的接近1；这篇论文发现的人类模式是这个比值明显小于1。真实交易日：比较“一条极端新闻”和“多条温和独立新闻”（真实对数似然比相同）引起的仓位变化，好的两者相等。",
+     "fit_cn": "解释“显眼信息跟随”现象（包括照抄年化波动数字）：显眼的数字强度高，但不一定分量大。也给训练提供一条可检查的规则：思考里必须同时写出强度和可靠程度。",
+     "formula": "Binomial chance setup with known bias theta: log LR = (h - t)*ln(theta/(1-theta)) = n*(2p - 1)*ln(theta/(1-theta)), with p = h/n (strength) and n (weight). Test regression: ln|agent log-odds shift| = a + b_s*ln(2p - 1) + b_w*ln(n); Bayes implies b_s = b_w = 1.",
+     "source_url": "https://doi.org/10.1016/0010-0285(92)90013-R",
+     "uncertainty": "Paper and abstract confirmed (Crossref, OpenAlex). The paper fits a regression of this kind and finds strength weighted more than sample size, but the exact specification above is from memory and derived from the binomial model, not re-read in the original.",
+     "verified": true
+    },
+    {
+     "name": "Benjamin: errors in probabilistic reasoning (under-inference, sample-size neglect, base-rate neglect) in the Grether form",
+     "authors": "Daniel J. Benjamin (2019); framework from David M. Grether (1980)",
+     "year": "2019 (Grether 1980)",
+     "venue": "Handbook of Behavioral Economics: Applications and Foundations 1, Volume 2, eds. B. D. Bernheim, S. DellaVigna, D. Laibson, Elsevier / North-Holland, pp. 69-186 (2019); Grether: Quarterly Journal of Economics 95(3):537-557 (1980)",
+     "core_idea_cn": "这一章综述人在概率推理上的系统错误。核心描述框架：主观后验赔率 = (似然比)的c次方 × (先验赔率)的d次方，贝叶斯就是 c = d = 1。c 小于1叫“推断不足”（把信号当作比实际弱），c 大于1叫“推断过度”；d 小于1叫“忽视基础比率”。综述中的主要事实：多数实验里人推断不足；样本越大推断不足越严重（样本量被忽视，作者称为“不相信大数定律”）；同时又常常忽视基础比率。作者强调 c 和 d 的绝对大小都重要，不只是两者的相对大小。",
+     "good_thinking_cn": "c 和 d 都接近1：既不把信号放大，也不把信号压小；先验（昨天的判断、长期的基础比率）按它应有的分量保留下来。",
+     "measurable_test_cn": "合成任务中先验赔率和似然比都已知，代理报出上涨概率（或由预期收益和预期波动换算），做最小二乘回归 ln(代理后验赔率) = c × ln(似然比) + d × ln(先验赔率)。报告 c、d 及置信区间，好的标准是两者都在约0.8到1.2之间（建议）。按信号条数分组分别估计 c，好的 c 不随条数增多而下降（检验样本量忽视）。真实数据中：以昨天提交的预期收益作为先验、今天新出现的工具变化作为信号，估计代理对昨天判断的保留程度 d；如果 d 明显低于卡尔曼参考规则对应的值，说明代理每天“忘掉”先验，这是6.7倍噪声的一个候选解释，需要检验后才能下结论。",
+     "fit_cn": "给“分量用得对不对”一个只有两个数的总结（c 和 d），并且能分开诊断“信号用错”和“先验用错”。我们的合成任务结构与这类实验一致，可以直接估计。",
+     "formula": "pi(A|S)/pi(B|S) = [ p(S|A)/p(S|B) ]^c * [ p(A)/p(B) ]^d ; Bayes: c = d = 1; c < 1 underinference, c > 1 overinference, d < 1 base-rate neglect. Estimation: ln(posterior odds) = c*ln(LR) + d*ln(prior odds) + error.",
+     "source_url": "https://doi.org/10.1016/bs.hesbe.2018.11.002 ; working paper https://www.nber.org/papers/w25200",
+     "uncertainty": "Chapter metadata confirmed via Crossref and NBER; the c and d formula and the definitions of underinference and base-rate neglect were read directly in the NBER working-paper text (Section 4). Grether 1980 confirmed via Crossref (first page 537; end page 557 from memory). The 0.8-1.2 band is our suggestion.",
+     "verified": true
+    },
+    {
+     "name": "Augenblick, Lazarus and Thaler: overinference from weak signals and underinference from strong signals",
+     "authors": "Ned Augenblick, Eben Lazarus, Michael Thaler",
+     "year": "2025 (online 14 October 2024)",
+     "venue": "Quarterly Journal of Economics 140(1):335-401",
+     "core_idea_cn": "人收到新信息时，有时修正过度、有时修正不足；决定是哪一种的关键是信号的强度：对弱信号推断过度，对强信号推断不足。模型的解释是：人知道该往哪个方向更新，但不确定该更新多少，于是更新量被压向中间。作者在抽象实验、自然情景实验、体育博彩市场和金融市场四个环境中都得到这一结果，并认为它能调和以往实验和实证文献中看似矛盾的发现。",
+     "good_thinking_cn": "更新幅度与信号的真实强度成正比，比例处处为1：不因为信号弱就做出大反应，也不因为信号强就不敢跟。",
+     "measurable_test_cn": "合成任务：按“真实贝叶斯对数赔率变化的绝对值”分箱（例如小于1分贝班、1到5、5到15、大于15分贝班），在每个箱内回归“代理对数赔率变化”对“贝叶斯对数赔率变化”，得到各箱斜率。好的：各箱斜率都接近1、整条曲线是平的；论文中的人类模式是弱箱斜率大于1、强箱小于1。真实数据：把每天的工具信号变化（趋势信号、相对强弱指数、新闻情绪等的日变化）按大小分箱，计算“代理仓位变化 / 卡尔曼参考规则仓位变化”。如果弱信号箱的比值远大于1，就说明6.7倍噪声主要来自对日常小波动的过度反应。",
+     "fit_cn": "这可能是我们“过度反应”问题最直接的机制假说：每天的工具读数大多是弱信号，若代理对弱信号推断过度，就会产生过多的日间仓位变化。它还给出了诊断时必须按信号强度分开看的理由，只看一个总斜率会把两种相反的错误平均掉。",
+     "formula": "Our test in the spirit of the paper: within bins b of |Bayesian log-odds update|, estimate slope beta_b in agent_update = beta_b * bayes_update + error. Bayes: beta_b = 1 for every bin. Reported pattern: beta_b > 1 for weak-signal bins, beta_b < 1 for strong-signal bins.",
+     "source_url": "https://doi.org/10.1093/qje/qjae032",
+     "uncertainty": "Authors, title, journal, volume 140, issue 1, pages 335-401, online date 2024-10-14 and print issue date January 2025 confirmed via Crossref; abstract read. Full text was not accessible, so the paper's exact regression specification was not re-read; the binned-slope test above is our adaptation.",
+     "verified": true
+    },
+    {
+     "name": "Enke and Zimmermann: correlation neglect in belief formation (double counting)",
+     "authors": "Benjamin Enke and Florian Zimmermann",
+     "year": "2019 (online December 2017)",
+     "venue": "Review of Economic Studies 86(1):313-332",
+     "core_idea_cn": "实验中被试收到相关的信号（几条“信息”其实来自同一个底层信号）。许多人忽视了重复计算问题，把相关的信号当作独立的来更新，于是信念对反复出现的说法反应过度，波动比理性更新更大。个体之间差别很大；主要原因是问题的复杂度，而不是计算能力不够；在实验中把注意力引向“相关性以及背后真正独立的信号”，能明显改善信念的合理性。",
+     "good_thinking_cn": "思考时先追问每条信息的来源：同一事件的多条报道、来自同一段价格序列的多个技术指标，应先合并成一条再计分量。",
+     "measurable_test_cn": "(1) 重复新闻扰动：同一条新闻以两个来源出现。重复计算份额 = (有重复时的对数赔率移动 - 无重复时的移动) / 无重复时的移动。好的接近0（贝叶斯最优参考代理为0），完全忽视相关性为1（平均计数参考代理）。(2) 冗余簇：用22字段冗余矩阵把高度相关的字段聚成簇；比较“簇内多个字段同向”与“只有一个字段”时代理的反应之比，再与贝叶斯规则算出的比值对比，好的两者接近。(3) 文本识别：在有重复的日子，用判读模型检查思考文本是否明确指出“这两条是同一来源或同一信息”，计算识别率；在无重复的日子计算误报率。好的是识别率高、误报率低。(4) 干预：论文发现提醒注意相关性有效，可以在思考模板里加一步“先列出独立来源”，测重复计算份额下降多少。",
+     "fit_cn": "直接对应目标(b)中的“冗余与重复计算”，并且我们的重复新闻扰动和冗余矩阵就是现成的测量工具。论文的干预结果也提示了训练思考过程的一个方向。",
+     "formula": "Same source counted twice: correct log O = log O0 + W(s); correlation neglect: log O = log O0 + 2*W(s). Double-counting share = (shift_with_duplicate - shift_without_duplicate) / shift_without_duplicate; Bayes = 0, full neglect = 1.",
+     "source_url": "https://doi.org/10.1093/restud/rdx081",
+     "uncertainty": "Authors, title, journal, volume 86, issue 1, pages 313-332, year 2019 confirmed via RePEc/IDEAS and Crossref; abstract read. The double-counting-share metric is our construction from the paper's concept.",
+     "verified": true
+    },
+    {
+     "name": "Augenblick and Rabin: belief movement must equal uncertainty reduction for a Bayesian",
+     "authors": "Ned Augenblick and Matthew Rabin",
+     "year": "2021",
+     "venue": "Quarterly Journal of Economics 136(2):933-985",
+     "core_idea_cn": "贝叶斯的人得到新信息、改变看法时，平均而言必须同时变得更确定。所以，经常大幅改变看法却一直很不确定，或者没怎么改变就变得很自信，对贝叶斯的人都很少见。作者定义了“信念移动量”和“不确定性下降量”，证明两者期望相等，并据此给出不需要知道真实答案的统计检验；还说明这个检验对几种常见心理偏差特别敏感。",
+     "good_thinking_cn": "看法的来回摆动必须“花掉”相应的不确定性：改得多，就应该更确定；如果每次都大改、却始终不确定，那就是过度反应或噪声。",
+     "measurable_test_cn": "只能用于“关于同一个固定事件”的信念序列。做法：在一个交易日内，让代理在每次调用工具之后报告“未来五日上涨的概率”（同一个事件），得到概率序列 p0, p1, ..., pT。计算移动量 m = 各步 (p下一步 - p这一步) 的平方和，不确定性下降量 r = p0×(1-p0) - pT×(1-pT)，在所有会话上汇总，得到比值 m / r 并检验 m - r 是否显著不为0。好的：比值接近1；明显大于1 = 过度移动（与6.7倍噪声同向）；小于1 = 移动不足。合成的多步任务（证据依次揭示）同样适用。注意：每天提交的是滚动的“未来五日收益”，不是同一个事件，跨日直接套用要谨慎。",
+     "fit_cn": "它不需要知道真实答案就能检查“动得太多”，正好补上真实交易日没有标准答案的缺口，也能检验训练后的思考过程是否真的更平稳且合理。",
+     "formula": "Binary event, belief path pi_0..pi_T: movement m = sum_t (pi_{t+1} - pi_t)^2; uncertainty u_t = pi_t*(1 - pi_t); uncertainty reduction r = u_0 - u_T = sum_t (u_t - u_{t+1}). Bayesian: E[m] = E[r]. Excess movement X = m - r (Bayes: E[X] = 0); normalized ratio m/r (Bayes: about 1).",
+     "source_url": "https://doi.org/10.1093/qje/qjaa043",
+     "uncertainty": "Authors, title, journal, volume, issue, pages confirmed via Crossref; abstract read via OpenAlex. Full text not accessible; the exact forms of m and r are written from memory of the paper and agree with the abstract's description, but were not re-read. This item was added beyond the requested list because it directly tests excessive belief movement.",
+     "verified": true
+    }
+   ],
+   "family_summary_cn": "回答“有没有量化的、经济学的理论来定义信息的分量和信息之间的关系，从而定义好的思考”：有，而且可以分成两层。\n\n第一层是“规范标准”，说清楚理性的人应该怎样给信息分量。(1) 古德的证据分量：一条信息的分量 = 它的对数似然比，单位可用分贝班；只有在相互独立时分量才能直接相加，不独立时只能加“已知其他信息后剩下的条件分量”。这一条把重复（条件分量为0）、已被价格消化（已知价格后条件分量接近0）、矛盾（正负抵消）统一起来，是整个评估的“统一单位”。(2) 卡尔曼增益和精度加权：给出“今天该动多少”的理性幅度；信号误差相关时用协方差矩阵的逆算权重，这正是我们22字段冗余矩阵的用处。(3) 凯恩斯的论证权重：要把“有多可能”和“依据有多厚”分开，依据厚时单条小信号不应推动判断。(4) 布莱克韦尔和霍华德的信息价值：一条信息的分量最终看它能否改变决策；过时、已消化、重复的信息都是已有信息的“打乱版”，附加价值为0。(5) 沙普利值和两两交互指数：给出“在其他信息都在的情况下”每条信息的分量，交互为负表示冗余，为正表示协同，同时覆盖目标(a)和(b)。(6) 理性注意力：注意力应分配给决策价值高的信息；而且注意力有限只能让反应更平滑，不会更噪，所以我们观察到的“比理性规则噪6.7倍”必须归因于分量用错，而不是信息不够（这一推论只对预测值的水平严格成立，对日间变化是强烈预期但不是定理）。\n\n第二层是“人怎样系统地用错分量”，提供了现成的测量方法和可能的机制。格里芬和特沃斯基：只看强度、忽视权重（对应照抄显眼的年化波动数字）。本杰明综述中的格雷瑟形式：主观后验赔率 = 似然比的c次方 × 先验赔率的d次方，用两个数字分开诊断“信号用错”和“先验用错”。奥古斯布利克、拉扎勒斯、塞勒（2025年《经济学季刊》）：对弱信号推断过度、对强信号推断不足，这是我们过度反应问题最直接的候选机制，因为每天的工具读数大多是弱信号——这一点尚未在我们的代理上检验，只是假说。恩克和齐默尔曼：相关信号被当作独立的，造成重复计算，且提醒注意相关性能改善。奥古斯布利克和拉宾：贝叶斯的人“信念移动量”必须等于“不确定性下降量”，不需要真实答案就能检查动得是否太多。\n\n据此可以给出一个可测量的“好的思考”定义：代理在每条信息上移动的对数赔率，等于这条信息在已知其他所有信息（包括价格已经走过的部分）之后的条件分量。对应的计分卡：合成任务中对数赔率变化对真实条件分量的斜率接近1，且按信号强弱分箱后各箱都接近1；格雷瑟回归中 c 和 d 都接近1；重复新闻的重复计算份额接近0；已消化、过时新闻引起的仓位变化接近0；代理沙普利值与最优沙普利值高度一致，冗余工具对的交互为负；思考文本的注意力份额与信息价值份额一致；预测值的方差不超过贝叶斯最优参考代理；同一事件的信念移动量与不确定性下降量之比接近1；日间仓位变化与卡尔曼参考规则之比接近1。文中所有阈值（如0.8到1.2、不低于0.7、不超过1.5）都是建议值，不是文献给出的标准。\n\n已确认的事项：11项文献的作者、年份、期刊卷期页码都通过Crossref、出版方页面或原文核对过；凯恩斯的原话和本杰明的c、d公式在原文中读到过。未完全确认的事项：奥古斯布利克-拉扎勒斯-塞勒、奥古斯布利克-拉宾、格里芬-特沃斯基三篇只读到摘要，具体回归形式是按记忆和模型推导写的；贝茨-格兰杰的相关预测组合公式、沙普利交互指数公式是标准形式，没有回到原文逐字核对；古德1985年综述的页码未确认。"
+  },
+  "verify": {
+   "verdicts": [
+    {
+     "name": "I. J. Good: weight of evidence = log likelihood ratio (ban, deciban)",
+     "status": "confirmed",
+     "note": "Crossref: Good, 'Studies in the History of Probability and Statistics. XXXVII A. M. Turing's statistical work in World War II', Biometrika 66(2):393-396, 1979. The book review DOI shows the book: Charles Griffin and Co. Ltd., London, 1950. Secondary sources citing Good 1979 say Turing and Good made the ban and deciban in 1940 for Banburismus, and that adding decibans is Bayesian updating. The formulas are correct: the log-odds update adds up, the conditional weight is right, and 1 deciban = 0.230 nats, 1 nat = 4.34 decibans. I could not read the full text of either source.",
+     "source_url": "https://doi.org/10.1093/biomet/66.2.393"
+    },
+    {
+     "name": "J. M. Keynes: weight of arguments",
+     "status": "confirmed",
+     "note": "I checked the Gutenberg 32625 source text. It is A Treatise on Probability, Macmillan and Co., London, 1921, Part I, Chapter VI 'The Weight of Arguments'. Verbatim: the comparison 'turns upon a balance, not between the favourable and the unfavourable evidence, but between the absolute amounts of relevant knowledge and of relevant ignorance'. Also: 'New evidence will sometimes decrease the probability of an argument, but it will always increase its weight.' The text says only relevant evidence counts. On measuring it: 'Only in a restricted class of cases can we compare the weights of two arguments.' The modern stand-in formulas are labelled as interpretation, and they are correct.",
+     "source_url": "https://www.gutenberg.org/ebooks/32625"
+    },
+    {
+     "name": "Precision weighting: Kalman 1960; Bates and Granger 1969",
+     "status": "confirmed",
+     "note": "Crossref: Kalman, 'A New Approach to Linear Filtering and Prediction Problems', J. Basic Engineering 82(1):35-45, 1960. Bates and Granger, 'The Combination of Forecasts', 20(4):451-468, Dec 1969; Crossref now lists this under J. Operational Research Society. I did not refetch the paper, but the two-forecast weight k = (s2^2 - rho s1 s2)/(s1^2 + s2^2 - 2 rho s1 s2) is the standard Bates-Granger result. The scalar and vector gain, the precision-weighted mean, the GLS weights, n/(1+(n-1)rho) and the sqrt(5/252) scaling are all mathematically correct.",
+     "source_url": "https://doi.org/10.1057/jors.1969.103"
+    },
+    {
+     "name": "Blackwell informativeness ordering; Howard information value theory",
+     "status": "confirmed",
+     "note": "Crossref: Blackwell, 'Comparison of Experiments', Proc. Second Berkeley Symposium, pp. 93-102, 1951. Blackwell, 'Equivalent Comparisons of Experiments', Ann. Math. Stat. 24(2):265-272, 1953. Howard, 'Information Value Theory', IEEE Trans. SSC 2(1):22-26, 1966. The garbling-matrix statement and the value-of-information formulas are standard and correct. The 'conditional value of field i' is your own construction, not Howard's.",
+     "source_url": "https://doi.org/10.1214/aoms/1177729032"
+    },
+    {
+     "name": "Rational inattention: Sims 2003; Mackowiak, Matejka, Wiederholt 2023 JEL review",
+     "status": "wrong",
+     "note": "The citations are right (Crossref): Sims, J. Monetary Econ. 50(3):665-690, 2003. Mackowiak-Matejka-Wiederholt, 'Rational Inattention: A Review', JEL 61(1):226-273, 2023. Matejka-McKay, AER 105(1):272-298, 2015. The formulas check out. One clause misstates the work: '而不是更噪' (rather than noisier). The review's quadratic-Gaussian section (ECB WP 2570 version) gives y = (a xi) x + (a xi) eps, 'where (a xi) eps is the resulting noise in actions'. It calls this 'stochastic under-reaction', and feature F1 says agents 'make random mistakes'. So in the Gaussian case, limited attention gives a dampened, delayed response plus extra noise in actions. Fix: drop '而不是更噪' and say decisions are both more sluggish and noisier. The rest of the claim is faithful.",
+     "source_url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp2570~a3979fbfa5.en.pdf"
+    },
+    {
+     "name": "Shapley value; Lundberg and Lee SHAP; Grabisch and Roubens interaction index",
+     "status": "confirmed",
+     "note": "Crossref: Shapley, 'A Value for n-Person Games', Contributions to the Theory of Games II (AM-28). The De Gruyter record lists pp. 307-318, while the common citation is 307-317, a trivial difference. Lundberg and Lee, NIPS 30 (2017), confirmed on the NeurIPS page. Grabisch and Roubens, IJGT 28(4):547-565, 1999. The phi_i formula and the axioms are standard and correct. The pairwise interaction formula is the standard Shapley interaction index; negative means redundancy and positive means complementarity.",
+     "source_url": "https://doi.org/10.1007/s001820050125"
+    },
+    {
+     "name": "Griffin and Tversky 1992: strength vs weight of evidence",
+     "status": "confirmed",
+     "note": "Crossref/OpenAlex: 'The weighing of evidence and the determinants of confidence', Cognitive Psychology 24(3):411-435, July 1992. The abstract matches the claim almost word for word: warmth of a letter vs credibility of the writer; overconfidence when strength is high and weight low, underconfidence the reverse; in the chance setup, strength = sample proportion and weight = sample size. The binomial log-LR formula is correct. The regression is your test in the spirit of the paper.",
+     "source_url": "https://doi.org/10.1016/0010-0285(92)90013-R"
+    },
+    {
+     "name": "Benjamin 2019: errors in probabilistic reasoning (Grether form)",
+     "status": "confirmed",
+     "note": "Crossref: Handbook of Behavioral Economics: Applications and Foundations 1, Vol 2, pp. 69-186, 2019. Grether, QJE 95(3):537-557, 1980 (pages checked on IDEAS). The NBER w25200 text matches: eq. (4.6) is the c/d form; c<1 is underinference, c>1 overinference, d<1 base-rate neglect. Stylized Fact 1: underinference is the dominant bias. Fact 2: it is more severe the larger the sample. Fact 7: people show base-rate neglect. Verbatim: 'in fact the absolute values of c and d both matter.' Nuance: 'non-belief in the law of large numbers' is a theory about beliefs over sampling distributions (Section 3.B), which Benjamin links to sample-size neglect. It is not simply his name for Fact 2.",
+     "source_url": "https://www.nber.org/papers/w25200"
+    },
+    {
+     "name": "Augenblick, Lazarus, Thaler: overinference from weak, underinference from strong signals",
+     "status": "confirmed",
+     "note": "Crossref/OpenAlex: QJE 140(1):335-401, online 14 Oct 2024, 2025 issue. The abstract matches: people know which direction to update but not how much; they overinfer from weak signals and underinfer from strong ones. Four settings: abstract experiments, a naturalistic experiment, sports betting markets and financial markets. The paper says this helps reconcile results that look contradictory. The binned-slope test is labelled as yours.",
+     "source_url": "https://doi.org/10.1093/qje/qjae032"
+    },
+    {
+     "name": "Enke and Zimmermann: correlation neglect in belief formation",
+     "status": "confirmed",
+     "note": "IDEAS: Review of Economic Studies 86(1):313-332, 2019; Crossref shows it online 22 Dec 2017. The abstract supports every part of the claim: beliefs overreact to repeated stories and are too volatile; susceptibility varies a lot between people; 'even though most participants in principle have the computational skills ... many approach the problem in a wrong way when the environment is moderately complex'; 'nudging people's focus towards the correlation and the underlying independent signals has large effects on beliefs.' The double-counting share is your own construction.",
+     "source_url": "https://doi.org/10.1093/restud/rdx081"
+    },
+    {
+     "name": "Augenblick and Rabin: belief movement vs uncertainty reduction",
+     "status": "confirmed",
+     "note": "Crossref: QJE 136(2):933-985, 2021. The abstract and the Nov 2020 author version match the claim, including the four psychological biases. Definitions: u_t = pi_t(1 - pi_t), r = uncertainty reduction, m = sum of squared changes, E[m] = E[r], X = m - r. The normalized statistic is X_norm = m/r = X/r + 1, with expected value 1 under the null. The paper builds it from averages: average movement divided by average uncertainty reduction.",
+     "source_url": "https://doi.org/10.1093/qje/qjaa043"
+    }
+   ]
+  }
+ },
+ {
+  "family": "relations",
+  "title": "Relationships between pieces of evidence",
+  "research": {
+   "items": [
+    {
+     "name": "舒姆的证据组合分类与似然比处理（The Evidential Foundations of Probabilistic Reasoning）",
+     "authors": "David A. Schum",
+     "year": "1994（2001年西北大学出版社重印）",
+     "venue": "Wiley 出版社，纽约（专著）；2001年重印：Northwestern University Press。同一分类的后续概述：Schum, \"Classifying Forms and Combinations of Evidence: Necessary in a Science of Evidence\"，收录于 Evidence, Inference and Enquiry（英国国家学术院出版，2011）",
+     "core_idea_cn": "舒姆把多条证据之间的关系分成几类。不一致的证据分两种：矛盾（两个来源报告的事情不可能同时成立）和冲突（两件事可以同时成立，但指向不同结论）。一致的证据也分两种：印证（两个来源报告同一件事）和汇聚（不同的事指向同一结论）。汇聚的证据里还要再分：冗余（已经知道第一条以后，第二条的说服力变小）和协同（已经知道第一条以后，第二条的说服力反而变大）。所有关系都用似然比来量化。一条证据的分量 = 假设成立时看到它的概率 ÷ 假设不成立时看到它的概率。两条证据合起来的分量 = 第一条的似然比 × 第二条在已知第一条时的条件似然比。条件似然比比单独似然比更接近 1 就是冗余，更远离 1 就是协同。他还把“有人报告某事发生了”和“某事真的发生了”分开处理：来源的可信度（命中率和误报率）会压缩这份报告的分量。",
+     "good_thinking_cn": "好的思考对每条证据先估计它单独的分量，再问一句：在我已经看过前面那些证据以后，这一条还剩多少分量？同一件事被重复报道属于印证：第二条有多少分量，要看第一个来源有多可靠，第一个来源越可靠，第二条越没用。多个指标都从同一段价格算出来，属于冗余汇聚：合起来的分量远小于把各自分量直接相乘。遇到矛盾的证据，要说清楚谁更可信，不能简单地让它们互相抵消。来源不太可靠时（比如二手转述的新闻），分量要按可信度打折。",
+     "measurable_test_cn": "输入：证据关系基准里的合成任务（每条证据的单独似然比和条件似然比都已知），以及真实交易日的重复新闻扰动。第一步：把智能体提交的预期5日收益（或推理里给出的上涨概率）换算成对数几率。分别在加入第 k 条证据之前和之后各跑一次，两次的差就是“智能体实际给第 k 条证据的对数似然比”。第二步：把它和舒姆意义下的真值，也就是已知前 k-1 条时的条件对数似然比，进行比较。要算的数：(1) 条件分量误差 = 智能体增量与真实条件对数似然比之差的绝对值的平均；(2) 冗余折扣比 = 第二条证据跟在第一条后面时智能体的增量 ÷ 同一条证据单独出现时智能体的增量，再和真实比值（条件对数似然比 ÷ 单独对数似然比）对比；(3) 按六类关系（矛盾、冲突、印证、冗余汇聚、协同汇聚、来源不可靠）分开报告；(4) 文本层面：把推理文本里每一句讲两条证据关系的话标成六类之一，算标对的比例。只算证据和证据之间的关系，不算“我的决定和信号X一致”这类自我辩护句。好的标准：每一类的条件分量误差都接近贝叶斯最优参考智能体（接近0），冗余折扣比和真值相差小于0.1。“平均计数”参考智能体在冗余类上的折扣比约为1，可以当作坏的基线。",
+     "fit_cn": "这一条最适合当“好的思考”的总定义：一条证据的权重 = 在已有证据条件下的对数似然比。我们的合成任务已经有已知的似然比，可以直接套用。舒姆的六类关系正好对应我们要测的重复计数、矛盾、协同和来源可信度。“已计入价格”可以看作“以当日之前的价格变动为条件的冗余”，“过期新闻”可以看作“以昨天已用过的信息为条件的冗余”。",
+     "formula": "L(E) = P(E|H) / P(E|not H)\nL(E1,E2) = L(E1) * L(E2|E1),  L(E2|E1) = P(E2|H,E1) / P(E2|not H,E1)\nredundant:  |log L(E2|E1)| < |log L(E2)| ;  synergistic: |log L(E2|E1)| > |log L(E2)|\nsource credibility (report E* about event E; h = P(E*|E), f = P(E*|not E)):\n  L(E*) = [P(E|H)*(h-f) + f] / [P(E|not H)*(h-f) + f] = [P(E|H) + f/(h-f)] / [P(E|not H) + f/(h-f)]\nagent implied weight of item k: w_k = logit(p_after_k) - logit(p_before_k), compare with log L(E_k | E_1..E_{k-1})",
+     "source_url": "https://nupress.northwestern.edu/9780810118218/the-evidential-foundations-of-probabilistic-reasoning/ ; https://doi.org/10.5871/bacad/9780197264843.003.0002",
+     "uncertainty": "书名、作者、年份和出版社已经通过开放图书馆目录和西北大学出版社页面确认（1994年Wiley初版，2001年重印）。2011年的分类章节已经通过Crossref确认。六类关系的名称和似然比的写法是按我对舒姆著作的了解写的，没有对照原书正文核实章节号和原文记号。来源可信度公式是按全概率公式推导的，结构和舒姆的“差值之比”公式一致，但记号是我写的。另外，这一轮网页搜索额度已经用完，核实都是通过Crossref、经济学论文库、arXiv、开放图书馆和出版社页面完成的。",
+     "verified": true
+    },
+    {
+     "name": "卡丹和舒姆：萨科—万泽蒂案证据的概率分析（威格莫尔图转成概率推理网络）",
+     "authors": "Joseph B. Kadane, David A. Schum；配套方法章节：A. Philip Dawid, David A. Schum, Amanda B. Hepler, \"Inference Networks: Bayes and Wigmore\"",
+     "year": "1996（配套章节2011）",
+     "venue": "Wiley 出版社，Wiley Series in Probability and Statistics（专著）；配套章节收录于 Evidence, Inference and Enquiry（英国国家学术院出版，2011）",
+     "core_idea_cn": "两位作者把萨科—万泽蒂案的全部证据画成威格莫尔图：每条证据要经过哪几步推理，才能连到最终要判断的问题上。然后把图变成概率推理网络：每个节点是一件事，每条箭头是一个依赖关系，每一步都给出条件概率。最后算出每条证据、每组证据对最终结论的似然比。两位作者各自独立给出概率，再做敏感性分析，看结论在不同的人给出的概率下是否稳定。配套章节说明了两种做法的关系：贝叶斯网络是明确的有向无环图，威格莫尔图是更早的、面向论证的推理网络。",
+     "good_thinking_cn": "好的思考会先画出“证据—中间事件—结论”的依赖图。哪些工具输出来自同一个上游（比如同一段收盘价）？哪些新闻在当日之前就已经反映到价格里？哪些新闻是转述？证据的分量沿着推理链往下传，每多一步不确定的推理，分量就衰减一点。依赖图画对了，重复计数、已计入价格、过期新闻这些问题会被自然处理掉。另外，结论应该在合理的概率范围内保持稳定（敏感性分析）。",
+     "measurable_test_cn": "输入：智能体的推理文本，我们已经算好的22个字段冗余矩阵，以及已知的数据来源关系（例如趋势信号、移动平均线收敛发散指标、相对强弱指标、均值回归都由收盘价序列算出；年化20日波动率和波动统计同源）。第一步：从推理文本中抽取智能体说出的“字段A和字段B有关系”（同源、重复、已计入价格、矛盾、需要合起来看）的句子，组成智能体的关系图。第二步：和真实依赖图比较，真实依赖图取冗余矩阵中相关系数绝对值高于某个阈值的字段对，再加上已知同源的字段对。要算的数：关系图的精确率、召回率，以及两者的调和平均数；同时报告“自我辩护句”（证据和决定之间的关系）占全部关系句的比例。第二个检验是推理链衰减：在合成任务中给新闻加一层不可靠的转述，用上一条的可信度公式算出理论上应缩小的比例，再和智能体实际缩小的比例相减。第三个检验是敏感性：把合成任务里的似然比在合理范围内小幅扰动，看智能体的方向判断是否稳定。好的标准：精确率高（例如高于0.8），召回率明显高于现在的水平（现在推理里很少把两条证据联系起来）；自我辩护句比例下降；衰减比例的误差接近0。",
+     "fit_cn": "这一条给“处理信息之间的关系”提供了可以检查的结构，也就是一张依赖图。它把我们的冗余矩阵（数据层面）和推理文本（语言层面）连在一起：可以检查智能体文本里说的关系是不是真实存在，也可以把“先画依赖图、再给分量”当作以后训练思考过程的目标格式。",
+     "formula": "network factorisation: P(H, X1..Xn) = prod_i P(Xi | parents(Xi))\nweight of evidence set S: log L(S) = log P(S|H) - log P(S|not H)\nchain attenuation (H -> E -> report E*): L(E*) = [P(E|H)*(h-f)+f] / [P(E|not H)*(h-f)+f], always closer to 1 than L(E) when h<1 or f>0\ntext-graph score: precision = |claimed ∩ true| / |claimed|, recall = |claimed ∩ true| / |true|, F = 2PR/(P+R)",
+     "source_url": "https://doi.org/10.1002/9781118150580 ; https://doi.org/10.5871/bacad/9780197264843.003.0005",
+     "uncertainty": "书名、两位作者和Wiley出版社已通过Crossref和开放图书馆确认。开放图书馆记的首次出版年是1996年，Crossref里电子版日期是1997年。配套章节的作者、标题和摘要已通过Crossref确认。书里具体怎样一步步把威格莫尔图转成概率、怎样做敏感性分析，是按我对这本书的了解概括的，没有读原文核对。",
+     "verified": true
+    },
+    {
+     "name": "条件互信息：把“增量信息”当作权重（信息论链式法则与交互信息）",
+     "authors": "Thomas M. Cover, Joy A. Thomas（教科书）；William J. McGill（交互信息）",
+     "year": "1991（第1版），2006（第2版）；McGill 1954",
+     "venue": "Elements of Information Theory，Wiley 出版社；McGill, \"Multivariate Information Transmission\"，Psychometrika 第19卷第2期，97-116页",
+     "core_idea_cn": "一条信息对目标（例如未来5日收益或未来5日波动）有多大价值，不看它单独和目标的互信息，而看在已经知道其他信息以后，它还能再减少多少不确定性，也就是条件互信息。链式法则：两条信息合起来的信息量 = 第一条的信息量 + 第二条在已知第一条时的增量信息。交互信息 = 单独信息 − 条件信息：大于0说明两条信息重叠（冗余占优），小于0说明合起来才更有用（协同占优）。对于近似服从正态分布的变量，条件互信息只由偏相关系数决定，很容易算。",
+     "good_thinking_cn": "好的思考按“增量信息”而不是“单独信息”给权重。排列工具的重要性时，问的是“这一条在已知其他条以后还新增了什么”。已经计入价格的新闻：在已知当日之前价格变动的条件下，它和未来收益的条件互信息接近0，所以几乎不该给权重。过期新闻和重复新闻也是一样。",
+     "measurable_test_cn": "输入：历史数据上的22个工具字段、未来5日收益、未来5日实现波动；智能体提交的预期收益、预期波动和目标仓位；单字段扰动实验（每次只改一个字段）。第一步：在历史数据上估计每个字段的增量信息，也就是在已知其他21个字段时，它和目标的条件互信息。可以用正态近似：负二分之一乘以 ln(1 − 偏相关系数的平方)；也可以用分箱法或最近邻估计。第二步：用单字段扰动，估计智能体对每个字段的敏感度（预期收益的变化 ÷ 字段的变化，两者都标准化）。第三步：计算敏感度和增量信息之间的斯皮尔曼秩相关系数，同时计算敏感度和单独信息之间的秩相关系数。好的标准：敏感度和增量信息的秩相关高，接近贝叶斯最优参考智能体；并且明显高于敏感度和单独信息的秩相关。如果反过来，和单独信息更相关，就说明在重复计数。在扰动实验里，重复新闻、已计入新闻、过期新闻的真实增量信息接近0，智能体对它们的敏感度也应该接近0。",
+     "fit_cn": "这是“信息分量”最基本的量化定义，可以直接用我们已经算好的冗余矩阵（相关系数矩阵）求出偏相关和条件互信息。要注意：收益的可预测部分很小，互信息的估计噪声很大，建议同时用更容易预测的波动作为目标，并用滚动样本外估计。",
+     "formula": "I(Y;X1,X2) = I(Y;X1) + I(Y;X2|X1)\nI(Y;X2|X1) = H(Y|X1) - H(Y|X1,X2)\ninteraction information: II = I(Y;X2) - I(Y;X2|X1)   (II>0 redundancy-dominated, II<0 synergy-dominated; sign convention differs across authors)\nGaussian case: I(Y;Xk | X_rest) = -0.5 * ln(1 - rho^2(Y,Xk | X_rest)),  rho(.|.) = partial correlation\nscore: SpearmanCorr(agent sensitivity_k, I(Y;Xk|X_rest)) vs SpearmanCorr(agent sensitivity_k, I(Y;Xk))",
+     "source_url": "https://doi.org/10.1002/047174882X ; https://doi.org/10.1007/BF02289159",
+     "uncertainty": "两本文献都已通过Crossref确认：教科书有第1版和第2版，Crossref里的电子版日期分别是2001年和2005年，纸质第2版通常记为2006年；McGill 1954年的论文发表在Psychometrika 第19卷第2期。链式法则和正态情形的公式是标准结果。交互信息的正负号在不同作者之间约定不同，McGill原文的记号没有核对。",
+     "verified": true
+    },
+    {
+     "name": "部分信息分解：独有信息、冗余信息、协同信息",
+     "authors": "Paul L. Williams, Randall D. Beer；正态变量情形：Adam B. Barrett；另一种定义：Nils Bertschinger, Johannes Rauh, Eckehard Olbrich, Jürgen Jost, Nihat Ay",
+     "year": "2010（Barrett 2015；Bertschinger 等 2014）",
+     "venue": "arXiv 预印本 arXiv:1004.2515（不是正式期刊论文）；Barrett：Physical Review E 第91卷第5期，文章号052802；Bertschinger 等：Entropy 第16卷第4期，2161-2183页",
+     "core_idea_cn": "两个信息源X1、X2对目标Y的总信息可以拆成四块：只有X1有的（独有1），只有X2有的（独有2），两个都有的（冗余），只有合在一起才有的（协同）。于是：X1单独的信息 = 独有1 + 冗余；在已知X1时X2的增量信息 = 独有2 + 协同。威廉斯和比尔用“对目标每个取值，各个来源中提供信息最少的那个”来定义冗余，并且保证四块都不小于0；交互信息可能为负，正是因为冗余和协同被混在了一起。巴雷特证明：在正态变量、单一目标的情形下，几种冗余定义都化为“两个单独互信息中较小的那个”。",
+     "good_thinking_cn": "好的思考要知道每一对证据属于哪一种。冗余多，合并时要打折扣；独有多，分别计入；协同多，必须放在一起看才有意义。例如“当日之前价格已经大涨”和“利好新闻”放在一起看，才能判断新闻已经计入价格；“波动很高”和“均值回归信号”放在一起看，会改变这个信号有多可信。",
+     "measurable_test_cn": "输入：冗余矩阵用到的22个字段的历史数据；目标取未来5日收益或未来5日实现波动；智能体对字段成对扰动的响应。第一步：对每一对字段算出四块。在正态近似下，冗余 = 两个单独互信息中较小的那个，独有i = 单独互信息i − 冗余，协同 = 合起来的互信息 − 单独互信息1 − 单独互信息2 + 冗余。第二步：对智能体做二乘二扰动：只改X1、只改X2、两个一起改，用预期5日收益（不要用会被截断的仓位）度量响应。算交互对比 = 两个一起改的响应 −（只改X1的响应 + 只改X2的响应）。第三步：把交互对比的正负和大小与“协同 − 冗余”进行比较。要算的数：交互对比与“协同 − 冗余”的相关系数；冗余型字段对中，响应小于单独响应之和的比例；协同型字段对中，响应大于单独响应之和的比例。好的标准：冗余型字段对上明显小于单独响应之和，协同型字段对上大于单独响应之和，都接近贝叶斯最优参考智能体。“平均计数”参考智能体的交互对比约为0，可以作为坏的基线。",
+     "fit_cn": "我们的冗余矩阵只给出了“两两相关”，这个框架能进一步区分冗余和协同，把“重复计数”和“需要合起来看”分成两个可以测的量，也正好对应要求的冗余和协同两种关系。",
+     "formula": "specific information: I(S=s;A) = sum_a p(a|s) * [ log 1/p(s) - log 1/p(s|a) ]\nWilliams-Beer redundancy: I_min(S;{A1..Ak}) = sum_s p(s) * min_i I(S=s;Ai)\ntwo sources: I(Y;X1,X2) = U1 + U2 + R + Syn ;  I(Y;X1) = U1 + R ;  I(Y;X2) = U2 + R ;  I(Y;X2|X1) = U2 + Syn\nGaussian, univariate target (Barrett 2015): R = min( I(Y;X1), I(Y;X2) )\nagent interaction contrast: C = Delta(both) - Delta(X1 only) - Delta(X2 only); good: sign(C) matches sign(Syn - R)",
+     "source_url": "https://arxiv.org/abs/1004.2515 ; https://doi.org/10.1103/PhysRevE.91.052802 ; https://doi.org/10.3390/e16042161",
+     "uncertainty": "威廉斯和比尔论文的标题、作者、日期（2010年4月提交到arXiv）以及冗余定义公式，都已从arXiv全文核对。它是预印本，不是正式期刊论文。巴雷特2015年论文和Bertschinger等2014年论文都已通过Crossref确认，“正态情形下冗余等于较小的单独互信息”这一点已从巴雷特的摘要确认。威廉斯和比尔的冗余定义后来受到批评，比如会把不同内容的信息也算成冗余，因此学界没有唯一公认的定义，用正态近似时这个分歧影响最小。“交互对比”是我为本项目设计的检验，不是原文内容。",
+     "verified": true
+    },
+    {
+     "name": "恩克和齐默尔曼：信念形成中的相关性忽视",
+     "authors": "Benjamin Enke, Florian Zimmermann",
+     "year": "2019（2017年网上先发）",
+     "venue": "The Review of Economic Studies，第86卷第1期，313-332页",
+     "core_idea_cn": "实验发现：很多人把彼此相关的信号（其实来自同一个底层信号的不同转述）当成相互独立的信号，同一条底层信息被重复计算。结果信念对“讲了又讲的故事”过度敏感，波动过大。不同人之间差别很大；环境稍微复杂一点，即使会算的人也常常用错方法。用实验手段把被试的注意力引到相关结构和底层独立信号上，信念会有大幅改善。",
+     "good_thinking_cn": "好的思考先把“我看到了几条”还原成“底层有几条独立信息”，再去更新信念。看到两条内容相近的新闻，要先判断它们是不是同一个来源或同一个事件。",
+     "measurable_test_cn": "输入：重复新闻扰动（同一条新闻原样出现两次，或者换一种说法但出自同一来源），以及智能体提交的预期5日收益和推理文本。第一个数，重复计数比 =（加入第二份同源新闻后预期收益的变化）÷（加入第一份时的变化）。贝叶斯最优约等于0，平均计数约等于1。第二个数是文本识别率：在有同源新闻的会话中，推理文本明确指出“这两条是同一来源或同一事件”的比例。第三个数是干预效果：仿照论文里的“引导注意力”做法，在提示中加入“先列出底层独立来源”，看重复计数比下降多少，可以当作以后训练的方向。第四个是信念波动检验：把每天仓位变化的大小，对“当天发生变化的同源字段个数”做回归。相关性忽视会让这个系数在控制有效独立信息数以后仍然显著为正。好的标准：重复计数比低于0.1，文本识别率高，控制有效独立信息数后的回归系数接近0。",
+     "fit_cn": "这篇论文直接对应我们的“重复新闻”扰动和“平均计数”参考智能体，也给出了一个经济学机制：相关性忽视会让信念波动过大，可以用来解释仓位变化比理性规则噪声大6.7倍的问题。它还给出了一个可以检验的干预方向：把注意力引到底层独立信号上。",
+     "formula": "double-counting ratio: DCR = [mu(news, news_copy) - mu(news)] / [mu(news) - mu(none)]   (Bayes ~ 0, counting_naive ~ 1)\nwhere mu(.) = submitted expected 5-day return under that evidence set\nbelief-volatility check: |Delta exposure_t| = a + b * (#changed correlated fields_t) + c * (change in effective independent signals_t) + e ; good: b ~ 0",
+     "source_url": "https://doi.org/10.1093/restud/rdx081 ; https://ideas.repec.org/a/oup/restud/v86y2019i1p313-332..html",
+     "uncertainty": "作者、期刊、年份、卷期页码已通过Crossref和经济学论文库确认，摘要中的主要发现（信念对重复讲述过度敏感、复杂性起作用、引导注意力效果很大）也已确认。具体实验设计（多少台电脑产生信号、中间人怎样转述）没有核对，所以公式只写了我们自己的检验量，没有写原文的模型。",
+     "verified": true
+    },
+    {
+     "name": "艾斯特和雷宾：信息丰富环境中的天真从众（冗余忽视）",
+     "authors": "Erik Eyster, Matthew Rabin",
+     "year": "2010",
+     "venue": "American Economic Journal: Microeconomics，第2卷第4期，221-243页",
+     "core_idea_cn": "在一个接一个做决定的情境里，后来的人能看到前面所有人的行动，但天真地以为每个前人的行动只反映了他自己的私人信号，没意识到前人的行动其实已经吸收了更早那些人的行动。结果早期的信号被一层层重复计入，人们可能越来越有信心地收敛到错误的结论。",
+     "good_thinking_cn": "好的思考会意识到，很多“二手”输入（例如趋势信号、新闻情绪、风险预算）已经吸收了更早的信息（例如过去的价格变动），不能再和原始信息叠加使用。智能体自己昨天的仓位也是一种“前人行动”，它已经包含了前几天的信息，今天再用同一份证据推动仓位，就是在重复计算。",
+     "measurable_test_cn": "输入：冗余矩阵，各字段的历史数据，智能体的扰动响应。第一个检验是只看独有部分：把每个衍生字段（例如新闻情绪、趋势信号）对它的上游原始字段（例如过去5日和20日收益）做回归，残差就是它的独有部分。做两种扰动：(a) 只改残差，上游不变；(b) 同时改上游和衍生字段，保持残差不变。要算的数：响应比 = 扰动(b)中智能体对衍生字段额外给的响应 ÷ 扰动(a)中的响应。好的标准接近0，也就是只对独有部分做出反应。第二个检验在合成任务里构造“已经吸收了前面信号的信号”，比较智能体隐含权重和理性权重（理性权重只算独有部分）。第三个检验看昨天仓位：把今天仓位的变化对“今天新增的信息”和“昨天已经出现过的信息”分别做回归，后者的系数应该接近0。",
+     "fit_cn": "这篇论文给“已计入”和“二手信息重复计数”提供了经济学模型，说明这种错误会随时间累积，而不只是一次性的偏差。这和我们的跨天仓位噪声、技术指标同源的问题都对得上。",
+     "formula": "illustrative naive-inference recursion (log-likelihood units; my notation, not the paper's):\n  naive player t: belief_t = s_t + sum_{k<t} a_k,  where each a_k already = s_k + sum_{j<k} a_j\n  => weight on s_1 inside a_t = 2^(t-2) for t>=2 (early signals overweighted exponentially); rational weight = 1\nproject test: response ratio = Delta_agent(upstream+derived moved, residual fixed) / Delta_agent(residual moved) ; good ~ 0",
+     "source_url": "https://doi.org/10.1257/mic.2.4.221",
+     "uncertainty": "作者、期刊、年份、卷期页码已通过Crossref确认。“前人行动被当成只反映私人信号、导致早期信号被重复计入”是这篇论文的核心观点，但公式里的递推是我按这个思路做的示意推导，不是原文的记号和定理；原文的具体设定（是否每个人都看到所有前人行动等）没有核对全文。",
+     "verified": true
+    },
+    {
+     "name": "德马佐、瓦亚诺斯和兹韦贝尔：说服偏差（把重复听到的信息当新信息）",
+     "authors": "Peter M. DeMarzo, Dimitri Vayanos, Jeffrey Zwiebel",
+     "year": "2003",
+     "venue": "The Quarterly Journal of Economics，第118卷第3期，909-968页",
+     "core_idea_cn": "人们在社交网络中反复听到别人的观点，却没考虑到其中有重复：同一条信息可能经过不同路径多次传到自己这里，人们把它当成新信息。结果每一轮都对邻居的观点做加权平均来更新信念，一个人的影响力取决于他在网络中被听到的次数（位置），而不是他的信息有多准确。长期来看，人们在很多问题上的观点会被归结到一个维度上。",
+     "good_thinking_cn": "好的思考记得“这条信息我昨天已经用过了”。同一条新闻连续几天出现在新闻工具里（过期新闻），或者同一事件被多家媒体转载，都不应该每出现一次就推动一次信念。一条信息的分量应该跟来源的准确度挂钩，而不是跟被提到的次数挂钩。",
+     "measurable_test_cn": "输入：过期新闻扰动和跨天会话，智能体每天提交的预期收益和仓位。第一个数，重复放大倍数 = 同一条新闻连续出现k天时累计的预期收益（或仓位）变化 ÷ 只出现一天时的变化。贝叶斯最优约等于1（只计一次），完全的说服偏差约等于k。第二个数，转载弹性：同一事件被m个来源报道时，取响应的对数对m的对数做回归，斜率就是弹性，好的应接近0。第三个数，文本标注率：推理文本中写出“这是旧闻”或“昨天已经计入”的比例。好的标准：重复放大倍数接近1（例如在1到1.2之间），转载弹性接近0，标注率高。",
+     "fit_cn": "这篇论文直接对应“过期新闻”和“跨天重复”这两种关系。我们的智能体每天重新读一遍工具输出，如果没有“昨天已经用过”的概念，就会出现论文里说的说服偏差，这也可能是仓位噪声过大的来源之一。",
+     "formula": "repeated averaging (DeGroot-type form used in the paper's setup): x_{t+1} = T x_t,  T = listening/weight matrix\nlong-run influence = left unit eigenvector of T (depends on network position, not accuracy)\nproject test: repetition multiplier RM(k) = [cumulative response over k days with the same news] / [response when news appears once] ; Bayes ~ 1, full persuasion bias ~ k\nrepost elasticity: slope of log(response) on log(m sources)",
+     "source_url": "https://doi.org/10.1162/00335530360698469",
+     "uncertainty": "作者、期刊、年份、卷期页码已通过Crossref确认。按矩阵反复加权平均的更新方式、影响力由网络位置决定、观点归结到一个维度，是按我对这篇论文的了解写的，没有对照全文核实具体命题和记号。重复放大倍数和转载弹性是为本项目设计的检验量。",
+     "verified": true
+    },
+    {
+     "name": "奥尔特沃和斯诺伯格：政治行为中的过度自信（由相关性忽视产生）",
+     "authors": "Pietro Ortoleva, Erik Snowberg",
+     "year": "2015",
+     "venue": "American Economic Review，第105卷第2期，504-535页",
+     "core_idea_cn": "把过度自信建模为相关性忽视：人们低估了自己收到的各条信息之间的相关性，以为自己掌握的独立信息比实际多，于是信心过高。模型推出，过度自信会带来更极端的观点、更高的投票参与和更强的党派认同，作者用大规模调查数据做了验证。",
+     "good_thinking_cn": "好的思考在多个同源指标方向一致时，信心的增加应该按“有效独立信息数”来算，而不是按“方向一致的指标个数”来算。多个同源指标都同意，不应该因此压低预测波动，也不应该让仓位更极端。",
+     "measurable_test_cn": "输入：每天的工具输出、冗余矩阵、提交的预期5日波动和目标仓位、事后的实现收益。第一步：每天数出方向一致的指标个数n，再用冗余矩阵算出有效独立信息数。如果各指标两两相关系数都约为ρ，有效独立信息数 = n ÷ (1 + (n−1)ρ)；一般情形用相关矩阵的逆矩阵算。第二步：分别把仓位的绝对值、预期波动的倒数，对n和有效独立信息数一起做回归。第三步做校准检验：标准化误差 =（实现收益 − 预期收益）÷ 预期波动，按n分组计算它的标准差。好的标准：控制有效独立信息数以后，n的系数接近0；各组标准化误差的标准差都接近1，并且不随n增大而变大。如果随n增大而变大，就是“越一致越过度自信”。",
+     "fit_cn": "这篇论文把相关性忽视和两个我们能直接测的结果连在一起：预测波动偏低（过度自信）和仓位过于极端（观点极端）。它为“预期波动”和“目标仓位”这两个提交数字提供了检验办法，补上了只看预期收益的不足。",
+     "formula": "effective number of independent signals (equal informativeness, correlation matrix R): n_eff = 1' R^{-1} 1 ; equicorrelated: n_eff = n / (1 + (n-1)*rho)\nregression: |exposure_t| = a + b*n_t + c*n_eff_t + e ; good: b ~ 0\ncalibration: z_t = (r_{t,t+5} - mu_t) / sigma_t ; good: sd(z | n) ~ 1 for every n",
+     "source_url": "https://doi.org/10.1257/aer.20130921",
+     "uncertainty": "作者、期刊、年份、卷期页码已通过Crossref确认，“过度自信导致观点极端、投票参与更高、党派认同更强”已从摘要确认。“过度自信来自相关性忽视”是按我对这篇论文的了解写的，没有核对原文的具体模型设定。有效独立信息数的公式是标准的广义最小二乘结论，不是这篇论文的原文内容。",
+     "verified": true
+    },
+    {
+     "name": "艾斯特、雷宾和瓦亚诺斯：交易者忽视价格中所含信息的金融市场（已计入价格）",
+     "authors": "Erik Eyster, Matthew Rabin, Dimitri Vayanos",
+     "year": "2019（2018年网上先发；2015年美国国家经济研究局工作论文）",
+     "venue": "The Journal of Finance，第74卷第1期，371-399页",
+     "core_idea_cn": "一部分交易者“受诅咒”：不从价格里推断别人掌握的信息，把自己的私人信息当成价格还没反映的新信息。只有这类交易者的市场，交易量比理性市场高；有理性套利者在场时，扭曲可能被放大，交易量更高。如果交易者能从价格中推断信息，只是不太相信它，交易量反而可能下降。",
+     "good_thinking_cn": "好的思考在用一条新闻之前，先问“价格是不是已经反映了它”。如果新闻发布之前价格已经朝新闻方向大幅移动，这条新闻的增量信息就很小。这需要把“价格统计”和“新闻”放在一起看，属于协同型的关系判断。",
+     "measurable_test_cn": "输入：已计入价格扰动（同样的新闻，一组发布前价格没动，一组发布前价格已经朝新闻方向移动），历史数据，智能体提交的预期收益和每天的仓位变化。第一个数是已计入折扣：智能体的折扣 = 1 −（已计入组的响应 ÷ 未计入组的响应）。数据给出的真实折扣 = 1 −（控制过去价格变动后，新闻情绪对未来5日收益的回归系数 ÷ 不控制时的系数）。要算两者之差。第二个数是文本识别率：推理中提到“已经反映在价格里”的比例。第三个数是交易量检验：论文预测忽视价格信息会造成过度交易，可以比较“去掉已计入新闻”前后智能体每天仓位变化的标准差（目前是理性规则的6.7倍）下降了多少。好的标准：智能体折扣与真实折扣相差很小，文本识别率高，去掉已计入新闻后仓位噪声明显下降。",
+     "fit_cn": "这是专门针对“已计入价格”这种关系的经济学理论，并且直接预测过度交易，和我们测到的仓位变化噪声过大能对上。用它可以把“已计入”检验和“过度交易”问题连在一起。",
+     "formula": "cursed belief uses E[v | s_i] instead of rational E[v | s_i, p]  (p = price; my notation)\nproject test: priced-in discount D = 1 - Delta_agent(news | price already moved) / Delta_agent(news | price flat)\ndata benchmark: D_true = 1 - beta(news | controlling past return) / beta(news, no control) ; good: |D_agent - D_true| small",
+     "source_url": "https://doi.org/10.1111/jofi.12729 ; https://ideas.repec.org/a/bla/jfinan/v74y2019i1p371-399.html",
+     "uncertainty": "作者、期刊、年份、卷期页码和摘要已通过Crossref和经济学论文库确认。公式里的条件期望写法是我对“受诅咒”含义的简写，不是原文记号；折扣检验是为本项目设计的。",
+     "verified": true
+    },
+    {
+     "name": "贝茨和格兰杰：预测组合（误差相关时的最优权重）",
+     "authors": "J. M. Bates, C. W. J. Granger；回归形式的推广：Clive W. J. Granger, Ramu Ramanathan",
+     "year": "1969（推广 1984）",
+     "venue": "Operational Research Quarterly 第20卷第4期，451-468页（该刊后改名 Journal of the Operational Research Society）；推广：Journal of Forecasting 第3卷第2期，197-204页",
+     "core_idea_cn": "把多个预测合起来通常比单个预测更好，最优权重取决于每个预测误差的方差和误差之间的相关性。两个预测时，第一个的最优权重 = (σ2² − ρσ1σ2) ÷ (σ1² + σ2² − 2ρσ1σ2)。误差相关性越高，合起来的好处越小，甚至可能给其中一个负权重。多个预测时，权重 = 误差协方差矩阵的逆乘以全1向量，再归一化。格兰杰和拉马纳坦把组合写成实际值对各个预测的回归，可以加常数项，也可以不要求权重相加等于1。",
+     "good_thinking_cn": "好的思考隐含地按误差协方差矩阵的逆来加权：误差高度相关的一组信号（同一价格序列算出的趋势、移动平均线收敛发散指标、相对强弱指标）应该分享一份权重，而不是每个都拿一份；单独更准的来源权重更高；误差负相关的来源互相补充，价值更大。",
+     "measurable_test_cn": "输入：每个工具字段隐含的5日收益预测（在历史数据上把每个字段回归成一个预测值），智能体提交的预期5日收益，历史实现收益。预期波动也照样做：比如年化20日波动换算成的5日波动、波动统计、风险预算。第一步：用历史误差估计误差协方差矩阵，算出最优权重；协方差要做收缩，减少估计噪声。第二步：把智能体提交的预期收益对各个工具的隐含预测做回归，得到它的隐含权重。第三步，要算的数：群组过度加权比 = 智能体在一个高相关群组内的隐含权重之和 ÷ 最优权重在同一群组内的权重之和；另外算隐含权重与最优权重的距离。好的标准：群组过度加权比接近1；“平均计数”参考智能体大约是群组大小的若干倍，可以当作坏的基线；样本外，智能体的预测误差不大于最优组合。",
+     "fit_cn": "这是计量经济学里“信息有重叠时怎么加权”的经典答案，可以直接用我们的冗余矩阵，并且同时适用于预期收益和预期波动两个提交数字。要注意的是，实际应用中估计出来的最优权重常常跑不赢简单平均（参见 Timmermann 2006 在《经济预测手册》中的预测组合一章），所以重点应放在“高相关群组是否被重复加权”这种相对比较上，而不是追求精确的权重。",
+     "formula": "two forecasts: f_c = k*f1 + (1-k)*f2 ,  k* = (s2^2 - rho*s1*s2) / (s1^2 + s2^2 - 2*rho*s1*s2)\nn forecasts: w* = Sigma^{-1} 1 / (1' Sigma^{-1} 1) ,  Var(combined error) = 1 / (1' Sigma^{-1} 1)\nGranger-Ramanathan: y_t = a + sum_k b_k * f_{k,t} + e_t\nproject test: group over-weight ratio = sum_{k in group} w_agent_k / sum_{k in group} w*_k ; good ~ 1",
+     "source_url": "https://doi.org/10.1057/jors.1969.103 ; https://doi.org/10.1002/for.3980030207 ; https://doi.org/10.1016/S1574-0706(05)01004-9",
+     "uncertainty": "贝茨和格兰杰1969年论文（第20卷第4期，451-468页）以及格兰杰和拉马纳坦1984年论文（第3卷第2期，197-204页）都已通过Crossref确认。Timmermann 2006年在《经济预测手册》中的一章（135-196页）也已通过Crossref确认存在。两个预测时的权重公式和多个预测时的逆协方差公式是标准结论；多个预测的矩阵写法是后来的通行写法，1969年原文主要讨论两个预测的情形。",
+     "verified": true
+    },
+    {
+     "name": "预测包含检验：一个信息来源在已知另一个之后是否多余",
+     "authors": "Yock Y. Chong, David F. Hendry；David I. Harvey, Stephen J. Leybourne, Paul Newbold；相关回归方法：Ray C. Fair, Robert J. Shiller",
+     "year": "1986；1998；1990",
+     "venue": "Chong 和 Hendry：The Review of Economic Studies 第53卷第4期，671页起；Harvey、Leybourne、Newbold：Journal of Business and Economic Statistics 第16卷第2期，254-259页；Fair 和 Shiller：American Economic Review 第80卷第3期，375-389页",
+     "core_idea_cn": "如果预测1已经包含了预测2的全部有用信息，那么把预测2加进组合不会带来任何改进，这就叫预测1“包含”预测2。检验方法是在“预测1的误差 = λ ×（预测1的误差 − 预测2的误差）+ 噪声”里检验λ是否为0。Chong 和 Hendry 把这个思路用于评估计量模型；Harvey、Leybourne 和 Newbold 给出在误差不服从正态分布、样本较小时更稳健的检验方法，做法是看“预测1的误差 ×（两个误差之差）”的平均值是否为0。Fair 和 Shiller 用实际值对两个预测一起回归，看每个预测是否含有另一个没有的信息。",
+     "good_thinking_cn": "好的思考最后给出的数字（预期收益、预期波动）应该包含所有工具的信息：任何一个工具的预测都不能再改进它，说明没有漏用信息。同时，它也不应该被某一个工具单独包含，否则说明只是照抄了最显眼的那个数字，没有加入别的信息。",
+     "measurable_test_cn": "输入：每天提交的预期5日波动；工具里的年化20日波动率，换算成5日（乘以根号下5/252）；其他波动字段；预期5日收益和各工具的隐含预测；事后实现值。第一个是照抄检验：把换算后的工具波动当预测2、智能体当预测1，反过来检验“工具是否包含智能体”。如果工具单独就包含了智能体的预测，说明智能体没有加入新信息；那2%照抄数字的会话是最极端的情形，还可以检查是否连换算都没做。第二个是漏用检验：对每个工具k，检验智能体是否包含工具k。λ_k显著大于0，说明这个工具被漏用或低估了，λ_k的估计值就是应该补上的权重。第三个是 Fair 和 Shiller 回归：实际值 = 常数 + b1 × 智能体预测 + b2 × 工具k预测 + 误差。好的标准：所有工具的λ_k在5%水平上都不显著（智能体包含了所有工具），反方向的检验显著（智能体含有工具没有的信息），回归中b1显著、b2不显著。5日预测期互相重叠，计算标准误时要处理由此带来的自相关。",
+     "fit_cn": "这是“一个信息来源在已知另一个之后是否多余”最直接的计量检验，只用到提交的数字和事后结果，不依赖推理文本，可以和前面的扰动检验互相印证。它特别适合检验那2%照抄年化波动率的问题，也能给出每个工具“该补多少权重”。",
+     "formula": "encompassing regression: e1_t = lambda*(e1_t - e2_t) + eps_t ;  H0: lambda = 0 (forecast 1 encompasses forecast 2)\nequivalent combination: f_c = (1-lambda)*f1 + lambda*f2\nHarvey-Leybourne-Newbold: d_t = (e1_t - e2_t)*e1_t , test mean(d_t) = 0 with a modified Diebold-Mariano type statistic vs Student t(n-1)\nFair-Shiller: Y_{t+h} - Y_t = a + b*(f1_t - Y_t) + c*(f2_t - Y_t) + u_t\nscale check for vol copying: sigma_5d = sigma_annual * sqrt(5/252)",
+     "source_url": "https://doi.org/10.2307/2297611 ; https://doi.org/10.1080/07350015.1998.10524759 ; https://ideas.repec.org/a/aea/aecrev/v80y1990i3p375-89.html",
+     "uncertainty": "三篇论文的作者、期刊、年份、卷期都已确认：前两篇通过Crossref，第三篇通过经济学论文库。Chong 和 Hendry 的论文 Crossref 只给出起始页671，结束页没有核对。包含回归的这种写法是文献中的通行写法；Chong 和 Hendry 原文的回归形式可能不同，例如用预测1的误差对预测2本身回归。Harvey、Leybourne、Newbold 小样本修正的具体形式，以及如何处理多步预测的自相关，没有对照全文核实。",
+     "verified": true
+    }
+   ],
+   "family_summary_cn": "这一组文献合起来，可以给“好的思考”一个能算出来的定义：每条信息的权重，应该等于它在“已经看过的其他信息”条件下还剩下的分量，用条件似然比的对数或条件互信息来度量，而不是它单独看起来有多大。各种信息之间的关系都可以归到这个定义下面：重复报道和同源指标属于冗余（舒姆的印证和冗余汇聚，部分信息分解里的冗余，预测组合里的误差相关）；已计入价格是以当日之前的价格为条件时的冗余（艾斯特、雷宾和瓦亚诺斯）；过期新闻是以昨天已经用过的信息为条件时的冗余（德马佐等的说服偏差）；矛盾和冲突要比较可信度（舒姆，预测组合中的负权重）；协同是合起来才有的信息（舒姆的协同，部分信息分解里的协同）。行为经济学指出了常见的错误方式，每种都有可以测的标志：重复计数比（恩克和齐默尔曼）、早期信号被层层重复计入（艾斯特和雷宾）、重复放大倍数（德马佐等）、方向一致的指标越多越过度自信（奥尔特沃和斯诺伯格）。计量经济学提供了只看提交数字和事后结果的检验：逆协方差加权（贝茨和格兰杰）和预测包含检验（Chong 和 Hendry；Harvey、Leybourne、Newbold；Fair 和 Shiller）。建议把测量分成四层：(1) 合成任务：智能体隐含增量与真实条件对数似然比之差；(2) 真实交易日扰动：重复计数比、已计入折扣、过期新闻的重复放大倍数、成对扰动的交互对比；(3) 事后结果：预测包含检验，以及按方向一致的指标个数分组的校准检验；(4) 推理文本：智能体写出的证据关系图与真实依赖图（冗余矩阵）对比的精确率和召回率，剔除自我辩护句。每一层都有贝叶斯最优和平均计数两个参考智能体作为好坏两端，以后可以直接当作训练信号。核实情况：本轮网页搜索额度已经用完，所有文献都改用Crossref、经济学论文库、arXiv、开放图书馆和出版社页面确认存在，作者、年份、期刊无误；威廉斯和比尔是预印本；两本书（舒姆，卡丹和舒姆）的章节细节，以及几篇经济学论文的具体模型记号，是按我对这些文献的了解写的，没有读原文核对，已在各条的不确定性说明中标出。各条里的检验量（重复计数比、交互对比、群组过度加权比等）是为本项目设计的，不是原文内容。"
+  },
+  "verify": {
+   "verdicts": [
+    {
+     "name": "舒姆的证据组合分类与似然比处理（The Evidential Foundations of Probabilistic Reasoning）",
+     "status": "confirmed",
+     "note": "Open Library: Wiley 1994 (ISBN 047157936X), Northwestern University Press 2001 (0810118211). The 2011 chapter exists: Schum, 'Classifying Forms and Combinations of Evidence: Necessary in a Science of Evidence', pp. 10-36, eds. Dawid, Twining, Vasilaki. Juchli et al. 2025 (Artificial Intelligence and Law) gives the same taxonomy from Schum 1994: harmonious = corroborative/convergent, dissonant = contradictory/conflicting, plus the redundance measure 1 - W(E2|E1)/W(E2) for redundancy vs synergy, and the split between a report and the event itself. The credibility formula follows algebraically from h and f. Small nuance: Schum also describes 'corroborative redundance', so redundancy is not limited to convergent evidence.",
+     "source_url": "https://academic.oup.com/british-academy-scholarship-online/book/13499/chapter/167004403"
+    },
+    {
+     "name": "卡丹和舒姆：萨科—万泽蒂案证据的概率分析（威格莫尔图转成概率推理网络）",
+     "status": "confirmed",
+     "note": "Crossref: Kadane & Schum, Wiley Series in Probability and Statistics, DOI 10.1002/9781118150580. Internet Archive MARC record says Wiley 1996; Crossref gives a 1997 print date, but 1996 is the usual citation. The Dawid, Schum and Hepler chapter 'Inference Networks: Bayes and Wigmore' (2011) is confirmed, and its abstract matches. In a 2024 paper Kadane co-wrote (arXiv 2403.16628), the book is described this way: Wigmore charts were used to break down the evidence, and odds-style probative-force judgments were given 'separately, by the authors and by an historian of the case'. So there was a third assessor, a historian. The same paper says how to attach probabilities to Wigmore charts 'remains an open question'. Calling the book a formal conversion into a Bayesian network slightly overstates it.",
+     "source_url": "https://arxiv.org/abs/2403.16628"
+    },
+    {
+     "name": "条件互信息：把“增量信息”当作权重（信息论链式法则与交互信息）",
+     "status": "corrected",
+     "corrected_formula": "Keep I(Y;X1,X2)=I(Y;X1)+I(Y;X2|X1) and the Gaussian partial-correlation formula. II = I(Y;X2) - I(Y;X2|X1) (>0 means redundancy) is the co-information sign (Bell 2003). Wikipedia says McGill (1954) subtracts in the opposite order, A = I(Y;X2|X1) - I(Y;X2), where >0 means synergy. Present the sign as a convention and do not attribute it to McGill.",
+     "corrected_year": "Cover & Thomas 1st ed. 1991; 2nd ed. 2006 (Crossref issue date 2005, DOI 10.1002/047174882X); McGill June 1954",
+     "note": "Crossref confirms McGill, Psychometrika 19(2):97-116, 1954, and Cover & Thomas, Wiley. The chain rule and the Gaussian formula -0.5 ln(1-rho^2 partial) are standard. Secondary sources disagree on McGill's sign: Wikipedia says it is the reverse of co-information, Chicharro 2017 groups the two together. I could not read McGill's original paper, so the sign question is still open."
+    },
+    {
+     "name": "部分信息分解：独有信息、冗余信息、协同信息",
+     "status": "confirmed",
+     "note": "arXiv 1004.2515 (Williams & Beer, April 2010) has no journal reference, and its abstract matches: minimum specific information, a decomposition with no negative parts, and interaction information mixing redundancy with synergy. The specific-information formula matches Barrett's restatement (eq. 24-25). Crossref confirms Barrett, PRE 91(5):052802, 2015, and Bertschinger, Rauh, Olbrich, Jost & Ay, Entropy 16(4):2161-2183, 2014. Exact condition in Barrett: jointly Gaussian, univariate target, sources of any dimension. Under that condition, any PID whose redundant and unique parts depend only on the pairwise source-target marginals (Williams-Beer, Griffith / Bertschinger, Harder) reduces to the minimum mutual information.",
+     "source_url": "https://arxiv.org/abs/1411.2832"
+    },
+    {
+     "name": "恩克和齐默尔曼：信念形成中的相关性忽视",
+     "status": "confirmed",
+     "note": "RePEc: Review of Economic Studies 86(1):313-332, 2019. Crossref shows online publication on 2017-12-22. The claim matches the abstract: double-counting, excessive swings, large differences between people, problems once the setting is moderately complex, and nudges toward the underlying independent signals having big effects. The DCR formula is the project's own test, not from the paper.",
+     "source_url": "https://ideas.repec.org/a/oup/restud/v86y2019i1p313-332..html"
+    },
+    {
+     "name": "艾斯特和雷宾：信息丰富环境中的天真从众（冗余忽视）",
+     "status": "confirmed",
+     "note": "AEA page: AEJ: Micro 2(4):221-43, November 2010. The abstract matches: people naively assume each earlier action reflects only that person's private signal, so early movers' signals get over-weighted, and naive herders can herd on wrong actions with full confidence. The 2^(t-2) recursion is the item's own illustration; it is arithmetically correct under its stated assumptions.",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/mic.2.4.221"
+    },
+    {
+     "name": "德马佐、瓦亚诺斯和兹韦贝尔：说服偏差（把重复听到的信息当新信息）",
+     "status": "corrected",
+     "corrected_formula": "long-run influence = left unit eigenvector of T. The weights in T include the precision each listener assigns to a source, so influence depends on accuracy AND on how well-connected one is, not on position instead of accuracy.",
+     "note": "Bibliographic data confirmed: QJE 118(3):909-968, 2003. The abstract says influence 'depends not only on accuracy, but also on how well-connected one is in the social network'. The claim needs this fix: '而不是他的信息有多准确' should read '不只取决于信息有多准确，还取决于他在网络中的位置'. The rest matches: failing to adjust for repeated information, and opinions converging to one dimension.",
+     "source_url": "https://researchonline.lse.ac.uk/id/eprint/454/1/persu53.pdf"
+    },
+    {
+     "name": "奥尔特沃和斯诺伯格：政治行为中的过度自信（由相关性忽视产生）",
+     "status": "confirmed",
+     "note": "AEA page: AER 105(2):504-35, February 2015. The NBER w19250 text says 'we derive it [overconfidence] as a consequence of correlational neglect' (the citizen believes Corr is lower than it really is). The abstract confirms the predictions (ideological extremeness, turnout, partisan identification) and a nationwide sample of over 3,000 adults. n_eff and the regressions are the project's own tests.",
+     "source_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20130921"
+    },
+    {
+     "name": "艾斯特、雷宾和瓦亚诺斯：交易者忽视价格中所含信息的金融市场（已计入价格）",
+     "status": "corrected",
+     "corrected_year": "2019 (online 2018-10-29; NBER WP w21224, May 2015)",
+     "note": "Bibliographic data confirmed: Journal of Finance 74(1):371-399. One clause of the claim reverses the abstract: 'Because rationals arbitrage away distortions caused by cursed traders, mixed markets can generate even more trade.' Rational traders REDUCE the distortions, and that is why volume rises; the distortions are not amplified. Fix: '有理性套利者在场时，他们会套利消除被诅咒交易者造成的扭曲，因此交易量可能更高'. Also, when traders infer information from prices but dismiss it, the abstract says volume 'may disappear', not just fall.",
+     "source_url": "https://ideas.repec.org/a/bla/jfinan/v74y2019i1p371-399.html"
+    },
+    {
+     "name": "贝茨和格兰杰：预测组合（误差相关时的最优权重）",
+     "status": "confirmed",
+     "note": "Crossref: Bates & Granger, 'The Combination of Forecasts', 20(4):451-468, December 1969. The journal was then called Operational Research Quarterly; Crossref now lists it as JORS. Granger & Ramanathan, J. Forecasting 3(2):197-204, April 1984, confirmed. I re-derived the two-forecast weight k* and the variance 1/(1'Σ⁻¹1); both are correct. The n-forecast Σ⁻¹1 weight is a later standard generalization (see Timmermann 2006, Handbook ch. 4, pp. 135-196), not something from the 1969 paper itself.",
+     "source_url": "https://doi.org/10.1057/jors.1969.103"
+    },
+    {
+     "name": "预测包含检验：一个信息来源在已知另一个之后是否多余",
+     "status": "confirmed",
+     "note": "Chong & Hendry, RES 53(4):671-690, 1986: the abstract proposes a 'limited information' forecast-encompassing test. Harvey, Leybourne & Newbold, JBES 16(2):254-259, 1998: the abstract says the regression test 'is not robust to nonnormality in the forecast errors' and offers other tests. Fair & Shiller, AER 80(3):375-389, 1990: regresses actual values on several models' forecasts. The encompassing regression and d_t=(e1-e2)e1 match the HLN setup. The vol-scaling line is the project's own.",
+     "source_url": "https://ideas.repec.org/a/bes/jnlbes/v16y1998i2p254-59.html"
+    }
+   ]
+  }
+ },
+ {
+  "family": "finance",
+  "title": "Finance and macro measurement of over- and under-reaction",
+  "research": {
+   "items": [
+    {
+     "name": "Forecast error on forecast revision regression (information rigidity test)",
+     "authors": "Olivier Coibion, Yuriy Gorodnichenko",
+     "year": "2015",
+     "venue": "American Economic Review 105(8): 2644-2678",
+     "source_url": "https://doi.org/10.1257/aer.20110306",
+     "formula": "x_{t+h} - F_t x_{t+h} = a + b * (F_t x_{t+h} - F_{t-1} x_{t+h}) + v_{t+h,t}.  Sticky information model: b = lambda/(1-lambda), lambda = probability of NOT updating information this period. Noisy information (Kalman filter F_t x_t = G x_t^i + (1-G) F_{t-1} x_t): b = (1-G)/G, G = Kalman gain = weight on new information. Full-information rational expectations: b = 0. F = average forecast across forecasters.",
+     "core_idea_cn": "用“事后的预测误差”去对“事前的预测修正幅度”做回归，检验预测者有没有把新信息用足。如果信息完全且理性，今天修正了多少，不能帮你预测之后还会错多少，回归系数应为零。系数为正，说明修正得不够（新信息只用了一部分，叫反应不足或信息粘滞）；系数的大小可以直接换算成“粘滞程度”：粘滞信息模型里系数等于 λ/(1−λ)，λ 是这一期没有更新信息的概率；带噪信息模型里系数等于 (1−G)/G，G 是卡尔曼增益，即新信息所占权重。原文用的是许多预测者的平均预测，在美国专业预测者数据里普遍得到正系数。",
+     "good_thinking_cn": "好的思考：每天的修正幅度恰好等于新信息应有的分量，所以“修正”本身不能预测之后的误差（系数为零）。而且修正是新信息的充分概括：把其他当天已经看得到的变量加进回归，也不应再能预测误差，否则说明那部分信息被漏掉了。",
+     "measurable_test_cn": "输入：同一只股票同一天的多次独立运行所提交的五日预期收益，取平均作为当天的“平均预测”；前一天的平均预测；预测目标在合成任务里用贝叶斯最优参照智能体（bayes_optimal）的后验均值（噪声远小于真实收益，优先用），在真实交易日用实际五日收益。为了让今天和昨天预测的是同一个量，合成任务中设计“同一个到期结果、证据分几天陆续到来”的版本。计算：回归 (目标 − 今天的预测) = a + b ×(今天的预测 − 昨天的预测)，报告 b 及置信区间；对提交的五日预期波动也做同样回归（目标为参照波动或实现的五日波动）。再在回归中逐个加入工具字段（趋势信号、新闻情绪、相对强弱指标等），看它们的系数。好的标准：b 接近零（例如绝对值小于 0.1 且置信区间包含零），各工具字段系数也接近零；b 大于零为反应不足，b 小于零为过度反应。",
+     "fit_cn": "直接可用，是整个“过度反应/反应不足”测量的标准起点。要注意它测的是“平均后的预测”，单次运行的行为要看下一条（个体层面）。",
+     "good_thinking_check": "",
+     "uncertainty": "Formula for the sticky-information coefficient was checked on the NBER working paper (w16537) page images; the noisy-information coefficient (1-G)/G is the standard result of the same paper's equation (9), whose image was not re-read here. The published version may number equations differently.",
+     "verified": true
+    },
+    {
+     "name": "Overreaction in Macroeconomic Expectations (individual-level forecast error on revision)",
+     "authors": "Pedro Bordalo, Nicola Gennaioli, Yueran Ma, Andrei Shleifer",
+     "year": "2020",
+     "venue": "American Economic Review 110(9): 2748-2782",
+     "source_url": "https://doi.org/10.1257/aer.20181219",
+     "formula": "Individual pooled regression: x_{t+h} - x^i_{t+h|t} = b0 + b1_p * (x^i_{t+h|t} - x^i_{t+h|t-1}) + e.  b1_p < 0 means the individual over-reacts. Diagnostic Kalman filter: x^{i,theta}_{t|t} = x^i_{t|t-1} + (1+theta) * Sigma/(Sigma+sigma_eps^2) * (s^i_t - x^i_{t|t-1}). Model prediction (working paper Prop. 2): b1_p = -theta(1+theta) / ((1+theta)^2 + theta^2 rho^2), while the consensus coefficient can still be > 0 for theta in (0, sigma_eps^2/Sigma). Structural estimates of theta average about 0.6 across series (working paper).",
+     "core_idea_cn": "把上一条的回归放到“每个预测者自己”的层面来做：用某个预测者自己的修正去预测他自己的误差。结果和平均层面相反：平均预测表现为反应不足（系数为正），但单个预测者普遍过度反应（系数为负）。解释：每个人对自己收到的那份新信息反应过度（诊断性预期），但每个人的信息不同，平均之后互相抵消，看起来反而像反应不足。所以只看平均会把个体的过度反应藏起来。",
+     "good_thinking_cn": "好的思考：每一次单独的推理过程本身就不过度也不不足，即单次运行层面的系数接近零，而且单次层面和平均层面的系数一致，不出现“个体过度反应、平均后看着正常”的符号翻转。",
+     "measurable_test_cn": "输入：每一次单独运行（一条轨迹）的提交五日预期收益和目标仓位，以及前一天同一条轨迹的提交值；目标为贝叶斯最优参照的后验均值，仓位的目标为凯利式理性仓位。计算两个回归：(1) 预期收益：(参照值 − 本次提交) 对 (本次提交 − 同轨迹昨天提交)，所有轨迹合并估计个体系数；(2) 仓位：(凯利仓位 − 智能体仓位) 对 (今天仓位 − 昨天仓位)。再用多次运行的平均值做同样回归得到平均层面系数。用公式 b = −θ(1+θ)/((1+θ)²+θ²ρ²) 反推出扭曲参数 θ（ρ 用目标序列的一阶自相关）。好的标准：个体层面系数接近零、θ 接近零，且个体与平均层面系数同号同大小。我们已测到仓位变化比理性规则噪声大约 6.7 倍，预计个体层面系数会明显为负，这个测试能告诉我们这些噪声是不是“对当天信息的系统性过度反应”。",
+     "fit_cn": "非常契合：我们的智能体每次运行就是一个“个体预测者”，多次运行取平均就是“共识”。它提醒我们评估时必须在单次运行层面算，不能只看平均。",
+     "uncertainty": "The closed-form b1_p expression and the theta about 0.6 figure are from the NBER working paper w24932 (2018); the published AER version may present them slightly differently.",
+     "verified": true
+    },
+    {
+     "name": "Diagnostic expectations (likelihood distorted by exponent theta)",
+     "authors": "Pedro Bordalo, Nicola Gennaioli, Andrei Shleifer (2018); Pedro Bordalo, Nicola Gennaioli, Rafael La Porta, Andrei Shleifer (2019)",
+     "year": "2018; 2019",
+     "venue": "Journal of Finance 73(1): 199-227 (Diagnostic Expectations and Credit Cycles); Journal of Finance 74(6): 2839-2874 (Diagnostic Expectations and Stock Returns)",
+     "source_url": "https://doi.org/10.1111/jofi.12586 ; https://doi.org/10.1111/jofi.12833",
+     "formula": "h^theta_t(w_{t+1}) = h(w_{t+1} | W_t = w_t) * [ h(w_{t+1} | W_t = w_t) / h(w_{t+1} | W_t = b*w_{t-1}) ]^theta * (1/Z).  theta = 0 is rational. For AR(1) with normal shocks: E^theta_t(w_{t+1}) = E_t(w_{t+1}) + theta * [E_t(w_{t+1}) - E_{t-1}(w_{t+1})].  Implied two-state version (our derivation, not in the papers): logodds^theta_t = logodds_{t-1} + (1+theta) * LLR_t, i.e. today's log likelihood ratio is multiplied by (1+theta). Reported theta estimates about 0.9 (credit spreads; analyst long-term growth forecasts).",
+     "core_idea_cn": "代表性启发式的数学版本：人在看到新消息后，会过分看重那些“因为这条消息而变得更可能”的结果。做法是把正确的后验分布乘上一个“似然比的 θ 次方”，似然比是“有这条消息时的概率 / 没有消息时的概率”。θ=0 就是理性；θ>0 时，预期 = 理性预期 + θ ×（今天的理性预期 − 昨天的理性预期），即沿着新闻方向多走 θ 倍。它有“真理内核”：扭曲的方向和真实新闻一致，只是幅度放大。2018 年论文用来解释信用利差过度波动后反转；2019 年论文解释分析师长期盈利增速预测最乐观的股票之后收益偏低。",
+     "good_thinking_cn": "好的思考：对每条证据，按它真实的对数似然比去更新，不多也不少，θ 等于零。换句话说，“今天新信息让我改了多少”应该正好等于这条信息的分量，而不是被“这条信息让某个结果变得多显眼”放大。",
+     "measurable_test_cn": "合成任务（已知似然比）：给智能体一系列证据，用其提交的数字反推出它对“上涨”这一状态的概率（或在任务里设定提交值与概率的换算），计算它每天对数几率的变化，对每天证据的真实对数似然比回归，斜率等于 1+θ。真实交易日：用参照智能体从工具输出算出今天和昨天的参照预期 B_t、B_{t−1}，回归 (智能体提交的五日预期收益 − B_t) 对 (B_t − B_{t−1})，斜率就是 θ。按证据类型分别估计（新闻、趋势与技术指标、波动统计），看哪一类被放大。再看“真理内核”：(智能体 − 参照) 与 (参照的变化) 的相关是正的（方向对、幅度大，即诊断性过度反应），还是接近零但方差很大（纯噪声）——两者都不好，但修法不同。好的标准：θ 接近零（例如绝对值小于 0.1），且 (智能体 − 参照) 的剩余方差小。",
+     "fit_cn": "最直接的“单参数”定义：好的思考就是 θ=0。θ 可以作为训练时的一个可解释指标，按证据类型分别打分。",
+     "uncertainty": "The density formula and E^theta formula were read in the NBER working paper w22266; the published notation may differ slightly. The two-state log-odds form is our own derivation from the density formula, not a statement in the papers. theta about 0.9 values are as cited in the BGMS working paper.",
+     "verified": true
+    },
+    {
+     "name": "A model of investor sentiment (regime belief: mean-reverting vs trending)",
+     "authors": "Nicholas Barberis, Andrei Shleifer, Robert Vishny",
+     "year": "1998",
+     "venue": "Journal of Financial Economics 49(3): 307-343",
+     "source_url": "https://doi.org/10.1016/S0304-405X(98)00027-0",
+     "formula": "Truth: earnings shock y_t = +y or -y, independent (random walk). Investor believes two Markov models: Model 1 (mean-reverting) P(y_{t+1} = y_t) = pi_1 < 0.5; Model 2 (trending) P(y_{t+1} = y_t) = pi_2 > 0.5. Regime switches 1->2 with prob lambda1, 2->1 with prob lambda2. Bayes update of q_t = P(Model 1 | history): q_{t+1} = ((1-lambda1) q_t + lambda2 (1-q_t)) P(y_{t+1}|s=1,y_t) / [ same + (lambda1 q_t + (1-lambda2)(1-q_t)) P(y_{t+1}|s=2,y_t) ]. Example in working paper: pi = 1/3 and 3/4, lambda1 = 0.1, lambda2 = 0.3.",
+     "core_idea_cn": "真实世界里盈利冲击是独立的（随机游走），但投资者以为世界在“均值回归”和“趋势延续”两种模式之间切换，并按贝叶斯规则判断现在处于哪种模式。结果：单条好消息出来时，他以为大概率会回调，所以反应不足（对应心理学里的保守主义）；一连串同方向的消息之后，他认定进入了趋势模式，于是过度反应（对应代表性启发式：从太短的序列里看出规律）。一个模型同时解释了短期反应不足和长期过度反应。",
+     "good_thinking_cn": "好的思考：一条证据的分量不应该取决于它前面有没有一串同方向证据，除非证据之间真的存在这种依赖关系。对独立的证据，第一条和第五条应该给一样的权重；对“连涨几天”这类序列，要先确认它在数据里是否真的预示延续或反转，再决定怎么用。",
+     "measurable_test_cn": "合成任务：构造彼此独立、强度相同的证据序列，控制当前证据之前已经连续出现了几条同方向证据（记为 k = 0, 1, 2, …）。计算单位证据的反应 R = 智能体对数几率（或五日预期收益）的变化 / 当前证据的真实对数似然比，再把 R 对 k 回归。好的标准：R 在所有 k 下都接近 1，对 k 的斜率接近零；若 k=0 时 R 明显小于 1、k 大时 R 明显大于 1，就是该模型描述的模式。真实交易日：按趋势信号已经连续同号的天数分组，比较智能体五日预期收益的变化与参照的变化之比。推理文字：统计“趋势会延续”“会反转”这类断言的出现次数，并与该股票历史收益实际的自相关对照，断言方向与数据不符的比例越低越好。",
+     "fit_cn": "对应我们“证据之间关系”中的序列关系：智能体每天看到趋势信号、均值回归信号、连续多日的新闻，最容易犯的就是把独立的东西当成有趋势的模式，或反之。",
+     "uncertainty": "Model details were read from the NBER working paper w5926 (1997) page images. In the working paper the Model-1 parameter is called pi_H and the Model-2 parameter pi_L; the published version may use the opposite labels, so the formula field uses neutral names pi_1, pi_2.",
+     "verified": true
+    },
+    {
+     "name": "Investor psychology and security market under- and overreactions (overconfidence and biased self-attribution)",
+     "authors": "Kent Daniel, David Hirshleifer, Avanidhar Subrahmanyam",
+     "year": "1998",
+     "venue": "Journal of Finance 53(6): 1839-1885",
+     "source_url": "https://doi.org/10.1111/0022-1082.00077",
+     "formula": "Value theta_v ~ N(0, s_theta^2). Private signal s1 = theta_v + e, true var(e) = s_e^2, perceived by the informed investor as s_C^2 < s_e^2. Public signal s2 = theta_v + eta, var s_p^2 (correctly perceived). Price P1 = s_theta^2/(s_theta^2 + s_C^2) * s1 (too large a weight on the private signal). Proportional excess volatility V^E_t = [var(P_t - P_{t-1}) - var_R(P_t - P_{t-1})] / var_R(P_t - P_{t-1}). Self-attribution: confidence in the private signal rises when later public information confirms it and falls too little when it disconfirms it.",
+     "core_idea_cn": "两个偏差：一是过度自信，即高估自己私人信息的精度（以为噪声比实际小），于是对私人信息过度反应、对之后的公开信息相对反应不足；二是有偏的自我归因，即结果好时归功于自己、结果坏时归于运气，所以信心在顺利时上升、在不顺时几乎不降。前者带来过度波动和长期反转，后者带来短期动量和之后的反转。论文还给出“超额波动”的标准写法：实际价格变动方差减去理性下的方差，再除以理性方差。",
+     "good_thinking_cn": "好的思考：对自己推出来的判断（不是工具直接给的事实）只给它应有的精度；后来的公开证据和自己判断一致或不一致时，信心的调整应对称；最终决策的日常波动不应超过理性规则本身的波动。",
+     "measurable_test_cn": "输入：每日目标仓位、凯利式理性仓位、提交的五日预期波动、前一天的交易盈亏、推理文字。计算：(1) 超额波动 V = 智能体仓位日变化的方差 / 凯利仓位日变化的方差 − 1；若我们测到的 6.7 倍是标准差之比，则 V 约等于 6.7² − 1 ≈ 44；好的标准是 V 接近 0。(2) 过度反应后修正：智能体仓位日变化的一阶自相关减去凯利仓位的同一数值；明显为负说明“先冲过头再拉回”；好的标准接近 0。(3) 自我归因：把信心（仓位绝对值、或 1/提交的预期波动、或推理文字中“非常确定”等措辞的比例）的变化分别对“昨天赚钱”和“昨天亏钱”回归；好的标准是两个斜率都接近零且对称（短期盈亏几乎不说明判断能力）。(4) 自身判断与公开证据：把推理中没有工具依据的判断和有工具依据的证据分开，估计各自对提交值的影响，与参照权重之比；好的标准接近 1。",
+     "fit_cn": "超额波动的定义可以直接套到我们的“仓位噪声 6.7 倍”上，把它从一个描述性数字变成一个有理论含义、可训练压低的指标；自我归因测试对应多日连续运行的智能体。",
+     "uncertainty": "Model equations were read from the published paper text hosted on the first author's site. Mapping 'private signal' to the agent's own ungrounded inferences is our interpretation.",
+     "verified": true
+    },
+    {
+     "name": "Efficient capital markets (definition of 'already in the price')",
+     "authors": "Eugene F. Fama",
+     "year": "1970",
+     "venue": "Journal of Finance 25(2): 383-417",
+     "source_url": "https://doi.org/10.1111/j.1540-6261.1970.tb00518.x",
+     "formula": "E(p_{j,t+1} | Phi_t) = [1 + E(r_{j,t+1} | Phi_t)] * p_{j,t};  x_{j,t+1} = p_{j,t+1} - E(p_{j,t+1} | Phi_t);  E(x_{j,t+1} | Phi_t) = 0 (fair game). Weak form: Phi_t = past prices; semi-strong form: all public information; strong form: all information including private.",
+     "core_idea_cn": "有效市场的定义：价格已经“完全反映”了信息集 Φ_t 里的所有信息，所以基于 Φ_t 无法预测超出正常预期收益的部分（“公平博弈”）。三个层次：弱式（过去价格）、半强式（所有公开信息）、强式（包括内部信息）。这正是“已经被定价”的正式定义：如果一条信息在当前价格形成之前就已公开，它对未来超额收益的预测力应该是零。",
+     "good_thinking_cn": "好的思考：用每条公开信息之前，先问“它是不是在当前价格形成之前就已经存在，价格是不是已经朝它的方向动过了”。如果是，它对预期收益的增量分量是零（或只剩已知的残余漂移）；真正能改变预期的只有“意料之外”的部分。",
+     "measurable_test_cn": "输入：基准里的“已被定价”扰动（同一条新闻，但时间设在价格变动之前，且价格已经朝新闻方向动过）、同一天无新闻版本、新闻是新鲜的版本；三个版本下提交的五日预期收益和仓位。计算“已定价泄漏比”L = (已定价版本 − 无新闻版本) / (新鲜版本 − 无新闻版本)。好的标准：L 接近 0（合成任务若人为设定了残余漂移，则应等于设定值）。真实交易日：把五日预期收益对“新闻情绪”和“新闻发布时间以来的累计涨跌”同时回归，发布早于价格变动的新闻的情绪系数应接近 0。弱式检查：智能体对只来自过去价格的字段（趋势、相对强弱指标、均线差离指标、均值回归信号）的依赖程度，不应超过这些字段在历史数据中对未来五日收益的样本外预测力（用历史回归算出这个上限）。推理文字：遇到旧消息时是否写出“价格已经涨了/跌了多少”，有则记 1，比例越高越好。",
+     "fit_cn": "给“已被定价”一个可计算的目标：增量分量为零或等于已知残余漂移。需要注意真实市场并不完全有效（见下一条的盈余公告后漂移），所以合成任务里应明确设定真实的残余可预测部分作为标准答案。",
+     "uncertainty": "Bibliographic data confirmed via Crossref. The formula notation is transcribed from our knowledge of the paper's Section I (expected return / fair game model); the full text was not retrieved in this session.",
+     "verified": true
+    },
+    {
+     "name": "Post-earnings-announcement drift and standardized unexpected earnings",
+     "authors": "Victor L. Bernard, Jacob K. Thomas",
+     "year": "1989 (companion paper 1990)",
+     "venue": "Journal of Accounting Research 27 (Supplement): 1-36; companion: Journal of Accounting and Economics 13(4): 305-340 (1990), 'Evidence that stock prices do not fully reflect the implications of current earnings for future earnings'",
+     "source_url": "https://doi.org/10.2307/2491062 ; https://doi.org/10.1016/0165-4101(90)90008-r",
+     "formula": "SUE_q = (EPS_q - E[EPS_q]) / sd(past forecast errors), with E[EPS_q] from a seasonal random walk with drift (EPS_{q-4} + drift). Drift: cumulative abnormal return after the announcement rises with the SUE decile. Rational-revision benchmark (our addition): rational forecast revisions are a martingale, so corr(revision_t, revision_{t+1}) = 0.",
+     "core_idea_cn": "把“意外部分”标准化：实际盈利减去按历史规律预期的盈利，再除以过去意外幅度的标准差，得到标准化意外盈利。价格在公告后几十个交易日内继续朝意外的方向漂移（盈余公告后漂移），1989 年论文认为这是价格反应迟缓，而不是风险补偿。1990 年的配套论文进一步发现，价格的表现像是把盈利当成简单季节性随机游走，忽视了本季意外和后几个季度意外之间的相关结构——即没有理解“这条信息与未来信息的关系”。",
+     "good_thinking_cn": "好的思考分三步：先算出每条信息里“意外”的部分，并按它通常的波动幅度标准化；一次性把它用足，不在之后几天慢慢补（不漂移）；再弄清楚这个意外对后面几天的信息意味着什么（持续性有多强）。",
+     "measurable_test_cn": "输入：每天的数值工具字段（趋势信号、二十日年化波动、相对强弱指标、新闻情绪等）以及提交的五日预期收益和五日预期波动。计算：(1) 每个字段的标准化意外 z = (今天的值 − 按该字段自身历史预期的值) / 过去意外的标准差；把提交值的日变化对“意外 z”和“字段水平”同时回归。好的标准：在控制意外后，水平的系数接近零（水平昨天就已经用过了），意外的系数接近参照智能体的系数。(2) 漂移检查：智能体自己每天修正的一阶自相关（五日预期收益和五日预期波动各算一次），减去参照的同一数值。好的标准接近 0；为正说明信息被慢慢消化（反应不足），为负说明先冲过头。(3) 漂移曲线：在某个大意外日之后，接下来 1 到 5 天的累计修正 / 当天修正，好的标准接近 0。",
+     "fit_cn": "把“信息分量”落实为“标准化的意外部分”，并提供“修正不应自相关”这一几乎不需要额外数据的检验，适合在真实交易日上大规模跑。",
+     "uncertainty": "Bibliographic data for both papers confirmed via Crossref; full texts were not retrieved. The exact SUE construction details (estimation window, scaling) and the drift horizon are stated from general knowledge of the paper and should be checked before quoting numbers. The martingale benchmark is our addition, not a claim of the papers.",
+     "verified": true
+    },
+    {
+     "name": "Stale news: All the news that's fit to reprint",
+     "authors": "Paul C. Tetlock (companions: Anastassia Fedyk and James Hodson 2023; Gur Huberman and Tomer Regev 2001)",
+     "year": "2011",
+     "venue": "Review of Financial Studies 24(5): 1481-1512 (companions: Journal of Financial Economics 149(1): 92-113, 2023, 'When can the market identify old news?'; Journal of Finance 56(1): 387-396, 2001, 'Contagious speculation and a cure for cancer')",
+     "source_url": "https://doi.org/10.1093/rfs/hhq141 ; https://doi.org/10.1016/j.jfineco.2023.04.008 ; https://doi.org/10.1111/0022-1082.00330",
+     "formula": "Staleness_i = textual similarity of story i to the previous 10 stories about the same firm (one common implementation: |W_i intersect W_prev| / |W_i union W_prev| on word sets). Test: response = a + b1*Sentiment + b2*Sentiment*Staleness; correct handling means b1 + b2 ≈ 0 when Staleness = 1.",
+     "core_idea_cn": "一条新闻的“陈旧度”定义为它与同一公司前十条新闻在文字上的相似度。发现：股价对陈旧新闻的反应较小，但陈旧新闻当天的涨跌会在下一周反转；个人投资者在新闻陈旧时反而交易更激进，反转在个人投资者交易多的股票里更大——说明有人把旧信息当新信息用了。2023 年的配套研究发现，把多处旧内容重新组合成一篇“新”报道，比原样转载更难被识别，引起更大的价格变动和随后反转（与“忽视证据之间相关性”有关）。2001 年的案例：一篇周日报纸文章重复了五个多月前就已发表的癌症研究，相关股票周一从约 12 美元开到 85 美元。",
+     "good_thinking_cn": "好的思考：对每条新闻先判断“它和之前看到的内容重合了多少”，重合的部分不再加分；同一件事被转载几次、换个说法、或拼合几篇旧稿，都只算一次。",
+     "measurable_test_cn": "输入：新闻工具每天输出的新闻文本和情绪分数、同一股票此前的新闻、提交的五日预期收益和仓位、推理文字。计算：(1) 每条新闻与之前十条的文字相似度（词集合重合度，或句向量相似度）作为陈旧度；把提交值的变化对“情绪”和“情绪 × 陈旧度”回归，算“陈旧反应比”= 完全陈旧时的反应 / 完全新鲜时的反应，好的标准接近 0。(2) 用基准扰动分三类分别算这个比：原样重复、改写后的旧闻、把两三条旧闻拼合成一条；好的标准是三类都接近 0 且彼此相近（不被拼合骗过）。(3) 重复计数：同一新闻出现 k 次时的反应 / 出现 1 次时的反应，好的标准等于 1；等权计数参照智能体会得到 k。(4) 推理文字中把陈旧新闻明确标为“旧消息/重复”的比例，越接近 1 越好。",
+     "fit_cn": "与我们已有的“重复新闻”“过期新闻”扰动一一对应；陈旧度的计算方法可直接搬用，拼合旧闻是值得新增的一类扰动。",
+     "uncertainty": "The staleness definition (similarity to previous ten stories) is from the confirmed abstract; the exact similarity formula in Tetlock (2011) was not retrieved, so the word-set overlap form is labeled as one common implementation. Huberman and Regev price figures are from their confirmed abstract (12.063 Friday close, open at 85).",
+     "verified": true
+    },
+    {
+     "name": "Limited attention: presentation effects and Friday announcements",
+     "authors": "David Hirshleifer, Siew Hong Teoh (2003); Stefano DellaVigna, Joshua M. Pollet (2009)",
+     "year": "2003; 2009",
+     "venue": "Journal of Accounting and Economics 36(1-3): 337-386 ('Limited attention, information disclosure, and financial reporting'); Journal of Finance 64(2): 709-749 ('Investor inattention and Friday earnings announcements')",
+     "source_url": "https://doi.org/10.1016/j.jacceco.2003.10.002 ; https://doi.org/10.1111/j.1540-6261.2009.01447.x",
+     "formula": "DellaVigna-Pollet: immediate response = slope of announcement-window return on earnings-surprise decile; delayed response = slope of post-window return on the same decile. Friday vs other days: immediate response about 15% lower, delayed response about 70% higher, trading volume about 8% lower. Generic test: invariance ratio = response(info presented less prominently or under load) / response(info presented prominently); rational = 1.",
+     "core_idea_cn": "注意力有限的投资者只处理显眼、容易处理的信息。2003 年的论文用模型说明：同一信息用什么格式、放在哪里披露，会改变价格反应，不显眼的信息被低估。2009 年的论文用自然实验验证：周五（大家分心）公布的盈利，当天反应少 15%，之后的漂移多 70%，成交量少 8%，说明分心导致当时反应不足、事后慢慢补。",
+     "good_thinking_cn": "好的思考：信息的分量与它的呈现方式无关——放在第一行还是埋在第二十个字段、写成年化还是五日、出现在新闻里还是数值里，只要内容相同，结论就相同；当天信息再多，也不应漏掉关键的一条。",
+     "measurable_test_cn": "输入：同一交易日的三种呈现扰动：(a) 关键证据放在工具输出最前面；(b) 同一证据埋在大量无关字段或长新闻列表中间；(c) 同一证据换格式（年化与五日、百分数与小数、写进新闻文字与单独数值字段）。计算“呈现不变比”= (b 或 c 下提交值相对无该证据时的变化) / (a 下的变化)，好的标准接近 1。负载测试：把智能体误差（提交的五日预期收益与参照之差的绝对值）对当天工具字段数和新闻条数回归，好的标准是斜率接近 0。延迟测试：若证据在后续几天仍可见，测“之后几天补上的修正 / 当天修正”，好的标准接近 0（当天已经用足）。",
+     "fit_cn": "对应我们的“显眼数字被照抄”和“证据被淹没”问题；呈现不变比可以作为训练时的数据增强目标。",
+     "uncertainty": "Both papers' bibliographic data confirmed via Crossref; DellaVigna-Pollet numbers are from the confirmed abstract. The abstract and full text of Hirshleifer-Teoh (2003) could not be retrieved, so its description is from general knowledge of the paper.",
+     "verified": true
+    },
+    {
+     "name": "All that glitters: attention-driven buying",
+     "authors": "Brad M. Barber, Terrance Odean",
+     "year": "2008",
+     "venue": "Review of Financial Studies 21(2): 785-818",
+     "source_url": "https://doi.org/10.1093/rfs/hhm079",
+     "formula": "Order imbalance = (buys - sells) / (buys + sells), sorted by attention proxies: stock in the news that day, abnormal trading volume, extreme one-day return. Finding: individual investors are net buyers of attention-grabbing stocks. Agent version (ours): attention imbalance = mean(dE_agent - dE_reference | attention day) - mean(dE_agent - dE_reference | other days).",
+     "core_idea_cn": "个人投资者是“引人注意的股票”的净买入者：当天上新闻、成交量异常放大、或单日涨跌极端的股票。原因是买入时要从几千只股票里挑，只会考虑先抓住注意力的那些；卖出时只需看自己持有的，所以没有这个问题。注意力决定了候选范围，偏好才在范围内起作用。",
+     "good_thinking_cn": "好的思考：“这只股票今天很受关注”本身不是买入理由；只有关注背后的信息内容（且未被定价的部分）才应进入判断。",
+     "measurable_test_cn": "输入：每日目标仓位、凯利式理性仓位、价格统计中的单日涨跌、成交量（若有）、当天新闻条数、推理文字。计算：把 (智能体仓位变化 − 凯利仓位变化) 对三个注意力指标回归：当天是否有新闻、成交量是否异常、单日涨跌是否落在最极端的十分之一；同时算“注意力买入偏差”= 注意力日的平均差值 − 非注意力日的平均差值，并分别看加仓和减仓方向是否不对称。好的标准：各系数和偏差接近 0，且不对称性接近 0。推理文字：统计只以“受关注、今天大涨大跌”而没有信息内容的理由出现的比例，越低越好。",
+     "fit_cn": "补充测试“显眼但无信息”的那一类输入如何推动仓位，可与显眼性跟随参照智能体（salience_follower）对照。",
+     "uncertainty": "Crossref lists the online issue year as 2007; the print issue is April 2008. Formula of the agent version is our adaptation.",
+     "verified": true
+    },
+    {
+     "name": "Salience theory (salience function and distorted decision weights) and the Annual Review survey on salience",
+     "authors": "Pedro Bordalo, Nicola Gennaioli, Andrei Shleifer",
+     "year": "2012; 2022 (also 2013 'Salience and Asset Prices', AER Papers and Proceedings 103(3): 623-628)",
+     "venue": "Quarterly Journal of Economics 127(3): 1243-1285; Annual Review of Economics 14: 521-544",
+     "source_url": "https://doi.org/10.1093/qje/qjs018 ; https://doi.org/10.1146/annurev-economics-051520-011616",
+     "formula": "Salience of state s for option i: sigma(x_s^i, x_s^-i) = |x_s^i - x_s^-i| / (|x_s^i| + |x_s^-i| + theta). Rank states by salience k_s (1 = most salient). Odds distortion: pi~_{s'} / pi~_s = delta^(k_{s'} - k_s) * pi_{s'} / pi_s, delta in (0,1]; weights pi~_s = pi_s * omega_s, omega_s = delta^k_s / sum_r delta^k_r pi_r. delta = 1 is the rational agent; smaller delta = stronger distortion (working paper calibration around delta ≈ 0.7). Survey: salience comes from contrast with surroundings, surprise relative to recalled experience, and prominence.",
+     "core_idea_cn": "注意力被“显眼”的东西自下而上地吸引，从而扭曲决策权重。2012 年论文给出显眼度函数：两个结果差得越多越显眼（排序性），但数值越大越不敏感（递减敏感性）；然后按显眼度排名把概率权重乘以 δ 的名次次方，δ=1 时无扭曲。2022 年综述把显眼的来源归为三类：与周围的对比、相对记忆中常态的意外、以及呈现上的突出；在金融上可解释右偏股票被高估等现象。",
+     "good_thinking_cn": "好的思考：每个字段的权重只取决于它的信息量，与它的显眼程度无关。数字大、排在前面、和平时差别大，这些都不应额外加权；尤其不能直接照抄一个显眼的数字作为答案，而要先换算成需要的量。",
+     "measurable_test_cn": "输入：二十二个工具输出字段每天的值、它们在输出中的位置和格式、提交的五日预期收益、五日预期波动和仓位。计算：(1) 每个字段每天的显眼度：对比 = 用上式比较该值与该字段平常值；意外 = 用上式比较今天和昨天的值；突出 = 位置靠前、数值位数多、带醒目标签。(2) 每个字段的实际权重：小幅扰动该字段后提交值的变化（或推理文字中被引用的比例），除以贝叶斯最优参照中的权重，得到“权重比”。把权重比对显眼度名次拟合“权重比 ∝ δ 的名次次方”，好的标准 δ 接近 1，权重比对显眼度的斜率接近 0。(3) 照抄率：提交的五日预期波动与二十日年化波动数字相同（在四舍五入范围内）的会话比例，目前约 2%，好的标准为 0；同时算换算误差 |提交的五日波动 − 年化波动 × √(5/252)| 相对参照的大小。与显眼性跟随参照智能体比较 δ。",
+     "fit_cn": "给“照抄显眼数字”和“被显眼字段带偏”一个有理论依据的单参数度量 δ，可直接和我们的二十二字段冗余矩阵结合使用。",
+     "uncertainty": "The salience function and odds-distortion formula were read from the NBER working paper w16387 (2010); the published notation may differ slightly. The delta ≈ 0.7 calibration is from that working paper. Applying the lottery-state framework to tool fields is our adaptation.",
+     "verified": true
+    },
+    {
+     "name": "Overinference from weak signals and underinference from strong signals",
+     "authors": "Ned Augenblick, Eben Lazarus, Michael Thaler",
+     "year": "2025",
+     "venue": "Quarterly Journal of Economics 140(1): 335-401",
+     "source_url": "https://doi.org/10.1093/qje/qjae032",
+     "formula": "Signal strength S(s) = |log( p(s|state=1) / p(s|state=0) )|. Bayes: logit(pi_1) = logit(pi_0) ± S. Perceived strength: E[S_hat | s] = k * S^beta, so log E[S_hat] = log k + beta * log S, with beta in (0,1). Effective weight on a signal: w(S) = k * S^-(1-beta) (> 1 for weak signals, < 1 for strong); crossover S* = k^(1/(1-beta)). Estimates from the first abstract experiment (arXiv version): k = 0.88, beta = 0.76. Grether-style check: logit(pi_hat_1) = alpha*logit(pi_0) ± gamma*S.",
+     "core_idea_cn": "人们知道该往哪个方向更新，但对“该更新多少”的估计不精确，于是把信号强度往中间压缩：弱信号被高估（过度推断），强信号被低估（推断不足）。用感知强度与真实强度（对数似然比的绝对值）在对数尺度上的斜率 β 来度量：β=1、k=1 是贝叶斯，β<1 就是“弱的放大、强的缩小”。作者在抽象实验、自然实验、体育博彩市场和金融市场（期权隐含信念）四个场景都得到同样结果。",
+     "good_thinking_cn": "好的思考就是“按信息分量加权”的直接定义：每条证据的影响与它的对数似然比成正比，β 和 k 都等于 1；不把所有证据当成差不多大小（这正是等权计数的毛病），也不对很强的证据犹豫不决。",
+     "measurable_test_cn": "输入：合成任务中每条证据的已知似然比、智能体在证据前后的概率判断（直接让它给出概率，或在任务中设定提交的五日预期收益与“上涨概率”的换算关系）。计算：真实强度 S = |对数似然比|；感知强度 Ŝ = |更新后对数几率 − 更新前对数几率|；拟合 log Ŝ = log k + β log S，报告 β、k、交叉点 S*，以及权重 Ŝ/S 落在 [0.8, 1.25] 之外的证据比例。好的标准：β 接近 1、k 接近 1，落在区间外的比例低。参照：等权计数参照智能体（counting_naive）应得到 β≈0，贝叶斯最优参照得到 β=1，可用作刻度两端。真实交易日：用参照模型对每个字段算出的对数似然比代替 S，用扰动单个字段得到的提交值变化代替 Ŝ。",
+     "fit_cn": "与我们已有的“已知似然比的合成任务”完全对齐，β 是衡量“是否按信息分量加权”最干净的单一数字，可直接作为训练目标之一。",
+     "uncertainty": "Bibliographic data confirmed via Crossref (online 2024, issue 2025). Formulas and the k = 0.88, beta = 0.76 estimates were read from the arXiv version 2109.09871; the published version may differ in numbers or notation.",
+     "verified": true
+    }
+   ],
+   "family_summary_cn": "这一类金融和宏观研究给“好的思考”提供了四样可以直接拿来用的东西。\n\n第一，信息分量的定义：只有“意料之外、还没被价格反映”的部分才有分量。有效市场理论（Fama 1970）定义了“已被定价”，标准化意外盈利（Bernard 和 Thomas 1989）给出了“意外部分除以它通常的波动幅度”的算法。\n\n第二，测过度反应和反应不足的标准回归：用事后误差对事前修正做回归（Coibion 和 Gorodnichenko 2015），系数为零才算好。Bordalo、Gennaioli、Ma、Shleifer 2020 发现，单个预测者过度反应，但平均以后会表现为反应不足。所以对我们的智能体必须在单次运行层面算，不能只看多次运行的平均。\n\n第三，用一个参数描述扭曲，便于测量和训练：\n- 诊断性预期的 θ（似然比被乘上 θ 次方，好的值为 0）；\n- 过度自信中“以为的噪声 / 真实噪声”（好的值为 1），以及由此定义的超额波动（好的值为 0）；\n- 显眼度理论的 δ（好的值为 1）；\n- 信号强度弹性 β 和 k（好的值都为 1）。它最直接对应“按信息分量加权”：等权计数参照应得到 β≈0，贝叶斯参照得到 β=1。\n\n第四，市场里已经记录过的“信息关系”错误，与我们的基准扰动一一对应：\n- 陈旧新闻和转载（Tetlock 2011），把旧闻拼合成“新”报道更难识别（Fedyk 和 Hodson 2023）；\n- 把独立序列误读成趋势或回归（Barberis、Shleifer、Vishny 1998）；\n- 分心和呈现方式导致的反应不足（Hirshleifer 和 Teoh 2003；DellaVigna 和 Pollet 2009）；\n- 只因受关注就买入（Barber 和 Odean 2008）；\n- 显眼数字被过度加权（Bordalo、Gennaioli、Shleifer 2012 和 2022）。\n\n建议的评分表，每项都有明确的“好”值：\n- 误差对修正的回归系数，单次层面与平均层面都接近 0；\n- θ 接近 0；\n- β 和 k 接近 1；\n- 超额波动接近 0；\n- 自己每天修正的自相关接近 0；\n- 已定价泄漏比接近 0；\n- 陈旧反应比接近 0，重复 k 次的反应比等于 1；\n- 呈现不变比接近 1；\n- 照抄年化波动的比例为 0。\n\n需要注意三点：\n- 真实五日收益噪声很大。以真实结果为目标的回归需要很多样本，所以优先用合成任务，并以贝叶斯最优参照作为目标。\n- 真实市场并非完全有效，存在盈余公告后漂移这类已知的残余可预测性。合成任务里应明确设定“已被定价后还剩多少”作为标准答案。\n- 部分细节未能从原文核对，已在各条的不确定说明里标出：Hirshleifer 和 Teoh 的具体内容、Bernard 和 Thomas 标准化意外盈利的估计窗口、Tetlock 相似度的精确公式、Fama 公式的记号。所有论文的作者、年份、期刊和卷期都已通过 Crossref 核对。"
+  },
+  "verify": {
+   "verdicts": [
+    {
+     "name": "Forecast error on forecast revision regression (information rigidity test)",
+     "status": "confirmed",
+     "note": "Checked against the authors' own copy of the paper (AER 105(8):2644-78). Eq. 5 gives b = λ/(1−λ), where λ is the probability of not getting new information. Eq. 9 gives b = (1−G)/G, where G is the Kalman gain. Both use the average forecast across forecasters. The paper reports 'pervasive evidence' of information rigidity. In the paper the Kalman filter's input is a signal y_it, not x_t^i, but this is only notation.",
+     "source_url": "https://eml.berkeley.edu/~ygorodni/CG_expform.pdf"
+    },
+    {
+     "name": "Overreaction in Macroeconomic Expectations (individual-level forecast error on revision)",
+     "status": "confirmed",
+     "note": "AEA page confirms AER 110(9):2748-82, 2020. In NBER w24932, Prop. 1 is the diagnostic Kalman filter with (1+θ)Σ/(Σ+σε²). Prop. 2 gives the individual coefficient −θ(1+θ)/((1+θ)²+θ²ρ²), and the consensus coefficient is >0 when θ∈(0,σε²/Σ). Structural θ averages 0.6. The reason the consensus under-reacts: each forecaster ignores the others' signals. 'Cancel out on average' is a loose paraphrase of that.",
+     "source_url": "https://www.nber.org/system/files/working_papers/w24932/w24932.pdf"
+    },
+    {
+     "name": "Diagnostic expectations (likelihood distorted by exponent theta)",
+     "status": "confirmed",
+     "note": "Crossref confirms both papers: JF 73(1):199-227 and JF 74(6):2839-2874. The h^θ density with reference Ω_t = bω_{t−1} and the AR(1) result E^θ = E_t + θ[E_t − E_{t−1}] appear in NBER w22266 (Prop. 1). BGMS w24932 says BGS 2018 and BGLS each estimate θ = 0.9. Caveat: the 2017 BGLS working paper calibrates θ = 1.22, so the published value may differ. The two-state log-odds formula is correctly labeled as the authors' own derivation, and it follows from the definition.",
+     "source_url": "https://www.nber.org/system/files/working_papers/w22266/w22266.pdf"
+    },
+    {
+     "name": "A model of investor sentiment (regime belief: mean-reverting vs trending)",
+     "status": "confirmed",
+     "note": "Crossref confirms JFE 49(3):307-343, 1998. The scanned NBER w5926 (pp. 16-18) shows: Model 1 has P(same sign) small (1/3) and Model 2 has it large (3/4); λ1 = 0.1, λ2 = 0.3; and the Bayes update for the probability of Model 1 matches. The working paper labels them π_H and π_L the opposite way round from the published paper, but the item's generic pi_1 and pi_2 are faithful.",
+     "source_url": "https://www.nber.org/system/files/working_papers/w5926/w5926.pdf"
+    },
+    {
+     "name": "Investor psychology and security market under- and overreactions (overconfidence and biased self-attribution)",
+     "status": "confirmed",
+     "note": "Published text (JF 53(6):1839-1885) gives P1 = σθ²/(σθ²+σC²)(θ+ε) with σC² < σε², and defines proportional excess volatility as [var − var_R]/var_R. Confidence rises on confirming news and falls 'only modestly, if at all' on disconfirming news. The abstract matches the claimed implications.",
+     "source_url": "http://www.kentdaniel.net/papers/published/jf98.pdf"
+    },
+    {
+     "name": "Efficient capital markets (definition of 'already in the price')",
+     "status": "confirmed",
+     "note": "Scanned original (JF 25(2):383-417) shows eq. (1), E(p_{j,t+1}|Φ_t) = [1+E(r_{j,t+1}|Φ_t)]p_jt, the weak / semi-strong / strong form definitions, and the fair-game framing. Crossref also lists Malkiel because he chaired the session, but Fama is the only author.",
+     "source_url": "http://www.e-m-h.org/Fama70.pdf"
+    },
+    {
+     "name": "Post-earnings-announcement drift and standardized unexpected earnings",
+     "status": "confirmed",
+     "note": "Crossref and RePEc confirm both papers: JAR 27 (Suppl.):1-36, 1989, 'Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?', and JAE 13(4):305-340, 1990. The 1990 finding that prices act as if earnings follow a seasonal random walk is supported by secondary sources. Caveat: the paper is paywalled, so I could not check the exact SUE construction (seasonal random walk with drift, scaled by the sd of past errors) against the text. The martingale benchmark is correctly labeled as the authors' own addition.",
+     "source_url": "https://doi.org/10.2307/2491062"
+    },
+    {
+     "name": "Stale news: All the news that's fit to reprint",
+     "status": "confirmed",
+     "note": "Exact title: 'All the News That's Fit to Reprint: Do Investors React to Stale Information?' (RFS 24(5):1481-1512). The abstract matches: staleness = similarity to the previous 10 stories; smaller reaction but reversal the next week; individual investors trade more aggressively; larger reversal where individual trading is high. Fedyk-Hodson (JFE 149(1):92-113, 2023) matches, including recombination vs reprint and correlation neglect. Huberman-Regev (JF 56(1):387-396) matches: 12.063 to 85, published more than 5 months earlier. Caveat: the sentiment×staleness test with b1+b2≈0 is the authors' own benchmark, not Tetlock's specification.",
+     "source_url": "https://doi.org/10.1093/rfs/hhq141"
+    },
+    {
+     "name": "Limited attention: presentation effects and Friday announcements",
+     "status": "confirmed",
+     "note": "Crossref confirms both: JAE 36(1-3):337-386 and JF 64(2):709-749. The Hirshleifer-Teoh abstract matches: it models how the form of presentation affects prices under limited attention. The DellaVigna-Pollet abstract gives 15% lower immediate response, 70% higher delayed response and 8% lower volume. The response-slope definitions are approximate. The invariance ratio is the authors' own generic construct.",
+     "source_url": "https://doi.org/10.1111/j.1540-6261.2009.01447.x"
+    },
+    {
+     "name": "All that glitters: attention-driven buying",
+     "status": "confirmed",
+     "note": "RFS 21(2):785-818, print 2008 (online Dec 2007). The full title adds 'The Effect of Attention and News on the Buying Behavior of Individual and Institutional Investors'. Eq. 3 defines buy-sell imbalance as (buys − sells)/(buys + sells), by count and by value. The abstract matches the claim exactly. The agent version is labeled as the authors' own.",
+     "source_url": "https://faculty.haas.berkeley.edu/odean/papers%20current%20versions/allthatglitters_rfs_2008.pdf"
+    },
+    {
+     "name": "Salience theory (salience function and distorted decision weights) and the Annual Review survey on salience",
+     "status": "confirmed",
+     "note": "Crossref confirms QJE 127(3):1243-1285, Annual Review of Economics 14:521-544 (2022), and AER P&P 103(3):623-628 (2013). NBER w16387 matches eq. 2: σ = |x^i − x^{−i}|/(|x^i| + |x^{−i}| + θ). Eqs. 3-4 give odds scaled by δ^(k_s' − k_s) with ω_s = δ^k_s / Σ_r δ^k_r π_r. The working paper's parameterization is δ = 0.7, θ = 0.1. The Annual Review abstract names contrast, surprise and prominence.",
+     "source_url": "https://www.nber.org/papers/w16387.pdf"
+    },
+    {
+     "name": "Overinference from weak signals and underinference from strong signals",
+     "status": "confirmed",
+     "note": "Crossref confirms QJE 140(1):335-401, 2025. arXiv 2109.09871v5 matches: S = |log likelihood ratio|; E[Ŝ|s] = kS^β; the log-linear form; ŵ(S) = kS^−(1−β); the crossover at S* = k^(1/(1−β)); and k = 0.88, β = 0.76 from the first experiment. It also has a Grether regression and the four settings: abstract experiment, naturalistic experiment, sports betting, and options-implied beliefs.",
+     "source_url": "https://arxiv.org/abs/2109.09871"
+    }
+   ]
+  }
+ },
+ {
+  "family": "llm",
+  "title": "LLM-specific work 2023 to 2026",
+  "research": {
+   "items": [
+    {
+     "name": "CogBench: a large language model walks into a psychology lab",
+     "authors": "Julian Coda-Forno, Marcel Binz, Jane X. Wang, Eric Schulz",
+     "year": "2024",
+     "venue": "ICML 2024 (Proceedings of Machine Learning Research, volume 235); arXiv 2402.18225",
+     "core_idea_cn": "用七个经典认知心理学实验给三十五个大语言模型做行为画像。其中一个是概率推理实验：转盘决定先验，抽出的球是证据，模型要报出后验概率。论文把模型的回答拆成两个权重，一个是先验权重，一个是证据权重。人类常见的毛病叫系统忽视，就是两个权重都小于一。论文还发现，让模型先写思维链能提高概率推理的成绩。",
+     "good_thinking_cn": "好的思考，就是每条证据的实际权重等于它真实的信息分量。写成广义贝叶斯公式：后验对数几率 = 先验权重 × 先验对数几率 + 证据权重 × 对数似然比。理想情况下两个权重都等于一。大于一叫过度反应，小于一叫反应不足。这个框架可以直接往外推：重复出现的证据、已经被价格消化的证据、过时的证据，正确权重都应该是零。",
+     "measurable_test_cn": "在已有的合成任务里，每条证据的对数似然比是已知的。先把智能体提交的数字换成“五日上涨概率”的对数几率。可以直接让它多报一个上涨概率；也可以用正态近似：上涨概率 = 标准正态分布函数(预期收益 / 预期波动)，这个换算是我们自己的假设。然后做回归：因变量是这个对数几率，自变量是先验对数几率、每类工具证据（趋势、相对强弱指标、移动平均收敛发散、新闻等）的真实对数似然比，再给“重复新闻副本”“已被价格消化的新闻”“过时新闻”各加一个自变量。要算的数是每个回归系数。合格标准：独立证据的系数在0.8到1.2之间，重复副本、已消化、过时三类的系数在-0.2到0.2之间。三个参照智能体跑同一个回归作为刻度：贝叶斯最优智能体应该得到约1和约0；平均计数型智能体在重复副本上会得到约1；显著性跟随型智能体在醒目字段上的系数会远大于1。",
+     "fit_cn": "最直接对上“按信息分量加权”这一条。它给的是一个数字化的定义，不用去看文字里有没有“互相印证”这类词。不足：原论文只有一条证据加一个先验，没有涉及证据之间相关的情况。往重复证据、已消化证据上扩展是我们自己加的。",
+     "formula": "Generalized Bayes (paper, Appendix B.1): P(A|B) ∝ P(B|A)^b2 * P(A)^b1 ; fitted as logit P(UrnF|Ball) = b0 + b1*logit P(UrnF) + b2*log[P(Ball|UrnF)/P(Ball|UrnJ)] ; Bayes-optimal b1=b2=1, system neglect b1,b2<1. Our extension: logit p_agent = b0 + b1*logit prior + sum_k b_k*LLR_k + c_dup*LLR_dup + c_priced*LLR_priced + c_stale*LLR_stale ; good: b_k≈1, c≈0.",
+     "source_url": "https://proceedings.mlr.press/v235/coda-forno24a.html",
+     "uncertainty": "会议出处已在 ICML 2024 论文集（第235卷）列表中确认。公式抄自论文附录 B.1。扩展到证据之间关系（重复、已消化、过时）是我们自己提的，论文里没有；把预期收益和预期波动换算成上涨概率的正态近似也是我们的假设。",
+     "verified": true
+    },
+    {
+     "name": "Is In-Context Learning in Large Language Models Bayesian? A Martingale Perspective",
+     "authors": "Fabian Falck, Ziyu Wang, Chris Holmes",
+     "year": "2024",
+     "venue": "ICML 2024 (Proceedings of Machine Learning Research, volume 235); arXiv 2406.00793",
+     "core_idea_cn": "真正的贝叶斯学习者必须满足“鞅性质”：在只知道今天信息的情况下，它对“将来自己会怎么想”的平均预期，就等于它今天的想法。也就是说，不应该存在一种今天就能预见到的“明天我会改主意”。论文从这个性质推出可以检验的统计量，在三个实验里发现大语言模型违反了这个性质，而且看到更多数据之后，不确定性也没有按贝叶斯的方式下降。",
+     "good_thinking_cn": "好的思考，观点的改动只由真正的新信息推动。改动量不能用昨天已经有的信息预测出来，也不能用昨天的改动量预测出来。如果改动有规律地来回摆（今天大加、明天回撤），说明是在对噪声过度反应。",
+     "measurable_test_cn": "输入是每只股票逐日提交的预期收益和目标仓位，以及前一天的全部工具输出。预测目标要固定成同一个终点，例如第t天和第t+1天都报“到第t+5天收盘的累计收益”。否则滚动的五日窗口本身就会带来变化。要算三个数：(一) 改动量的自相关，即今天的改动量对昨天改动量回归的系数；(二) 用昨天已知的工具字段回归今天的改动量，得到的决定系数；(三) 改动量的方差除以贝叶斯最优参照智能体改动量的方差。合格标准：自相关系数接近0（例如落在-0.1到0.1之间且不显著）；决定系数接近0；方差比接近1。我们现在测到仓位变化的噪声大约是理性凯利式规则的6.7倍，这个方差比就是要压下去的目标。另外，同一天同样的输入重复跑几次，看输出的离散程度占日间改动量的多大比例，用来区分“随机抽样噪声”和“对信息的过度反应”。",
+     "fit_cn": "直接对上“日间仓位变化太吵”的问题。它不需要知道真实答案，真实交易日上也能用。注意：原论文针对的是可交换数据（顺序无关的样本），股票数据是时间序列，必须把预测目标固定成同一个终点才严格适用。",
+     "formula": "Definition 1 (paper): p(Z_{n+1}=z | Z_{1:n}) = p(Z_{n+k}=z | Z_{1:n}) for all n,k>0 ; implies E[forecast_{t+1} | info_t] = forecast_t. Our test: (F_{t+1}-F_t) = a + c*(F_t-F_{t-1}) + d'*X_{t-1} + e ; good: c≈0, d≈0, Var(dF_agent)/Var(dF_bayes)≈1.",
+     "source_url": "https://arxiv.org/abs/2406.00793",
+     "uncertainty": "会议出处已在 ICML 2024 论文集列表中确认，定义抄自论文。给我们智能体用的回归形式是我们把这个性质翻译过来的写法，不是论文里原样的检验统计量。",
+     "verified": true
+    },
+    {
+     "name": "Surveying Generative AI's Economic Expectations",
+     "authors": "Leland Bybee",
+     "year": "2023",
+     "venue": "SSRN working paper (doi 10.2139/ssrn.4430515)",
+     "core_idea_cn": "让大语言模型读1984年到2021年的《华尔街日报》新闻，再问它对各种金融变量和宏观变量的预期，拼成一份“模型版的预期调查”。结果和专业预测者调查、美国个人投资者协会调查、杜克大学财务总监调查都很接近，而且连人类调查里偏离“完全信息理性预期”的地方也复制了：宏观预期反应不足；股票收益预期是外推型的（过去涨就预期接着涨），和客观的预期收益脱节，并且和未来真实收益负相关。换成训练期以外的新闻，这些结论仍然成立，说明不是背答案。",
+     "good_thinking_cn": "好的预期要通过预测误差检验：事后的预测误差不能用事前的改动量预测出来。改动量和误差正相关，说明反应不足；负相关，说明过度反应。收益预期也不能只是把过去的涨跌往后延长。",
+     "measurable_test_cn": "输入是每天提交的预期五日收益、它比前一天改了多少、事后的真实五日收益、过去二十日收益。要算三个数：(一) 预测误差回归：用“真实收益减预期收益”对“预期的改动量”回归，看系数；(二) 外推系数：用预期收益对过去二十日收益回归，同时控制贝叶斯最优参照智能体的预期，看剩下的系数；(三) 波动预期检验：提交的五日预期波动，除以“年化二十日波动率 × 根号(5/252)”。合格标准：(一) 系数接近0，明显为正说明反应不足，明显为负说明过度反应；(二) 控制之后的外推系数接近0；(三) 比值接近1。如果比值接近7.1，也就是根号(252/5)，说明直接抄了年化数字，对应我们看到的那约2%的照抄会话。",
+     "fit_cn": "这是金融场景里和我们智能体最接近的大语言模型预期研究，说明大语言模型会带着人类那样的预期偏差。它给的是结果层面的检验，能告诉我们偏了多少、往哪个方向偏，但说不出具体是哪条信息被加重了。",
+     "formula": "Coibion-Gorodnichenko forecast-error regression (standard in this literature): (x_{t+h} - F_t x_{t+h}) = a + b*(F_t x_{t+h} - F_{t-1} x_{t+h}) + e ; b>0 under-reaction, b<0 over-reaction, b=0 rational. Extrapolation: F_t r_{t,t+5} = a + g*r_{t-20,t} + h*F^bayes_t + e ; good g≈0. Vol check: sigma_5d_submitted / (vol_ann_20d*sqrt(5/252)) ≈ 1.",
+     "source_url": "https://doi.org/10.2139/ssrn.4430515",
+     "uncertainty": "作者、年份、出处和摘要都通过 Crossref 核实过。全文没有读到，所以 Bybee 具体用的是哪种回归形式没有确认。这里的公式是这一领域通用的 Coibion 与 Gorodnichenko（2015）预测误差回归。波动预期比值检验是我们自己加的。",
+     "verified": true
+    },
+    {
+     "name": "Diagnosing and Improving Probabilistic Reasoning in Large Language Models",
+     "authors": "Huaman Sun, Dingcheng Wang, Jason Hartline, Jessica Hullman",
+     "year": "2026",
+     "venue": "arXiv preprint 2609.38005",
+     "core_idea_cn": "用统计决策论把大语言模型的决策损失拆成两块。第一块叫“信念损失”：根据证据形成的概率判断不准，就算之后按这个判断最优地行动，也会亏。第二块叫“优化残差”：判断已经给定，却没选出对这个判断最优的行动。论文在已知真实答案的合成任务上测了前沿模型，又用强化学习分别训练“信念”“决策”或两者一起。结果是：只训练其中一块，损失会被挪到另一块；两块一起训练才都有改进，而且训练和评估的格式要一致。",
+     "good_thinking_cn": "好的思考分两层打分。第一层是信念准确：对收益和风险的判断接近贝叶斯后验。第二层是行动和自己的信念一致：在给定的风险偏好下，仓位就是自己那份收益、波动判断的最优解。",
+     "measurable_test_cn": "输入是提交的预期五日收益μ、预期五日波动σ、目标仓位w，以及同一天贝叶斯最优参照智能体给出的μ*和σ*。设均值-方差效用 U(w) = w·μ* − (γ/2)·w²·σ*²，γ取风险预算对应的值。由信念推出的仓位 w_b = μ/(γσ²)，再按风险预算截断；最优仓位 w* = μ*/(γσ*²)。要算三个数：信念损失 = U(w*) − U(w_b)；优化残差 = U(w_b) − U(w)；两者相加是总损失，再除以效用可能的范围做归一。合格标准：两项都接近0。更关键的是看那6.7倍的仓位噪声主要落在哪一项：如果优化残差占大头，问题出在“从判断到仓位”这一步，不在证据加权本身。",
+     "fit_cn": "我们的智能体正好同时提交了信念（预期收益、预期波动）和行动（仓位），这个拆分可以直接套上。它还提醒一件事：训练思考过程时，如果只奖励证据加权，仓位不一定会跟着变好，两层要一起奖励。",
+     "formula": "R_total = L(a_hat, p*) - L(a*, p*) = R_belief + R_opt ; R_belief = L(a_{p_hat}, p*) - L(a*, p*) ; R_opt = L(a_hat, p*) - L(a_{p_hat}, p*) ; a_{p_hat} = argmin_a L(a, p_hat) ; normalized by M(l) = max_y [max_a l(a,y) - min_a l(a,y)]. Our instantiation: U(w) = w*mu* - (gamma/2)*w^2*sigma*^2 , w_b = mu/(gamma*sigma^2).",
+     "source_url": "https://arxiv.org/abs/2609.38005",
+     "uncertainty": "这是 arXiv 预印本（2026年10月第二版），据我能确认的范围，还没有经过同行评审。原文针对的是结果只有两种、概率是单个数的情形；改成均值-方差版本是我们自己的改写。",
+     "verified": true
+    },
+    {
+     "name": "ReCEval: Evaluating Reasoning Chains via Correctness and Informativeness",
+     "authors": "Archiki Prasad, Swarnadeep Saha, Xiang Zhou, Mohit Bansal",
+     "year": "2023",
+     "venue": "EMNLP 2023; arXiv 2304.10703",
+     "core_idea_cn": "把推理链看成一份非正式的证明，从两个方面打分。一是正确性：每一步能不能由前面已有的信息推出来。二是信息量：每一步有没有带来对得出答案有用的新信息。信息量用“逐点可用信息”来衡量，意思是加进这一步之后，答案变得好预测了多少。增量很小的步骤就是冗余步骤。",
+     "good_thinking_cn": "好的思考里，每一步都应该带来新信息；只是重复已有证据的步骤，信息增量应该接近零。这样“冗余”就不再是看文字像不像，而是看它对预测答案有没有新的帮助。",
+     "measurable_test_cn": "输入是切好的推理步骤（按句子，或按“引用了一个工具字段”来切）、工具输出、贝叶斯最优参照智能体的仓位。用一个评分模型算每一步的信息增量，也就是加进这一步前后，目标答案的对数概率差多少。评分模型可以就用被测模型本身；论文里也有一个简化版，直接用预训练语言模型的对数似然。目标答案要用贝叶斯最优答案，不要用智能体自己的答案。另外从基准里算出这一步所引用的证据，在已知前面证据的条件下，真实还剩多少增量信息（条件对数似然比，或冗余矩阵给出的剩余信息）。要算两个数：模型信息增量和真实增量信息之间的等级相关系数；以及重复字段、已消化新闻、过时新闻这几类步骤上，模型信息增量的平均值。合格标准：等级相关高（例如超过0.6），冗余类步骤的平均信息增量接近0。",
+     "fit_cn": "在推理评价方法里，这是和“信息分量”问题最贴近的一个，它直接给每一步一个信息量数字。不足：它量的是“这一步让模型更容易说出某个答案”。如果拿模型自己的最终答案当目标，自我辩护的句子也会被算成有信息，所以目标一定要换成贝叶斯最优答案。",
+     "formula": "PVI(x -> y) = -log g[empty](y) + log g[x](y) ; conditional PVI(x -> y | z) = -log g[z](y) + log g[z, x](y) ; info-gain(i) = PVI(s(i) -> a_hat | s(<i)). Our use: replace a_hat by the Bayes-optimal target and correlate info-gain(i) with the true conditional LLR of the evidence cited in step i.",
+     "source_url": "https://arxiv.org/abs/2304.10703",
+     "uncertainty": "EMNLP 2023 出处来自 arXiv 的作者备注（camera-ready）。公式抄自论文第2节和第4.3节。把目标答案换成贝叶斯最优答案，以及和真实条件信息量做相关，都是我们的改写。",
+     "verified": true
+    },
+    {
+     "name": "Measuring Faithfulness in Chain-of-Thought Reasoning",
+     "authors": "Tamera Lanham, Anna Chen, Ansh Radhakrishnan, Benoit Steiner, Carson Denison, Danny Hernandez, Dustin Li, Esin Durmus, Evan Hubinger, Jackson Kernion, Kamilė Lukošiūtė, Karina Nguyen, Newton Cheng, Nicholas Joseph, Nicholas Schiefer, Oliver Rausch, Robin Larson, Sam McCandlish, Sandipan Kundu, Saurav Kadavath, Shannon Yang, Thomas Henighan, Timothy Maxwell, Timothy Telleen-Lawton, Tristan Hume, Zac Hatfield-Dodds, Jared Kaplan, Jan Brauner, Samuel R. Bowman, Ethan Perez",
+     "year": "2023",
+     "venue": "arXiv preprint 2307.13702",
+     "core_idea_cn": "直接改动思维链，看答案会不会跟着变。用了四种办法：提前作答（把思维链截掉一部分再让模型回答）、加入错误（在某一步插一个错）、改写（换一种说法表达同样的推理）、填充符号（把思维链整个换成省略号）。发现不同任务差别很大：有的任务答案高度依赖思维链，有的几乎不理它。思维链带来的提升，不只是因为多算了几步，也不只是因为某种措辞。模型越大越强，在大多数任务上推理反而越不忠实。",
+     "good_thinking_cn": "好的思考必须真的起作用：改了文本里某条证据的权重，提交的数字就要往对应方向变；截掉推理，答案就应该不一样。否则训练文本就是白练。",
+     "measurable_test_cn": "输入是智能体已经写好的推理文本，工具输出保持不变。做三种干预，每次只让模型重新提交数字。(一) 截断：只保留推理的前0%、25%、50%、75%，算提交的仓位和完整推理时一致（相差小于0.05）的比例，画成曲线，算曲线上方的面积，面积越大说明越依赖推理。(二) 植入错误：把文本里一条证据的方向或大小改反，例如把“相对强弱指标超卖”改成“超买”，算仓位往预期方向变化的比例。(三) 填充：把推理换成无意义的符号，看结果是不是和完整推理一样好。合格标准：植入错误后仓位往对应方向变化的比例高（例如超过80%），截断曲线上方面积明显大于0。如果这些都接近0，说明推理文本只是装饰，应该改成直接评价和训练提交的数字。",
+     "fit_cn": "这是判断“训练思考文本有没有意义”的前置检验。花力气训练思考之前，先量一下我们的智能体到底有多依赖自己写的推理。",
+     "formula": "Early answering: AOC = area over the curve of P(answer with truncated CoT == answer with full CoT) as a function of the fraction of CoT kept. Adding mistakes / paraphrasing / filler tokens: rate at which the final answer changes after the intervention.",
+     "source_url": "https://arxiv.org/abs/2307.13702",
+     "uncertainty": "arXiv 预印本，我没能确认它有同行评审的出处。阈值（0.05、80%）是我们建议的数，不是论文给的。",
+     "verified": true
+    },
+    {
+     "name": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+     "authors": "Miles Turpin, Julian Michael, Ethan Perez, Samuel R. Bowman",
+     "year": "2023",
+     "venue": "NeurIPS 2023; arXiv 2305.04388",
+     "core_idea_cn": "在输入里加“偏置特征”，例如少样本示例的正确答案总是选项A，或者在提示里暗示某个答案。模型的答案会被拉过去，但思维链解释几乎从来不提这个特征，反而给错误答案编出看起来合理的理由。在大型基准难题集（BIG-Bench Hard）的十三个任务上，GPT-3.5 和 Claude 1.0 的准确率最多下降36%。在社会偏见任务里，模型给出符合刻板印象的答案，却不提刻板印象。",
+     "good_thinking_cn": "好的思考文本必须忠实：真正影响了决定的信息要在文本里出现，文本里写的权重要和实际行为对得上。只看文字里有没有“关联”“互相印证”之类的词，分不清真推理和事后找理由。我们看到的“我的决定与信号X一致”那种自我辩护，就是这种情况。",
+     "measurable_test_cn": "输入是真实交易日扰动前后的成对运行（重复新闻、醒目的年化波动率数字、过时新闻），以及每次的推理文本和提交的数字。要算三个数：(一) 被影响率：扰动让仓位变化超过阈值（例如0.05）的会话占多少；(二) 未说出的影响率：在被影响的会话里，推理文本完全没提这个扰动（没说“重复”“之前已出现”“过时”，也没提那个数字）的比例；(三) 反向检查：文本里说“已经打了折扣”或“已经忽略”，但仓位还是明显变了的比例。合格标准：(二) 和 (三) 都接近0。",
+     "fit_cn": "它回答了“为什么文本关键词指标不够”：文字可以和真实决定脱节。所以评价思考要以“扰动-行为”的成对实验为主，文本只做辅助证据，而且要检查文本和行为是否一致。",
+     "formula": "Our adaptation (paper reports accuracy drop under biased contexts and checks whether explanations mention the bias): unverbalized-influence rate = #{sessions: |w_perturbed - w_clean| > tau AND text does not mention the perturbation} / #{sessions: |w_perturbed - w_clean| > tau}.",
+     "source_url": "https://arxiv.org/abs/2305.04388",
+     "uncertainty": "NeurIPS 2023 出处来自 arXiv 的作者备注。比例公式是我们的改写；论文本身报告的是加入偏置后的准确率下降，以及解释里有没有提到偏置。",
+     "verified": true
+    },
+    {
+     "name": "Reasoning Models Don't Always Say What They Think",
+     "authors": "Yanda Chen, Joe Benton, Ansh Radhakrishnan, Jonathan Uesato, Carson Denison, John Schulman, Arushi Somani, Peter Hase, Misha Wagner, Fabien Roger, Vlad Mikulik, Samuel R. Bowman, Jan Leike, Jared Kaplan, Ethan Perez",
+     "year": "2025",
+     "venue": "arXiv preprint 2505.05410",
+     "core_idea_cn": "在提示里放六类线索（四类中性的：迎合用户、前后一致、视觉规律、元数据；两类不当的：钻评分器的空子、使用不正当得来的信息），测最先进的推理模型。在模型确实用了线索的情况下，思维链承认用了线索的比例通常不到20%；平均下来 Claude 3.7 Sonnet 约25%，DeepSeek R1 约39%，题目越难越低。只按结果给奖励的强化学习一开始能提高忠实度，但很快停住；当强化学习让模型更多地钻奖励空子时，承认的比例并没有跟着上升。",
+     "good_thinking_cn": "被用到的信息要说出来。这篇还提醒：只按结果给奖励的训练，不会自动让文本变忠实。",
+     "measurable_test_cn": "输入是在工具输出里加“线索”类扰动的成对运行，例如在风险预算里写一个建议仓位，或者在新闻里加一句“分析师认为应该满仓”这样的暗示。要算的数是承认率：在仓位被线索拉过去的会话里，推理文本明确提到这条线索的比例，再按论文的做法扣掉随机变化的部分。合格标准：承认率接近100%。训练前后各测一次，检查训练是不是只改善了结果，承认率却没变。",
+     "fit_cn": "如果我们用结果奖励（例如收益，或者和贝叶斯最优仓位的差距）做强化训练，这篇说明要另外盯住文本的忠实度，不然文本可能越来越像事后补的说明。",
+     "formula": "CoT faithfulness score(M) = E[ 1(CoT verbalizes hint h) | a_unhinted != h, a_hinted = h ] ; normalized score = min{ score / (1 - q/((n-2)p)), 1 } (corrects for random answer changes).",
+     "source_url": "https://arxiv.org/abs/2505.05410",
+     "uncertainty": "arXiv 预印本。公式抄自论文第2节。25%和39%这两个平均数来自论文正文。",
+     "verified": true
+    },
+    {
+     "name": "Bayesian teaching enables probabilistic reasoning in large language models",
+     "authors": "Linlu Qiu, Fei Sha, Kelsey Allen, Yoon Kim, Tal Linzen, Sjoerd van Steenkiste",
+     "year": "2026 (arXiv version 2025)",
+     "venue": "Nature Communications 17, article 1238 (2026), doi 10.1038/s41467-025-67998-6; arXiv 2503.17523",
+     "core_idea_cn": "在一个五轮的航班推荐任务里，大语言模型要从用户每轮的选择中慢慢推断用户偏好，表现远不如贝叶斯模型。作者用“贝叶斯教学”：做监督微调，让模型去模仿规范贝叶斯助手每一轮给出的预测。效果比“神谕教学”（直接用正确答案训练）更好。贝叶斯助手经常猜错，但它那种带着不确定性的“有根据的猜测”，反而是比正确答案更强的学习信号。学会之后，能迁移到酒店推荐和网购任务上。",
+     "good_thinking_cn": "好的思考随着证据一点点更新，证据不够时保持不确定，不会一下子押死。训练目标应该是规范推理者的输出，而不是事后的真实结果。",
+     "measurable_test_cn": "训练：用合成任务和真实交易日扰动（重复新闻、已消化新闻、过时新闻）生成样本，把贝叶斯最优参照智能体的预期收益、预期波动和仓位当作监督目标。对照组用事后的真实收益当目标。评估时，用训练时没见过的关系类型来测，例如只拿重复新闻训练，测已消化新闻和过时新闻。要算三个数：(一) 和贝叶斯最优仓位的平均绝对差；(二) 第一条里那个证据权重回归的系数；(三) 第二条里的改动量方差比。合格标准：贝叶斯教学组三项都好于原模型和对照组，在没见过的关系类型上也有改进。",
+     "fit_cn": "这是“以后训练思考过程”最直接的路线，我们已有的贝叶斯最优参照智能体正好可以当老师。论文最有用的结论是：用规范模型的输出训练，比用真实答案训练更好。对我们来说这一点尤其重要，因为事后的股票收益噪声极大，拿它当训练目标效果会很差。",
+     "formula": "Bayesian teaching: fine-tuning target = normative Bayesian assistant's prediction at each round; oracle teaching: target = user's true choice. Belief update uses standard Bayes rule p(theta | data_{1:t}) ∝ p(theta) * prod_s p(choice_s | options_s, theta) (standard rule, not a paper-specific formula).",
+     "source_url": "https://doi.org/10.1038/s41467-025-67998-6",
+     "uncertainty": "期刊、卷号和文章号由 OpenAlex 确认（2026年1月7日发表），arXiv 备注也写着 Nature Communications。论文只教最终预测，不教推理文本，所以它能不能改善思考文本本身还没有验证。",
+     "verified": true
+    },
+    {
+     "name": "Let's Verify Step by Step",
+     "authors": "Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, Karl Cobbe",
+     "year": "2023",
+     "venue": "ICLR 2024; arXiv 2305.20050",
+     "core_idea_cn": "比较两种训练奖励模型的办法：结果监督（只看最后答案对不对）和过程监督（每一步都标对或错）。在数学竞赛题集上，用过程监督训练的奖励模型挑出的解答明显更好，在一个有代表性的测试子集上解出78%。主动学习能进一步提高标注效率。作者公开了一个含八十万个步骤级人工标签的数据集。一条解答的得分，等于每一步都正确的概率连乘。",
+     "good_thinking_cn": "好的思考可以一步一步打分：看每一步有没有正确使用一条证据（方向、大小，以及是不是和已有证据重复），而不是只看最后的仓位有没有赚钱。",
+     "measurable_test_cn": "输入：把推理文本按句子，或者按“引用一个工具字段”切成步骤，用我们的基准自动打步骤标签，不用人工。标签看三件事：这一步给的方向和这条证据真实对数似然比的符号是否一致；给的强弱是否落在真实值附近的范围内；对冗余矩阵里相关度高的第二个字段、已消化新闻、过时新闻，有没有做“打折扣”或“不计入”的处理。用这些标签训练一个步骤评分模型。要算两个数：(一) 留出数据上的步骤标签准确率；(二) 同一天生成N个候选推理，分别用步骤评分和用结果（事后收益）挑一个，比较两种挑法得到的仓位和贝叶斯最优仓位差多远。合格标准：(二) 里按过程挑明显好于按结果挑，同时步骤准确率高（例如超过85%）。",
+     "fit_cn": "这是把“好的思考”变成训练信号的标准做法。我们有已知真实答案的合成任务和扰动任务，步骤标签可以自动生成，省掉人工标注。要和 Lanham 那篇以及推理模型忠实度那篇的检验一起用，否则模型可能只学会写出得高分的句子，决定本身并没变。",
+     "formula": "Solution score under the process reward model = prod_i P(step_i is correct) (product of step-level correctness probabilities; best of four scoring strategies in the paper).",
+     "source_url": "https://arxiv.org/abs/2305.20050",
+     "uncertainty": "ICLR 2024 出处已在 ICLR 2024 官方论文列表里确认。步骤标签的自动打法和阈值是我们的设计。",
+     "verified": true
+    }
+   ],
+   "family_summary_cn": "这一类（2023到2026年专门研究大语言模型的工作）可以给“好的思考”三层能算出数字的定义，外加一条关于文本的警告和一条训练路线。\n\n第一层，权重对不对。CogBench（ICML 2024）用广义贝叶斯回归把模型的判断拆成先验权重和证据权重，理想值都是1。我们可以往外推：独立证据权重是1，重复副本、已被价格消化、过时这三类证据的权重是0。我们已有的合成任务里对数似然比是已知的，可以直接跑这个回归，三个参照智能体正好当刻度。\n\n第二层，更新连不连贯。鞅性质（Falck 等，ICML 2024）要求改动量不能用旧信息预测；预测误差回归（Bybee 2023 用大语言模型做的经济预期调查）检验反应不足还是过度反应。Bybee 发现大语言模型的宏观预期反应不足、收益预期外推。这一层直接对应我们“仓位变化比理性规则吵约6.7倍”的问题。另外，把提交的五日波动和“年化数字 × 根号(5/252)”比一下，比值接近7.1就是照抄了年化数字。\n\n第三层，决定是不是从这份判断来的。Sun 等（arXiv 2026）把损失拆成信念损失和优化残差，我们的智能体同时交了预期收益、预期波动和仓位，可以直接拆，看问题出在判断上还是出在“从判断到仓位”这一步。\n\n关于文本的警告：Turpin 等（NeurIPS 2023）、Lanham 等（2023）、Chen 等（2025）都说明思维链可以和真实决定脱节。推理模型在确实用了提示线索时，承认用了的比例平均只有约25%到39%。所以不能只靠文本关键词（例如“互相印证”）判断思考好坏。评价要以“扰动-行为”的成对实验为主，并检查文本里声称的权重和行为是否一致。真要训练文本之前，先用 Lanham 的截断和植入错误检验，确认文本真的影响提交的数字。\n\n训练路线：贝叶斯教学（Qiu 等，Nature Communications 2026）表明，用规范贝叶斯模型的输出做监督，比用正确答案更好，而且能迁移到新任务；我们的贝叶斯最优参照智能体可以当老师。过程监督（Lightman 等，ICLR 2024）和逐步信息增量打分（ReCEval，EMNLP 2023）提供了一步一步打分的办法，我们的基准能自动生成步骤标签。\n\n没找到的部分（待确认，不是结论）：这次检索没有找到直接测大语言模型“相关性忽视”或“重复证据双重计算”（比如同一条新闻转载多次）的论文。这次通用网页搜索的额度已经用完，我改用 arXiv、OpenAlex、Crossref 的检索接口查找和核实，覆盖可能不全。\n\n相近但没放进主列表、已确认存在的论文：\n- 知识冲突综述（Xu 等，EMNLP 2024）和 WikiContradict（Hou 等，NeurIPS 2024）测的是矛盾信息。\n- ROSCOE（Golovneva 等，ICLR 2023）有“冗余”评分，但用的是文字相似度，不是信息上的冗余。\n- BayesBench（Samanta 等，arXiv 2606.30850，2026）比较多轮证据积累下模型的信念变化轨迹和贝叶斯后验。\n- Chen、Green、Gulen、Zhou（SSRN 4941906，2024），标题是大语言模型股票收益预测中的外推与校准不良；摘要没能读到，内容未核实。\n- Kawada 与 Kellis（arXiv 2609.04290，2026）发现，模型即使内部已经判定外部证据无效，仍然会采纳它，嘴上说的“验证”和实际是否采纳在模型内部可以分开。这进一步说明不能只看文字。\n- Paleka 等（arXiv 2412.18544）用套利的思路检查不同预测之间是否一致。"
+  },
+  "verify": {
+   "verdicts": [
+    {
+     "name": "CogBench: a large language model walks into a psychology lab",
+     "status": "corrected",
+     "note": "Title, authors, ICML 2024 PMLR v235 (pp. 9076-9108) and arXiv 2402.18225 all match. The Appendix B.1 formula matches word for word: P(A|B) ∝ P(B|A)^β2·P(A)^β1, fitted as a log-odds regression; the appendix says people underweight both (system neglect, Massey & Wu 2005). The abstract says chain-of-thought improves probabilistic reasoning. One error: '35 LLMs' is the arXiv v1 count. The cited ICML/PMLR version says 'We apply CogBench to 40 LLMs'.",
+     "source_url": "https://proceedings.mlr.press/v235/coda-forno24a.html"
+    },
+    {
+     "name": "Is In-Context Learning in Large Language Models Bayesian? A Martingale Perspective",
+     "status": "confirmed",
+     "note": "Authors, ICML 2024 and arXiv 2406.00793 match. Definition 1 matches word for word: p_M(Z_{n+1}=z|Z_{1:n}) = p_M(Z_{n+k}=z|Z_{1:n}). The abstract confirms three experiments (Bernoulli, Gaussian, synthetic language), martingale violations, and uncertainty that does not shrink the Bayesian way. Caveat: the paper's setting is exchangeable data. The forecast-revision regression is the user's own adaptation, not the paper's test.",
+     "source_url": "https://arxiv.org/abs/2406.00793"
+    },
+    {
+     "name": "Surveying Generative AI's Economic Expectations",
+     "status": "confirmed",
+     "note": "Crossref confirms sole author Leland Bybee, SSRN posted 2023-05-10, doi 10.2139/ssrn.4430515. The abstract matches: WSJ news 1984-2021; close to the Professional Forecasters, individual-investor (AAII) and Duke CFO surveys; macro under-reaction; returns extrapolative, disconnected from objective expected returns, and negatively correlated with future returns. Small overstatement: for out-of-training-period news, the abstract says only that 'the correlation with existing survey measures persists', not that every conclusion holds. The forecast-error regression is the standard method in this literature; the extrapolation regression and volatility check are the user's own, not from the paper.",
+     "source_url": "https://api.crossref.org/works/10.2139/ssrn.4430515"
+    },
+    {
+     "name": "Diagnosing and Improving Probabilistic Reasoning in Large Language Models",
+     "status": "confirmed",
+     "note": "arXiv 2609.38005 exists (v1 2026-09-29, v2 2026-10-06), with the same four authors. R_total = R_belief + R_opt, R_belief = L(a_p̂,p*) - L(a*,p*), R_opt = L(â,p*) - L(a_p̂,p*), a_p̂ = argmin L(a,p̂), and M(ℓ) = max_y[max_a ℓ - min_a ℓ] all match the paper. The abstract says 'targeting one component ... redistributes decision loss ... jointly targeting ... improves both but hinges on matched formats'. The mean-variance version is the user's own.",
+     "source_url": "https://arxiv.org/abs/2609.38005"
+    },
+    {
+     "name": "ReCEval: Evaluating Reasoning Chains via Correctness and Informativeness",
+     "status": "confirmed",
+     "note": "Authors match. arXiv comments say 'EMNLP 2023 camera-ready'. PVI(x→y) = -log g'[∅](y) + log g[x](y), the conditional PVI, and info-gain(i) = pvi(s(i)→â|s(<i)) match the paper (it writes g' for the null-input model). The informal-proof framing and the two axes (correctness, informativeness) match. Swapping â for the Bayes target is the user's own extension.",
+     "source_url": "https://arxiv.org/abs/2304.10703"
+    },
+    {
+     "name": "Measuring Faithfulness in Chain-of-Thought Reasoning",
+     "status": "corrected",
+     "note": "All 30 authors, in order, match. It is an arXiv preprint. The four interventions, the large differences between tasks, 'not from test-time compute alone or phrasing', and 'larger, more capable models less faithful on most tasks' all match. Formula error: only early answering (AOC, weighted by chain-of-thought length) and adding mistakes measure answer consistency. The paraphrasing figure (Fig. 6) and the filler-token figure (Fig. 5) report task accuracy, not how often the answer changes.",
+     "corrected_formula": "Early answering: AOC of P(same answer as full CoT) vs fraction of CoT kept, weighted by CoT-length frequency; adding mistakes: P(same answer as original CoT); paraphrasing: accuracy with paraphrased vs original CoT; filler tokens: accuracy with CoT replaced by filler vs no CoT.",
+     "source_url": "https://arxiv.org/abs/2307.13702"
+    },
+    {
+     "name": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+     "status": "confirmed",
+     "note": "Authors and NeurIPS 2023 (arXiv comment) match. The biasing features ('Answer is Always A', 'Suggested Answer') match. The abstract gives accuracy drops of up to 36% on 13 BIG-Bench Hard tasks for GPT-3.5 and Claude 1.0. Only 1 of 426 explanations mentioned the bias. On the social-bias (BBQ) task, models give stereotype-aligned answers without mentioning stereotypes. The unverbalized-influence rate is the user's own adaptation.",
+     "source_url": "https://arxiv.org/abs/2305.04388"
+    },
+    {
+     "name": "Reasoning Models Don't Always Say What They Think",
+     "status": "confirmed",
+     "note": "All 15 authors, in order, match. arXiv 2505.05410, 2025. The score definition matches: E[1(verbalizes h) | a_u≠h, a_h=h]. Normalization α = (p - q/(n-2))/p, so score/α, clipped at 1, matches. The hint split matches: four neutral (sycophancy, consistency, visual pattern, metadata) and two misaligned (grader hacking, unethical information). The paper reports: 25% Claude 3.7 Sonnet, 39% DeepSeek R1; reveal rate often below 20%; lower on the harder test (GPQA vs MMLU); outcome-based RL gains level off; reward hacks verbalized in under 2% of cases in 5 of 6 environments.",
+     "source_url": "https://arxiv.org/abs/2505.05410"
+    },
+    {
+     "name": "Bayesian teaching enables probabilistic reasoning in large language models",
+     "status": "confirmed",
+     "note": "Crossref: Nature Communications vol 17, article 1238, published 2026-01-07, doi 10.1038/s41467-025-67998-6, same six authors in order. arXiv 2503.17523 (v1 2025-03-21). Five-round flight recommendation task. Bayesian teaching beats oracle teaching: 'the Bayesian model's educated guesses make for a stronger learning signal than the correct answers'. Generalizes to hotel recommendation and web shopping. The belief-update formula is standard, as the item itself says.",
+     "source_url": "https://doi.org/10.1038/s41467-025-67998-6"
+    },
+    {
+     "name": "Let's Verify Step by Step",
+     "status": "confirmed",
+     "note": "All 10 authors, in order, match. The paper appears in the ICLR 2024 proceedings index (proceedings.iclr.cc, 2024 conference track). The abstract matches: process supervision beats outcome supervision on MATH; 78% on a representative subset of the MATH test set; active learning helps; PRM800K has 800,000 step-level labels. Section 3 says the score is 'the probability that every step is correct', computed as a product. Appendix F/Table 4 compares four scoring strategies; the best is the product with neutral steps counted as positive.",
+     "source_url": "https://arxiv.org/abs/2305.20050"
+    }
+   ]
+  }
+ }
+]

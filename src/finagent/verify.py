@@ -1,9 +1,12 @@
 """`finagent verify` ties every shipped byte to the code; `finagent unpack` extracts the run records it reads.
 
   L0  the repository alone: data/ and the record archives against their sha256 lists; the prompts, readings blocks, arm
-      rewrites and tool outputs against what the original code produced (tests/fixtures/, records/infra/checks/)
+      rewrites and tool outputs against what the original code produced (tests/fixtures/, records/infra/checks/);
+      data/mechanisms/ against its own sha256 list
   L1  the unpacked records (records/raw): each record against runs.jsonl, the run plan and its own logs; outcomes from the
-      panel; a replay of every harness tool call; the Codex configs and command lines; results/ recomputed byte for byte
+      panel; a replay of every harness tool call; the Codex configs and command lines; results/ recomputed byte for byte;
+      the four mechanism analyses, their page and the good-thinking theory document rebuilt byte for byte (these read
+      data/mechanisms/, data/panel/ and docs/good_thinking/, not the records, but are results like the others)
   L2  the leakage audit of the coding-agent runs and of the audit canary, re-run with the original host's settings
 Each check returns (ok, detail); `finagent verify [--level L0|L1|L2|all]` prints one row per check and exits 1 on a failure.
 """
@@ -31,6 +34,8 @@ from finagent.data.outcomes import Outcomes
 from finagent.data.pit import news_cache
 from finagent.harness import agent, session, toolbox
 from finagent.harness.prompts import REMINDER, SYSTEM, build_day_payload, harness_prompt, render_prompt, sha256
+from finagent.mechanisms import page as mech_page
+from finagent.mechanisms import position_adjustment, proximity, salience, theory_doc, thinking
 
 LEVELS = ("L0", "L1", "L2")
 FIXTURES = config.ROOT / "tests" / "fixtures"
@@ -169,13 +174,15 @@ def relay_log(model: str) -> Path:
 @check("L0", "data files")
 def data_files() -> tuple[bool, str]:
     """data/MANIFEST.sha256 covers every input the pilot reads; data/prompts/ (checked by "prompts folder" below,
-    against `finagent prompts`'s own regeneration) and data/evidence_relations/ (not an input the pilot reads,
-    verified on its own, not by `finagent verify` -- see docs/EVIDENCE_RELATIONS.md) live under data/ too but are
-    out of this check's scope, same as before they were nested here."""
+    against `finagent prompts`'s own regeneration), data/evidence_relations/ (not an input the pilot reads,
+    verified on its own, not by `finagent verify` -- see docs/EVIDENCE_RELATIONS.md) and data/mechanisms/ (its own
+    manifest, checked by "mechanism data" below) live under data/ too but are out of this check's scope, same as
+    before they were nested here."""
     sums = read_sums(config.DATA / "MANIFEST.sha256")
     bad = sum_problems(config.DATA, sums)
     extra = {p for p in files_under(config.DATA) - set(sums)
-             if p not in {"README.md", "MANIFEST.sha256"} and not p.startswith(("prompts/", "evidence_relations/"))}
+             if p not in {"README.md", "MANIFEST.sha256"}
+             and not p.startswith(("prompts/", "evidence_relations/", "mechanisms/"))}
     return not bad and not extra, (f"{len(sums) - len(bad)} of {len(sums)} files match data/MANIFEST.sha256"
                                    + listed(bad, "differ") + listed(extra, "not listed"))
 
@@ -301,6 +308,20 @@ def golden_tool_outputs() -> tuple[bool, str]:
     return not bad, (f"{len(g['calls'])} calls ({per} per day and arm), {len(g['sequences'])} stateful sequences ({n_steps} calls), "
                      f"{len(g['submit_echoes'])} submit replies: {sum(bad.values())} differences"
                      + (f" ({tally(bad)})" if bad else ""))
+
+
+@check("L0", "mechanism data")
+def mechanism_data() -> tuple[bool, str]:
+    """data/mechanisms/MANIFEST.sha256 covers every file there but itself and the README.md files: the two session
+    corpora (newsagent, q3news_s1), the grounding sessions and the copied inputs of the four mechanism analyses."""
+    root = config.MECHANISMS_DATA
+    sums = read_sums(root / "MANIFEST.sha256")
+    bad = sum_problems(root, sums)
+    extra = {p for p in files_under(root) - set(sums) if p != "MANIFEST.sha256" and not p.endswith("README.md")}
+    folders = Counter(name.split("/")[0] + ("/" + name.split("/")[1] if name.startswith("sessions/") else "")
+                      for name in sums)
+    return not bad and not extra, (f"{len(sums) - len(bad)} of {len(sums)} files match data/mechanisms/MANIFEST.sha256 "
+                                   f"({tally(folders)})" + listed(bad, "differ") + listed(extra, "not listed"))
 
 
 # ================================================================================================== L1: the unpacked records
@@ -489,6 +510,62 @@ def figure_files() -> tuple[bool, str]:
     bad = [name for name, text in svgs.items() if not same_bytes(config.RESULTS / "figures" / name, text)]
     return not bad, (f"{len(svgs) - len(bad)} of {len(svgs)} charts in results/figures redrawn byte for byte"
                      + listed(bad, "differ"))
+
+
+def mechanism_rebuilt(name: str, text: str, detail: str) -> tuple[bool, str]:
+    """results/mechanisms/<name>/data.json against a fresh build."""
+    path = config.MECHANISMS_RESULTS / name / "data.json"
+    same = same_bytes(path, text)
+    return same, f"{config.rel(path)} {'rebuilt byte for byte' if same else 'DIFFERS from a rebuild'}: {detail}"
+
+
+@check("L1", "mechanism salience")
+def mechanism_salience() -> tuple[bool, str]:
+    d = salience.build()
+    n, cp = d["n_sessions_used"], d["step3_copied_vs_not_copied"]["newsagent_FULL_plus_NO_NEWS_combined"]["copied"]
+    return mechanism_rebuilt("salience", salience.dumps(d), f"{n['newsagent_total']} newsagent sessions, {cp['n']} "
+                             "copy the annualised number")
+
+
+@check("L1", "mechanism proximity")
+def mechanism_proximity() -> tuple[bool, str]:
+    d = proximity.build()
+    acc, fe = d["sample_accounting"], d["step2_results"]["within_day_fixed_effects_level_test"]["fe_regression"]
+    return mechanism_rebuilt("proximity", proximity.dumps(d), f"{acc['n_usable_part1_2']} usable sessions, "
+                             f"{acc['n_days_with_both_is_last_groups']} matched days, day fixed effects p={fe['p']:.2f}")
+
+
+@check("L1", "mechanism position")
+def mechanism_position() -> tuple[bool, str]:
+    d = position_adjustment.build()
+    ratio = d["headline"]["overall"]["std_ratio"]
+    return mechanism_rebuilt("position_adjustment", position_adjustment.dumps(d),
+                             f"{ratio['n']} day-to-day changes, std ratio agent / rational {ratio['ratio']:.2f}")
+
+
+@check("L1", "mechanism thinking")
+def mechanism_thinking() -> tuple[bool, str]:
+    d = thinking.build()
+    o = d["rates"]["overall"]
+    return mechanism_rebuilt("thinking", thinking.dumps(d), f"{o['n']:,} reasoning texts, relationship language "
+                             f"{o['pct_relationship']}% (strict2 {o['pct_relationship_strict2']}%)")
+
+
+@check("L1", "mechanism page")
+def mechanism_page() -> tuple[bool, str]:
+    data = mech_page.load()
+    same = same_bytes(mech_page.OUT_FILE, mech_page.build(data))
+    return same, (f"{config.rel(mech_page.OUT_FILE)} {'redrawn byte for byte' if same else 'DIFFERS from a redraw'} from "
+                  f"the four data.json; {mech_page.check_typed_numbers(data)} numbers typed in its text agree with them")
+
+
+@check("L1", "theory document")
+def theory_document() -> tuple[bool, str]:
+    files = theory_doc.build()
+    bad = [config.rel(p) for p, data in files.items() if not (p.is_file() and p.read_bytes() == data)]
+    n = len(theory_doc.appendix_rows(theory_doc.load())[0])
+    return not bad, (f"{len(files) - len(bad)} of {len(files)} files (.docx, Markdown) rebuilt byte for byte from "
+                     f"docs/good_thinking/good_thinking_theory.json ({n} literature entries)" + listed(bad, "differ"))
 
 
 # ================================================================================================== L2: the leakage audit

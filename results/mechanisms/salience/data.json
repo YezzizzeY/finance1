@@ -1,0 +1,454 @@
+{
+ "corpora": {
+  "primary": {
+   "arms_scanned": [
+    "FULL (label FULL, k=0..3)",
+    "NO_NEWS (k=0..3)"
+   ],
+   "excluded_from_scan": "FULL_T06_* files (label FULL_T06, temperature=0.6 robustness arm, 500 files) -- a separate temperature sweep, not part of the main k=0..3 FULL/NO_NEWS comparison this analysis targets.",
+   "model": "Qwen3.5-9B",
+   "n_files_scanned_total": 2000,
+   "n_skipped_and_why": {
+    "no_vol_stats_call": 403,
+    "submit_missing_fields": 152
+   },
+   "n_usable": 1445,
+   "name": "data/mechanisms/sessions/newsagent",
+   "usability_filter": "session kept only if submit_decision has all of {action,shares,target_exposure_pct,p_up,expected_return_pct,expected_vol_pct,confidence,reasoning} AND get_volatility_stats was called >=1 time in the trace (last call used if >1)."
+  },
+  "secondary_crosscheck": {
+   "model": "Qwen3-8B (thinking on)",
+   "n_skipped_and_why": {
+    "no_submit_decision": 5,
+    "no_vol_stats_call": 1692,
+    "submit_missing_fields": 9
+   },
+   "n_usable": 294,
+   "name": "data/mechanisms/sessions/q3news_s1",
+   "note": "Most q3news sessions never call get_volatility_stats (different tool-use behaviour under thinking-on), so the usable N here is far smaller than newsagent; used only as a secondary robustness check on the step-2 regression sign/magnitude, not in the headline n."
+  },
+  "skipped_entirely": {
+   "model": "Qwen3-8B",
+   "n_skipped_and_why": {
+    "no_vol_stats_call": 1999,
+    "submit_missing_fields": 1
+   },
+   "n_usable": 0,
+   "name": "data/mechanisms/salience/grounding_A_main (FULL_G / NO_NEWS_G)",
+   "reason": "Verified directly by inspecting every session's trace: in this corpus the price-tool readings are injected as static text in the user prompt (grounding='price-tool-readings block injected'), so the agent's tool_calls contain only submit_decision in the overwhelming majority of sessions (1,998/2,000); a full rescan (corrected 2026-10-23 after independent verification) found 2/2,000 sessions additionally call get_risk_budget (a different tool, also never get_volatility_stats). get_volatility_stats specifically is never invoked as a tool anywhere in this corpus (0/2,000). The task's own inclusion rule ('get_volatility_stats was called at least once') therefore yields exactly 0 usable sessions here, confirmed on all 2000 session files, not inferred from a sample. This corpus cannot test tool-output copying by construction and is reported as skipped, not substituted with a weaker proxy."
+  }
+ },
+ "examples": [
+  {
+   "arm": "FULL",
+   "day": "2026-06-01",
+   "day_id": "V_2026-06-01",
+   "k": 3,
+   "kind": "a_anchoring_on_annualised",
+   "model": "Qwen3.5-9B",
+   "note": "Model names the figure 'annualized' (get_volatility_stats ann_vol_20d_pct=16.4) and ~20 lines later calls it 'approximately 16% annually', then submits expected_vol_pct=16.4 -- the exact annualised number -- as the 5-day forecast. Rational 5-day sigma for this day was 3.37%; realised 5-day vol (panel) was 3.74%.",
+   "quotes": [
+    "**Volatility**: 16.4% annualized (20-day), regime \"low\", recent move was 1.11%",
+    "Volatility remains subdued at approximately 16% annually."
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/V_2026-06-01/FULL_3.json.gz",
+   "submitted_expected_vol_pct": 16.4,
+   "ticker": "V"
+  },
+  {
+   "arm": "FULL",
+   "day": "2026-03-20",
+   "day_id": "HAL_2026-03-20",
+   "k": 1,
+   "kind": "a_anchoring_on_annualised",
+   "model": "Qwen3.5-9B",
+   "note": "Model reads 'Recent volatility is elevated (33.5-36.5% annualized)' from the tool output, restates it as 'elevated volatility in the 30% range' right before the forecast, and submits expected_vol_pct=30.0 -- close to ann_vol_20d_pct=30.1, not to a correctly-scaled 5-day figure. Rational 5-day sigma was 4.67%; realised 5-day vol (panel) was 5.34%.",
+   "quotes": [
+    "Recent volatility is elevated (33.5-36.5% annualized), but regime is \"normal\"",
+    "My forecast anticipates modest gains around 0.8% with elevated volatility in the 30% range, reflecting the stock's current dynamic price environment."
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/HAL_2026-03-20/FULL_1.json.gz",
+   "submitted_expected_vol_pct": 30,
+   "ticker": "HAL"
+  },
+  {
+   "arm": "FULL",
+   "day": "2026-03-27",
+   "day_id": "HWM_2026-03-27",
+   "k": 3,
+   "kind": "a_anchoring_paired_same_day_k3",
+   "model": "Qwen3.5-9B",
+   "note": "Same ticker/day as the k=1 rollout below (HWM_2026-03-27), where get_volatility_stats reported 'Volatility: 31-34% annualized, normal regime'. This rollout (k=3) anchors on that annualised band and submits expected_vol_pct=27.0 (looks-copied: within 15% of ann_vol_20d_pct=31.3). Rational 5-day sigma=5.62%; realised 5-day vol=6.24%.",
+   "quotes": [
+    "I anticipate volatility between 25-30%, suggesting cautious optimism about near-term price dynamics."
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/HWM_2026-03-27/FULL_3.json.gz",
+   "submitted_expected_vol_pct": 27,
+   "ticker": "HWM"
+  },
+  {
+   "arm": "FULL",
+   "day": "2026-03-17",
+   "day_id": "BAC_2026-03-17",
+   "k": 1,
+   "kind": "c_positive_contrast_correct_conversion",
+   "model": "Qwen3.5-9B",
+   "note": "Model explicitly de-annualises ann_vol_20d_pct=28.4 with the sqrt(time) rule (28.4/sqrt(252)=1.77%/day, *sqrt(5)=3.95%) and submits expected_vol_pct=4.0, matching its own correct arithmetic almost exactly.",
+   "quotes": [
+    "expected_vol_pct: Volatility is high at 28.4% annualized, so 5-day vol would be roughly sqrt(5) * daily vol. Daily vol ≈ 28.4%/sqrt(252) ≈ 1.77%. 5-day vol ≈ 1.77% * sqrt(5) ≈ 3.95%"
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/BAC_2026-03-17/FULL_1.json.gz",
+   "submitted_expected_vol_pct": 4,
+   "ticker": "BAC"
+  },
+  {
+   "arm": "FULL",
+   "day": "2026-03-27",
+   "day_id": "HWM_2026-03-27",
+   "k": 1,
+   "kind": "c_positive_contrast_paired_same_day_k1",
+   "model": "Qwen3.5-9B",
+   "note": "Same ticker/day as the k=3 rollout above; this rollout (k=1) correctly applies the sqrt(5) scaling to the same 31-34% annualised reading and submits expected_vol_pct=13.0 (within the 12-15% it computed). Shows the literal-copy failure is a per-rollout sampling event, not a fixed property of the ticker/day.",
+   "quotes": [
+    "expected_vol_pct: With 31-34% annualized volatility, 5-day vol is roughly sqrt(5) times daily, or about 12-15% one-standard-deviation"
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/HWM_2026-03-27/FULL_1.json.gz",
+   "submitted_expected_vol_pct": 13,
+   "ticker": "HWM"
+  },
+  {
+   "arm": "FULL",
+   "day": "2026-06-11",
+   "day_id": "MSCI_2026-06-11",
+   "k": 1,
+   "kind": "b_bonus_trace_answer_mismatch",
+   "model": "Qwen3.5-9B",
+   "note": "First pass mis-derives daily vol (uses sqrt(1/20) instead of sqrt(1/252)), reaches 14.3% for the 5-day figure and rejects it as implausible. Second pass restates the metric definition correctly and redoes the conversion properly, landing on 4.07% -- yet two sentences later writes 'let me estimate expected_vol_pct around 6-8% to be conservative' and finally submits expected_vol_pct=6.5, ~60% above its own correctly-computed number. Trace (4.07%) and submitted answer (6.5%) do not match.",
+   "quotes": [
+    "Wait, expected_vol_pct is the one-standard-deviation size of the 5-day return in percent. Given annualized vol of ~28.9% over 20 days, daily vol would be ~sqrt(1/20)*28.9% = ~6.4% per day. Over 5 days, volatility accumulates as sqrt(5)*6.4% ≈ 14.3%. But that seems high.",
+    "Actually, the expected_vol_pct parameter is \"one-standard-deviation size of the 5-day return, percent (not annualised, not daily)\". So if daily return has std dev of X%, 5-day return would have std dev of X% * sqrt(5).\n\nGiven 20-day annualized vol of 28.9%, daily vol ≈ 28.9% / sqrt(252) ≈ 1.82% per day. Over 5 days: 1.82% * sqrt(5) ≈ 4.07%."
+   ],
+   "session_file": "data/mechanisms/sessions/newsagent/MSCI_2026-06-11/FULL_1.json.gz",
+   "submitted_expected_vol_pct": 6.5,
+   "ticker": "MSCI"
+  }
+ ],
+ "limitations_and_open_questions": [
+  "The grounding_20261012/A_main corpus could not be used at all for this mechanism (0/2000 sessions call get_volatility_stats); the salience-copying question remains untested in that price-grounded setting.",
+  "q3news_S1 cross-check N is small (155 FULL / 139 NO_NEWS) because most sessions in that corpus never call get_volatility_stats; its regression coefficients are noisy (wide SEs) and should be read as directionally consistent with newsagent, not as independent confirmation at comparable precision.",
+  "The 'looks-copied' group size (12-27 sessions depending on split) is too small to further stratify by ticker, volatility regime, or k without very wide uncertainty; this is reported as an open question, not resolved here.",
+  "Model 2's b1 estimate is unstable across corpora (0.57-0.62 in newsagent vs 0.06-0.40 in q3news, overlapping confidence given q3news's wide SE of ~0.85) -- NOT claimed as a cross-model finding, just noted.",
+  "This analysis treats each (day_id, k) rollout as an independent observation for OLS/SE purposes; days contribute up to 4 correlated rollouts (same ticker/day, different sampling draws), so classical SEs here are a lower bound on the true SE under day-level clustering. Reported both classical and HC1-robust SEs; neither corrects for within-day clustering specifically. This does not change the sign of any headline conclusion (b2~0 either way) but means the step-3 group-size CIs would widen somewhat under day clustering."
+ ],
+ "n_sessions_used": {
+  "grounding_A_main_usable": 0,
+  "newsagent_FULL_primary": 694,
+  "newsagent_NO_NEWS": 751,
+  "newsagent_total": 1445,
+  "q3news_S1_FULL_crosscheck": 155,
+  "q3news_S1_NO_NEWS_crosscheck": 139
+ },
+ "rational_benchmark_join": {
+  "join_hit_rate": {
+   "hit_rate": 1.0,
+   "n_hit_total": 1739,
+   "n_hit_via_events_all": 1697,
+   "n_hit_via_nonevent_days_fallback": 42,
+   "n_session_rows": 1739
+  },
+  "method": "day_id (TICKER_date) looked up as event_id in events_all.parquet first; misses fell back to nonevent_days.parquet joined on ticker+t (sigma = exp(lsig) there). Checked explicitly which corpus day_ids are events_all misses (6/250 newsagent day_ids: CSGP_2026-03-31, ED_2026-03-12, GLW_2026-03-12, GWW_2026-06-16, IDXX_2026-08-04, PG_2026-03-12) and confirmed all 6 are present in nonevent_days.",
+  "sigma_scale_conversion": "No numeric conversion needed, and this is verified rather than assumed: data/mechanisms/salience/rcf_20261011/rule.json field 'operationalization.target_and_bins' states R5 = 100*ln(C[t+5]/C[t]) (the realised 5-day log return, in percent) and sigma = exp(lsig), both evaluated at close t, with u=(R5-m)/sigma. So events_all.sigma IS ALREADY the rational model's standard deviation of the 5-day percent log return -- same units (percent) and same horizon (5 trading days) as the agent's submitted expected_vol_pct. Used directly, unscaled, as rational_sigma5_pct in the regression below."
+ },
+ "realised_5d_vol_method": {
+  "definition": "rv5_realised_pct = sqrt(sum of the 5 squared daily log returns in percent, close t to close t+5) from data/panel/us_daily_stratos_20260924.parquet, matching the project's own rv5 definition in the research workspace's repro/rsize/rules_doc.py ('sqrt of the sum of the 5 squared daily log returns (percent)').",
+  "n_sessions_with_rv5_computed": 1739,
+  "validation": "For AAPL_2026-03-19, summing the 5 panel daily log returns from 2026-03-19 to 2026-03-26 reproduces events_all.R5 = 1.566235 to 6 decimal places (1.5662345352...), confirming date alignment and close-price series match between the panel and the benchmark.",
+  "why_rv5_not_abs_R5": "events_all.R5 is a SIGNED 5-day return, not a volatility measure; sqrt(sum of squared daily returns) is the more faithful realised-volatility proxy and is exactly the quantity this project's own code already calls rv5 -- used instead of the noisier |R5| single-path proxy for the accuracy metric in step 3."
+ },
+ "step2_regression_ols": {
+  "headline_finding": "In the primary corpus (newsagent FULL, n=694), b1 (rational 5-day sigma) is strongly significant (0.566, SE 0.069, t=8.17) and model 1 R2=0.0880. Adding ann_vol_20d_pct (model 2) moves b2 to -0.0073 (SE 0.0205, t=-0.36, not significant) and R2 to only 0.0881 -- delta R2 = 0.00017, i.e. essentially no additional linear explanatory power from the annualised headline number once the rational benchmark is in the regression. The same near-zero, non-significant b2 pattern holds in NO_NEWS (b2=+0.0047, SE 0.0210) and in the much smaller q3news FULL cross-check (b2=-0.0433, SE 0.1016). CONCLUSION: the AGGREGATE linear test finds no detectable smooth anchoring effect of ann_vol_20d_pct on top of the rational sigma. This does not mean salience-copying is absent -- see step 3, which finds a concentrated, rare, discrete failure mode that a linear-in-the-whole-sample regression is not well suited to detect.",
+  "newsagent_FULL_primary": {
+   "delta_r2": 0.00016732765013183215,
+   "model1_sigma_only": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.5661578282166582,
+      "p_approx_normal": 3.3306690738754696e-16,
+      "se": 0.06929277280358839,
+      "se_hc1": 0.0699729244546855,
+      "t": 8.170517722265823
+     },
+     "intercept": {
+      "coef": 4.136446217971498,
+      "p_approx_normal": 0.0,
+      "se": 0.4169336643694572,
+      "se_hc1": 0.41198976892785644,
+      "t": 9.921113528280774
+     }
+    },
+    "dof": 692,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5"
+    ],
+    "r2": 0.08798248739632586
+   },
+   "model2_sigma_plus_annvol20": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.6235319559676887,
+      "p_approx_normal": 0.00037832741346965904,
+      "se": 0.1754077184754892,
+      "se_hc1": 0.1746555508389233,
+      "t": 3.554757803059953
+     },
+     "b2_ann_vol_20d_pct": {
+      "coef": -0.00730278496867328,
+      "p_approx_normal": 0.7217723327929693,
+      "se": 0.020508192180265936,
+      "se_hc1": 0.018628601160340104,
+      "t": -0.3560911124921291
+     },
+     "intercept": {
+      "coef": 4.080240480699892,
+      "p_approx_normal": 0.0,
+      "se": 0.4460572330855522,
+      "se_hc1": 0.4544480193142765,
+      "t": 9.1473474210367
+     }
+    },
+    "dof": 691,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5",
+     "b2_ann_vol_20d_pct"
+    ],
+    "r2": 0.08814981504645769
+   },
+   "n": 694
+  },
+  "newsagent_NO_NEWS": {
+   "delta_r2": 6.10282307873522e-05,
+   "model1_sigma_only": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.571739424606426,
+      "p_approx_normal": 1.1102230246251565e-16,
+      "se": 0.068823599433349,
+      "se_hc1": 0.0666906017721061,
+      "t": 8.307316520986628
+     },
+     "intercept": {
+      "coef": 4.206513477134927,
+      "p_approx_normal": 0.0,
+      "se": 0.41406845248690416,
+      "se_hc1": 0.413837767865026,
+      "t": 10.158980844521034
+     }
+    },
+    "dof": 749,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5"
+    ],
+    "r2": 0.08436495956781798
+   },
+   "model2_sigma_plus_annvol20": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.536553489043934,
+      "p_approx_normal": 0.0018083588372495019,
+      "se": 0.17197091141618082,
+      "se_hc1": 0.14066212054581428,
+      "t": 3.1200246868811408
+     },
+     "b2_ann_vol_20d_pct": {
+      "coef": 0.004680825308129322,
+      "p_approx_normal": 0.8233097349791892,
+      "se": 0.020962977726916014,
+      "se_hc1": 0.01715080153164076,
+      "t": 0.22329009595422328
+     },
+     "intercept": {
+      "coef": 4.235471079035137,
+      "p_approx_normal": 0.0,
+      "se": 0.43415310302464094,
+      "se_hc1": 0.4167829266263586,
+      "t": 9.755708411451218
+     }
+    },
+    "dof": 748,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5",
+     "b2_ann_vol_20d_pct"
+    ],
+    "r2": 0.08442598779860533
+   },
+   "n": 751
+  },
+  "q3news_S1_FULL_crosscheck": {
+   "delta_r2": 0.0011928856992580172,
+   "model1_sigma_only": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.058718175874623156,
+      "p_approx_normal": 0.8437080309872244,
+      "se": 0.2978309245616784,
+      "se_hc1": 0.18288291596285589,
+      "t": 0.19715271663289985
+     },
+     "intercept": {
+      "coef": 9.295489675202731,
+      "p_approx_normal": 8.947723767471771e-07,
+      "se": 1.891837079862794,
+      "se_hc1": 1.42938880038136,
+      "t": 4.9134726103776805
+     }
+    },
+    "dof": 153,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5"
+    ],
+    "r2": 0.00025398249399322115
+   },
+   "model2_sigma_plus_annvol20": {
+    "coefs": {
+     "b1_rational_sigma5": {
+      "coef": 0.3975242262271402,
+      "p_approx_normal": 0.6397492388220709,
+      "se": 0.8493210275553112,
+      "se_hc1": 0.7291286659178157,
+      "t": 0.4680494339947939
+     },
+     "b2_ann_vol_20d_pct": {
+      "coef": -0.043291012858560116,
+      "p_approx_normal": 0.6700177603045532,
+      "se": 0.10159261188530892,
+      "se_hc1": 0.08737029414510125,
+      "t": -0.42612363296095485
+     },
+     "intercept": {
+      "coef": 8.98512923412797,
+      "p_approx_normal": 9.78124392969626e-06,
+      "se": 2.03193654491466,
+      "se_hc1": 1.6034139555133824,
+      "t": 4.421953656286711
+     }
+    },
+    "dof": 152,
+    "names": [
+     "intercept",
+     "b1_rational_sigma5",
+     "b2_ann_vol_20d_pct"
+    ],
+    "r2": 0.0014468681932512384
+   },
+   "n": 155
+  },
+  "spec": "expected_vol_pct ~ a + b1*rational_sigma5_pct   [model 1]   and expected_vol_pct ~ a + b1*rational_sigma5_pct + b2*ann_vol_20d_pct   [model 2]. Closed-form OLS via numpy normal equations (no scipy/statsmodels in the venv -- confirmed absent). SE = classical OLS (homoskedastic) standard errors; se_hc1 = heteroskedasticity-robust (HC1 sandwich) SE also reported as a robustness check. p-values use a normal approximation to the t-distribution (fine given dof in the hundreds)."
+ },
+ "step3_copied_vs_not_copied": {
+  "accuracy_metric": "abs(ln(expected_vol_pct / rv5_realised_pct)) -- absolute log-ratio error against the panel-computed realised 5-day vol (see realised_5d_vol_method); restricted to sessions with rv5_realised_pct > 0.",
+  "definition": "looks_copied = |expected_vol_pct - ann_vol_20d_pct| / ann_vol_20d_pct <= 0.15 (within 15% of the annualised headline figure -- effectively requires the agent to have reported ~7x too much vol relative to the correct sqrt-time-scaled 5-day figure, since ann_vol_20d_pct / 7.1 is roughly what a correct 5-day conversion would give).",
+  "headline_finding": "The looks-copied group is RARE (FULL: 15/694 = 2.16%; NO_NEWS: 12/751 = 1.60%; combined: 27/1445 = 1.87%) but has dramatically worse forecast accuracy: mean abs-log-ratio-error combined = 1.73 (SE 0.126) for the copied group vs 0.62 (SE 0.012) for everyone else -- a difference of 1.11 (SE 0.127, t=8.78), huge and precisely estimated despite n=27 because the effect size is large (e^1.73≈5.6x vs e^0.62≈1.9x typical multiplicative miss). Consistent in FULL alone (diff=1.10, SE 0.172, t=6.39, n_copied=15) and NO_NEWS alone (diff=1.13, SE 0.195, t=5.82, n_copied=12). CAVEAT: n_copied is small in every split (12-27); the point estimate of the group SIZE is noisy even though the point estimate of the accuracy GAP is not (because within-group variance, not n, sets that SE).",
+  "newsagent_FULL": {
+   "copied": {
+    "mean_abs_ln_ratio_error": 1.7023703490538467,
+    "n": 15,
+    "pct_of_total": 2.161383285302594,
+    "se": 0.17120050243106577
+   },
+   "diff_copied_minus_not": {
+    "diff": 1.0991385639634759,
+    "se": 0.1720915276681677,
+    "t": 6.38694175626629
+   },
+   "n_total_with_rv5": 694,
+   "not_copied": {
+    "mean_abs_ln_ratio_error": 0.6032317850903708,
+    "n": 679,
+    "pct_of_total": 97.83861671469741,
+    "se": 0.01748947862328595
+   }
+  },
+  "newsagent_FULL_plus_NO_NEWS_combined": {
+   "copied": {
+    "mean_abs_ln_ratio_error": 1.729628308758564,
+    "n": 27,
+    "pct_of_total": 1.8685121107266436,
+    "se": 0.1260268067243363
+   },
+   "diff_copied_minus_not": {
+    "diff": 1.1120081857602493,
+    "se": 0.12662577852121554,
+    "t": 8.78184678306983
+   },
+   "n_total_with_rv5": 1445,
+   "not_copied": {
+    "mean_abs_ln_ratio_error": 0.6176201229983146,
+    "n": 1418,
+    "pct_of_total": 98.13148788927336,
+    "se": 0.012301697971040868
+   }
+  },
+  "newsagent_NO_NEWS": {
+   "copied": {
+    "mean_abs_ln_ratio_error": 1.7637007583894604,
+    "n": 12,
+    "pct_of_total": 1.5978695073235685,
+    "se": 0.19403217608380874
+   },
+   "diff_copied_minus_not": {
+    "diff": 1.1328604981252544,
+    "se": 0.19480075017668352,
+    "t": 5.815483241711104
+   },
+   "n_total_with_rv5": 751,
+   "not_copied": {
+    "mean_abs_ln_ratio_error": 0.6308402602642061,
+    "n": 739,
+    "pct_of_total": 98.40213049267643,
+    "se": 0.017287189290931884
+   }
+  },
+  "reconciliation_with_step2": "Step 2's regression found no smooth linear anchoring effect; step 3 finds a strong, real effect concentrated in a small (~2%) subgroup that nearly literally copies the annualised number. These are not contradictory: salience-copying here looks like a rare DISCRETE failure (full copy or no copy), not a graded bias that shifts everyone's forecast a little -- a linear regression averaged over ~98% unaffected sessions will correctly find ~zero slope even when a sharp, large, real failure mode exists in the tail."
+ },
+ "step5_full_vs_nonews_salience_effect": {
+  "b2_comparison": {
+   "FULL": {
+    "b2": -0.00730278496867328,
+    "n": 694,
+    "se": 0.020508192180265936
+   },
+   "NO_NEWS": {
+    "b2": 0.004680825308129322,
+    "n": 751,
+    "se": 0.020962977726916014
+   },
+   "diff_FULL_minus_NO_NEWS": -0.011983610276802602,
+   "se_diff": 0.029326308695127278,
+   "t": -0.40863002573500645
+  },
+  "copy_rate_two_proportion_test": {
+   "FULL": {
+    "k_copied": 15,
+    "n": 694,
+    "rate": 0.021613832853025938
+   },
+   "NO_NEWS": {
+    "k_copied": 12,
+    "n": 751,
+    "rate": 0.015978695073235686
+   },
+   "diff_FULL_minus_NO_NEWS": 0.005635137779790252,
+   "note": "two-proportion z-test on the 'looks-copied' (within 15% of ann_vol_20d_pct) rate; small k makes this low-powered.",
+   "p_two_sided_normal_approx": 0.4293247632968846,
+   "se_diff": 0.007129948127266879,
+   "z": 0.7903476545979259
+  },
+  "headline_finding": "Neither the regression b2 (FULL -0.0073 vs NO_NEWS +0.0047, diff -0.0120, SE 0.0293, t=-0.41) nor the looks-copied RATE (FULL 2.16% vs NO_NEWS 1.60%, diff +0.56pp, SE 0.71pp, z=0.79, p~0.43) differs significantly between arms. Both comparisons are LOW-POWERED (b2 itself is indistinguishable from 0 in both arms; the copying rate is based on only 12-15 events per arm), so this is best read as 'no evidence of a difference', not 'confirmed no difference'. At face value it is consistent with the project's established finding that price-tool salience operates largely independently of whether news is also in context -- the literal-copy failure mode shows up at a similar (small) rate whether or not news competes for attention."
+ },
+ "task": "SALIENCE: does the size of a conspicuous annualised-volatility number the agent sees (get_volatility_stats tool output) predict its 5-day expected_vol_pct forecast beyond what the rational benchmark (events_all.parquet sigma) justifies?"
+}

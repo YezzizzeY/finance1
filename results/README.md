@@ -97,3 +97,29 @@ reference forecasters scored on [`data/evidence_relations/synthetic/`](../data/e
 test split), not part of the five-model pilot or of `finagent verify`. CPU only, no GPU, no model calls; see
 [`docs/EVIDENCE_RELATIONS.md`](../docs/EVIDENCE_RELATIONS.md) and [`data/README.md`](../data/README.md#evidence_relations)
 for the rest of the evidence-relations extension (the four inputs/benchmark pieces, which live under `data/`).
+
+## mechanisms
+
+[`mechanisms/`](mechanisms/) holds the four mechanism analyses of saved agent sessions, which are not outputs of
+`finagent analyze`: they are recomputed from [`data/mechanisms/`](../data/mechanisms/README.md) (and the price panel)
+by their own commands, and `finagent verify` rebuilds each of them byte for byte (L1). CPU only, no model calls. The
+questions, method and caveats: [`docs/MECHANISMS.md`](../docs/MECHANISMS.md).
+
+| Folder | Command | What it holds |
+|---|---|---|
+| [`mechanisms/salience/`](mechanisms/salience/README.md) | `finagent mech-salience` | regressions of the 5-day vol forecast on the rational sigma and the annualised number, the copied-vs-not-copied comparison, FULL vs NO_NEWS, six verbatim quotes |
+| [`mechanisms/proximity/`](mechanisms/proximity/README.md) | `finagent mech-proximity` | the same-day natural experiment on calling position: slopes, day fixed effects, paired days, confounds, examples |
+| [`mechanisms/position_adjustment/`](mechanisms/position_adjustment/README.md) | `finagent mech-position` | day-to-day exposure changes against a Kelly-style rational rule: coverage, regressions with clustered SEs, std ratio, k sensitivity, worked trajectories |
+| [`mechanisms/thinking/`](mechanisms/thinking/README.md) | `finagent mech-thinking` | weighing and relationship language in 4,000 reasoning texts: rates by arm, corpus and tool count, tests, hand-check precision, the news-volatility check, examples |
+| `mechanisms/page/mechanisms.html` | `finagent mech-page` | the four results on one page (Chinese), drawn from the four `data.json`; byte-identical to the research workspace's page |
+
+Headline numbers, copied from the four `data.json`:
+
+| Analysis | Result | n |
+|---|---|---:|
+| Salience | the annualised number adds nothing once the rational sigma is known (b2 = −0.0073, t = −0.36); 27 sessions (1.9%) copy it, mean error 1.73 against 0.62 (t = 8.78) | 1,445 sessions |
+| Proximity | no effect of calling position: slope difference p = 0.59, day fixed effects p = 0.73 | 420 sessions on 128 days |
+| Position adjustment | agent exposure changes have 6.71 times the std of the rational rule's; slope +0.22 (cluster SE 0.28 to 0.29), Spearman −0.16 | 692 changes |
+| Thinking | strict relationship language 63.2% with news against 51.7% without (z = 7.32); hand check: 4 of 17 relationship matches genuine | 4,000 texts |
+
+`make mechanisms` rebuilds all four, the page and the good-thinking theory document (`docs/GOOD_THINKING.md`).

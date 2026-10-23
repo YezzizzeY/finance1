@@ -1,0 +1,620 @@
+{
+ "base_files_loaded": {
+  "test_bear": "data/mechanisms/position_adjustment/base5d_test_bear.json",
+  "test_calm": "data/mechanisms/position_adjustment/base5d_test_calm.json",
+  "test_crash": "data/mechanisms/position_adjustment/base5d_test_crash.json",
+  "test_crash_R2": "data/mechanisms/position_adjustment/BASE_crash_R2.json",
+  "val_calm": "data/mechanisms/position_adjustment/base5d_val_calm.json",
+  "val_stress": "data/mechanisms/position_adjustment/base5d_val_stress.json"
+ },
+ "events_all_nonevent_overlap_check": 0,
+ "headline": {
+  "eventful_abs_u_ge_2": {
+   "regression": {
+    "a": 3.677792962613725,
+    "b": 0.3161607347036215,
+    "n": 16,
+    "se_cluster_day": {
+     "a": 5.05833488245866,
+     "b": 0.9229867353393557,
+     "n_clusters": 6
+    },
+    "se_cluster_ticker": {
+     "a": 5.134638979747255,
+     "b": 1.0006602612425257,
+     "n_clusters": 5
+    },
+    "se_hc1": {
+     "a": 4.471522707885813,
+     "b": 1.0287544803500912
+    }
+   },
+   "spearman_rank_corr": {
+    "n": 16,
+    "rho": 0.0
+   },
+   "std_ratio": {
+    "n": 16,
+    "ratio": 9.406648090797745,
+    "std_agent": 16.396286120564348,
+    "std_rational": 1.7430529942546025
+   }
+  },
+  "mid_1_to_2_for_reference_only": {
+   "regression": {
+    "a": -1.6701859958733385,
+    "b": -0.12029845101179792,
+    "n": 144,
+    "se_cluster_day": {
+     "a": 1.5545060264423953,
+     "b": 0.7763052308204016,
+     "n_clusters": 14
+    },
+    "se_cluster_ticker": {
+     "a": 1.2000946244192168,
+     "b": 0.594457895346072,
+     "n_clusters": 25
+    },
+    "se_hc1": {
+     "a": 1.2505110063999607,
+     "b": 0.634425969580731
+    }
+   },
+   "spearman_rank_corr": {
+    "n": 144,
+    "rho": -0.16301348705826424
+   },
+   "std_ratio": {
+    "n": 144,
+    "ratio": 7.311035683895751,
+    "std_agent": 15.113744537490263,
+    "std_rational": 2.0672508234068374
+   }
+  },
+  "overall": {
+   "regression": {
+    "a": -1.232103753697814,
+    "b": 0.22170191289646843,
+    "n": 692,
+    "se_cluster_day": {
+     "a": 0.6860293700917492,
+     "b": 0.2791673194421624,
+     "n_clusters": 14
+    },
+    "se_cluster_ticker": {
+     "a": 0.5187740334244945,
+     "b": 0.2897084927496031,
+     "n_clusters": 26
+    },
+    "se_hc1": {
+     "a": 0.5704670141109354,
+     "b": 0.24128997855358947
+    }
+   },
+   "spearman_rank_corr": {
+    "n": 692,
+    "rho": -0.1648519815843426
+   },
+   "std_ratio": {
+    "n": 692,
+    "ratio": 6.705303942708544,
+    "std_agent": 14.93456524506826,
+    "std_rational": 2.2272764027808685
+   }
+  },
+  "quiet_abs_u_lt_1": {
+   "regression": {
+    "a": -1.2410310591696119,
+    "b": 0.3178654572681784,
+    "n": 532,
+    "se_cluster_day": {
+     "a": 0.6257223993361318,
+     "b": 0.2757579088622149,
+     "n_clusters": 14
+    },
+    "se_cluster_ticker": {
+     "a": 0.5616914582885203,
+     "b": 0.30448870410229245,
+     "n_clusters": 26
+    },
+    "se_hc1": {
+     "a": 0.6449713620375335,
+     "b": 0.2617509558034201
+    }
+   },
+   "spearman_rank_corr": {
+    "n": 532,
+    "rho": -0.16657694876491136
+   },
+   "std_ratio": {
+    "n": 532,
+    "ratio": 6.511823592510338,
+    "std_agent": 14.84668614660973,
+    "std_rational": 2.2799582844482837
+   }
+  }
+ },
+ "k_sensitivity": {
+  "k_base": {
+   "a": -1.232103753697814,
+   "b": 0.22170191289646843,
+   "k": 283.60093315058083,
+   "n": 692,
+   "spearman_rho": -0.1648519815843426,
+   "std_ratio": 6.705303942708544
+  },
+  "k_double": {
+   "a": -1.232103753697814,
+   "b": 0.11085095644823421,
+   "k": 567.2018663011617,
+   "n": 692,
+   "spearman_rho": -0.1648519815843426,
+   "std_ratio": 3.352651971354272
+  },
+  "k_half": {
+   "a": -1.2517072315644207,
+   "b": 0.3769551529024259,
+   "k": 141.80046657529041,
+   "n": 692,
+   "spearman_rho": -0.15185674581391592,
+   "std_ratio": 10.799170618867068
+  }
+ },
+ "level_correlation_same_day": {
+  "n": 754,
+  "pearson": 0.0031471831902276765,
+  "spearman": 0.23792518916064812
+ },
+ "limitation": "The rational-benchmark corpus (data/mechanisms/position_adjustment/events_all.parquet and nonevent_days.parquet) only covers calendar dates 2025-10-02 to 2026-09-17. Four of the five BASE trajectory windows (val_calm 2023-10-02, val_stress 2024-07-22, test_crash 2025-04-01, test_bear 2022-05-02, plus the test_crash replicate) fall entirely outside that range and get a 0% rational join -- confirmed by direct check, not assumed. Only the test_calm window (2026-01-05 to 2026-01-26, 40 held-out stocks, 2 twin trajectories each) overlaps the benchmark's coverage, so ALL regression/ratio/rank numbers above come from that one window only. This is a real corpus-coverage constraint, not a bug: it is reported here rather than forcing a cross-window result.",
+ "method": {
+  "eventful_threshold": "|u| >= 2.0",
+  "k_base": 283.60093315058083,
+  "k_choice": "k chosen so std(unclipped k*m/sigma^2) over the joined, usable sample equals std(agent exposure_pct) over that same sample; sensitivity to k reported via k_half/k_double and via Spearman rank correlation of the deltas, which is scale-invariant",
+  "quiet_threshold": "|u| < 1.0 (u = standardized surprise from events_all/nonevent_days, at day t)",
+  "rational_rule": "rational_target_pct[t] = clip(k * m[t] / exp(lsig[t])**2, 0, 100); delta_rational[t] = rational_target[t] - rational_target[t-1] using the same k/clip",
+  "scope": "BASE policy only (Qwen3.5-9B tool agent, default prompt); files listed in base_files_loaded below"
+ },
+ "n_agent_days_total": 6240,
+ "n_agent_days_usable_window": 1200,
+ "n_consecutive_day_gaps": 1120,
+ "n_gaps_with_rational_join_both_days": 692,
+ "n_trajectories_total": 440,
+ "n_trajectories_usable_window": 80,
+ "rational_join_coverage_by_window": [
+  {
+   "hit_rate": 0.0,
+   "n_matched": 0,
+   "n_ticker_days": 360,
+   "window": "val_calm"
+  },
+  {
+   "hit_rate": 0.0,
+   "n_matched": 0,
+   "n_ticker_days": 360,
+   "window": "val_stress"
+  },
+  {
+   "hit_rate": 0.6283333333333333,
+   "n_matched": 377,
+   "n_ticker_days": 600,
+   "window": "test_calm"
+  },
+  {
+   "hit_rate": 0.0,
+   "n_matched": 0,
+   "n_ticker_days": 600,
+   "window": "test_crash"
+  },
+  {
+   "hit_rate": 0.0,
+   "n_matched": 0,
+   "n_ticker_days": 600,
+   "window": "test_bear"
+  },
+  {
+   "hit_rate": 0.0,
+   "n_matched": 0,
+   "n_ticker_days": 600,
+   "window": "test_crash_R2"
+  }
+ ],
+ "rational_join_overall_hit_rate": 0.12083333333333333,
+ "u_bucket_counts_among_rational_matched_agent_days": {
+  "eventful_abs_u_ge_2": 20,
+  "mid_1_to_2": 154,
+  "quiet_abs_u_lt_1": 580,
+  "total_matched_agent_days": 754
+ },
+ "usable_windows": [
+  "test_calm"
+ ],
+ "worked_examples": [
+  {
+   "g": 0,
+   "n_eventful_gaps": 3,
+   "n_quiet_gaps": 9,
+   "table": [
+    {
+     "agent_exposure_pct": 99.71,
+     "day": "2026-01-05",
+     "delta_agent": null,
+     "delta_rational": null,
+     "rational_target_pct": 4.27,
+     "u": 0.6
+    },
+    {
+     "agent_exposure_pct": 20.23,
+     "day": "2026-01-06",
+     "delta_agent": -79.48,
+     "delta_rational": -1.17,
+     "rational_target_pct": 3.1,
+     "u": -0.09
+    },
+    {
+     "agent_exposure_pct": 23.96,
+     "day": "2026-01-07",
+     "delta_agent": 3.73,
+     "delta_rational": 1.51,
+     "rational_target_pct": 4.61,
+     "u": 0.27
+    },
+    {
+     "agent_exposure_pct": 24.36,
+     "day": "2026-01-08",
+     "delta_agent": 0.4,
+     "delta_rational": -2.01,
+     "rational_target_pct": 2.6,
+     "u": 0.34
+    },
+    {
+     "agent_exposure_pct": 5.8,
+     "day": "2026-01-09",
+     "delta_agent": -18.57,
+     "delta_rational": 1.85,
+     "rational_target_pct": 4.44,
+     "u": 0.04
+    },
+    {
+     "agent_exposure_pct": 8.74,
+     "day": "2026-01-12",
+     "delta_agent": 2.94,
+     "delta_rational": 2.89,
+     "rational_target_pct": 7.33,
+     "u": -0.64
+    },
+    {
+     "agent_exposure_pct": 8.65,
+     "day": "2026-01-13",
+     "delta_agent": -0.09,
+     "delta_rational": 3.83,
+     "rational_target_pct": 11.16,
+     "u": -0.21
+    },
+    {
+     "agent_exposure_pct": 48.91,
+     "day": "2026-01-14",
+     "delta_agent": 40.26,
+     "delta_rational": -2.14,
+     "rational_target_pct": 9.01,
+     "u": -0.16
+    },
+    {
+     "agent_exposure_pct": 36.67,
+     "day": "2026-01-15",
+     "delta_agent": -12.23,
+     "delta_rational": -1.06,
+     "rational_target_pct": 7.95,
+     "u": -0.86
+    },
+    {
+     "agent_exposure_pct": 26.82,
+     "day": "2026-01-16",
+     "delta_agent": -9.85,
+     "delta_rational": 2.34,
+     "rational_target_pct": 10.3,
+     "u": -0.0
+    },
+    {
+     "agent_exposure_pct": 36.04,
+     "day": "2026-01-20",
+     "delta_agent": 9.22,
+     "delta_rational": 0.22,
+     "rational_target_pct": 10.52,
+     "u": -3.17
+    },
+    {
+     "agent_exposure_pct": 78.89,
+     "day": "2026-01-21",
+     "delta_agent": 42.85,
+     "delta_rational": -1.28,
+     "rational_target_pct": 9.24,
+     "u": -2.09
+    },
+    {
+     "agent_exposure_pct": 79.0,
+     "day": "2026-01-22",
+     "delta_agent": 0.11,
+     "delta_rational": -0.13,
+     "rational_target_pct": 9.11,
+     "u": -1.87
+    },
+    {
+     "agent_exposure_pct": 39.47,
+     "day": "2026-01-23",
+     "delta_agent": -39.52,
+     "delta_rational": 2.28,
+     "rational_target_pct": 11.39,
+     "u": -1.91
+    },
+    {
+     "agent_exposure_pct": 43.83,
+     "day": "2026-01-26",
+     "delta_agent": 4.36,
+     "delta_rational": -3.4,
+     "rational_target_pct": 7.99,
+     "u": -2.5
+    }
+   ],
+   "ticker": "ELV",
+   "window": "test_calm"
+  },
+  {
+   "g": 0,
+   "n_eventful_gaps": 2,
+   "n_quiet_gaps": 5,
+   "table": [
+    {
+     "agent_exposure_pct": 2.92,
+     "day": "2026-01-05",
+     "delta_agent": null,
+     "delta_rational": null,
+     "rational_target_pct": 6.06,
+     "u": 2.72
+    },
+    {
+     "agent_exposure_pct": 1.58,
+     "day": "2026-01-06",
+     "delta_agent": -1.34,
+     "delta_rational": -6.06,
+     "rational_target_pct": 0.0,
+     "u": 1.95
+    },
+    {
+     "agent_exposure_pct": 1.61,
+     "day": "2026-01-07",
+     "delta_agent": 0.03,
+     "delta_rational": 0.0,
+     "rational_target_pct": 0.0,
+     "u": 1.69
+    },
+    {
+     "agent_exposure_pct": 1.26,
+     "day": "2026-01-08",
+     "delta_agent": -0.35,
+     "delta_rational": 0.94,
+     "rational_target_pct": 0.94,
+     "u": 1.6
+    },
+    {
+     "agent_exposure_pct": 1.29,
+     "day": "2026-01-09",
+     "delta_agent": 0.02,
+     "delta_rational": -0.81,
+     "rational_target_pct": 0.13,
+     "u": 0.19
+    },
+    {
+     "agent_exposure_pct": 1.35,
+     "day": "2026-01-12",
+     "delta_agent": 0.06,
+     "delta_rational": -0.13,
+     "rational_target_pct": 0.0,
+     "u": 0.34
+    },
+    {
+     "agent_exposure_pct": 1.41,
+     "day": "2026-01-13",
+     "delta_agent": 0.06,
+     "delta_rational": 0.0,
+     "rational_target_pct": 0.0,
+     "u": 0.3
+    },
+    {
+     "agent_exposure_pct": 1.41,
+     "day": "2026-01-14",
+     "delta_agent": 0.01,
+     "delta_rational": 0.9,
+     "rational_target_pct": 0.9,
+     "u": 1.01
+    },
+    {
+     "agent_exposure_pct": 4.5,
+     "day": "2026-01-15",
+     "delta_agent": 3.09,
+     "delta_rational": 0.48,
+     "rational_target_pct": 1.37,
+     "u": 1.43
+    },
+    {
+     "agent_exposure_pct": 6.03,
+     "day": "2026-01-16",
+     "delta_agent": 1.53,
+     "delta_rational": 2.24,
+     "rational_target_pct": 3.61,
+     "u": 2.12
+    },
+    {
+     "agent_exposure_pct": 6.36,
+     "day": "2026-01-20",
+     "delta_agent": 0.33,
+     "delta_rational": -1.91,
+     "rational_target_pct": 1.7,
+     "u": 1.68
+    },
+    {
+     "agent_exposure_pct": 5.72,
+     "day": "2026-01-21",
+     "delta_agent": -0.64,
+     "delta_rational": 0.28,
+     "rational_target_pct": 1.99,
+     "u": 0.3
+    },
+    {
+     "agent_exposure_pct": 4.85,
+     "day": "2026-01-22",
+     "delta_agent": -0.87,
+     "delta_rational": -1.1,
+     "rational_target_pct": 0.89,
+     "u": -0.61
+    },
+    {
+     "agent_exposure_pct": 4.13,
+     "day": "2026-01-23",
+     "delta_agent": -0.72,
+     "delta_rational": -0.08,
+     "rational_target_pct": 0.81,
+     "u": -1.55
+    },
+    {
+     "agent_exposure_pct": 3.38,
+     "day": "2026-01-26",
+     "delta_agent": -0.75,
+     "delta_rational": -0.81,
+     "rational_target_pct": 0.0,
+     "u": -2.13
+    }
+   ],
+   "ticker": "ALB",
+   "window": "test_calm"
+  },
+  {
+   "g": 0,
+   "n_eventful_gaps": 1,
+   "n_quiet_gaps": 11,
+   "table": [
+    {
+     "agent_exposure_pct": 34.01,
+     "day": "2026-01-05",
+     "delta_agent": null,
+     "delta_rational": null,
+     "rational_target_pct": 6.17,
+     "u": 1.05
+    },
+    {
+     "agent_exposure_pct": 33.86,
+     "day": "2026-01-06",
+     "delta_agent": -0.16,
+     "delta_rational": 0.54,
+     "rational_target_pct": 6.72,
+     "u": 1.32
+    },
+    {
+     "agent_exposure_pct": 33.44,
+     "day": "2026-01-07",
+     "delta_agent": -0.41,
+     "delta_rational": 0.23,
+     "rational_target_pct": 6.94,
+     "u": 1.83
+    },
+    {
+     "agent_exposure_pct": 25.07,
+     "day": "2026-01-08",
+     "delta_agent": -8.37,
+     "delta_rational": -0.49,
+     "rational_target_pct": 6.46,
+     "u": 2.01
+    },
+    {
+     "agent_exposure_pct": 16.44,
+     "day": "2026-01-09",
+     "delta_agent": -8.63,
+     "delta_rational": -3.04,
+     "rational_target_pct": 3.42,
+     "u": 0.92
+    },
+    {
+     "agent_exposure_pct": 16.6,
+     "day": "2026-01-12",
+     "delta_agent": 0.15,
+     "delta_rational": 1.46,
+     "rational_target_pct": 4.88,
+     "u": 0.04
+    },
+    {
+     "agent_exposure_pct": 23.36,
+     "day": "2026-01-13",
+     "delta_agent": 6.76,
+     "delta_rational": -0.54,
+     "rational_target_pct": 4.34,
+     "u": 0.57
+    },
+    {
+     "agent_exposure_pct": 18.53,
+     "day": "2026-01-14",
+     "delta_agent": -4.83,
+     "delta_rational": -2.45,
+     "rational_target_pct": 1.89,
+     "u": 0.53
+    },
+    {
+     "agent_exposure_pct": 15.1,
+     "day": "2026-01-15",
+     "delta_agent": -3.42,
+     "delta_rational": 1.12,
+     "rational_target_pct": 3.01,
+     "u": 0.37
+    },
+    {
+     "agent_exposure_pct": 15.06,
+     "day": "2026-01-16",
+     "delta_agent": -0.04,
+     "delta_rational": 4.6,
+     "rational_target_pct": 7.61,
+     "u": 0.48
+    },
+    {
+     "agent_exposure_pct": 14.73,
+     "day": "2026-01-20",
+     "delta_agent": -0.33,
+     "delta_rational": 1.43,
+     "rational_target_pct": 9.04,
+     "u": 0.71
+    },
+    {
+     "agent_exposure_pct": 9.97,
+     "day": "2026-01-21",
+     "delta_agent": -4.76,
+     "delta_rational": -3.55,
+     "rational_target_pct": 5.5,
+     "u": 0.13
+    },
+    {
+     "agent_exposure_pct": 5.15,
+     "day": "2026-01-22",
+     "delta_agent": -4.82,
+     "delta_rational": 1.19,
+     "rational_target_pct": 6.69,
+     "u": 0.33
+    },
+    {
+     "agent_exposure_pct": 2.23,
+     "day": "2026-01-23",
+     "delta_agent": -2.93,
+     "delta_rational": 0.5,
+     "rational_target_pct": 7.19,
+     "u": -0.25
+    },
+    {
+     "agent_exposure_pct": 2.23,
+     "day": "2026-01-26",
+     "delta_agent": 0.0,
+     "delta_rational": -0.03,
+     "rational_target_pct": 7.16,
+     "u": -0.06
+    }
+   ],
+   "ticker": "FERG",
+   "window": "test_calm"
+  }
+ ]
+}

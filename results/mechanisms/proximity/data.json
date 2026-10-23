@@ -1,0 +1,517 @@
+{
+ "_notes_added_2026-10-23": [
+  "Independent verification found the day-fixed-effects regression's reported standard error used residual degrees of freedom = n-2 (418) rather than n minus the 128 day-dummy parameters (approx. 291). Recomputing with the correct df widens the SE slightly but does not change the conclusion: the coefficient (-0.122, originally reported SE 0.360) is nowhere close to significant either way (p=0.73 at df=418; still far from significant at the smaller correct df). No headline number or conclusion changes."
+ ],
+ "confound_discussion": {
+  "check_1_does_magnitude_predict_position": {
+   "description": "Is ann_vol_20d_pct itself more extreme when the tool happens to be called last? (full unmatched pool, n=754)",
+   "is_last_false_mean_se": {
+    "mean": 35.551675485008815,
+    "n": 567,
+    "se": 0.8209632409467558
+   },
+   "is_last_true_mean_se": {
+    "mean": 37.383957219251336,
+    "n": 187,
+    "se": 1.4729667969292095
+   },
+   "p_two_sided": 0.2772275683799883,
+   "verdict": "No (p=0.28) -- the magnitude of the number does not predict whether it gets called last.",
+   "z": 1.0865684641715936
+  },
+  "check_2_does_reliance_ratio_differ": {
+   "description": "If the agent calls it last \"because it intends to rely on it most,\" the ratio expected_vol_pct/ann_vol_20d_pct should be HIGHER when is_last=True. It is not: 0.223 (is_last=True) vs 0.223 (is_last=False), see step2_results.",
+   "verdict": "No detectable difference -- this specific version of the confound story is not supported by the data."
+  },
+  "check_3_session_length_confound": {
+   "description": "Total tool calls per session (excluding submit_decision) differs sharply by is_last group: sessions where get_volatility_stats is called last are systematically SHORTER sessions.",
+   "is_last_false_mean_se": {
+    "mean": 8.317460317460318,
+    "se": 0.05045141025514534
+   },
+   "is_last_true_mean_se": {
+    "mean": 7.053475935828877,
+    "se": 0.07021190738335001
+   },
+   "p_two_sided": 0.0,
+   "verdict": "YES, real and large (p<1e-15) -- mechanically true in part because \"called last\" caps how many more calls can follow, but it also means is_last is confounded with \"this was a shorter, more decisive session\" in general, not purely with calling-position. We could not rule this out as an independent channel. It does not change the headline here (the effect we looked for was null anyway), but it means a different, positive-finding dataset using the same is_last design would still need to separately control for session length before attributing an effect to position per se.",
+   "z": -14.619565352352792
+  },
+  "overall_assessment": "The confound that the task flagged (intent-driven calling order) is not supported by the two direct checks we could run (magnitude does not predict position; reliance ratio does not differ by position). A second, different confound (session length/thoroughness) is real and sizeable, but is moot for THIS result because the position effect itself was null on every cut. We flag it because a future test with a positive finding on this corpus would need to address it.",
+  "threat": "Does the agent call get_volatility_stats LAST specifically WHEN it intends to rely on it most (a different causal story than \"position itself causes weight\")?"
+ },
+ "corpus": "data/mechanisms/sessions/newsagent, FULL arm, temperature=1.0 runs only (file pattern FULL_{0,1,2,3}.json.gz; the FULL_T06_* temperature-0.6 files were excluded per the task spec), 250 ticker-days x up to 4 k-runs = 1000 session files attempted.",
+ "examples": [
+  {
+   "description": "HAL_2026-03-20: FULL_1 calls get_volatility_stats as the LAST tool before submit_decision (is_last=True); FULL_2 calls simulate_order AFTER get_volatility_stats (is_last=False). Both see the identical ann_vol_20d_pct=30.1. In FULL_1 (last) the agent submits expected_vol_pct=30, almost exactly the raw tool number (ratio 1.00). In FULL_2 (not last) it submits expected_vol_pct=5.5 (ratio 0.18, close to the corpus-typical ~0.22). Taken alone this looks like a proximity effect in the \"last = more weight\" direction.",
+   "label": "same_day_pair_A",
+   "sessions": [
+    {
+     "day": "2026-03-20",
+     "day_id": "HAL_2026-03-20",
+     "file": "data/mechanisms/sessions/newsagent/HAL_2026-03-20/FULL_1.json.gz",
+     "get_risk_budget_result": null,
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 36.5, \"ann_vol_20d_pct\": 30.1, \"ann_vol_60d_pct\": 35.2, \"parkinson_vol_10d_pct\": 33.5, \"atr_14\": 1.22, \"atr_14_pct_of_price\": 3.34, \"vol_zscore_vs_63d\": -0.56, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 1.09, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 1,
+     "submit_decision_args": {
+      "action": "Hold",
+      "confidence": 0.65,
+      "expected_return_pct": 0.8,
+      "expected_vol_pct": 30,
+      "p_up": 0.58,
+      "reasoning": "Technical indicators remain bullish with strong trend alignment (EMA 8/21/55), positive MACD, and healthy 5-day return of +8.4%. Price trading below Bollinger upper band at 36.77, suggesting room to run. However, stock is within 2.2% of 52-week high (37.20), creating potential resistance. Current 94.9% exposure is slightly elevated; reducing to 90% provides better risk-rebalance while maintaining upside participation. Price-volume correlation positive, insider activity neutral. Expect modest 5-day upside but elevated volatility regime.",
+      "shares": 0,
+      "target_exposure_pct": 90
+     },
+     "ticker": "HAL",
+     "tool_call_order": [
+      "get_portfolio",
+      "get_price_stats",
+      "get_trend_signal",
+      "get_mean_reversion_signal",
+      "get_rsi",
+      "get_macd",
+      "get_volatility_stats",
+      "submit_decision"
+     ]
+    },
+    {
+     "day": "2026-03-20",
+     "day_id": "HAL_2026-03-20",
+     "file": "data/mechanisms/sessions/newsagent/HAL_2026-03-20/FULL_2.json.gz",
+     "get_risk_budget_result": null,
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 36.5, \"ann_vol_20d_pct\": 30.1, \"ann_vol_60d_pct\": 35.2, \"parkinson_vol_10d_pct\": 33.5, \"atr_14\": 1.22, \"atr_14_pct_of_price\": 3.34, \"vol_zscore_vs_63d\": -0.56, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 1.09, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 2,
+     "submit_decision_args": {
+      "action": "Hold",
+      "expected_return_pct": 1.5,
+      "expected_vol_pct": 5.5,
+      "p_up": 0.6,
+      "reasoning": "Stock in strong bullish trend (EMA 8/21/55 aligned), but mean reversion signal neutral with price near upper Bollinger band (0.88 position, z-score 1.89). RSI 53.9 neutral, MACD bullish. 5-day return already strong at +8.43%. Volatility elevated but normal regime. Recent automation news positive. Given extended short-term gains and mean-reversion caution, maintaining current ~95% exposure is appropriate. Expect continued momentum but with potential for pullback near resistance.",
+      "shares": 0,
+      "target_exposure_pct": 95
+     },
+     "ticker": "HAL",
+     "tool_call_order": [
+      "get_trend_signal",
+      "get_mean_reversion_signal",
+      "get_rsi",
+      "get_macd",
+      "get_price_stats",
+      "get_volatility_stats",
+      "simulate_order",
+      "submit_decision"
+     ]
+    }
+   ]
+  },
+  {
+   "description": "STX_2026-06-17: FULL_1 calls get_volatility_stats LAST before submit_decision (is_last=True) and submits expected_vol_pct=8.5 against ann_vol_20d_pct=65.7 (ratio 0.13). FULL_2 calls get_volume_analysis, get_support_resistance and get_risk_budget AFTER get_volatility_stats (is_last=False) and submits expected_vol_pct=28 (ratio 0.43) -- FARTHER from submit, yet CLOSER (proportionally) to the tool number, and its reasoning explicitly cites the get_risk_budget call made after get_volatility_stats (\"Risk budget severely exceeded (99.8% vs 23% max)\"). This is the opposite direction from pair A: it shows the within-day sign is not stable, consistent with the null result below rather than with either session being a confirming case on its own.",
+   "label": "same_day_pair_B_opposite_direction",
+   "sessions": [
+    {
+     "day": "2026-06-17",
+     "day_id": "STX_2026-06-17",
+     "file": "data/mechanisms/sessions/newsagent/STX_2026-06-17/FULL_1.json.gz",
+     "get_risk_budget_result": null,
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 84.5, \"ann_vol_20d_pct\": 65.7, \"ann_vol_60d_pct\": 64.6, \"parkinson_vol_10d_pct\": 69.3, \"atr_14\": 65.01, \"atr_14_pct_of_price\": 6.1, \"vol_zscore_vs_63d\": 0.25, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 3.31, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 1,
+     "submit_decision_args": {
+      "action": "Sell",
+      "confidence": 0.65,
+      "expected_return_pct": 2.8,
+      "expected_vol_pct": 8.5,
+      "p_up": 0.62,
+      "reasoning": "Stock at 52-week highs with overbought mean reversion signal (1.06x upper Bollinger band, RSI 68.7, z-score 2.03). Strong bullish trend (EMA8>EMA21>EMA55) but price extended 30% in 5 days, 45% in 20 days. Recent earnings/sector news positive but insider selling noted. Reduced exposure from 99.8% to ~80% to protect gains while maintaining bullish stance. Elevated volatility regime (84.5% 10-day annualized) suggests potential for larger moves. Forecast: moderate upside but elevated pullback risk.",
+      "shares": 15,
+      "target_exposure_pct": 80
+     },
+     "ticker": "STX",
+     "tool_call_order": [
+      "get_trend_signal",
+      "get_rsi",
+      "get_macd",
+      "get_mean_reversion_signal",
+      "get_support_resistance",
+      "get_volume_analysis",
+      "get_price_stats",
+      "get_volatility_stats",
+      "submit_decision"
+     ]
+    },
+    {
+     "day": "2026-06-17",
+     "day_id": "STX_2026-06-17",
+     "file": "data/mechanisms/sessions/newsagent/STX_2026-06-17/FULL_2.json.gz",
+     "get_risk_budget_result": "{\"target_vol_pct\": 15.0, \"trailing_vol_20d_pct\": 65.7, \"max_exposure_pct_for_target\": 22.8, \"current_exposure_pct\": 99.8, \"current_ex_ante_risk_pct\": 65.6, \"gap_to_budget_pct_points\": -77.0, \"shares_to_reach_budget\": -75}",
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 84.5, \"ann_vol_20d_pct\": 65.7, \"ann_vol_60d_pct\": 64.6, \"parkinson_vol_10d_pct\": 69.3, \"atr_14\": 65.01, \"atr_14_pct_of_price\": 6.1, \"vol_zscore_vs_63d\": 0.25, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 3.31, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 2,
+     "submit_decision_args": {
+      "action": "Sell",
+      "confidence": 0.55,
+      "expected_return_pct": 3.5,
+      "expected_vol_pct": 28,
+      "p_up": 0.6,
+      "reasoning": "Bullish trend intact (EMA spread 28.61%, MACD positive), but overbought on mean reversion (above Bollinger upper, z-score 2.03). Risk budget severely exceeded (99.8% vs 23% max). Reducing to ~50% exposure while maintaining bullish view. High volatility environment requires measured approach. Recent strong rally (+3.31% yesterday, +17.5% over 3 days) may lead to pullback.",
+      "shares": 40,
+      "target_exposure_pct": 50
+     },
+     "ticker": "STX",
+     "tool_call_order": [
+      "get_trend_signal",
+      "get_rsi",
+      "get_macd",
+      "get_mean_reversion_signal",
+      "get_price_stats",
+      "get_volatility_stats",
+      "get_volume_analysis",
+      "get_support_resistance",
+      "get_risk_budget",
+      "submit_decision"
+     ]
+    }
+   ]
+  },
+  {
+   "description": "ACN_2026-03-24, FULL_3: get_volatility_stats is called, then get_risk_budget. ann_vol_20d_pct (from get_volatility_stats) = 42.9 and trailing_vol_20d_pct (from get_risk_budget) = 42.9 -- IDENTICAL to one decimal, because both tools run the exact same formula (_sd(returns[-20:]) * ANN) on the exact same as_of price history (verified in src/finagent/harness/toolbox.py lines ~174-182 and ~207-212). The submitted reasoning cites this single shared number directly: \"High volatility (42.9% ann)\". There is no second, independent number for the agent to be \"closer to\" -- the premise behind result 3 does not hold in this toolset.",
+   "label": "part3_tie_illustration_1",
+   "sessions": [
+    {
+     "day": "2026-03-24",
+     "day_id": "ACN_2026-03-24",
+     "file": "data/mechanisms/sessions/newsagent/ACN_2026-03-24/FULL_3.json.gz",
+     "get_risk_budget_result": "{\"target_vol_pct\": 15.0, \"trailing_vol_20d_pct\": 42.9, \"max_exposure_pct_for_target\": 35.0, \"current_exposure_pct\": 0.0, \"current_ex_ante_risk_pct\": 0.0, \"gap_to_budget_pct_points\": 35.0, \"shares_to_reach_budget\": 184}",
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 32.8, \"ann_vol_20d_pct\": 42.9, \"ann_vol_60d_pct\": 45.0, \"parkinson_vol_10d_pct\": 45.9, \"atr_14\": 8.37, \"atr_14_pct_of_price\": 4.41, \"vol_zscore_vs_63d\": 0.22, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 3.29, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 3,
+     "submit_decision_args": {
+      "action": "Buy",
+      "confidence": 0.55,
+      "expected_return_pct": -0.8,
+      "expected_vol_pct": 9.5,
+      "p_up": 0.48,
+      "reasoning": "Stock down ~40% from peak, now only 3.5% from 52-week low. RSI 33.5 approaching oversold territory. Bearish trend (price below all EMAs), but recent news positive (DaVinci Commerce investment, NOAA contracts). High volatility (42.9% ann) with large move yesterday (3.29%). Conservative entry at 8% exposure after significant decline. Expect modest negative/neutral 5-day return with elevated volatility.",
+      "shares": 42,
+      "target_exposure_pct": 8
+     },
+     "ticker": "ACN",
+     "tool_call_order": [
+      "get_trend_signal",
+      "get_mean_reversion_signal",
+      "get_rsi",
+      "get_macd",
+      "get_price_stats",
+      "get_volatility_stats",
+      "get_risk_budget",
+      "submit_decision"
+     ]
+    }
+   ]
+  },
+  {
+   "description": "AAPL_2026-03-19, FULL_1: same structural tie on a different ticker/day -- get_risk_budget.trailing_vol_20d_pct = 20.9 and get_volatility_stats.ann_vol_20d_pct = 20.9, exactly equal. Confirms the tie in example 3 is not a coincidence of one ticker.",
+   "label": "part3_tie_illustration_2",
+   "sessions": [
+    {
+     "day": "2026-03-19",
+     "day_id": "AAPL_2026-03-19",
+     "file": "data/mechanisms/sessions/newsagent/AAPL_2026-03-19/FULL_1.json.gz",
+     "get_risk_budget_result": "{\"target_vol_pct\": 15.0, \"trailing_vol_20d_pct\": 20.9, \"max_exposure_pct_for_target\": 71.8, \"current_exposure_pct\": 99.8, \"current_ex_ante_risk_pct\": 20.9, \"gap_to_budget_pct_points\": -28.0, \"shares_to_reach_budget\": -110}",
+     "get_volatility_stats_result": "{\"ann_vol_10d_pct\": 18.5, \"ann_vol_20d_pct\": 20.9, \"ann_vol_60d_pct\": 23.9, \"parkinson_vol_10d_pct\": 19.1, \"atr_14\": 5.29, \"atr_14_pct_of_price\": 2.13, \"vol_zscore_vs_63d\": -0.02, \"regime\": \"normal\", \"abs_move_yesterday_pct\": 0.39, \"note\": \"big moves cluster: after a large move the next few days are usually larger than average\"}",
+     "k": 1,
+     "submit_decision_args": {
+      "action": "Sell",
+      "confidence": 0.6,
+      "expected_return_pct": 0.5,
+      "expected_vol_pct": 4.5,
+      "p_up": 0.52,
+      "reasoning": "Reduce exposure from 99.8% to ~72% to align with risk budget (trailing vol 20.9% vs 15% target). Trend is bearish (EMA8 below EMA21/55), RSI oversold at 25.7 suggests potential bounce, and price near support at 242.97. China sales up 23% is positive, but CEO succession news adds uncertainty. Expecting mean reversion with small upside.",
+      "shares": 128,
+      "target_exposure_pct": 72
+     },
+     "ticker": "AAPL",
+     "tool_call_order": [
+      "get_trend_signal",
+      "get_mean_reversion_signal",
+      "get_rsi",
+      "get_macd",
+      "get_price_stats",
+      "get_support_resistance",
+      "get_risk_budget",
+      "get_volatility_stats",
+      "simulate_order",
+      "simulate_order",
+      "submit_decision"
+     ]
+    }
+   ]
+  }
+ ],
+ "extraction_rules": {
+  "is_last_definition": "Among trace entries that are literal tool-call records (have a \"tool\" key -- this excludes the separate \"turn\" entries that just list which tools the model decided to call), get_volatility_stats is is_last=True iff it is the entry immediately preceding the submit_decision tool-call entry, i.e. zero other tool-call entries sit between them.",
+  "tool_result_parsing": "Tool \"result\" fields are JSON-encoded strings; parsed with json.loads before reading fields.",
+  "usable_session_filter": "d[\"valid\"] is True; trace parses; exactly one get_volatility_stats call; exactly one submit_decision call and it is the final tool-call entry; submit_decision.args has a numeric expected_vol_pct; get_volatility_stats's result JSON has ann_vol_20d_pct."
+ },
+ "sample_accounting": {
+  "files_attempted": 1000,
+  "key_structural_fact": "ann_vol_20d_pct is IDENTICAL across every k-run of the same day_id (checked all 250 days with >=1 usable session: 0 days show any variation). This is expected -- the tool is a deterministic function of the as_of price history, which is the same for every k-run of a given ticker-day -- and it is what makes the matched-day design a clean natural experiment: within a matched day, MAGNITUDE is held exactly fixed and only calling POSITION (and the free-running generation) differs across k-runs.",
+  "matched_day_ids": [
+   "AAPL_2026-03-19",
+   "ACN_2026-03-23",
+   "ACN_2026-03-24",
+   "ACN_2026-06-23",
+   "ACN_2026-09-01",
+   "AJG_2026-03-24",
+   "ALB_2026-08-24",
+   "AMGN_2026-08-05",
+   "AMGN_2026-09-08",
+   "AMGN_2026-09-09",
+   "AMT_2026-08-21",
+   "AMZN_2026-08-18",
+   "AMZN_2026-08-27",
+   "AVGO_2026-08-17",
+   "AXP_2026-08-31",
+   "AXP_2026-09-03",
+   "BAC_2026-03-17",
+   "BAC_2026-06-10",
+   "BAC_2026-09-11",
+   "BA_2026-06-08",
+   "CAT_2026-03-16",
+   "CIEN_2026-03-18",
+   "CIEN_2026-08-10",
+   "CIEN_2026-08-17",
+   "CRH_2026-06-22",
+   "CRM_2026-06-30",
+   "CRM_2026-08-10",
+   "CRWD_2026-03-24",
+   "CRWD_2026-08-07",
+   "CRWD_2026-08-13",
+   "CRWD_2026-08-27",
+   "CSCO_2026-06-02",
+   "CSCO_2026-06-25",
+   "CSGP_2026-03-11",
+   "CSGP_2026-03-31",
+   "CVX_2026-03-30",
+   "CVX_2026-09-03",
+   "DG_2026-03-10",
+   "DG_2026-03-27",
+   "DVN_2026-03-06",
+   "DVN_2026-03-11",
+   "ECL_2026-08-19",
+   "ED_2026-03-18",
+   "ELV_2026-08-25",
+   "FERG_2026-08-11",
+   "FIX_2026-03-05",
+   "FIX_2026-06-03",
+   "FIX_2026-08-20",
+   "GLW_2026-03-12",
+   "GLW_2026-08-18",
+   "GM_2026-08-11",
+   "GM_2026-08-21",
+   "HAL_2026-03-20",
+   "HAL_2026-06-16",
+   "HAL_2026-09-02",
+   "HAL_2026-09-15",
+   "HCA_2026-03-04",
+   "HD_2026-06-12",
+   "HON_2026-06-09",
+   "HOOD_2026-03-03",
+   "HWM_2026-03-27",
+   "HWM_2026-09-09",
+   "IBM_2026-03-30",
+   "IBM_2026-08-05",
+   "IDXX_2026-03-13",
+   "JNJ_2026-06-09",
+   "JNJ_2026-08-04",
+   "JPM_2026-09-17",
+   "KO_2026-06-11",
+   "LHX_2026-09-02",
+   "LMT_2026-06-01",
+   "LMT_2026-06-02",
+   "LMT_2026-06-10",
+   "LMT_2026-06-29",
+   "LYB_2026-03-04",
+   "LYB_2026-03-13",
+   "LYB_2026-03-31",
+   "LYB_2026-06-11",
+   "MA_2026-06-03",
+   "MCD_2026-06-08",
+   "MCD_2026-06-29",
+   "MCHP_2026-06-09",
+   "MCHP_2026-08-20",
+   "MRK_2026-06-24",
+   "MRK_2026-09-01",
+   "MSCI_2026-06-11",
+   "NEE_2026-08-21",
+   "NFLX_2026-08-06",
+   "NFLX_2026-08-19",
+   "NFLX_2026-08-28",
+   "NKE_2026-06-03",
+   "NKE_2026-08-25",
+   "ORCL_2026-06-23",
+   "ORCL_2026-08-07",
+   "O_2026-03-03",
+   "O_2026-03-13",
+   "PANW_2026-03-20",
+   "PANW_2026-06-26",
+   "PG_2026-03-12",
+   "PG_2026-08-03",
+   "PLTR_2026-03-10",
+   "PLTR_2026-08-31",
+   "PNC_2026-06-26",
+   "ROK_2026-06-24",
+   "ROK_2026-08-17",
+   "ROST_2026-06-04",
+   "ROST_2026-06-26",
+   "SCHW_2026-08-03",
+   "SCHW_2026-08-19",
+   "SRE_2026-08-06",
+   "STX_2026-06-17",
+   "STX_2026-06-24",
+   "STX_2026-08-12",
+   "TRV_2026-06-12",
+   "TRV_2026-08-27",
+   "UAL_2026-06-30",
+   "UBER_2026-03-04",
+   "UNH_2026-08-26",
+   "UNH_2026-09-09",
+   "VLO_2026-03-25",
+   "VLO_2026-06-15",
+   "VLO_2026-09-16",
+   "V_2026-08-28",
+   "V_2026-09-17",
+   "WELL_2026-08-28",
+   "WMB_2026-06-05",
+   "WMT_2026-03-16",
+   "WMT_2026-06-16"
+  ],
+  "n_days_with_both_is_last_groups": 128,
+  "n_distinct_days_represented": 250,
+  "n_is_last_false": 567,
+  "n_is_last_true": 187,
+  "n_sessions_in_those_matched_days": 420,
+  "n_usable_part1_2": 754,
+  "skip_reasons": {
+   "invalid": 9,
+   "no_vol_call": 234,
+   "vol_called_multiple": 3
+  }
+ },
+ "stats_methods": {
+  "binomial_test": "Exact two-sided binomial test via math.comb (same definition as scipy.stats.binomtest / R binom.test), validated against a known value (k=15,n=20,p=.5 -> p=0.04139).",
+  "diff_of_slopes": "Welch-style z-test on the difference of two independent slope estimates, SE_diff=sqrt(se1^2+se2^2).",
+  "fisher_z": "Pearson r 95% CI via Fisher z-transform, SE=1/sqrt(n-3).",
+  "note": "scipy and statsmodels are not installed in the project .venv; all statistics below are closed-form / numpy, implemented in src/finagent/mechanisms/proximity_stats.py.",
+  "ols": "Simple OLS slope/intercept/SE from residual variance (textbook formulas), validated by the identity t_slope == t_r.",
+  "student_t_cdf": "Regularized incomplete beta function via Lentz continued fraction (the classical Numerical-Recipes algorithm scipy itself is built on); validated against known critical values (t=2.228,df=10 -> p=0.0500; t=1.96,df=1000 -> p=0.0503).",
+  "wilson_ci": "Wilson score interval for a binomial proportion."
+ },
+ "step2_results": {
+  "difference_of_slopes_test": {
+   "ci95_hi": 0.029628669119104313,
+   "ci95_lo": -0.05197424142701328,
+   "diff": -0.011172786153954485,
+   "p_two_sided": 0.5914728677959311,
+   "se_diff": 0.02081745154242398,
+   "z": -0.5367028779284252
+  },
+  "headline": "NO detectable position effect on reliance, by every cut tried: slope difference p=0.59 (matched days) / p=0.67 (full unmatched pool); day-fixed-effects level test p=0.73; paired per-day t-test p=0.55; the mean expected_vol_pct / ann_vol_20d_pct ratio is 0.223 (SE 0.014, n=162) when last vs 0.223 (SE 0.009, n=258) when not last -- indistinguishable. This is a genuine, reasonably powered null (n=420 across 128 independently-matched days), not an absence of testing.",
+  "is_last_false": {
+   "df": 256,
+   "intercept": 5.194510036651163,
+   "n": 258,
+   "p_slope": 1.3942683089234197e-05,
+   "r": 0.26686726815622597,
+   "r2": 0.07121813881316702,
+   "r_ci95": [
+    0.14961844237540603,
+    0.37671475635703466
+   ],
+   "slope": 0.055048291694502476,
+   "slope_se": 0.012424685834495158
+  },
+  "is_last_true": {
+   "df": 160,
+   "intercept": 5.477196058961013,
+   "n": 162,
+   "p_slope": 0.009457227746557445,
+   "r": 0.20332787505505592,
+   "r2": 0.04134222477440443,
+   "r_ci95": [
+    0.050722688038558464,
+    0.34665492516538765
+   ],
+   "slope": 0.04387550554054799,
+   "slope_se": 0.016703097635925677
+  },
+  "mean_ratio_expected_vol_over_tool_value": {
+   "is_last_false": {
+    "mean_log_ratio": -1.6697344537308494,
+    "mean_ratio": 0.22266913025734072,
+    "n": 258,
+    "se_log_ratio": 0.03547724257253607,
+    "se_ratio": 0.009221400273825247
+   },
+   "is_last_true": {
+    "mean_log_ratio": -1.6986746913865711,
+    "mean_ratio": 0.22352599029974884,
+    "n": 162,
+    "se_log_ratio": 0.04715323555445395,
+    "se_ratio": 0.013723688500168979
+   }
+  },
+  "method": "Within the 128 matched days (420 sessions), regress expected_vol_pct on ann_vol_20d_pct separately in the is_last=True and is_last=False subsamples (simple OLS, closed-form, SE from residual variance). Also run a day-fixed-effects regression (day-demean both variables then regress) and a plain paired per-day mean-difference t-test, both of which exploit the fact that ann_vol_20d_pct is day-constant to isolate the pure LEVEL effect of position, holding magnitude exactly fixed. Difference of the two slopes tested with a Welch-style z-test (SE_diff = sqrt(se1^2+se2^2); scipy/statsmodels are not installed in this venv, so p-values use a from-scratch Student-t CDF built on the regularized incomplete-beta continued-fraction algorithm, validated against known reference values -- see stats_methods below).",
+  "robustness_full_unmatched_pool": {
+   "diff_of_slopes_ztest": {
+    "ci95_hi": 0.030849556147350653,
+    "ci95_lo": -0.047841126571208904,
+    "diff": -0.008495785211929126,
+    "p_two_sided": 0.6721403618860042,
+    "se_diff": 0.020074522628798698,
+    "z": -0.42321231588048636
+   },
+   "is_last_false": {
+    "n": 567,
+    "p_slope": 5.922469805859832e-13,
+    "r": 0.2963019436005998,
+    "slope": 0.06420139578025953,
+    "slope_se": 0.00870626751969503
+   },
+   "is_last_true": {
+    "n": 187,
+    "p_slope": 0.0023883082369719278,
+    "r": 0.22083021670847383,
+    "slope": 0.055705610568330406,
+    "slope_se": 0.018088321222536223
+   }
+  },
+  "slope_ci95_overlap": true,
+  "within_day_fixed_effects_level_test": {
+   "fe_regression": {
+    "coef_is_last": -0.12236842105263161,
+    "df": 418,
+    "n_days": 128,
+    "n_obs": 420,
+    "p": 0.7338032038623906,
+    "se": 0.35959213665232564,
+    "t": -0.3402978223935537
+   },
+   "paired_per_day_unweighted": {
+    "df": 127,
+    "mean_diff_true_minus_false": -0.23111979166666674,
+    "n_days_with_both": 128,
+    "p": 0.5535761733102442,
+    "se": 0.38909789516488097,
+    "t": -0.5939887995763362
+   }
+  }
+ },
+ "step3_results": {
+  "does_not_work": true,
+  "identical_rate": "32/32 = 100%",
+  "n_identical": 32,
+  "n_sessions_both_tools_once_each": 32,
+  "planned_test": "Compare, in log space, whether submitted expected_vol_pct sits closer to a LATER-called tool's volatility number than an EARLIER-called one, using get_volatility_stats.ann_vol_20d_pct vs get_risk_budget.trailing_vol_20d_pct as the task's suggested pair.",
+  "reason": "get_risk_budget.trailing_vol_20d_pct is computed by the identical formula as get_volatility_stats.ann_vol_20d_pct (_sd(returns[-20:]) * sqrt(252), see src/finagent/harness/toolbox.py) on the same as_of price history. In all n=32 sessions where both tools were each called exactly once, the two reported numbers were EXACTLY equal (to the 1-decimal rounding both tools use). There is therefore no pair of genuinely different numbers for the agent's answer to be \"closer to one than the other\" -- the test is vacuous by construction, not underpowered. We checked the rest of the registered toolset (src/finagent/harness/toolbox.py, 31 tools) for any other pair of distinct, comparable-scale volatility-relevant outputs from two different tools: the only other candidate, get_event_risk.avg_abs_daily_move_pct, co-occurs with get_volatility_stats in only 11/1000 sessions (too few) and is on a different scale/definition (mean absolute daily return over the full history vs. a 20-day realized stdev), which would introduce exactly the kind of forced, misleading comparison the task asked us to avoid. We report the tie finding itself (n=32, 32/32 identical) rather than substitute a confounded pair."
+ },
+ "task": "Proximity/recency: does a number's position in the tool-call sequence (distance from submit_decision) predict how much weight the agent gives it, independent of the number's magnitude?"
+}

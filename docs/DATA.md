@@ -2,9 +2,10 @@
 
 `data/` holds every input the presentation pilot reads, in full and byte-identical to the original files:
 307 files, 50.9 MB for the pilot's own six tickers. `data/MANIFEST.sha256` lists the sha256 of every file in
-`data/` (937 files, 171.4 MB in total), and `finagent verify`'s "data files" check reads all 937 entries, not
-just the pilot's 307: it hashes every file in `data/` (the six pilot tickers and the 90 `evidence_relations`
-ones alike) against the manifest and fails on any extra, untracked file too. Lineage back
+`data/` outside `prompts/`, `evidence_relations/` and `mechanisms/` (937 files, 171.4 MB in total; the last two
+have their own manifests, [below](#datamechanisms) for `mechanisms/`), and `finagent verify`'s "data files" check
+reads all 937 entries, not just the pilot's 307: it hashes every one of those files (the six pilot tickers and the
+90 `evidence_relations` ones alike) against the manifest and fails on any extra, untracked file too. Lineage back
 to the vendors is in [PROVENANCE.md](PROVENANCE.md), terms of use in [DATA_LICENSE.md](../DATA_LICENSE.md).
 Hashes below are shortened to 16 hex digits where the manifest has the full value.
 
@@ -90,10 +91,33 @@ A few inputs live in the code rather than in `data/`: the system prompt texts an
 event list (`finagent.data.corpactions`) and the earnings calendar of the earnings tool, which holds AAPL
 report dates only (`finagent.harness.toolbox`).
 
+## data/mechanisms
+
+The inputs of the four mechanism analyses ([MECHANISMS.md](MECHANISMS.md)), copied byte for byte from the research
+workspace: 7,011 files, 107,909,578 bytes, each listed with its sha256 in `data/mechanisms/MANIFEST.sha256` and
+checked by `finagent verify` ("mechanism data", L0). File-by-file sources: [`data/mechanisms/README.md`](../data/mechanisms/README.md).
+None of them is read by the presentation pilot.
+
+| File | Size (bytes) | sha256 | Read by | Content and origin |
+|---|---:|---|---|---|
+| `mechanisms/sessions/newsagent/<day_id>/{FULL,NO_NEWS}_<k>.json.gz`, `FULL_T06_<k>.json.gz` | 37,729,810 (2,500 files) | per file in the manifest | `finagent.mechanisms.salience`, `.proximity`, `.thinking` | Saved Qwen3.5-9B tool-agent sessions on 250 real ticker-days (full traces: prompts with news headlines, reasoning, tool calls and results, decision). Workspace `results/newsagent_20261011/raw/sessions/`. |
+| `mechanisms/sessions/q3news_s1/<day_id>/…` | 35,364,055 (2,500 files) | per file in the manifest | `finagent.mechanisms.salience` (cross-check), `.thinking` | The same days and arms with Qwen3-8B (thinking on). Workspace `results/q3news_20261012/S1/sessions/`. |
+| `mechanisms/salience/grounding_A_main/<day_id>/{FULL_G,NO_NEWS_G}_<k>.json.gz` | 26,922,431 (2,000 files) | per file in the manifest | `finagent.mechanisms.salience` | Qwen3-8B sessions with the price readings written into the prompt; scanned, 0 usable for this question. Workspace `results/grounding_20261012/A_main/sessions/`. |
+| `mechanisms/salience/rcf_20261011/rule.json` | 11,688 | `350ca6bf49b77682…` | `finagent.mechanisms.salience` | The rational benchmark's definitions (R5, sigma = exp(lsig), u). |
+| `mechanisms/salience/rcf_20261011/events_all.parquet` (= `mechanisms/position_adjustment/events_all.parquet`) | 2,270,578 | `317f6aaa8da6ef55ad19c669cc7c7c2c93c74ebd26da59f8b15c5cc5d343523b` | `finagent.mechanisms.salience`, `.position_adjustment` | Rational 5-day mean m, log-sigma lsig and surprise u of 15,134 news-event (ticker, day) rows, with news item ids, no headline text; derived from the price panel and the news feed. |
+| `mechanisms/salience/rcf_20261011/nonevent_days.parquet` (= `mechanisms/position_adjustment/nonevent_days.parquet`) | 306,643 | `83c753d3686af35a1374556367e02afa40a33d697d105804ba97291f8feee11d` | `finagent.mechanisms.salience`, `.position_adjustment` | The same for 6,035 days without news. |
+| `mechanisms/position_adjustment/base5d_<window>.json` (5 windows) | 2,199,725 (5 files) | per file in the manifest | `finagent.mechanisms.position_adjustment` | BASE-policy Qwen3.5-9B multi-day trajectories: per day the parsed decision (sigma, mu, p_up, exposure) and the realised outcome. |
+| `mechanisms/position_adjustment/BASE_crash_R2.json` | 527,427 | `1a38ed934a273d71…` | `finagent.mechanisms.position_adjustment` | A replicate of the test_crash window. |
+
+The mechanism analyses also read `panel/us_daily_stratos_20260924.parquet` above (salience, for the realised 5-day
+volatility). The theory document's input, `docs/good_thinking/good_thinking_theory.json` (189,310 bytes, sha256
+`b4f1054a8bc0352d…`), is literature metadata and summaries written by this project, not data, and lives under `docs/`.
+
 ## Licensing in brief
 
 Prices: Hugging Face dataset without a stated license. News: Finnhub and the original publishers, shipped
 only for exact non-commercial reproduction. Anchors, saved sessions and registered files: produced by this
 project and licensed CC BY 4.0; they hold outputs of Qwen3-8B (weights under Apache-2.0; the outputs are this
 project's material) and quote news headlines, which keep their owners' terms. Details and the removal policy:
-[DATA_LICENSE.md](../DATA_LICENSE.md).
+[DATA_LICENSE.md](../DATA_LICENSE.md). The saved sessions in `data/mechanisms/` are this project's
+model outputs (CC BY 4.0) that quote the same news headlines and prices, which keep their owners' terms.
