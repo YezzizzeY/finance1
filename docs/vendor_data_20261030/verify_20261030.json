@@ -1,0 +1,53 @@
+{
+ "intraday_1m_vs_stratos_daily": {
+  "pairs": 23772,
+  "symbols": 96,
+  "median_abs_diff": 0.0002381130012945598,
+  "share_within_0.2pct": 0.9805233047282518,
+  "share_over_2pct": 0.00021033148241628806
+ },
+ "databento_daily_vs_stratos_daily": {
+  "pairs": 278916,
+  "symbols": 505,
+  "median_abs_diff": 4.041032164447955e-08,
+  "share_within_0.2pct": 0.9869817436073943,
+  "share_over_2pct": 0.0003836280457198583
+ },
+ "indexone_adj_vs_stratos_daily": {
+  "pairs": 76666,
+  "symbols": 96,
+  "median_abs_diff": 1.2023036291275435e-05,
+  "share_within_0.2pct": 0.9992043409073122,
+  "share_over_2pct": 3.9130775050217825e-05
+ },
+ "indexone_adj_vs_ext2017_daily": {
+  "pairs": 215465,
+  "symbols": 96,
+  "median_abs_diff": 2.2185561488918815e-05,
+  "share_within_0.2pct": 0.9984220174970413,
+  "share_over_2pct": 0.00059406400111387
+ },
+ "reference_cik_check": {
+  "tickers_compared": 500,
+  "same_cik": 500,
+  "different": []
+ },
+ "fundamentals_quarterly": {
+  "tickers": 644,
+  "rows": 27956,
+  "median_rows_per_ticker": 46.0,
+  "date_min": "2015-01-02",
+  "date_max": "2026-12-31",
+  "median_days_period_end_to_filing_since_2015": 34.0,
+  "share_rows_with_acceptedDate_since_2015": 0.9986764916297038
+ },
+ "fundamentals_annual": {
+  "tickers": 644,
+  "rows": 18671,
+  "median_rows_per_ticker": 31.0,
+  "date_min": "1985-05-31",
+  "date_max": "2026-09-03",
+  "median_days_period_end_to_filing_since_2015": 51.0,
+  "share_rows_with_acceptedDate_since_2015": 0.9986937590711176
+ }
+}
