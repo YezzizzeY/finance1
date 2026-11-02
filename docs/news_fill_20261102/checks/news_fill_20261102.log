@@ -1,0 +1,173 @@
+{
+ "date": "2026-11-02",
+ "floor": "2025-11-07",
+ "end": "2026-09-18",
+ "calls_planned": 4469,
+ "by_month": {
+  "2025-11": 721,
+  "2025-12": 933,
+  "2026-01": 934,
+  "2026-02": 843,
+  "2026-03": 934,
+  "2026-04": 39,
+  "2026-05": 19,
+  "2026-06": 21,
+  "2026-07": 16,
+  "2026-08": 4,
+  "2026-09": 5
+ }
+}
+top: [('NVDA', 189), ('AMZN', 155), ('MSFT', 153), ('GS', 148), ('JPM', 148), ('WMT', 148), ('AAPL', 147), ('AXP', 147), ('HON', 147), ('KO', 147)]
+50 calls, 320 new items, 128s, last AAPL 2025-12-26 n=14
+100 calls, 1848 new items, 254s, last AAPL 2026-02-14 n=13
+150 calls, 2205 new items, 413s, last AMGN 2025-11-08 n=7
+200 calls, 2205 new items, 589s, last AMGN 2025-12-28 n=0
+250 calls, 2205 new items, 795s, last AMGN 2026-02-16 n=0
+300 calls, 2205 new items, 974s, last AMZN 2025-11-12 n=57
+350 calls, 2205 new items, 1175s, last AMZN 2026-01-01 n=3
+400 calls, 2205 new items, 1409s, last AMZN 2026-02-20 n=76
+450 calls, 2339 new items, 1604s, last AVGO 2026-06-06 n=25
+'AXP', 147), ('HON', 147), ('KO', 147)]
+50 calls, 122 new items, 66s, last AMGN 2025-11-30 n=1
+100 calls, 232 new items, 162s, last AMZN 2025-11-11 n=34
+150 calls, 515 new items, 260s, last AMZN 2025-12-06 n=21
+200 calls, 911 new items, 387s, last AMZN 2025-12-31 n=20
+250 calls, 2012 new items, 484s, last AMGN 2026-03-09 n=6
+300 calls, 4058 new items, 581s, last AVGO 2026-09-03 n=122
+350 calls, 4742 new items, 709s, last AXP 2025-12-01 n=9
+400 calls, 5061 new items, 807s, last BA 2025-11-16 n=0
+450 calls, 5425 new items, 904s, last AXP 2026-01-20 n=15
+500 calls, 5815 new items, 999s, last BA 2026-01-06 n=7
+550 calls, 6299 new items, 1127s, last AXP 2026-03-10 n=8
+600 calls, 6667 new items, 1223s, last BA 2026-02-27 n=15
+Traceback (most recent call last):
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/_scripts/fill_finnhub_news.py", line 196, in <module>
+    main()
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/_scripts/fill_finnhub_news.py", line 191, in main
+    list(ex.map(work, [tk for tk in P if P[tk]]))
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/_scripts/fill_finnhub_news.py", line 183, in work
+    n_new = merge_items(tk, items)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/_scripts/fill_finnhub_news.py", line 113, in merge_items
+    tmp = p.with_suffix(".tmp"); tmp.write_text(json.dumps(old, ensure_ascii=False)); tmp.replace(p)
+                                                                                      ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+    os.replace(self, target)
+FileNotFoundError: [Errno 2] No such file or directory: '/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/raw/news_finnhub/raw/AMZN.tmp' -> '/srv/shared_home/lmz/ai/work2_llm_agent_behavior/data/raw/news_finnhub/raw/AMZN.json'
+{
+ "date": "2026-11-02",
+ "floor": "2025-11-07",
+ "end": "2026-09-18",
+ "calls_planned": 4469,
+ "by_month": {
+  "2025-11": 721,
+  "2025-12": 933,
+  "2026-01": 934,
+  "2026-02": 843,
+  "2026-03": 934,
+  "2026-04": 39,
+  "2026-05": 19,
+  "2026-06": 21,
+  "2026-07": 16,
+  "2026-08": 4,
+  "2026-09": 5
+ }
+}
+top: [('NVDA', 189), ('AMZN', 155), ('MSFT', 153), ('GS', 148), ('JPM', 148), ('WMT', 148), ('AAPL', 147), ('AXP', 147), ('HON', 147), ('KO', 147)]
+AAPL: 4 fetched days hold fewer items than returned; fetching again
+AMGN: 1 fetched days hold fewer items than returned; fetching again
+AMZN: 8 fetched days hold fewer items than returned; fetching again
+50 calls, 0 new items, 64s, last AXP 2026-01-27 n=11
+100 calls, 0 new items, 122s, last AXP 2026-03-18 n=9
+150 calls, 0 new items, 180s, last BA 2025-12-11 n=6
+200 calls, 0 new items, 238s, last BA 2026-01-30 n=9
+250 calls, 0 new items, 296s, last BA 2026-03-21 n=3
+300 calls, 168 new items, 354s, last CAT 2025-12-13 n=3
+350 calls, 450 new items, 412s, last CAT 2026-02-01 n=2
+400 calls, 813 new items, 470s, last CAT 2026-03-23 n=9
+450 calls, 1281 new items, 530s, last CRM 2025-12-17 n=22
+500 calls, 1585 new items, 588s, last CRM 2026-02-05 n=36
+550 calls, 1954 new items, 646s, last CRM 2026-03-27 n=23
+600 calls, 2326 new items, 704s, last CSCO 2025-12-22 n=5
+650 calls, 2525 new items, 762s, last CSCO 2026-02-10 n=28
+700 calls, 2929 new items, 820s, last CSCO 2026-04-24 n=13
+750 calls, 3311 new items, 879s, last CVX 2025-12-26 n=2
+800 calls, 3609 new items, 937s, last CVX 2026-02-14 n=3
+850 calls, 4024 new items, 995s, last DIS 2025-11-10 n=31
+900 calls, 4406 new items, 1053s, last DIS 2025-12-30 n=7
+950 calls, 4773 new items, 1111s, last DIS 2026-02-18 n=18
+1000 calls, 5169 new items, 1169s, last GS 2025-11-12 n=34
+1050 calls, 5543 new items, 1227s, last GS 2026-01-01 n=2
+1100 calls, 5893 new items, 1285s, last GS 2026-02-20 n=22
+1150 calls, 6234 new items, 1343s, last HD 2025-11-14 n=16
+1200 calls, 6606 new items, 1401s, last HD 2026-01-03 n=0
+1250 calls, 6777 new items, 1461s, last HD 2026-02-22 n=10
+1300 calls, 7174 new items, 1519s, last HON 2025-11-19 n=1
+1350 calls, 7336 new items, 1577s, last HON 2026-01-08 n=4
+1400 calls, 7588 new items, 1635s, last HON 2026-02-27 n=5
+1450 calls, 7887 new items, 1692s, last IBM 2025-11-22 n=5
+1500 calls, 8175 new items, 1751s, last IBM 2026-01-11 n=2
+1550 calls, 8636 new items, 1810s, last IBM 2026-03-02 n=8
+1600 calls, 8987 new items, 1868s, last JNJ 2025-11-26 n=8
+1650 calls, 9234 new items, 1925s, last JNJ 2026-01-15 n=7
+1700 calls, 9711 new items, 1983s, last JNJ 2026-03-06 n=14
+1750 calls, 10111 new items, 2042s, last JPM 2025-11-30 n=1
+1800 calls, 10347 new items, 2102s, last JPM 2026-01-19 n=18
+1850 calls, 10824 new items, 2161s, last JPM 2026-03-10 n=39
+1900 calls, 11203 new items, 2219s, last KO 2025-12-02 n=11
+1950 calls, 11527 new items, 2277s, last KO 2026-01-21 n=8
+2000 calls, 11825 new items, 2335s, last KO 2026-03-12 n=7
+2050 calls, 12079 new items, 2393s, last MCD 2025-12-02 n=2
+2100 calls, 12306 new items, 2451s, last MCD 2026-01-21 n=3
+2150 calls, 12770 new items, 2509s, last MCD 2026-03-12 n=12
+2200 calls, 12900 new items, 2567s, last MMM 2025-12-07 n=1
+2250 calls, 13058 new items, 2625s, last MMM 2026-01-26 n=5
+2300 calls, 13164 new items, 2683s, last MMM 2026-03-17 n=1
+2350 calls, 13492 new items, 2741s, last MRK 2025-12-11 n=5
+2400 calls, 13841 new items, 2799s, last MRK 2026-01-30 n=12
+2450 calls, 14166 new items, 2857s, last MRK 2026-03-21 n=0
+2500 calls, 14586 new items, 2930s, last MSFT 2025-12-16 n=40
+2550 calls, 16283 new items, 3006s, last MSFT 2026-02-04 n=104
+2600 calls, 16531 new items, 3083s, last MSFT 2026-03-26 n=75
+2650 calls, 16870 new items, 3145s, last NKE 2025-12-10 n=11
+2700 calls, 17453 new items, 3203s, last NKE 2026-01-29 n=8
+2750 calls, 17646 new items, 3261s, last NKE 2026-03-20 n=5
+2800 calls, 19935 new items, 3351s, last NVDA 2025-12-14 n=8
+2850 calls, 23306 new items, 3447s, last NVDA 2026-02-02 n=149
+2900 calls, 31222 new items, 3547s, last NVDA 2026-03-24 n=219
+2950 calls, 33046 new items, 3645s, last NVDA 2026-09-13 n=126
+3000 calls, 33289 new items, 3704s, last PG 2025-12-21 n=4
+3050 calls, 33602 new items, 3761s, last PG 2026-02-09 n=6
+3100 calls, 33831 new items, 3819s, last PG 2026-03-31 n=4
+3150 calls, 33908 new items, 3877s, last SHW 2025-12-20 n=2
+3200 calls, 33993 new items, 3935s, last SHW 2026-02-08 n=1
+3250 calls, 34065 new items, 3992s, last SHW 2026-03-30 n=0
+3300 calls, 34150 new items, 4051s, last TRV 2025-12-23 n=2
+3350 calls, 34272 new items, 4108s, last TRV 2026-02-11 n=3
+3400 calls, 34348 new items, 4166s, last UNH 2025-11-07 n=3
+3450 calls, 34617 new items, 4224s, last UNH 2025-12-27 n=1
+3500 calls, 34821 new items, 4282s, last UNH 2026-02-15 n=0
+3550 calls, 35082 new items, 4340s, last V 2025-11-11 n=15
+3600 calls, 35463 new items, 4398s, last V 2025-12-31 n=3
+3650 calls, 35805 new items, 4457s, last V 2026-02-19 n=20
+3700 calls, 36185 new items, 4515s, last VZ 2025-11-14 n=14
+3750 calls, 36446 new items, 4572s, last VZ 2026-01-03 n=3
+3800 calls, 36839 new items, 4630s, last VZ 2026-02-22 n=0
+3850 calls, 37059 new items, 4688s, last WMT 2025-11-18 n=31
+3900 calls, 37501 new items, 4746s, last WMT 2026-01-07 n=11
+3950 calls, 37872 new items, 4805s, last WMT 2026-02-26 n=37
+done: 3986 calls, 38109 new items, 4847s

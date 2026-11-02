@@ -1,7 +1,7 @@
 # Data license and notices
 
 The MIT license in [`LICENSE`](LICENSE) covers the code only. This file states, for each kind of material
-in `data/` (including `data/prompts/` and `data/mechanisms/`), `records/`, `results/`, `docs/good_thinking/`, `docs/vendor_data_20261030/` and
+in `data/` (including `data/prompts/` and `data/mechanisms/`), `records/`, `results/`, `docs/good_thinking/`, `docs/vendor_data_20261030/`, `docs/news_fill_20261102/` and
 `tests/fixtures/`, who owns it and on what terms it is included. Where we hold no license, we say so.
 
 **The project's own material** (Copyright (c) 2026 YezzizzeY) is licensed under the
@@ -25,6 +25,7 @@ inside it is excluded from that license and keeps its owners' terms, listed in t
 | Rational-benchmark event tables | `data/mechanisms/salience/rcf_20261011/`, `data/mechanisms/position_adjustment/*.parquet` | this project, derived from the daily prices and the news feed above (per-day m, lsig, u and news item ids; no headline text) | CC BY 4.0; the prices they are derived from keep their own terms |
 | Mechanism results, their page and the good-thinking theory document | `results/mechanisms/`, `docs/good_thinking/`, `docs/GOOD_THINKING.md` | this project (`src/finagent/mechanisms/`); the results quote excerpts of the saved sessions above; the theory document cites and summarises published works, whose text is not reproduced | CC BY 4.0; quoted headlines keep their owners' terms |
 | Vendor-data scripts, checks and hashes | `docs/vendor_data_20261030/` | this project; the checks are aggregate statistics computed from Databento and Index One data, which is licensed to us and **not included** | CC BY 4.0 |
+| News-fill scripts, checks and hashes | `docs/news_fill_20261102/` | this project; the checks are per-ticker, per-day and per-month counts computed from Finnhub company news, whose text is **not included** in that folder | CC BY 4.0 |
 | Synthetic two-signal Bayesian benchmark and its reference-model results | `data/evidence_relations/synthetic/`, `results/evidence_relations/reference_models/` | this project (`src/finagent/evidence_relations/{synthetic,bayes,reference_models}.py`); a closed-form Gaussian AR(1) simulation with its own fixed seed, holding no third-party material of any kind -- no prices, no news, no model output | CC BY 4.0 |
 
 **Model weights** are not shipped. Download them from Hugging Face under their Apache-2.0 licenses at the

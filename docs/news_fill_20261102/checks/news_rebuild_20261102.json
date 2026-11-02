@@ -1,0 +1,187 @@
+{
+ "date": "2026-11-02",
+ "items_before": 264006,
+ "items_after": 285342,
+ "relevant_after": 132018,
+ "kept_before": 120987,
+ "kept_after": 129228,
+ "by_pull": {
+  "rcf_20261011": 226915,
+  "dow30_existing": 37091,
+  "fill_20261102": 21336
+ },
+ "fill_calls": 4469,
+ "fill_calls_capped_(n>=150)": 76,
+ "fill_calls_n_quantiles": [
+  7,
+  47,
+  188,
+  250
+ ],
+ "kept_by_month_before": {
+  "202509": 414,
+  "202510": 7168,
+  "202511": 7756,
+  "202512": 8127,
+  "202601": 10141,
+  "202602": 10549,
+  "202603": 10616,
+  "202604": 14356,
+  "202605": 11640,
+  "202606": 11865,
+  "202607": 13491,
+  "202608": 7717,
+  "202609": 7147
+ },
+ "kept_by_month_after": {
+  "202509": 414,
+  "202510": 7168,
+  "202511": 8441,
+  "202512": 8840,
+  "202601": 12600,
+  "202602": 12931,
+  "202603": 12323,
+  "202604": 14386,
+  "202605": 11728,
+  "202606": 11975,
+  "202607": 13519,
+  "202608": 7720,
+  "202609": 7183
+ },
+ "top15": {
+  "NVDA": {
+   "kept_before": 6980,
+   "kept_after": 12234,
+   "train_zero_days_before": 93,
+   "train_zero_days_after": 19,
+   "test_zero_days_before": 7,
+   "test_zero_days_after": 0
+  },
+  "AAPL": {
+   "kept_before": 6421,
+   "kept_after": 6940,
+   "train_zero_days_before": 26,
+   "train_zero_days_after": 7,
+   "test_zero_days_before": 0,
+   "test_zero_days_after": 0
+  },
+  "MSFT": {
+   "kept_before": 6466,
+   "kept_after": 7023,
+   "train_zero_days_before": 27,
+   "train_zero_days_after": 8,
+   "test_zero_days_before": 0,
+   "test_zero_days_after": 0
+  },
+  "AMZN": {
+   "kept_before": 6397,
+   "kept_after": 7780,
+   "train_zero_days_before": 40,
+   "train_zero_days_after": 8,
+   "test_zero_days_before": 0,
+   "test_zero_days_after": 0
+  },
+  "AVGO": {
+   "kept_before": 3474,
+   "kept_after": 3502,
+   "train_zero_days_before": 6,
+   "train_zero_days_after": 6,
+   "test_zero_days_before": 0,
+   "test_zero_days_after": 0
+  },
+  "JPM": {
+   "kept_before": 2876,
+   "kept_after": 2909,
+   "train_zero_days_before": 10,
+   "train_zero_days_after": 9,
+   "test_zero_days_before": 4,
+   "test_zero_days_after": 4
+  },
+  "WMT": {
+   "kept_before": 2802,
+   "kept_after": 2817,
+   "train_zero_days_before": 6,
+   "train_zero_days_after": 6,
+   "test_zero_days_before": 1,
+   "test_zero_days_after": 1
+  },
+  "V": {
+   "kept_before": 1824,
+   "kept_after": 1833,
+   "train_zero_days_before": 7,
+   "train_zero_days_after": 7,
+   "test_zero_days_before": 3,
+   "test_zero_days_after": 3
+  },
+  "JNJ": {
+   "kept_before": 1535,
+   "kept_after": 1541,
+   "train_zero_days_before": 4,
+   "train_zero_days_after": 4,
+   "test_zero_days_before": 6,
+   "test_zero_days_after": 6
+  },
+  "MA": {
+   "kept_before": 1454,
+   "kept_after": 1454,
+   "train_zero_days_before": 7,
+   "train_zero_days_after": 7,
+   "test_zero_days_before": 5,
+   "test_zero_days_after": 5
+  },
+  "CSCO": {
+   "kept_before": 1659,
+   "kept_after": 1666,
+   "train_zero_days_before": 0,
+   "train_zero_days_after": 0,
+   "test_zero_days_before": 4,
+   "test_zero_days_after": 4
+  },
+  "ORCL": {
+   "kept_before": 3925,
+   "kept_after": 3945,
+   "train_zero_days_before": 7,
+   "train_zero_days_after": 7,
+   "test_zero_days_before": 2,
+   "test_zero_days_after": 2
+  },
+  "CVX": {
+   "kept_before": 1898,
+   "kept_after": 1905,
+   "train_zero_days_before": 2,
+   "train_zero_days_after": 2,
+   "test_zero_days_before": 4,
+   "test_zero_days_after": 4
+  },
+  "BAC": {
+   "kept_before": 1803,
+   "kept_after": 1803,
+   "train_zero_days_before": 7,
+   "train_zero_days_after": 7,
+   "test_zero_days_before": 4,
+   "test_zero_days_after": 4
+  },
+  "PLTR": {
+   "kept_before": 4306,
+   "kept_after": 4313,
+   "train_zero_days_before": 6,
+   "train_zero_days_after": 6,
+   "test_zero_days_before": 3,
+   "test_zero_days_after": 3
+  }
+ },
+ "time_rules_pass": true,
+ "time_rule_counts": {
+  "utc": 95411,
+  "wall": 28393,
+  "plus5": 8131,
+  "date_only": 83
+ },
+ "date_flag_share": 0.021133481797936646,
+ "first_report_changed_by_correction": 1381,
+ "day_coverage_complete_share": {
+  "all": 0.9469532987398073,
+  "from_2025-11-07": 1.0,
+  "test_2026-03-19..09-18": 1.0
+ }
+}

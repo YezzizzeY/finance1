@@ -103,6 +103,11 @@ to a ticker list.
   before 2025-10-15, so MRK's items from 2025-09-29 are already out of reach, and every item the pilot uses
   (the latest D(t) is 2026-08-28) will be by about 2027-08. Finnhub also returns at most about 250 items per
   call and may change ids or text. The caches are therefore shipped as they are.
+  Checked again on 2026-11-02: the free tier then returned nothing before 2025-11-07. On that day the gaps the
+  250-item cap had left in the project's wider news folder (the pulls of 2026-09-25 and 2026-10-10, 95 tickers) were
+  refetched one ticker-day per call (4,469 calls) and the news tables of that folder were rebuilt with the same rules;
+  scripts, counts and hashes are in [`news_fill_20261102/`](news_fill_20261102/README.md). The `news_v2` caches used by
+  the pilot were **not** changed.
 - **Price levels.** The dataset is rewritten several times a day and its adjusted levels shift with each
   new dividend or split. Revision `786615b8…` can still be downloaded from the dataset history (checked
   2026-10-19), but nothing guarantees it will stay; the snapshot is shipped.
