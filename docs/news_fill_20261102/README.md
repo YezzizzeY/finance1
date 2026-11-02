@@ -42,8 +42,10 @@ and 26 empty training days.
 | ticker-days inside a known-complete span, from 2025-11-07 | — | 100% |
 
 All three publication-time tests pass. The remaining empty days are all before 2025-11-07, which the free
-tier no longer serves. 76 single days (NVDA 70, AMZN 4, MSFT 2) still return exactly 250 items; the API
-cannot split a day further, so those days hold only their newest 250 items.
+tier no longer serves. 76 single days returned 150 items or more (NVDA 70, AMZN 4, MSFT 2; the plan's `trunc` flag is set at 150, conservatively);
+only 3 of them, all NVDA (2026-03-17, 06-01, 06-09), hit the 250-item cap. On those 3 days the oldest item returned lies at
+00:37 … 04:49 UTC, so only the late-evening hours (New York time) of the previous day are missing; on the other 73 days the
+oldest item is near 00:00 UTC and nothing was cut. The API cannot split a day further.
 
 | Folder or file | What it holds |
 |---|---|
